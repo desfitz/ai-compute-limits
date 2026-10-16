@@ -2,7 +2,16 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23406476.svg)](https://doi.org/10.5281/zenodo.23406476) [![License: CC BY 4.0](https://img.shields.io/badge/text%20%26%20figures-CC%20BY%204.0-lightgrey.svg)](paper/LICENSE) [![License: MIT](https://img.shields.io/badge/model-MIT-lightgrey.svg)](model/LICENSE)
 
-Version 27, 15 October 2026. Record of all versions: https://doi.org/10.5281/zenodo.23406475. Repository: https://github.com/desfitz/ai-compute-limits.
+Version 27, 15 October 2026.
+
+**Links**
+- Paper, version 27 (PDF): https://doi.org/10.5281/zenodo.23406476
+- All versions (concept DOI): https://doi.org/10.5281/zenodo.23406475
+- The fourteen-slide deck (PDF): https://zenodo.org/records/23406476/files/ai_compute_easy_deck_v28-2_2026-10-15.pdf?download=1
+- This repository (model, register, code): https://github.com/desfitz/ai-compute-limits
+- First open question (facility-opex dispute): https://github.com/desfitz/ai-compute-limits/issues/1
+- SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7620359
+- Comments and corrections: desmond.fitzpatrick@nvara.ai
 
 **Start here:** the twelve-slide version, `paper/easy_deck_v28-2.pdf` (PowerPoint: `paper/easy_deck_v28-2.pptx`). The paper is `paper/paper_v27.pdf`.
 

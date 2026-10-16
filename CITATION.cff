@@ -16,6 +16,12 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.23406476"
     description: "Zenodo DOI, version 27 (15 Oct 2026)"
+  - type: doi
+    value: "10.5281/zenodo.23406475"
+    description: "Zenodo concept DOI (all versions)"
+  - type: url
+    value: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7620359"
+    description: "SSRN abstract 7620359"
 keywords:
   - AI infrastructure
   - hyperscaler capex
