@@ -1,0 +1,383 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usetheme{default}\usecolortheme{dove}
+\usepackage{graphicx,booktabs,tabularx,array}
+\usepackage[final,expansion=false]{microtype}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{\hspace*{0.4cm}\scriptsize\textcolor{gray}{The Macroeconomic Limits of AI Compute --- deck v26.5, 1 Oct 2026 --- generated from the paper's figures and register}\hfill\scriptsize\textcolor{gray}{\insertframenumber}\hspace*{0.4cm}\vspace{0.2cm}}
+\setbeamercolor{frametitle}{fg=black!85,bg=white}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black!90}
+\setbeamercolor{item}{fg=black!70}
+\definecolor{accent}{RGB}{40,70,110}
+\newcommand{\src}[1]{\vfill\hfill{\scriptsize\textcolor{gray}{Source: #1}}}
+\newcommand{\claim}[1]{\par\vspace{2pt}{\small\textcolor{accent}{#1}}\par}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{document}
+
+% ---------- 1 title
+\begin{frame}
+\vspace{1.2cm}{\Huge\bfseries The Macroeconomic Limits of AI Compute}\\[6pt]
+{\Large Can the build-out earn its carry --- and what growth does it take?}\\[14pt]
+{\normalsize Desmond Fitzpatrick, Ph.D. \quad IBM Systems (retired) \quad desmond.fitzpatrick@gmail.com}\\[4pt]
+{\small A community estimate: every number in an open register, every chart regenerated from it. Paper v26.5, 1 October 2026.}
+\vfill{\footnotesize\textcolor{gray}{This deck is a rendering of the paper. Where they differ, the paper and the register are right.}}
+\end{frame}
+
+% ---------- 2 what we're trying to do
+\begin{frame}[shrink=6]{What we are trying to do}
+\claim{Replace assertion with arithmetic that anyone can check and improve.}
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\textbf{The question.} Five companies will spend about \$780B this year on AI data centers. Will the revenue arrive to pay for it --- and how fast must it grow?\\[6pt]
+\textbf{The method, in five steps.}
+\begin{enumerate}\setlength{\itemsep}{1pt}
+\item Build the \emph{carry} of the installed base, cohort by cohort.
+\item Estimate demand twice, independently: top-down (observed 2026 revenue grown at $g$) and bottom-up (fifteen bounded sector chains).
+\item Ask what fraction of a customer's dollar reaches the data-center owner.
+\item Propagate every range honestly; report a distribution.
+\item Put every input in a public register; let the community move it.
+\end{enumerate}
+\column{0.5\textwidth}
+\textbf{Why Fermi.} Fermi got the Trinity yield to within a factor of two with one loose factor and knowledge of which one it was. Here every factor is bounded to tens of percent; ``Fermi'' names the decomposition and the propagation, not the precision.
+\end{columns}
+\end{frame}
+
+
+
+% ---------- 3 scale
+\begin{frame}{Why it matters: the scale of the thing}
+\claim{\$780B a year is 1.5--2.5\% of US GDP --- the peaks of the railway and telecom booms, each of which ended in impairment without ending the technology.}
+\begin{columns}[T]
+\column{0.55\textwidth}\includegraphics[width=\textwidth]{f1_capex.pdf}
+\column{0.45\textwidth}\small
+\begin{tabular}{lr}\toprule Big-5 capex & \$B \\\midrule 2022 (pre-AI baseline) & 162 \\ 2023 & 161 \\ 2024 & 260 \\ 2025 & 448 \\ 2026 (guidance) & $\sim$780 \\ 2027 (street consensus) & $\sim$1{,}050 \\ 2028 (street consensus) & $\sim$1{,}150 \\\bottomrule\end{tabular}\\[8pt]
+World GDP $\sim$\$115T; US $\sim$\$30T. The question is who carries the write-down and when, not whether AI is affordable.
+\end{columns}
+\src{Epoch AI (SEC XBRL) 2022--25; company guidance Q2 2026; S\&P Capital IQ consensus via a16z, Sept 2026}
+\end{frame}
+
+% ---------- 4 observables
+\begin{frame}[shrink=6]{The observables the model must reconcile with}
+\claim{Audited filings first; company statements second; press third --- and marked as such.}
+\scriptsize\vspace{-4pt}
+\begin{tabularx}{\textwidth}{L{4.4cm}L{2.5cm}X}\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Provenance}\\\midrule
+Nvidia data-center revenue FY26; Q1 FY27 run-rate & \$194B; $\sim$\$300B & 8-K (audited)\\
+Big-4 2026 capex guidance & \$725--745B & Q2 calls (company statements)\\
+Google Cloud Q2 2026; backlog & +82\%; \$514B & Alphabet release\\
+Azure FY26 Q4; M365 commercial seats & +43\%; +6--7\%/yr & Microsoft 8-K metrics\\
+Microsoft 365 Copilot paid seats & $>$30M (Jul.) & Earnings call (paid $\neq$ used)\\
+Anthropic run-rate Dec-25 / Jul-26; expected exit-26 & \$9B / \$65B; $>$\$100B & Company; Bloomberg (press)\\
+OpenAI Q1 / Q2 2026 booked; Aug run-rate & \$5.7B / \$6.7B; \$40B & Sacra, press (unaudited)\\
+Oracle RPO Q1 FY27; share from OpenAI; cloud backlogs (3 largest) & \$664B; $>$50\%; $\sim$\$1.7T & Earnings call; filings\\
+H100 rental, Sept 2026 & \$2.63/GPU-hr, rising & Silicon Data\\
+US DC projects blocked/delayed, Q1 2026 & \$130B & Data Center Watch\\
+Calendar-2026 AI revenue, all channels (derived) & \$187B (171--202) & Seven-component decomposition\\\bottomrule
+\end{tabularx}
+\end{frame}
+
+% ---------- 5 carry
+\begin{frame}{The carry is a stock, not a flow --- and it ramps}
+\footnotesize
+\claim{Net of the pre-AI baseline, the AI stock is $\sim$\$1.1T entering 2027 and $\sim$\$2.2T by 2029. Its carry: $\sim$\$390B (2027), \$535B (2028), \$725B (2030) if capex merely plateaus.}
+\begin{columns}[T]
+\column{0.6\textwidth}\includegraphics[width=\textwidth]{f2_carry.pdf}
+\column{0.4\textwidth}\small
+\textbf{Carry $H_t$} $=$ depreciation $+$ facility opex $+$ return on net book, summed over every cohort still alive.\\[6pt]
+Silicon: effective life 4.2 yr (training 3.5, inference 5, harmonic mean). Shell: 20 yr.\\[6pt]
+2028 plateau, at the modes: depreciation $\sim$\$280B, opex $\sim$\$130B, return $\sim$\$125B.\\[6pt]
+A 35\% capex cut flattens the carry near \$460B --- the 2025--26 cohorts are on the books whatever happens next.
+\end{columns}
+\src{paper Section 4, Eq. 2; register entries supply.*}
+\end{frame}
+
+% ---------- 6 where a dollar goes
+\begin{frame}{Where a customer's dollar goes}
+\claim{End-customer revenue is not infrastructure receipts. Labs keep a margin; devices, premises and integrators take a share; what is left must cover the carry.}
+\begin{center}\includegraphics[width=0.84\textwidth]{f18_flow.pdf}\end{center}
+\src{paper Section 6; cloud-capture share $\theta\approx0.82$ overall, $\theta_{\text{lab}}\approx0.64$}
+\end{frame}
+
+% ---------- 7 scissors
+\begin{frame}{Top-down: the scissors}
+\claim{Carry on one blade, receipts on the other. Whether and when they cross depends on one number: sustained growth $g$.}
+\begin{columns}[T]
+\column{0.62\textwidth}\includegraphics[width=\textwidth]{f3_scissors.pdf}
+\column{0.38\textwidth}\small
+Base: calendar-2026 AI revenue \$187B, seven sourced components.\\[6pt]
+At 20\%/yr: never crosses.\\ At 35\%: crosses after 2030.\\ At 50\%: crosses in 2030.\\ At 70\%: crosses in 2029.\\[6pt]
+No rate crosses in 2027 or 2028: those years are a sunk deficit of \$100--250B under every path.
+\end{columns}
+\src{paper Fig. 9; register demand.base\_2026, demand.theta}
+\end{frame}
+
+% ---------- 8 breakeven
+\begin{frame}{Break-even growth, by year and by capex path}
+\claim{Plateau: $\sim$48\%/yr sustained through 2030. Street-consensus (arms race): $\sim$62\%. A 35\% cut: $\sim$33\%.}
+\begin{columns}[T]
+\column{0.6\textwidth}\includegraphics[width=\textwidth]{f5_breakeven.pdf}
+\column{0.4\textwidth}\small
+\begin{tabular}{lccc}\toprule & 2028 & 2029 & 2030\\\midrule Plateau & 92\% & 65\% & 48\%\\ Arms race & 111\% & 80\% & 62\%\\ Rationalize & 72\% & 47\% & 33\%\\\bottomrule\end{tabular}\\[8pt]
+Longer silicon life (8 yr) does not help by 2030: cohorts stay on the books longer. A 2030 break-even at 48\% means \$880B of AI revenue --- larger than today's entire public cloud.
+\end{columns}
+\src{paper Table 8}
+\end{frame}
+
+% ---------- 9 sectors
+\begin{frame}{Bottom-up: fifteen sector chains, no growth rate assumed}
+\claim{Each sector has a 2026 base, a 2030 ceiling set by a physical or budgetary constraint, a ramp, and a cloud-capture share. Growth is a consequence, not an input.}
+\begin{columns}[T]
+\column{0.6\textwidth}\includegraphics[width=\textwidth]{f9_sectors.pdf}
+\column{0.4\textwidth}\small
+Four sectors carry three-quarters: office assistants/agents, advertising uplift, consumer, coding.\\[6pt]
+Ceilings: 350M seats $\times$ adoption $\times$ price, capped by IT budgets; Meta+Google ad yield lift; 1.3--2B users $\times$ paid conversion; 29M developers.\\[6pt]
+Implied growth: 57\% (2027) $\to$ 39\% $\to$ 24\% $\to$ 14\% (2030). CAGR 33\%.
+\end{columns}
+\src{paper Section 7, Table 4, Appendix B}
+\end{frame}
+
+% ---------- 10 reconciliation
+\begin{frame}{Reconciliation: what the stock needs versus what the sectors deliver}
+\claim{The stock needs 48\%/yr; the sectors deliver 33\%. The 2030 gap --- $\sim$\$255B of receipts --- is 3.5 standard deviations of the propagated uncertainty.}
+\begin{columns}[T]
+\column{0.5\textwidth}\includegraphics[width=\textwidth]{f10_reconcile.pdf}
+\column{0.5\textwidth}\includegraphics[width=\textwidth]{f12_growth.pdf}
+\end{columns}
+\src{paper Figs. 13--14; the two estimates share only the 2026 base}
+\end{frame}
+
+% ---------- 11 overlap
+\begin{frame}{Do the distributions overlap?}
+\claim{Under a plateau or the street's path, receipts and carry do not touch in any year to 2030. Under a 35\% cut they overlap from 2029.}
+\begin{center}\includegraphics[width=0.85\textwidth]{f16_overlap.pdf}\end{center}
+\begin{center}\small\begin{tabular}{lcccc}\toprule P(profit) & 2027 & 2028 & 2029 & 2030\\\midrule Plateau & 0\% & 0\% & 0\% & 0\%\\ Arms race & 0\% & 0\% & 0\% & 0\%\\ Rationalize & 0\% & 2\% & 20\% & 52\%\\\bottomrule\end{tabular}\end{center}
+\src{paper Fig. 16, Table 13}
+\end{frame}
+
+% ---------- 12 probability map
+\begin{frame}[shrink=8]{The result as a probability map}
+\claim{Two residual axes --- adoption beyond what the sectors see, and the assistant ceiling --- inside a feasibility band set by enterprise budgets.}
+\begin{center}\includegraphics[width=0.83\textwidth]{f17_probmap.pdf}\end{center}
+\vspace{-6pt}{\footnotesize On a plateau the 50\% contour sits at a residual factor $\sim$1.5 --- inside the band, but requiring AI to take $\sim$25\% of a software-and-services pool that is no longer growing. Under a cut, P(profit) is 52\% in 2030 and 95\% by 2032.}
+\src{paper Fig. 17}
+\end{frame}
+
+% ---------- 13 variance budget
+\begin{frame}{Where the uncertainty lives --- and how decomposition moved it}
+\claim{Single judgment ranges: two inputs carried 82\% of the variance. Decomposed into sourced components: root-sum-square 286 $\to$ 104.}
+\begin{columns}[T]
+\column{0.5\textwidth}\includegraphics[width=\textwidth]{f7_tornado.pdf}
+\column{0.5\textwidth}\small
+\begin{tabular}{lrr}\toprule Input & before & after\\\midrule 2026 revenue base & 64\% & 38\%\\ Cloud share $\theta$ & 18\% & 25\%\\ Silicon life & 5\% & 22\%\\ Facility opex & 7\% & 4\%\\ Cost of capital & 1\% & 8\%\\ Grid, siting, lags & --- & $\sim$2\%\\\bottomrule\end{tabular}\\[8pt]
+Decomposition tightened some inputs and moved others --- the base down (\$210B$\to$\$187B), opex down, the baseline up --- in both directions, as an honest method should.
+\end{columns}
+\src{paper Table 12, Section 8}
+\end{frame}
+
+% ---------- 14 sector tornado
+\begin{frame}{No single sector closes the gap}
+\claim{Advertising and office assistants matter most; even both at their maxima leave the plateau short, because ramps and capture shares bind too.}
+\begin{columns}[T]
+\column{0.5\textwidth}\includegraphics[width=\textwidth]{f11_sector_tornado.pdf}
+\column{0.5\textwidth}\includegraphics[width=\textwidth]{f14_whatif_ceilings.pdf}
+\end{columns}
+\src{paper Figs. 15 and 19}
+\end{frame}
+
+% ---------- 15 feasibility band
+\begin{frame}{The budget the bull case draws on is itself being torn up}
+\footnotesize
+\claim{Seat-priced software deflating (\$2T of market value gone Jan--Apr 2026), Europe leaving US vendors, services shrinking --- yet the AI-financeable total is nearly unchanged, because the money moves from seats to solutions.}
+\begin{columns}[T]
+\column{0.55\textwidth}\includegraphics[width=\textwidth]{f22_secondary.pdf}
+\column{0.45\textwidth}\small
+2030 software+services pool: \$3.75T (not \$4.85T at Gartner's growth); accessible to US vendors \$3.25T; AI share $\sim$25\%; band \$920B--\$1.31T.\\[6pt]
+Composition changes far more than the total: incumbents lose the dollar, non-US providers keep more at home, the infrastructure meter sees a fraction.\\[6pt]
+Two terms are too loose to range and are swept instead: the reallocation share and seat-software growth.
+\end{columns}
+\src{paper Section 8; Gartner; SaaSpocalypse coverage; State of Digital Sovereignty 2026}
+\end{frame}
+
+% ---------- 16 incumbent
+\begin{frame}[shrink=6]{The incumbent's dilemma: adding AI while raising the bill}
+\claim{Revenue is seats $\times$ price. Price rises offset seat loss only while $(1+p)^4[1-\epsilon((1+p)^4-1)]$ beats the seat trend. Attach, not price, decides it.}
+\begin{center}\includegraphics[width=0.9\textwidth]{f21_incumbent.pdf}\end{center}
+\vspace{-4pt}{\small Microsoft as illustration, on unverified inputs: commercial seats still growing 6--7\%/yr (8-K), Copilot paid seats 30M (6.5\% attach; bundled via E7; usage 20--30\% of paid in some estimates). The seat-deflation argument has not yet overcome the disclosed growth.}
+\src{paper Section 8; Microsoft 8-K FY27 metrics}
+\end{frame}
+
+% ---------- 17 economic depreciation and floor
+\begin{frame}[shrink=6]{Economic depreciation and the commodity floor}
+\claim{If an accelerator is worth what it earns against the newest chip, the 2023--26 silicon is already \$100--250B below book. If token prices converge on marginal cash cost (\$0.03--0.05/M), receipts converge on the opex line.}
+\includegraphics[width=\textwidth]{f23_econdep_floor.pdf}
+\vspace{-4pt}{\small Counter-evidence, incorporated: H100 rentals \emph{rising} to \$2.63/hr in Sept 2026 (Silicon Data) --- scarcity before the 2027--28 cohorts land. The variable stays swept until that series moves.}
+\src{paper Section 14; reviewer V. Mehta; Epoch AI; Silicon Data via a16z}
+\end{frame}
+
+% ---------- 18 cost curve
+\begin{frame}[shrink=8]{Who is the low-cost producer}
+\claim{At effective prices, only in-house silicon on cheap power and on-premise open-weight routine work cover their carry. The debt-funded neo-cloud is the marginal producer the floor eliminates first.}
+\includegraphics[width=\textwidth]{f24_coststack.pdf}
+\src{paper Fig. 25; EIA tariffs; Nvidia; Damodaran; Oracle utilization}
+\end{frame}
+
+% ---------- 19 precedents
+\begin{frame}[shrink=8]{Four decades of computing already taught this}
+\footnotesize
+\claim{Utilization gains go to the buyer, not the producer.}
+\begin{columns}[T]
+\column{0.5\textwidth}\small
+\textbf{Mainframe batch, 1970s.} A machine paid for by the shift is economic only if the night is filled with batch; operators ran at 90\%+.\\[6pt]
+\textbf{Bitcoin mining.} Special-purpose silicon; within two years of each ASIC generation the hashprice converged to the marginal cost of the cheapest power; equipment obsolete in 12--24 months; capacity migrated to cheap electricity.\\[6pt]
+Inference has every one of those properties. Batch APIs at 50--75\% off and caching at 90\% off are the night shift arriving.
+\column{0.5\textwidth}\small
+\textbf{The productivity lag is measured, not asserted.}\\[4pt]
+\begin{tabular}{lr}\toprule US labor productivity growth & \%/yr\\\midrule 1948--73 & 2.8\\ 1973--95 (PC era; Solow's paradox) & 1.4\\ 1995--2004 (IT payoff) & 2.9\\ 2005--19 & 1.4\\\bottomrule\end{tabular}\\[6pt]
+Dynamo: $\sim$40 years (David 1990). PC: $\sim$15 years (Jorgenson--Ho--Stiroh 2008). Firm-level IT returns: 5--7 years, only with reorganization (Brynjolfsson--Hitt 2000).\\[4pt]
+Today: AI in production at $\sim$1 in 10 firms (Census BTOS 2025); 95\% of pilots with no P\&L impact (MIT NANDA 2025).
+\end{columns}
+\src{paper Sections 9 and 14}
+\end{frame}
+
+% ---------- 20 readiness
+\begin{frame}{Readiness: grid, water, consent}
+\footnotesize
+\claim{A funded, grid-connected project must also be allowed to be built.}
+\begin{columns}[T]
+\column{0.5\textwidth}\small
+\textbf{Consent.} \$156B of US projects blocked or delayed in 2025; \$130B in Q1 2026 alone (75 projects); 833 opposition groups in 49 states; New York moratorium July 2026; Ipsos $\sim$70\% local opposition.\\[6pt]
+\textbf{Water.} A 2030 fleet of 60--110 GW consumes $\sim$90B gallons/yr evaporatively --- under 0.1\% of US withdrawals, decisive locally (Arizona, Aragon, the Randstad).\\[6pt]
+\textbf{Rates.} Data-center load \emph{lowered} residential rates $\sim$6\% over 2019--24 (Watten et al.); opposition has risen regardless.
+\column{0.5\textwidth}\small
+\textbf{In the model:} siting deferral 10--35\% of each cohort a year; shell cost uplift 2--9\%; cooling opex uplift 0--6\%; grid energization cap \$1.15--1.68T/yr (binds only in arms-race draws).\\[6pt]
+\textbf{Effect:} the carry shifts later, not away --- 2027 down $\sim$\$20B, 2030 up $\sim$\$15B.\\[6pt]
+\textbf{Sovereignty.} France's national Linux mandate, Schleswig-Holstein, Denmark; German IT leaders implementing European software 20\%$\to$40\% in a year. In the model: a 3--8\% displacement ramp on sovereign-exposed sectors; $\kappa$=1.2, $\gamma$=0.25 overlay roughly doubles the 2030 deficit.
+\end{columns}
+\src{paper Sections 8 and 10; Data Center Watch; Forbes; State of Digital Sovereignty 2026}
+\end{frame}
+
+% ---------- 21 horizon
+\begin{frame}{Beyond 2030: a plateau does not recover by 2035}
+\claim{Receipts grow from \$480B to \$910B --- but so does the carry, through replacement silicon and shell cohorts. A rational operator who cuts in step with receipts is profitable by 2031 and recovers cumulatively by 2034--35.}
+\begin{columns}[T]
+\column{0.58\textwidth}\includegraphics[width=\textwidth]{f19_horizon2035.pdf}
+\column{0.42\textwidth}\includegraphics[width=\textwidth]{f20_adaptive.pdf}
+\end{columns}
+\src{paper Appendix E}
+\end{frame}
+
+% ---------- 22 what-ifs
+\begin{frame}{What-if curves over the variables no decomposition removes}
+\claim{The plateau crosses $z=0$ only if the sector chains are $\sim$50\% too conservative at once.}
+\begin{columns}[T]
+\column{0.5\textwidth}\includegraphics[width=\textwidth]{f13_whatif_mcap.pdf}
+\column{0.5\textwidth}\includegraphics[width=\textwidth]{f15_whatif_theta_base.pdf}
+\end{columns}
+\src{paper Figs. 18 and 20}
+\end{frame}
+
+% ---------- 23 bull case
+\begin{frame}{The bull case at its strongest (a16z, September 2026) --- where we agree}
+\claim{On nearly every observable, the two documents agree.}
+\scriptsize
+\begin{tabularx}{\textwidth}{L{5cm}X}\toprule
+\textbf{a16z's point} & \textbf{What the register does with it}\\\midrule
+The street keeps underestimating capex; consensus \$1.05T (2027), \$1.15T (2028) & Adopted: the paper's arms-race path \emph{is} consensus; the plateau is below it. On consensus the 2030 deficit is $\sim$\$545B\\
+Backlogs doubled to $\sim$\$1.7T & Observable added. A contract is not a payment: Oracle's converts over years, half from one counterparty\\
+Hyperscaler ROIC $\sim$20\% $>$ cost of debt & True of the existing businesses; the AI cohorts' return is what the paper computes\\
+Data centers lowered residential rates 6\% (Watten et al.) & Taken as stated; the siting variable is calibrated on what communities do, not what rates did\\
+Frontier labs: 69\% of spend on 35\% of tokens; tokens +600$\times$ & The cloud-capture share and the floor, measured from the demand side\\
+SaaS: prove-it, not pocalypse; fundamentals stable & Why seat-software growth is a secondary variable; a16z's own newspaper chart is the caution\\\bottomrule
+\end{tabularx}
+\src{paper Section 15}
+\end{frame}
+
+% ---------- 24 bull case disagreements
+\begin{frame}{The bull case at its strongest --- where we disagree, on two judgments}
+\footnotesize
+\claim{Not on the numbers: on who pays, and on whether rising compute prices are permanent.}
+\begin{columns}[T]
+\column{0.5\textwidth}\small
+\textbf{1. Labor budgets or IT budgets?}\\[4pt]
+a16z: AI's market is ``considerably larger than IT budgets'' because AI is paid from payroll --- \$30T, not \$3.3T.\\[4pt]
+Paper: only about a quarter of nominal labor savings reach cash, over a J-curve (slack, verification, Parkinson--Jevons, the manager's dilemma). So the band is an IT-budget band.\\[4pt]
+If a16z is right, the band is wrong by a factor of several and the plateau pays. If the slack trap is right, the band holds. The register cannot settle this from 2026 data.
+\column{0.5\textwidth}\small
+\textbf{2. Scarcity or cycle top?}\\[4pt]
+a16z: H100 rentals rising to \$2.63/hr while token prices fall --- Jevons absorbing every efficiency gain; GPUs ``getting more valuable over time.''\\[4pt]
+Paper: that is what Jevons looks like while supply is short. Bitcoin's precedent is what it looks like after supply catches up --- and \$2.63 against a \$0.20--0.35 cash cost is the same 8--13$\times$ ratio the commodity floor finds at the token level.\\[4pt]
+The variable to watch: the H100 rental through 2027. A decline toward \$1 is the floor arriving.
+\end{columns}
+\src{paper Section 15}
+\end{frame}
+
+% ---------- 25 tests
+\begin{frame}{What would change the distribution}
+\claim{The result is a distribution, so the tests are observations that move it decisively.}
+\begin{columns}[T]
+\column{0.5\textwidth}\small
+\textbf{Two hard tests, either sufficient:}
+\begin{enumerate}
+\item Calendar-2028 AI revenue above \$400B on the paper's basis --- i.e.\ $\ge$50\%/yr has held two more years. Interim: 2027 near \$330B is our path; above \$350B favours the build-out.
+\item By 2030: impairments under \$100B \emph{and} no 30\% capex retreat.
+\end{enumerate}
+\textbf{Softer, non-deciding:} BLS displacement $<$1.5\%; frontier API prices $-$80\% with integrator revenue growing.
+\column{0.5\textwidth}\small
+\textbf{The calendar}\\[4pt]
+\begin{tabular}{ll}\toprule Oct 28--30 & Big-4 Q3 calls: 2027 guidance, Copilot seats, Advantage+, Gemini MAU\\ Nov & Anthropic IPO: first audited lab figures\\ Nov 19 & Nvidia Q3 FY27\\ by Dec 3 & \textbf{v27 issued} with a delta log\\ Jan 2027 & 10-Ks: calendar-2026 revenue; useful lives\\ Jan 2028 & Interim marker (\$330B / \$350B)\\ Jan 2029 & The revenue test (\$400B)\\\bottomrule\end{tabular}
+\end{columns}
+\src{paper Section 17 and Appendix H}
+\end{frame}
+
+% ---------- 26 every input
+\begin{frame}{Every input, appraised --- and graded}
+\footnotesize
+\claim{Forty-plus register entries, each with evidence, range, the likely bias of its source, and what would improve it. Graded like Wikipedia's article classes.}
+\begin{columns}[T]
+\column{0.5\textwidth}\small
+\begin{tabular}{clr}\toprule Grade & Meaning & Count\\\midrule P & anchored on a primary source & 10+\\ S & secondary, or chain with judgment steps & 20+\\ J & judgment, no external anchor --- the first targets & 10\\ --- & secondary variables, swept not ranged & 7\\\bottomrule\end{tabular}\\[8pt]
+The companies concerned could retire most of the J and S entries by disclosing a few numbers they already have: paid seats and their trend, AI revenue on a stated basis, compute cost as a share of lab revenue, accelerator lives in service.
+\column{0.5\textwidth}\includegraphics[width=\textwidth]{blueprint.pdf}
+\end{columns}
+\src{paper Appendix G; community\_repo/parameters.json; blueprint/}
+\end{frame}
+
+% ---------- 27 how to contribute
+\begin{frame}[shrink=6]{How this estimate is improved: a community model}
+\footnotesize
+\claim{One object of record, small sourced contributions, machinery that checks them, collective credit.}
+\begin{columns}[T]
+\column{0.5\textwidth}\small
+\textbf{Borrowed from collaborative mathematics} (Polymath; the Equational Theories Project) and from open policy models (Tax-Calculator, OpenFisca):
+\begin{enumerate}
+\item One GitHub issue per input: the talk page.
+\item A pull request changing \texttt{parameters.json}: the edit.
+\item CI rebuilds and posts the consequence (z, $g^{*}$, P) before the edit lands.
+\item A reviewer checks the source, never the conclusion.
+\item Versioned releases with a Zenodo DOI, a colour-marked change copy, and a delta log.
+\end{enumerate}
+\column{0.5\textwidth}\small
+\textbf{The rules.} Provenance or it did not happen. Ranges, not points. Say who benefits. No result-driven edits. Two defensible ranges for one input $\Rightarrow$ a secondary variable until a disclosure settles it.\\[6pt]
+\textbf{Re-issue rule.} Minor if $|\Delta z|<0.5$, $|\Delta g^{*}|<5$ pts, $|\Delta P|<15$ pts; material otherwise, or if an observable lands outside its P10--P90.\\[8pt]
+\textbf{Best first contribution:} a primary source for a number we could only infer.
+\end{columns}
+\src{community\_repo: README, CONTRIBUTING, GOVERNANCE, COMMUNITY\_REVIEW}
+\end{frame}
+
+% ---------- 28 close
+\begin{frame}[shrink=12]{The whole thing, one slide}
+\footnotesize\begin{itemize}
+\item The carry of the installed base ramps from $\sim$\$390B (2027) to $\sim$\$725B (2030) on a plateau; the street's path (arms race) takes it past \$1T.
+\item 2027--28 are a sunk deficit under every path.
+\item Break-even needs $\sim$48\%/yr sustained to 2030 on a plateau, $\sim$62\% on consensus; the sector chains deliver $\sim$33\%, decaying to 14\%.
+\item The 2030 shortfall on a plateau is $\sim$\$255B, 3.5$\sigma$; P(profit) is zero on a plateau and on consensus, 52\% under a 35\% cut, 95\% by 2032.
+\item AI revenue can approach \$1T while software shrinks, because most of it is the software industry's own money changing hands --- and only a fraction reaches the meter.
+\item If token prices find their marginal cash cost, the carry is never recovered by anyone but the lowest-cost producer: in-house silicon on cheap power running open-weight models.
+\item A plateau does not recover by 2035; a rational operator who cuts in step with receipts is profitable by 2031.
+\item The two judgments the result turns on: whether AI is paid from labor budgets, and whether today's rising GPU rentals are permanent. The register names both; the October calls begin to answer them.
+\end{itemize}
+\vfill{\small\textcolor{gray}{Paper, register, model, figures: Zenodo DOI (on deposit) and the public repository. Reviewers: Francis Pedraza, Matthew Fitzpatrick, Viraj Mehta.}}
+\end{frame}
+\end{document}

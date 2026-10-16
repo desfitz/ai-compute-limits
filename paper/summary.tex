@@ -1,0 +1,26 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.6in]{geometry}\usepackage{amsmath}\usepackage{graphicx}\usepackage[final,expansion=false]{microtype}\usepackage{setspace}\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\setstretch{1.0}\small\pagestyle{empty}
+\begin{document}
+\begin{center}{\Large\textbf{The Macroeconomic Limits of AI Compute}}\\[2pt]
+{\normalsize A community estimate of whether the build-out can earn its carry --- and what it takes}\\[2pt]
+{\small Desmond Fitzpatrick, Ph.D. \quad IBM Systems (retired) \quad September 2026 \quad Summary of v23}\end{center}
+\vspace{4pt}
+\noindent\textbf{Why this matters.} Five companies will spend about \$780 billion this year on AI data centers --- roughly 2.5\% of US GDP, the scale of the railway and telecom booms --- on the expectation that revenue will arrive to pay for it. Whether it does is not a technology question; it is the largest capital-allocation question in the world economy, and it is being answered mostly by assertion. This project tries to answer it by arithmetic that anyone can check and improve.
+
+\noindent\textbf{What we did.} We built a \emph{vintage} model of the installed base: each year's capital spending as a cohort with its own depreciation life (silicon $\sim$4 years, buildings $\sim$20), energization lag, grid and siting constraints, and a return on net book. That gives the annual \emph{carry} the base must earn. We then estimated demand two independent ways --- top-down, from observed 2026 AI revenue grown at a rate $g$; and bottom-up, from fifteen sector chains, each bounded by seats, budgets, users or ad yields --- and asked what fraction of a customer's dollar actually reaches the infrastructure owner after the labs' margins and the leakage to devices, premises and integrators. Every input is a range with a source; the arithmetic propagates the ranges honestly (independent uncertainties add in quadrature, weighted by share); and the answer is a distribution, not a number.
+
+\noindent\textbf{What we found.}
+\begin{itemize}\setlength{\itemsep}{1pt}
+\item The carry ramps from $\sim$\$390B in 2027 to $\sim$\$725B in 2030 if spending merely plateaus. No plausible demand growth covers 2027--28: those years are a sunk deficit under every path.
+\item Breaking even in 2030 on a plateau needs AI revenue to grow $\sim$49\% a year, sustained, from \$179B to $\sim$\$880B. The sector chains deliver $\sim$33\%: growth decays as the big sectors approach their ceilings. The 2030 gap is $\sim$\$260B, 3.5 standard deviations of the propagated uncertainty.
+\item The bull case is not impossible. It is financeable if AI takes $\sim$25\% of an enterprise software-and-services budget that is no longer growing --- money that comes out of seat-priced software and consulting hours. That is why AI revenue can approach a trillion while the software industry shrinks: it is the software industry's own money changing hands, and only a fraction reaches the meter.
+\item Extending to 2035 does not rescue a plateau; a 35\% capex cut, or an operator who cuts in step with realized receipts, turns profitable in 2030--31 and recovers by 2034--35. The outcome is more likely to be decided by a capex decision than by a demand surprise.
+\end{itemize}
+
+\begin{center}\includegraphics[width=0.52\textwidth]{f3_scissors.pdf}\end{center}
+\vspace{-6pt}
+\noindent\textbf{What would prove us wrong.} Calendar-2028 AI revenue above \$400B on the paper's basis, or, by 2030, impairments under \$100B with no 30\% capex retreat. Interim marker: 2027 revenue near \$330B is our path; above \$350B favors the build-out.
+
+\noindent\textbf{How to help.} The estimate lives in a public register of $\sim$45 inputs, each with its evidence, range, likely bias and what would improve it. Change one, and a script recomputes everything and reports what moved. Modeled on collaborative mathematics: one object of record, small sourced contributions, machinery that checks them, collective credit. The most valuable contribution is a primary source for a number we could only infer --- and the companies concerned could remove most of the inference with a few disclosures they already possess.
+\end{document}

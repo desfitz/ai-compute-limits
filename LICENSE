@@ -1,0 +1,10 @@
+This repository carries two licenses.
+
+  paper/, figures/, figures_color/, blueprint/ and the Markdown documents
+  (text and figures): Creative Commons Attribution 4.0 International
+  (CC BY 4.0) -- see paper/LICENSE.
+
+  model/ (scripts, register parameters.json, numbers.json, data):
+  MIT License -- see model/LICENSE.
+
+Copyright (c) 2026 Desmond Fitzpatrick.

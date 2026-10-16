@@ -1,0 +1,514 @@
+{
+ "_meta": {
+  "paper": "The Macroeconomic Limits of AI Compute",
+  "as_of": "2026-10-01 (v26.5 pre-earnings)",
+  "units": "$B unless stated; rates per year; shares 0-1",
+  "rule": "Each entry: value (triangular min/mode/max or scalar), source, source_date, next_update (when the source next publishes), trigger (what would move it), maps_to (model parameter).",
+  "version": " ; v27 (2026-10-14): GS note anchors added, no values changed"
+ },
+ "supply": {
+  "capex_history": {
+   "value": {
+    "2023": 161,
+    "2024": 260,
+    "2025": 448,
+    "2026": 780
+   },
+   "source": "Epoch AI (2023-25); 2026 = Q2 guidance: GOOG 195-205, MSFT ~175 calendar, AMZN ~220, META 135-145, ORCL ~50",
+   "source_date": "2026-07-30",
+   "next_update": "2026-10-28 (Big-4 Q3 calls; Oracle 2026-12)",
+   "trigger": "2026 actual vs 780; 2027 guidance",
+   "maps_to": "HIST"
+  },
+  "ai_capex_2023": {
+   "value": [
+    20,
+    30,
+    40
+   ],
+   "source": "Epoch AI; flat 2023 total",
+   "source_date": "2026-02",
+   "next_update": "n/a (historical)",
+   "maps_to": "ai23"
+  },
+  "nonai_growth": {
+   "value": [
+    0.02,
+    0.06,
+    0.1
+   ],
+   "source": "judgment; Amazon fulfillment + cloud refresh",
+   "next_update": "2027-02 (10-K segment capex)",
+   "maps_to": "gn"
+  },
+  "silicon_share": {
+   "value": [
+    0.45,
+    0.52,
+    0.6
+   ],
+   "source": "Nvidia DC revenue / AI capex",
+   "source_date": "2026-05",
+   "next_update": "2026-11-19 (NVDA Q3 FY27)",
+   "maps_to": "phi"
+  },
+  "training_share": {
+   "value": [
+    0.35,
+    0.45,
+    0.55
+   ],
+   "source": "judgment",
+   "next_update": "any hyperscaler fleet disclosure",
+   "maps_to": "ftrain"
+  },
+  "life_training": {
+   "value": [
+    2.5,
+    3.5,
+    4.5
+   ],
+   "source": "thermal physics (JEDEC JEP122, Llama-3 field data)",
+   "next_update": "2027-02 (10-K useful-life notes)",
+   "maps_to": "Ltr"
+  },
+  "life_inference": {
+   "value": [
+    4.0,
+    5.0,
+    6.0
+   ],
+   "source": "Amazon 5y, Meta 5.5y, MSFT/GOOG 6y accounting lives",
+   "source_date": "2026-02",
+   "next_update": "2027-02 (10-K)",
+   "maps_to": "Linf"
+  },
+  "life_shell": {
+   "value": [
+    15,
+    20,
+    25
+   ],
+   "source": "industry",
+   "maps_to": "Lsh"
+  },
+  "opex_share": {
+   "value": [
+    0.059,
+    0.0665,
+    0.074
+   ],
+   "source": "decomposed: PUE, tariff (EIA), utilization, staff, tax, network",
+   "next_update": "EIA monthly; 2026-12 tariff filings",
+   "maps_to": "copex",
+   "flag": "disputed input (v27): Goldman Sachs/Epoch use $836M per GW-yr non-D&A opex, ~2% of capital (power and maintenance only). Paper decomposition adds staffing, property tax/insurance, network, other = 6.65%. Gap ~$85-115B/yr of carry 2028-30. Adopting 0.02 would be a MATERIAL re-issue (|dz|>=0.5); not adopted pending a sourced operator cost per MW-year.",
+   "anchors": {
+    "gs_epoch_2026-09": 0.02,
+    "paper_decomposition": 0.0665
+   }
+  },
+  "wacc": {
+   "value": [
+    0.09,
+    0.0945,
+    0.099
+   ],
+   "source": "CAPM, Damodaran Jan-2026",
+   "next_update": "2027-01 (Damodaran update)",
+   "maps_to": "r"
+  },
+  "lag_silicon": {
+   "value": [
+    0.5,
+    0.7,
+    0.9
+   ],
+   "source": "judgment (1-3 quarters)",
+   "maps_to": "lagsi"
+  },
+  "lag_shell": {
+   "value": [
+    0.2,
+    0.4,
+    0.6
+   ],
+   "source": "judgment (12-24 months)",
+   "maps_to": "lagsh"
+  },
+  "grid_cap": {
+   "value": [
+    1150,
+    1400,
+    1680
+   ],
+   "source": "22-40 GW/yr x $38-55M/MW",
+   "next_update": "PJM/ERCOT queue reports; DCW quarterly",
+   "maps_to": "gridcap",
+   "flag": "high anchor (v27): Goldman Sachs semiconductor build implies 20/35/57 GW of AI deployments in 2026/27/28 (all buyers); 57 GW is above this range top (40 GW/yr). Observable to test in 2028 energization data.",
+   "anchors_gw_per_yr": {
+    "paper": [
+     22,
+     32,
+     40
+    ],
+    "gs_2028": 57
+   }
+  },
+  "siting_deferral": {
+   "value": [
+    0.1,
+    0.2,
+    0.35
+   ],
+   "source": "Data Center Watch Q1-2026 ($130B blocked/delayed)",
+   "source_date": "2026-06",
+   "next_update": "2026-10 (DCW Q3 report)",
+   "trigger": "quarterly blocked/delayed value vs pipeline",
+   "maps_to": "fdelay"
+  },
+  "site_cost_uplift": {
+   "value": [
+    1.02,
+    1.05,
+    1.09
+   ],
+   "source": "judgment (community benefit, dry cooling, relocation)",
+   "maps_to": "ksite"
+  },
+  "cooling_opex_uplift": {
+   "value": [
+    0.0,
+    0.03,
+    0.06
+   ],
+   "source": "dry vs evaporative cooling",
+   "maps_to": "pue_up"
+  },
+  "econ_depreciation_rate": {
+   "value": [
+    0.5,
+    0.7,
+    0.9
+   ],
+   "source": "reviewer (V. Mehta): cost-per-token improvement per chip generation; secondary-market accelerator prices; Epoch cost-per-token series",
+   "source_date": "2026-09-29",
+   "next_update": "Epoch price series (monthly); H100 rental/secondary prices",
+   "secondary": true,
+   "maps_to": "delta_econ (econdep.py)"
+  },
+  "inference_utilization": {
+   "value": [
+    0.4,
+    0.45,
+    0.5
+   ],
+   "source": "reviewer (V. Mehta): operator modeling; latency and peak buffers",
+   "secondary": true,
+   "sweep": "doubling case",
+   "maps_to": "util (econdep.py)"
+  },
+  "batch_share": {
+   "value": [
+    0.3,
+    0.5,
+    0.7
+   ],
+   "units": "share of 2030 inference tokens processed as batch/asynchronous",
+   "source": "lab batch APIs (50-75% discounts, 24h windows); precedent: mainframe batch windows, grid computing, Bitcoin mining",
+   "secondary": true,
+   "maps_to": "b (coststack.py)"
+  },
+  "china_four_capex_2026": {
+   "value": [
+    50,
+    80,
+    110
+   ],
+   "units": "$B/yr, outside the Big-5 model",
+   "source": "TrendForce top-9 CSP forecast; Alibaba/Tencent/Baidu Q2 2026 filings",
+   "grade": "S",
+   "maps_to": "observable only; not in carry"
+  },
+  "capex_consensus_2027_2028": {
+   "value": [
+    1050,
+    1150
+   ],
+   "units": "$B/yr, S&P Capital IQ consensus Sept 18 2026 (JPM: 1066/1179)",
+   "source": "a16z State of Markets Sept 2026",
+   "source_date": "2026-09-18",
+   "grade": "S",
+   "maps_to": "ArmsRace path (~consensus)",
+   "next_update": "2026-10-28 guidance"
+  },
+  "gpu_rental_h100": {
+   "value": 2.63,
+   "units": "$/GPU-hour, Sept 2026",
+   "source": "Silicon Data via a16z",
+   "source_date": "2026-09-07",
+   "grade": "S",
+   "secondary": true,
+   "trigger": "decline toward $1/hr = floor arriving; feeds econ_depreciation_rate",
+   "maps_to": "delta_econ evidence"
+  }
+ },
+ "demand": {
+  "base_2026": {
+   "value": [
+    171,
+    187,
+    202
+   ],
+   "source": "7 components; updated 29 Sep 2026: OpenAI Q2 booked $6.7B (H1 $12.4B), Aug run-rate $40B -> cal-2026 ~$31-33B; Anthropic expected >$100B annualized exit-2026 (Bloomberg/NYT, 15 Sep) -> cal-2026 ~$58-66B",
+   "source_date": "2026-09-29",
+   "next_update": "2026-10-28 (MSFT/GOOG/META/AMZN Q3); lab run-rate reports monthly",
+   "trigger": "calendar-2026 bookings; any lab audited figure (OpenAI S-1)",
+   "maps_to": "D0"
+  },
+  "theta": {
+   "value": [
+    0.77,
+    0.815,
+    0.86
+   ],
+   "source": "channel-weighted; theta_lab by lab (OpenAI gross margin ~39%)",
+   "next_update": "OpenAI S-1 (filed confidentially 2026-06); Anthropic disclosures",
+   "maps_to": "theta"
+  },
+  "circular": {
+   "value": [
+    8,
+    12,
+    18
+   ],
+   "source": "MSFT-OpenAI, NVDA-CoreWeave, AMZN/GOOG-Anthropic",
+   "next_update": "10-K related-party notes",
+   "maps_to": "circ"
+  },
+  "sectors": {
+   "source": "Table 4 of the paper; assistant ceiling from M365 Copilot seats (20M Apr-2026); ads from Meta Q2-2026; consumer from MAU",
+   "next_update": "2026-10-28 (Copilot seats); Meta Q3; Alphabet Q3",
+   "trigger": "Copilot paid seats; Advantage+ run-rate; Gemini MAU",
+   "maps_to": "SECTORS"
+  },
+  "eu_displacement": {
+   "value": [
+    0.03,
+    0.05,
+    0.08
+   ],
+   "source": "State of Digital Sovereignty 2026; France DINUM; Schleswig-Holstein",
+   "next_update": "2027-03 (survey); procurement announcements",
+   "maps_to": "geu"
+  },
+  "common_factor_ceiling": {
+   "value": [
+    0.7,
+    1.0,
+    1.4
+   ],
+   "source": "judgment (macro/capability)",
+   "maps_to": "mC"
+  },
+  "common_factor_ramp": {
+   "value": [
+    0.7,
+    1.0,
+    1.3
+   ],
+   "source": "judgment",
+   "maps_to": "mk"
+  },
+  "post2030_ceiling_growth": {
+   "value": [
+    0.06,
+    0.1,
+    0.14
+   ],
+   "source": "IT/ads/users growth",
+   "maps_to": "gC"
+  },
+  "token_price_index": {
+   "value": [
+    0.03,
+    0.1,
+    0.3
+   ],
+   "units": "$ per million tokens, volume-weighted EFFECTIVE (batch + caching); list-price tier 0.10/0.30/1.0 kept as 'interactive'",
+   "source": "lab pricing pages: batch -50 to -75%, prompt caching -90% on cached prefix; REFERENCES.md 2026-09-29",
+   "next_update": "monthly",
+   "maps_to": "price (econdep.py)"
+  },
+  "marginal_cash_cost": {
+   "value": [
+    0.026,
+    0.036,
+    0.053
+   ],
+   "units": "$ per million tokens",
+   "source": "chain: kW x PUE x tariff + opex per accelerator-hour / tokens per hour at 45% utilization",
+   "next_update": "with tariff and throughput data",
+   "maps_to": "mcc (econdep.py)"
+  },
+  "google_cloud_backlog": {
+   "value": 514,
+   "units": "$B, Q2 2026",
+   "source": "Alphabet Q2 2026 release",
+   "source_date": "2026-07-22",
+   "next_update": "2026-10-28",
+   "grade": "P",
+   "maps_to": "observable only"
+  },
+  "cloud_backlogs_total": {
+   "value": 1700,
+   "units": "$B, MSFT RPO + Google Cloud + AMZN RPO, Q2 2026",
+   "source": "filings via a16z",
+   "grade": "P",
+   "maps_to": "observable only"
+  },
+  "openrouter_frontier_spend_share": {
+   "value": 0.69,
+   "units": "share of spend on ~35% of tokens",
+   "source": "OpenRouter via a16z, Sept 28 2026",
+   "grade": "S",
+   "maps_to": "theta_lab / cost-curve evidence"
+  }
+ },
+ "feasibility": {
+  "software_2026": {
+   "value": [
+    1380,
+    1440,
+    1500
+   ],
+   "source": "Gartner Jul-2026",
+   "next_update": "2026-10 (Gartner Q4 update)",
+   "maps_to": "sw26"
+  },
+  "services_2026": {
+   "value": [
+    1800,
+    1870,
+    1940
+   ],
+   "source": "Gartner Jul-2026",
+   "next_update": "2026-10",
+   "maps_to": "sv26"
+  },
+  "seat_share_of_software": {
+   "value": [
+    0.5,
+    0.55,
+    0.6
+   ],
+   "source": "judgment",
+   "maps_to": "seat_share"
+  },
+  "seat_saas_growth": {
+   "value": [
+    -0.06,
+    0.0,
+    0.05
+   ],
+   "source": "SaaSpocalypse; Atlassian seat decline",
+   "next_update": "quarterly (CRM, TEAM, ADBE, NOW seat metrics)",
+   "secondary": true,
+   "maps_to": "g_seat"
+  },
+  "reallocation_to_ai": {
+   "value": [
+    0.12,
+    0.2,
+    0.32
+   ],
+   "source": "judgment",
+   "next_update": "2027 Gartner category data",
+   "secondary": true,
+   "maps_to": "realloc"
+  },
+  "eu_pool_displacement": {
+   "value": [
+    0.1,
+    0.2,
+    0.35
+   ],
+   "source": "sovereignty survey; procurement",
+   "maps_to": "disp"
+  }
+ },
+ "incumbent_case_msft365": {
+  "seats_2026_M": {
+   "value": [
+    420,
+    450,
+    480
+   ],
+   "source": "widely quoted; VERIFY",
+   "next_update": "2026-10-28 (FY27 Q1)",
+   "trigger": "any seat-count disclosure or decline"
+  },
+  "arpu_2026": {
+   "value": [
+    19,
+    21,
+    23
+   ],
+   "source": "VERIFY",
+   "next_update": "FY27 Q1"
+  },
+  "copilot_paid_seats_M": {
+   "value": 30,
+   "source": "MSFT FY26 Q4 call (Jul 2026): past 30M",
+   "source_date": "2026-07-29",
+   "next_update": "2026-10-28",
+   "trigger": "seats vs 30M; attach vs 6.5%",
+   "grade": "P"
+  },
+  "price_growth": {
+   "value": [
+    0.05,
+    0.08,
+    0.12
+   ],
+   "source": "Jul-2026 increase (up to 43% on some SKUs)"
+  },
+  "seat_elasticity": {
+   "value": [
+    0.15,
+    0.35,
+    0.6
+   ],
+   "source": "judgment",
+   "secondary": true
+  },
+  "seat_trend": {
+   "value": [
+    -0.04,
+    0.0,
+    0.04
+   ],
+   "units": "per year 2026-30",
+   "source": "MSFT 8-K FY27 metrics: commercial seat growth +6-7% y/y through FY26; model assumes deceleration",
+   "secondary": true,
+   "grade": "P"
+  },
+  "copilot_active_share": {
+   "value": [
+    0.25,
+    0.45,
+    0.7
+   ],
+   "units": "weekly active / paid seats",
+   "source": "Microsoft claims engagement at Outlook/Teams parity; independent estimates 20-30% in large deployments (ai2.work)",
+   "secondary": true,
+   "grade": "J",
+   "next_update": "any Microsoft usage disclosure",
+   "maps_to": "assistant chain (text)"
+  }
+ },
+ "reissue_rule": {
+  "minor": "any input change: rerun, update tables, bump version, no re-release",
+  "material": "|delta z_2030| >= 0.5 OR |delta g*_2030| >= 5 points OR P(profit 2030, rationalize) moves >= 15 points OR any 2026 observable outside its P10-P90 -> re-release with a delta log",
+  "cadence": "after each Big-5 earnings week (late Jan, late Apr, late Jul, late Oct) and after Nvidia (Feb/May/Aug/Nov)"
+ }
+}
