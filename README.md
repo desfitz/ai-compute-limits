@@ -11,6 +11,7 @@ Version 27, 15 October 2026.
 - This repository (model, register, code): https://github.com/desfitz/ai-compute-limits
 - First open question (facility-opex dispute): https://github.com/desfitz/ai-compute-limits/issues/1
 - SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7620359
+- The slides with commentary (Data Democracy on Substack): https://datademocracy.substack.com/p/the-macroeconomic-limits-of-ai-compute
 - Comments and corrections: desmond.fitzpatrick@nvara.ai
 
 **Start here:** the fourteen-slide version, `paper/easy_deck_v28-2.pdf` (PowerPoint: `paper/easy_deck_v28-2.pptx`). The paper is `paper/paper_v27.pdf`.
