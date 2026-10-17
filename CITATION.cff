@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this estimate, the model or the register, please cite the paper and the repository."
 title: "The Macroeconomic Limits of AI Compute: A Vintage Fermi Model of Capital Carry, Sectoral Demand, and the Growth Rate the Build-Out Requires"
 type: software
-version: "27"
-date-released: 2026-10-15
+version: "27.1"
+date-released: 2026-10-16
 license: "CC-BY-4.0 (paper, figures); MIT (model, scripts)"
 repository-code: "https://github.com/desfitz/ai-compute-limits"
 authors:
@@ -14,7 +14,7 @@ authors:
     affiliation: "Founder, Nvara.ai; retired, IBM Systems"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23406476"
+    value: "10.5281/zenodo.23428319"
     description: "Zenodo DOI, version 27 (15 Oct 2026)"
   - type: doi
     value: "10.5281/zenodo.23406475"
