@@ -4,6 +4,8 @@
 
 Version 27, 15 October 2026.
 
+**Purpose:** This paper is the first in a series that puts open, rebuildable analytical tools in the hands of the wider public, so anyone can test claims about problems of public importance, change the inputs, and see the answer for themselves.
+
 **Links**
 - Paper, version 27.1 (PDF): https://doi.org/10.5281/zenodo.23428319
 - All versions (concept DOI): https://doi.org/10.5281/zenodo.23406475
