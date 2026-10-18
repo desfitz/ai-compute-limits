@@ -4,7 +4,7 @@
 
 Version 27, 15 October 2026.
 
-**Purpose:** This paper is the first in a series that puts open, rebuildable analytical tools in the hands of the wider public, so anyone can test claims about problems of public importance, change the inputs, and see the answer for themselves.
+**Purpose:** This is the first analysis in Data Democracy's public economics series: open, rebuildable tools for testing claims about big decisions, from public spending to macro challenges like AI that shape public policy. Each analysis comes with its data and sources, and with the model and code wherever they can be published. Here, everything is public: change the inputs and see the answer for yourself.
 
 **Links**
 - Paper, version 27.1 (PDF): https://doi.org/10.5281/zenodo.23428319
@@ -17,6 +17,14 @@ Version 27, 15 October 2026.
 - Comments and corrections: desmond.fitzpatrick@nvara.ai
 
 **Start here:** the fourteen-slide version, `paper/easy_deck_v28-2.pdf` (PowerPoint: `paper/easy_deck_v28-2.pptx`). The paper is `paper/paper_v27.pdf`.
+
+## The method in plain words
+
+The estimate follows Enrico Fermi's approach. A question too big to answer directly (will AI revenue pay for the data centers?) is broken into smaller pieces that can each be estimated from evidence: spending, chip life, running costs, the return the capital could earn elsewhere, revenue in fifteen sectors, and how much of each customer dollar reaches the data-center owners.
+
+Each piece gets a value and a range, and the uncertainty in each is squeezed as far as the evidence allows. Because the errors in the pieces are partly independent, some high and some low, they partly cancel, so the total is more accurate than any single top-down guess. The few pieces that stay uncertain (how fast firms adopt AI, how big the office-assistant market gets) are kept visible as a tail rather than hidden.
+
+Every piece lives in `model/parameters.json`. Change one, rebuild, and the answer moves.
 
 This repository is the canonical home of a living estimate: can the AI data-center
 build-out earn its carry, and under what demand growth? The paper is one *rendering*
