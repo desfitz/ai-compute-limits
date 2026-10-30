@@ -1,5 +1,6 @@
 import numpy as np, matplotlib; matplotlib.use('Agg'); import figstyle; import matplotlib.pyplot as plt
 from model5 import *
+import json as _json; GSTAR=_json.load(open('numbers.json'))['Plateau']['g_star']['2030']/100.0  # v28: break-even growth from the latest run, not hard-coded
 plt.rcParams.update({'font.size':9,'axes.spines.top':False,'axes.spines.right':False})
 q=lambda x,p: np.percentile(x,p); m=np.median; sl=lambda x: np.std(np.log(x))
 rng=np.random.default_rng(21)
@@ -74,7 +75,7 @@ bs=np.arange(150,301,15)
 for p,ls in zip(PATHS,['-','--',':']):
     zz=[]
     for b in bs:
-        o=topdown(p,0.49,over=dict(D0=(b*0.9,b,b*1.1)))[2030]; d=o['D']-o['H']; zz.append(m(d))
+        o=topdown(p,GSTAR,over=dict(D0=(b*0.9,b,b*1.1)))[2030]; d=o['D']-o['H']; zz.append(m(d))
     ax[1].plot(bs,zz,ls,color='#1E2761',marker='o',ms=3,label=p)
 ax[1].axhline(0,color='#7F9BC0',lw=0.8); ax[1].set_xlabel('Calendar-2026 AI revenue base ($B), top-down at g=42%'); ax[1].set_ylabel('median delta_2030 ($B)'); ax[1].legend(fontsize=7)
 fig.suptitle('What-if 3: lab economics and the 2026 base',fontsize=9); plt.tight_layout(); plt.savefig('f15_whatif_theta_base.pdf')

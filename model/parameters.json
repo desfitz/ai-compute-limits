@@ -278,21 +278,48 @@
    "trigger": "decline toward $1/hr = floor arriving; feeds econ_depreciation_rate",
    "maps_to": "delta_econ evidence"
   },
-  "spacex_ai_capex_overlay": {
+  "other_builders_ai_capex": {
    "value": {
     "2023": 0.5,
-    "2024": 5.6,
-    "2025": 12.7,
-    "2026": 74.5
+    "2024": 14.3,
+    "2025": 27.8,
+    "2026": 140.4
    },
-   "forward_paths": {
-    "hold": 74.5,
-    "q4_pace": 150
+   "include_in_base": true,
+   "components": {
+    "spacex_xai": {
+     "2023": 0.5,
+     "2024": 5.6,
+     "2025": 12.7,
+     "2026": 74.5,
+     "source": "SpaceX IPO filing (TechCrunch 2026-05-20); Q2 call (Baxtel 2026-08-05); Q3 call 2026-10-20 (investingLive; Hargreaves Lansdown): Q1 7.7 + Q2 15.8 + Q3 16.4 + Q4 32-37 of 35-40 guided"
+    },
+    "coreweave": {
+     "2024": 8.7,
+     "2025": 10.3,
+     "2026": 37.0,
+     "source": "2024 cash PP&E (filings via tickerleague); 2025 cash PP&E 10.3 (headline 14.9 incl. accrued, Q4 call 2026-02-26); 2026 guidance 35-39 (Q2 release, Nasdaq/Zacks 2026-08-13)"
+    },
+    "nebius": {
+     "2025": 4.1,
+     "2026": 22.5,
+     "source": "2025 4.1 (247wallst 2026-02-12); 2026 guidance 20-25 (company, via TIKR / Boerse-Express, Jun/Sep 2026)"
+    },
+    "iren": {
+     "2026": 3.5,
+     "source": "H2 CY2026 GPU spend ~3.5 (Zacks 2026); FY27 25-30 (CFO, Q4 call 2026-08-27) informs the forward path"
+    },
+    "applied_digital": {
+     "2025": 0.7,
+     "2026": 2.9,
+     "source": "FY25 0.68 / FY26 2.87, SEC earnings release 2026-07-27"
+    }
    },
-   "source": "SpaceX IPO filing (TechCrunch 2026-05-20); Q2 call (Baxtel 2026-08-05): Q2 AI capex 15.8; Q3 call 2026-10-20 (investingLive, Hargreaves Lansdown): AI capex 16.4, Q4 total capex guided 35-40 'almost entirely' compute (taken as 32-37 AI)",
-   "next_update": "2027-01 (SpaceX Q4 results)",
-   "maps_to": "overlay only (model/spacex_overlay.py); enters the base in v29",
-   "note": "Added for symmetry: SpaceX's rent from Anthropic is already inside counted receipts; its cost was not in the carry."
+   "forward": "follows the Big-5 path: scaled by path capex / 780",
+   "excluded": "Meta Hyperion JV (off balance sheet, derived 7-14/yr), Anthropic/Fluidstack (derived ~10/yr), Crusoe, Lambda, Nscale (no capex disclosed), Tesla (no AI $ disclosed), GCC (analyst estimate), China four (tracked separately). All would widen the gap; excluded for lack of a stated figure.",
+   "next_update": "2026-11-10 (CoreWeave Q3); 2027-01 (SpaceX Q4)",
+   "maps_to": "added to AI-attributable capex in the carry (model5.oth_capex)",
+   "note": "Added in v28 for symmetry: rent these owners earn is already inside counted receipts; their cost was not in the carry."
   }
  },
  "demand": {

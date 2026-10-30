@@ -1,5 +1,6 @@
 import numpy as np, matplotlib; matplotlib.use('Agg'); import figstyle; import matplotlib.pyplot as plt
 from model5 import *
+import json as _json; GSTAR=_json.load(open('numbers.json'))['Plateau']['g_star']['2030']/100.0  # v28: break-even growth from the latest run, not hard-coded
 plt.rcParams.update({'font.size':9,'axes.spines.top':False,'axes.spines.right':False})
 q=lambda x,p: np.percentile(x,p); m=np.median
 r=run('Plateau'); yrs=list(range(2026,2031))
@@ -19,7 +20,7 @@ ax.fill_between(ty,[q(r['H'][t],10) for t in ty],[q(r['H'][t],90) for t in ty],c
 ax.plot(ty,[m(r['rec'][t]) for t in ty],'-',color='#2E86AB',marker='s',label='Bottom-up cloud receipts')
 ax.fill_between(ty,[q(r['rec'][t],10) for t in ty],[q(r['rec'][t],90) for t in ty],color='#2E86AB',alpha=0.2)
 ax.plot(ty,[m(r['end'][t]) for t in ty],'--',color='#2E86AB',marker='s',ms=3,label='Bottom-up end-customer revenue')
-o=topdown('Plateau',0.49); ax.plot(ty,[m(o[t]['D']) for t in ty],':',color='#1E2761',marker='^',ms=3,label='Top-down receipts at g*=49%')
+o=topdown('Plateau',GSTAR); ax.plot(ty,[m(o[t]['D']) for t in ty],':',color='#1E2761',marker='^',ms=3,label=f'Top-down receipts at g*={GSTAR*100:.0f}%')
 ax.set_ylabel('$B/yr'); ax.set_xticks(ty); ax.legend(fontsize=7); ax.set_ylim(0,1000)
 ax.set_title('Reconciliation: carry vs bottom-up demand vs top-down break-even path',fontsize=9)
 plt.tight_layout(); plt.savefig('f10_reconcile.pdf')
