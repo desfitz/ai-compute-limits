@@ -242,6 +242,12 @@ Spending tracks revenue & $-$150 & $-$330 & $-$470 & $-$550 & $-$500 & $-$340 & 
   \item \emph{Why the payback year does not move.} To state everything in today's money, each year's hole and each year's recovery are divided by the same price level. Dividing a number by a positive number never changes its sign, so the year the hole closes is the same either way --- 2033 for a 35\% cut, 2035 for spending that tracks revenue (Table~\ref{tab:cumwacc}, both halves). Deflating the 9.45\% rate a second time would have pushed payback later for no reason: that is the double count avoided.
   \item \emph{What does change.} The return investors keep. In 2035 the flat path's average return is about $+$1\% in dollars of each year, $(1.011/1.027)-1\approx-1.6\%$ in today's money: still losing purchasing power after nine years.
   \end{enumerate}
+\item \textbf{Tax, counted honestly.} The returns above are before tax, by design: the 9.45\% cost of money is an after-tax rate, and the paper compares it with pre-tax profit. Does tax change the picture? The 2025 tax law made 100\% first-year write-off of equipment permanent for property acquired after 19 January 2025~\cite{ref:irs_notice_2026_11}, and the builders' tax bills fell sharply in 2025 --- Amazon's from about \$9B to \$1.2B, Meta's from \$9.6B to \$2.8B, Alphabet's from \$21.1B to \$13.8B~\cite{ref:yahoo_tax_2026}. It does not rescue the build-out, for two reasons, shown step by step (\texttt{model/tax\_check.py}, flat path):
+  \begin{enumerate}
+  \item \emph{The write-off delays tax; it does not cancel it.} Chips written off at once for tax are still depreciated over their lives in the books; the tax not yet paid is an interest-free loan from the Treasury, repaid as the books catch up. Amazon says so itself: the policy ``ultimately doesn't change the amount of tax we pay''~\cite{ref:yahoo_tax_2026}. Its value is the interest saved on that loan: about \$9--27B a year by 2030 (tax rate 15--21\%; chips only, or chips plus half of the power and cooling plant).
+  \item \emph{Tax on the return itself.} To keep 9.45\% after a tax rate of 15--21\%, the owners must earn about \$34--51B a year more profit by 2030 than the carry charges. The base leaves this out.
+  \item \emph{Net.} Tax makes the 2030 gap \emph{wider} by about \$15--40B a year, not narrower. The base stays before tax, as stated throughout, so that the comparison is with the profit the companies report; the effect of tax is given here so that no reader has to guess its sign.
+  \end{enumerate}
 \item \textbf{What average growth would do it on a flat path:} about 49\% a year to break even in 2030, and about 64\% a year to have made up the 2027--28 losses by then (Table~\ref{tab:breakeven}). The sector chains deliver about 33\%.
 \end{itemize}
 
@@ -315,6 +321,14 @@ Spending tracks revenue & $-$150 & $-$330 & $-$480 & $-$580 & $-$570 & $-$460 & 
 \item \emph{Held at the 2026 level} ($\sim$\$75B a year): it adds about \$40B to the yearly cost in 2027, \$60B in 2028, \$87B in 2030 and \$120B in 2035. The flat path's 2030 shortfall widens from about \$260B to about \$345B.
 \item \emph{At the fourth-quarter pace} ($\sim$\$150B a year from 2027): it adds about \$55B in 2027, \$100B in 2028, \$166B in 2030. The 2030 shortfall widens to about \$425B.
 \item \emph{The management claim.} SpaceX's CFO says compute is deployed for ``less than a one-year payback''~\cite{ref:baxtel_spacex_q2}. That is an interested party's statement, recorded as grade-J (judgment), like the Big-5's own claims (Section~\ref{sec:gs}). Anthropic's \$15B a year covers well under a year of a \$75B build-out; the rest of the payback has to come from revenue the model already counts.
+\end{itemize}
+
+\lead{Does a new builder take revenue from the others?} Yes --- and that is why adding one widens the gap. The revenue side of the model is set by what end customers pay: enterprises, consumers, advertisers. A new builder creates no new customers; it divides the same revenue among more owners.
+\begin{itemize}
+\item \emph{Rent moves, it does not grow.} The \$15B a year Anthropic pays SpaceX for Colossus~1 is \$15B that Azure, AWS or Google Cloud did not receive for the same work.
+\item \emph{Captive uses are still paid for by end customers.} Grok, robotaxis and robots earn money only when subscribers, riders or advertisers pay; that revenue is already in the sector chains (consumer, autonomous fleets, coding tools). If SpaceX's computers serve it, the other clouds do not.
+\item \emph{Compute in orbit.} If SpaceX builds data centers in space, that spending appears in its capex like any other, probably with a shorter life (a satellite's years, not a building's decades) and so a higher yearly carry; its customers are the same end customers.
+\item \emph{So:} the industry's cost rises by the new builder's cohort; its revenue does not. The Big-5 are squeezed twice --- by the lost rent and by the lower prices more capacity brings.
 \end{itemize}
 
 \lead{Why an overlay, not the base, in v28.} Three reasons. SpaceX has three quarters of public segment data and only a forecast for the largest one; its fourth-quarter actual (late January) decides between the two paths above; and changing the base on the eve of release, without the register run and the reissue test, would break the paper's own update rule (Appendix~\ref{app:update}). The overlay is stated next to every headline it moves; it enters the register and the base in v29.
@@ -2990,6 +3004,12 @@ Hargreaves Lansdown (2026). ``SpaceX Q3 results: AI powers a big beat,'' Oct.~20
 
 \bibitem{ref:basenor_spacex_q4}
 Basenor (2026). ``SpaceX plans \$35--40B Q4 capex,'' Oct.~2026 (Q4 capex ``almost entirely'' for compute; \$40B of callable debt for GPUs arriving in Q1--Q2 2027). \url{https://www.basenor.com/blogs/news/spacex-plans-35-40b-q4-capex-matches-teslas-last-4-years-combined}
+
+\bibitem{ref:irs_notice_2026_11}
+Internal Revenue Service (2026). Notice 2026-11, ``Interim guidance on the permanent 100-percent additional first-year depreciation deduction under section 168(k),'' Jan.~14, 2026 (property acquired and placed in service after Jan.~19, 2025; reinstated by Pub.~L.~119-21). Summary: KPMG TaxNewsFlash, \url{https://kpmg.com/us/en/taxnewsflash/news/2026/01/notice-2026-11-interim-guidance-100-percent-depreciation-deduction.html}
+
+\bibitem{ref:yahoo_tax_2026}
+Yahoo Finance (2026). ``Amazon, Meta, and Alphabet report plunging tax bills thanks to AI investment and new rules in Washington,'' Feb.~10, 2026 (2024 to 2025: Amazon $\sim$\$9B to \$1.2B; Meta $\sim$\$9.6B to \$2.8B; Alphabet $\sim$\$21.1B to \$13.8B; deferred taxes for 2025 over \$11B, \$18B, $\sim$\$8B; Amazon: the policy ``ultimately doesn't change the amount of tax we pay''). \url{https://finance.yahoo.com/news/amazon-meta-and-alphabet-report-plunging-tax-bills-thanks-to-ai-investment-and-new-rules-in-washington-161229652.html}
 
 \bibitem{ref:fed_goal}
 Federal Open Market Committee (2026). ``Statement on Longer-Run Goals and Monetary Policy Strategy'' (inflation of 2 percent over the longer run, as measured by the PCE price index). \url{https://www.federalreserve.gov/monetarypolicy/files/FOMC_LongerRunGoals.pdf}
