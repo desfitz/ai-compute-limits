@@ -54,7 +54,7 @@ s.addText("This is a probability assessment, not a forecast: the most likely out
 // NEW v29: what the October earnings changed
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "New: what the October earnings changed", "Version 28 of the paper, 29 October 2026");
 s.addText(BUL([
-  "Alphabet had its worst day ever: down about 13%, roughly $500 billion of value, on results in which Google Cloud doubled. Investors sold the spending, not the business.",
+  "Alphabet had its worst day ever: down about 13%, roughly $500 billion of value, on results in which Google Cloud doubled. Investors sold the spending - and a slowdown in search ads as AI answers replace ad-bearing results.",
   "Every company pointed 2027 up - Alphabet \"increase significantly\", Amazon \"meaningfully more\". Flat spending, the paper's base case, is now the conservative one.",
   "Anthropic's S-1 gave the first filed numbers from an AI lab. Our estimate held: its third quarter, $16.8 billion, is inside the $16-19 billion we projected. Most of its $80.7 billion loss is accounting, not cash.",
   "Oracle said its spending peaks in 2027-28 and steps down after: the first builder to describe the way out.",
@@ -177,7 +177,7 @@ P(s, "The paper, the model, the data and the register of inputs — each with it
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v29_2026-10-29_v2.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-29_v3.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);

@@ -10,8 +10,10 @@ Each version opens with what changed and why. Click a line to expand it.
 
 <details><summary><b>The market asked the paper's question: Alphabet's worst day ever, down ~13%, ~$480-500B of value</b></summary>
 
+- Investors sold two things: the spending, and a slowdown in search advertising (below).
+
 - 29 October: shares fell nearly 13%, the biggest one-day loss of value in the company's history, on results in which Google Cloud revenue doubled.
-- Investors sold the spending: Q3 capex $51.4B, negative free cash flow, and the CFO's "we continue to expect our capex to increase significantly in 2027".
+- The spending: Q3 capex $51.4B, free cash flow -$9.1B, long-term debt up from $21.6B to $125.1B in a year, and the CFO's "we continue to expect our capex to increase significantly in 2027".
 - Sources: [CNBC](https://www.cnbc.com/2026/10/29/alphabet-google-microsoft-msft-shares-today-earnings.html); [Yahoo Finance](https://finance.yahoo.com/markets/article/alphabet-heads-for-a-500-billion-drop-in-market-value-the-biggest-in-its-history-134824763.html); [Alphabet Q3 release](https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm)
 </details>
 
@@ -20,6 +22,32 @@ Each version opens with what changed and why. Click a line to expand it.
 - Alphabet: "increase significantly in 2027" (no figure; the widely quoted "$300B" is a press estimate, not guidance).
 - Amazon: "spend meaningfully more in 2027". Meta: "continue investing aggressively". Microsoft: fiscal-2027 capex to grow; Q2 above $50B.
 - Street 2027 about $1.1T (Goldman Sachs, Sept 25). The paper's arms-race path, not its plateau, is the one the companies describe.
+</details>
+
+### What spooked investors: AI and the search business
+
+<details><summary><b>More searches, less money per search: Google Search +12% (from 17% in Q2) while query growth was the highest in five years</b></summary>
+
+- Revenue per query grew more slowly, or fell. The paper's reading: AI answers are replacing some of the ad-bearing results beside them.
+- Also: EPS $2.67 vs $3.00 expected; long-term debt $125.1B vs $21.6B a year earlier ([Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/nasdaq-drops-365-points-alphabets-200822565.html)).
+- The paper already counts AI only as an uplift to advertising (25/40/55 $B) and assumes AI answers defend search share rather than expand it. If AI takes from search, the uplift belongs at its low end (about $15B less in the 2026 base). No input changed yet: one quarter is a signal; on the watch list for v28.1.
+</details>
+
+### How deep the hole gets, and when it is paid back
+
+<details><summary><b>New table: cumulative surplus or deficit by year, 2027-2035, by spending path</b></summary>
+
+The yearly cost already includes a normal return on the money (about 9-10% a year), so break-even means earning an ordinary investor's return.
+
+| Path ($B, cumulative from 2027) | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
+|---|---|---|---|---|---|---|---|---|---|
+| Flat spending | -150 | -360 | -600 | -860 | -1,080 | -1,280 | -1,420 | -1,520 | -1,550 |
+| Arms race | -190 | -510 | -940 | -1,490 | -2,070 | -2,640 | -3,210 | -3,750 | -4,260 |
+| 35% cut | -120 | -210 | -260 | -260 | -180 | -30 | +190 | +490 | +870 |
+| Spending tracks revenue | -150 | -330 | -470 | -550 | -500 | -340 | -100 | +180 | +480 |
+
+- Flat spending is never repaid by 2035; an arms race never earns its return; cutting back is repaid by 2033-34.
+- On a flat path, average growth of ~49%/yr breaks even in 2030 and ~64%/yr makes up the 2027-28 losses by then. The sector chains deliver ~33%.
 </details>
 
 ### New sources

@@ -71,7 +71,7 @@
 \small Retired, IBM Systems \\
 \small \texttt{desmond.fitzpatrick@nvara.ai} \quad \texttt{desmond.fitzpatrick@gmail.com} \\
 \small ORCID: \url{https://orcid.org/0009-0001-0534-2793}}
-\date{29 October 2026 --- Version 28, the post-earnings rebuild. \textit{What changed since version 27 is listed on the next page. Nvidia (19 November), Oracle (December) and Anthropic's amended S-1 enter as version 28.1; see Appendix~\ref{app:update}.}}
+\date{29 October 2026 --- Version 28, the post-earnings rebuild. \textit{What changed since version 27 is listed on page~\pageref{sec:v28}. Nvidia (19 November), Oracle (December) and Anthropic's amended S-1 enter as version 28.1; see Appendix~\ref{app:update}.}}
 
 \begin{document}
 \maketitle
@@ -111,6 +111,8 @@
 \noindent\textbf{\large Reading guide}\par\vspace{0.3em}
 \noindent\textbf{1. What is new in version 28}\dotfill p.~\pageref{sec:v28}\\
 \hspace*{1.5em}The headline: what the October earnings changed\dotfill p.~\pageref{ag:headline}\\
+\hspace*{1.5em}What spooked investors: AI and the search business\dotfill p.~\pageref{ag:search}\\
+\hspace*{1.5em}How deep the hole gets, and when it is paid back\dotfill p.~\pageref{ag:cum}\\
 \hspace*{1.5em}New sources: Anthropic's S-1, cloud growth, Oracle\dotfill p.~\pageref{ag:sources}\\
 \hspace*{1.5em}Accounting changes that make the cost look smaller\dotfill p.~\pageref{ag:acct}\\
 \hspace*{1.5em}Errata: where earlier versions erred\dotfill p.~\pageref{ag:errata}\\
@@ -136,9 +138,40 @@ Version 28 is the post-earnings rebuild promised in Appendix~\ref{app:update}. E
 
 \subsection*{The headline}\label{ag:headline}
 \begin{itemize}
-\item \textbf{The market asked the paper's question.} On 29 October Alphabet had its worst day as a public company --- down nearly 13\%, about \$480--500B of value~\cite{ref:cnbc_goog_1029,ref:yahoo_goog_1029} --- on results in which Google Cloud revenue \emph{doubled}. Investors sold the spending, not the business: capex of \$51.4B in the quarter, negative free cash flow, and the CFO's statement that ``we continue to expect our capex to increase significantly in 2027''~\cite{ref:alphabet_q3_2026}. Whether the revenue can carry the build-out is now being priced, at the largest scale yet.
+\item \textbf{The market asked the paper's question.} On 29 October Alphabet had its worst day as a public company --- down nearly 13\%, about \$480--500B of value~\cite{ref:cnbc_goog_1029,ref:yahoo_goog_1029} --- on results in which Google Cloud revenue \emph{doubled}. Investors sold two things: the spending --- capex of \$51.4B in the quarter, free cash flow of $-$\$9.1B, long-term debt up from \$21.6B to \$125.1B in a year, and the CFO's statement that ``we continue to expect our capex to increase significantly in 2027''~\cite{ref:alphabet_q3_2026,ref:yahoo_nasdaq_1029} --- and a slowdown in search advertising (next subsection). Whether the revenue can carry the build-out is now being priced, at the largest scale yet.
 \item \textbf{The result does not move: $-$\$259B/yr in 2030, $z=-3.54$.} Calendar-2026 capex guidance across the five is unchanged in total at $\sim$\$780B. The 2026 revenue base, re-derived from Anthropic's filed financials, is \$179B (P10--P90 \$168--191B). Break-even growth on a plateau is 49\%/yr to 2030; the sector chains still deliver about 33\%. Under the re-issue rule the change is \emph{minor} (Appendix~\ref{app:update}).
 \item \textbf{Flat spending is now the conservative case.} No company guided down. Alphabet (``increase significantly''), Amazon (``spend meaningfully more in 2027''), Meta (``continue investing aggressively'') and Microsoft (fiscal-2027 capex to grow, Q2 above \$50B) all point up~\cite{ref:alphabet_q3_2026,ref:amzn_q3_2026,ref:meta_q3_2026,ref:msft_q1fy27}. The street's 2027 figure is about \$1.1T~\cite{ref:gs_capex_bbg}. The paper's arms-race path, not its plateau, is the one the companies describe.
+\end{itemize}
+
+\subsection*{What spooked investors: AI and the search business}\label{ag:search}
+\begin{itemize}
+\item \textbf{More searches, less money per search.} Google Search revenue grew 12\% (\$63.4B), down from 17\% in the second quarter, in the same quarter that Google said search query growth was the highest in five years~\cite{ref:alphabet_q3_2026,ref:yahoo_nasdaq_1029}. Faster query growth with slower revenue growth means revenue per query grew more slowly, or fell. The paper's reading: AI answers are replacing some of the ad-bearing results they sit beside. Analysts called the search slowdown the point that ``outweighs all other points in the print''~\cite{ref:yahoo_nasdaq_1029}.
+\item \textbf{The paper already carries this.} AI enters the revenue base only as an \emph{uplift} to advertising (25 / 40 / 55 \$B, Table~\ref{tab:basedecomp}), and the search chain assumes AI answers ``defend share rather than expand it'', adding only 5--15\% of search revenue (Appendix~\ref{app:sectors}). If AI answers take revenue from search rather than add to it, the uplift belongs at the low end, and the gap widens.
+\item \textbf{No input changed for it yet.} One quarter is a signal, not a measurement, and the register moves only on a sourced figure. Two more quarters of falling revenue per query would move the advertising uplift to its low end, worth about \$15B a year of 2026 base and more by 2030. It is on the watch list for v28.1.
+\end{itemize}
+
+\subsection*{How deep the hole gets, and when it is paid back}\label{ag:cum}
+The yearly cost in this paper already includes a return on the money: about 9--10\% a year (Appendix~\ref{app:inputs}). So ``break-even'' here means earning an ordinary investor's return, not merely covering costs; a positive cumulative figure means the shortfall in that return has been made up. Table~\ref{tab:cumyear} adds up each year's surplus or deficit from 2027, with revenue growing as the fifteen sector chains say it will (about 33\% a year on average to 2030, slowing after).
+\begin{table}[htbp]
+\centering\small
+\caption{Cumulative surplus ($+$) or deficit ($-$) from 2027, by spending path (\$B, median, bottom-up revenue, rounded to \$10B)}
+\label{tab:cumyear}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Path} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{2030} & \textbf{2031} & \textbf{2032} & \textbf{2033} & \textbf{2034} & \textbf{2035} \\
+\midrule
+Flat spending (plateau) & $-$150 & $-$360 & $-$600 & $-$860 & $-$1{,}080 & $-$1{,}280 & $-$1{,}420 & $-$1{,}520 & $-$1{,}550 \\
+Arms race (street path) & $-$190 & $-$510 & $-$940 & $-$1{,}490 & $-$2{,}070 & $-$2{,}640 & $-$3{,}210 & $-$3{,}750 & $-$4{,}260 \\
+35\% cut (rationalize) & $-$120 & $-$210 & $-$260 & $-$260 & $-$180 & $-$30 & $+$190 & $+$490 & $+$870 \\
+Spending tracks revenue & $-$150 & $-$330 & $-$470 & $-$550 & $-$500 & $-$340 & $-$100 & $+$180 & $+$480 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{itemize}
+\item \textbf{Flat spending} digs a hole of about \$860B by 2030 and \$1.55T by 2035. Each year's loss shrinks, but the hole is never repaid within the horizon.
+\item \textbf{An arms race} --- the path the companies now describe --- never earns its return: the hole passes \$4T by 2035.
+\item \textbf{Cutting back} is the only way the money comes back with a normal return. A 35\% cut bottoms out near \$260B in 2029--30 and is repaid by 2033. Spending that simply tracks booked revenue bottoms near \$550B in 2030 and is repaid by 2034.
+\item \textbf{What average growth would do it on a flat path:} about 49\% a year to break even in 2030, and about 64\% a year to have made up the 2027--28 losses by then (Table~\ref{tab:breakeven}). The sector chains deliver about 33\%.
 \end{itemize}
 
 \subsection*{New sources}\label{ag:sources}
@@ -158,7 +191,7 @@ Version 28 is the post-earnings rebuild promised in Appendix~\ref{app:update}. E
 \end{itemize}
 
 \subsection*{Easier to read}\label{ag:read}
-The abstract is rewritten as ten short points in plain language, followed by a one-page reading guide with page numbers; the detail the abstract used to carry is in the Executive Summary.
+The abstract is rewritten as ten short points in plain language, followed by an at-a-glance box (method, who is counted, what is tracked, sources) and a reading guide with page numbers; the detail the abstract used to carry is in the Executive Summary. The byline now puts Nvara first.
 
 \subsection*{Errata: where earlier versions erred}\label{ag:errata}
 Errors in published versions are listed here and kept, version by version, in the repository's \texttt{ERRATA.md}; nothing is corrected silently.
@@ -190,7 +223,7 @@ Anthropic's amended S-1 with filed third-quarter figures (expected in November; 
     \item \textbf{Scale.} A \$780B/yr build-out and a \$260B/yr shortfall sound enormous and are not, against the economies that host them: world GDP is $\sim$\$115T, the US $\sim$\$30T, China $\sim$\$19T, the EU $\sim$\$20T\verify. The build-out is 1.5--2.5\% of US GDP per year depending on definition (gross, or lease-adjusted as in BofA's cycle comparison~\cite{ref:a16z_som}) --- at the peaks of the railway booms of the 1840s and 1870s and of telecoms in 1999--2001, each of which ended in impairment without ending the technology.
     \item \textbf{The street's path is the arms race.} The street has Big-5 capex at $\sim$\$1.1T in 2027 and $\sim$\$1.15T in 2028~\cite{ref:gs_capex_bbg,ref:a16z_som}, and on the October calls every company that gave a direction for 2027 pointed up (What Is New in Version 28). The paper's plateau is therefore below consensus and its arms-race path is consensus; on that path the 2030 deficit is $\sim$\$545B and no year through 2035 is profitable. The strongest statement of the bull case, a16z's September deck, is taken point by point in Section~\ref{sec:a16z}; the two documents agree on nearly every observable and disagree on two judgments --- whether AI is paid from labor budgets as well as IT budgets, and whether today's rising GPU rental prices are a permanent state or a cycle top. The question here is who carries the write-down and when, not whether AI is affordable.
     \item \textbf{The sell-side hurdle agrees with the carry.} Goldman Sachs's September 2026 framework~\cite{ref:gs_roic2026} --- \$1.42T of 2028--30 revenue to earn 15\% on the \$1.73T 2026--27 cohort --- is 27.4 cents per dollar of capital per year; the paper's carry is 28.4 (Section~\ref{sec:gs}, Table~\ref{tab:gs_reconcile}). The note isolates one cohort and benchmarks to backlog; the paper stacks the cohorts and forecasts receipts. The one material input difference is facility operating cost (2\% versus 6.65\% of capital), now carried as two anchors in the register.
-    \item \textbf{Beyond 2030.} Ending the analysis in 2030 would invite the objection that 2032 makes it all back. Appendix~\ref{app:horizon} runs the model to 2035: on a plateau the annual deficit narrows to roughly zero by 2035 and the cumulative deficit is never recovered within the horizon; under an arms race it widens every year; under a 35\% cut, or under an adaptive path in which capex tracks realized receipts, annual profit arrives in 2030--31 and cumulative recovery by 2034--35.
+    \item \textbf{Beyond 2030.} Ending the analysis in 2030 would invite the objection that 2032 makes it all back. Appendix~\ref{app:horizon} runs the model to 2035: on a plateau the annual deficit narrows to roughly zero by 2035 and the cumulative deficit is never recovered within the horizon; under an arms race it widens every year; under a 35\% cut, or under an adaptive path in which capex tracks realized receipts, annual profit arrives in 2030--31 and cumulative recovery by 2033--34 (Table~\ref{tab:cumyear}).
     \item \textbf{Consequence, either way.} The 2025--27 cohorts will not earn their carry in 2027--28 under any growth rate. ASC 360-10 recoverability~\cite{ref:fasb_asc360} is tested on projected cash flows, so impairment turns on whether management can still credibly forecast $g\ge g^{*}$ in 2028. That is the observable this paper puts its name on.
 \end{itemize}
 \newpage
@@ -1011,7 +1044,7 @@ All parameters triangular Triang(min, mode, max); \$B.
 Ending at 2030 invites the objection that the deficit is a timing artifact: the stock is built ahead of demand, and by 2032 the demand has arrived. This appendix extends the same model to 2035. After 2030 the sector ceilings grow with the budgets that set them --- IT spending, advertising and users --- at a rate $g_C\sim$Triang(6, 10, 14)\%/yr, and the logistic ramps continue; capex paths are held at their 2028--30 levels. A fourth, \emph{adaptive}, path lets capex respond: each year's capex is last year's scaled by the ratio of receipts to carry, damped by a square root and bounded to \$400B--\$1.1T --- the behavior of an operator who reads the same numbers this paper does and neither ignores nor panics at them.
 
 \begin{figure}[htbp]\centering\includegraphics[width=\textwidth]{f19_horizon2035.pdf}
-\caption{Annual and cumulative surplus or deficit to 2035 by capex path (medians). A plateau reaches annual break-even only around 2035 and never recovers cumulatively within the horizon; the adaptive path is profitable from 2031 and recovers cumulatively in 2034--35.}\label{fig:horizon}\end{figure}
+\caption{Annual and cumulative surplus or deficit to 2035 by capex path (medians). A plateau reaches annual break-even only around 2035 and never recovers cumulatively within the horizon; the adaptive path is profitable from 2031 and recovers cumulatively in 2034.}\label{fig:horizon}\end{figure}
 
 \begin{table}[htbp]
 \centering\small
@@ -1023,8 +1056,8 @@ Ending at 2030 invites the objection that the deficit is a timing artifact: the 
 \midrule
 Plateau & $-230$ (1\%) & $-190$ (4\%) & $-145$ (13\%) & $-95$ (26\%) & $-35$ (42\%) & $-1{,}550$ \\
 Arms race & $-575$ (0\%) & $-575$ (0\%) & $-565$ (0\%) & $-540$ (0\%) & $-510$ (0\%) & $-4{,}260$ \\
-Rationalize & $+80$ (83\%) & $+150$ (95\%) & $+220$ (98\%) & $+300$ (100\%) & $+385$ (100\%) & $+880$ \\
-Adaptive & $+55$ (80\%) & $+165$ (99\%) & $+245$ (100\%) & $+290$ (100\%) & $+300$ (100\%) & $+505$ \\
+Rationalize & $+80$ (83\%) & $+150$ (95\%) & $+220$ (98\%) & $+300$ (100\%) & $+385$ (100\%) & $+875$ \\
+Adaptive & $+50$ (80\%) & $+160$ (99\%) & $+240$ (100\%) & $+285$ (100\%) & $+290$ (100\%) & $+475$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1032,7 +1065,7 @@ Adaptive & $+55$ (80\%) & $+165$ (99\%) & $+245$ (100\%) & $+290$ (100\%) & $+30
 \begin{figure}[htbp]\centering\includegraphics[width=0.85\textwidth]{f20_adaptive.pdf}
 \caption{The adaptive path. Capex falls to $\sim$\$400B by 2030--31 as receipts lag carry, then re-expands as receipts overtake it; the stock is right-sized to demand with a two-year lag.}\label{fig:adaptive}\end{figure}
 
-Three readings. First, the plateau does not recover by 2035: infrastructure receipts grow from \$480B to \$910B, but the plateau's carry grows too --- replacement of short-lived silicon plus the shell cohorts still depreciating --- from \$725B to \$930B, so the annual gap is still open at the end of the horizon and the cumulative deficit of $\sim$\$1.55T is not repaid. ``By 2035 it all comes back'' is true for the technology and false for the plateau balance sheet. Second, the arms race never closes. Third, a 35\% cut or an adaptive operator turns profitable in 2030--31 and recovers cumulatively by 2034--35, at a stock that has fallen to roughly \$400--500B/yr of capex --- close to what Section~\ref{sec:results} identified as the level realized demand can carry. The adaptive path also answers a question the fixed paths cannot: how does the industry stay on the rails? By letting the operators' own recoverability tests do their work a year at a time, rather than by any single actor's failure. Growth $g$ is in this sense not an exogenous unknown but the outcome of decisions the operators will make with the same numbers, which is why the paper reports distributions and thresholds rather than a forecast.
+Three readings. First, the plateau does not recover by 2035: infrastructure receipts grow from \$480B to \$910B, but the plateau's carry grows too --- replacement of short-lived silicon plus the shell cohorts still depreciating --- from \$725B to \$930B, so the annual gap is still open at the end of the horizon and the cumulative deficit of $\sim$\$1.55T is not repaid. ``By 2035 it all comes back'' is true for the technology and false for the plateau balance sheet. Second, the arms race never closes. Third, a 35\% cut or an adaptive operator turns profitable in 2030--31 and recovers cumulatively by 2033--34, at a stock that has fallen to roughly \$400--500B/yr of capex --- close to what Section~\ref{sec:results} identified as the level realized demand can carry. The adaptive path also answers a question the fixed paths cannot: how does the industry stay on the rails? By letting the operators' own recoverability tests do their work a year at a time, rather than by any single actor's failure. Growth $g$ is in this sense not an exogenous unknown but the outcome of decisions the operators will make with the same numbers, which is why the paper reports distributions and thresholds rather than a forecast.
 
 \section{Sector Ceiling Derivations}\label{app:sectors}
 Each ceiling is a Fermi chain to 2030; ranges become the triangular min/max in Table~\ref{tab:sectors}.
@@ -2157,5 +2190,8 @@ Dealroom (2026). ``Anthropic's draft S-1 reveals \$16.3B revenue, \$80.7B loss a
 \bibitem{ref:gs_capex_bbg}
 Bloomberg (2026). ``Goldman Sees Hyperscaler AI Capex Rising 50\% to \$1.2 Trillion,'' Sept.~25, 2026 (Street 2027 $\sim$\$1.1T; Goldman 2027 \$1.2T, 2028 \$1.4T). \url{https://www.bloomberg.com/news/articles/2026-09-25/goldman-sees-hyperscaler-ai-capex-rising-50-to-1-2-trillion}
 
+
+\bibitem{ref:yahoo_nasdaq_1029}
+Yahoo Finance (2026). ``Nasdaq Drops 365 Points on Alphabet's Rare Double Miss: Stock Market Today,'' Oct.~29, 2026 (EPS \$2.67 vs \$3.00 expected; revenue \$127.6B vs \$127.9B; search ad growth 12\% vs 17\% in Q2; long-term debt \$125.1B vs \$21.6B a year earlier; Wedbush: the search slowdown ``outweighs all other points in the print''). \url{https://finance.yahoo.com/markets/stocks/articles/nasdaq-drops-365-points-alphabets-200822565.html}
 \end{thebibliography}
 \end{document}
