@@ -124,6 +124,7 @@
 \item \textbf{The revenue.} AI revenue in 2026 is about \$179B. To cover the cost by 2030 it must grow about 49\% a year, every year.
 \item \textbf{What the sectors deliver.} Counted sector by sector --- fifteen of them, each with its own ceiling --- it grows about 33\% a year, and only \$480--490B of it reaches the owners of the data centers.
 \item \textbf{The gap.} The most likely outcome is a shortfall of about \$260B a year in 2030, more than three standard deviations from break-even; more if spending keeps rising as the companies now say it will. 2027--28 is a loss on every path.
+\item \textbf{A sixth builder.} Musk's SpaceX/xAI now spends at hyperscaler scale (about \$75B on AI in 2026). Its rent from Anthropic was already counted; its costs were not. Added, they widen the 2030 shortfall to about \$345B, or \$425B at its current pace.
 \item \textbf{How long investors wait.} Even on the best path --- spending cut back to follow the revenue that actually arrives --- the money earns an ordinary return (about 9.5\% a year), counting the early losses, only in 2034--35, eight to nine years from now.
 
   On a flat path it has averaged about 1\% a year by 2035. If spending keeps rising, it loses money on average every year to 2035. And the losses are not free: they are paid for by borrowing (Alphabet's long-term debt rose from \$21.6B to \$125.1B in a year~\cite{ref:yahoo_nasdaq_1029}) or by giving up other earnings, so the hole grows with interest.
@@ -144,9 +145,9 @@
 \noindent\textbf{\large At a glance}\par\vspace{0.3em}
 \begin{tabular}{@{}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.74\textwidth}@{}}
 \textbf{Method} & Fermi estimate: the answer is a chain of bounded factors, and each factor's uncertainty is carried to the result by Monte Carlo simulation (100,000 draws). \\[2pt]
-\textbf{Who is counted} & The five largest US builders --- Microsoft, Alphabet, Amazon, Meta, Oracle. They are about nine-tenths of 2026 spending by the world's nine largest cloud operators; the Chinese four (\$50--110B a year) are tracked but kept outside the model~\cite{ref:trendforce_csp9}. \\[2pt]
-\textbf{What is tracked} & 52 inputs in a public register, each with a source, a date and its next update; 15 sector revenue chains; a 2026 revenue base built from 7 components; 19 inputs decomposed into sourced parts; years 2023--2035. \\[2pt]
-\textbf{Sources} & 129 references: about 20 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
+\textbf{Who is counted} & The five largest US builders --- Microsoft, Alphabet, Amazon, Meta, Oracle. They are about nine-tenths of 2026 spending by the world's nine largest cloud operators; the Chinese four (\$50--110B a year) are tracked but kept outside the model~\cite{ref:trendforce_csp9}. New in v28: SpaceX/xAI, now a sixth builder at about \$75B in 2026, is shown alongside the base as a separate overlay (p.~\pageref{ag:spacex}). \\[2pt]
+\textbf{What is tracked} & 53 inputs in a public register, each with a source, a date and its next update; 15 sector revenue chains; a 2026 revenue base built from 7 components; 19 inputs decomposed into sourced parts; years 2023--2035. \\[2pt]
+\textbf{Sources} & 134 references: about 20 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
 \textbf{Result} & About \$260B a year short in 2030 if spending stays flat; overturned if 2028 AI revenue exceeds \$400B. \\[2pt]
 \textbf{The wait} & With early losses counted, an ordinary return arrives in 2034--35 at best; about 1\% a year by 2035 on a flat path; never by 2035 if spending keeps rising. \\
 \end{tabular}
@@ -159,6 +160,7 @@
 \hspace*{1.5em}The headline: what the October earnings changed\dotfill p.~\pageref{ag:headline}\\
 \hspace*{1.5em}What spooked investors: AI and the search business\dotfill p.~\pageref{ag:search}\\
 \hspace*{1.5em}\textbf{How long investors wait:} the hole, the payback, the return\dotfill p.~\pageref{ag:cum}\\
+\hspace*{1.5em}\textbf{The sixth builder:} SpaceX/xAI, and why it is added\dotfill p.~\pageref{ag:spacex}\\
 \hspace*{1.5em}New sources: Anthropic's S-1, cloud growth, Oracle\dotfill p.~\pageref{ag:sources}\\
 \hspace*{1.5em}Accounting changes that make the cost look smaller\dotfill p.~\pageref{ag:acct}\\
 \hspace*{1.5em}Errata: where earlier versions erred\dotfill p.~\pageref{ag:errata}\\
@@ -289,6 +291,36 @@ Spending tracks revenue & $-$150 & $-$330 & $-$480 & $-$580 & $-$570 & $-$460 & 
 \end{table}
 
 
+\subsection*{The sixth builder: SpaceX/xAI, and why it is added}\label{ag:spacex}
+\claim{Musk's AI business now builds at the scale of a hyperscaler. Leaving it out made the paper too kind to the build-out, so v28 shows its cost next to the base.}
+
+\inbrief{
+\item SpaceX's AI arm (xAI, Grok, the Colossus data centers) will spend about \$75B on AI in 2026 --- a tenth of the Big-5 --- and its fourth quarter runs at \$140--160B a year.
+\item Its rent from Anthropic is already in the revenue the model counts; its spending was not. Counting one without the other flattered the build-out.
+\item Added at its 2026 level, it widens the 2030 shortfall on a flat path from about \$260B to about \$345B; at its fourth-quarter pace, to about \$425B.
+\item It is shown as an overlay, not yet merged into the base: three quarters of public data, and the largest quarter is still a forecast. It enters the base in v29.
+}
+
+\lead{Why it was left out.} The paper counts the builders whose spending is reported in SEC filings and reconstructed quarter by quarter by Epoch AI --- Microsoft, Alphabet, Amazon, Meta and Oracle~\cite{ref:epoch_capex}. Until 2026 xAI was private and small: \$5.6B of AI spending in 2024 and \$12.7B in 2025~\cite{ref:tc_spacex_s1}. Its first quarterly report inside a public company came in August.
+
+\lead{Why it is added now.} It is no longer small, and leaving it out biases the result.
+\begin{itemize}
+\item \emph{Scale.} SpaceX's AI capex was \$7.7B in the first quarter of 2026, \$15.8B in the second and \$16.4B in the third; total capex for the fourth quarter is guided to \$35--40B, ``almost entirely'' for compute~\cite{ref:baxtel_spacex_q2,ref:il_spacex_q3,ref:hl_spacex_q3,ref:basenor_spacex_q4}. That is about \$75B for 2026 (taking \$32--37B of the fourth quarter as AI), and a run rate of \$140--160B a year --- Meta's scale. Musk has said compute will be ``closer to 10 GW than 5 GW'' by the end of 2027~\cite{ref:baxtel_spacex_q2}.
+\item \emph{Symmetry --- the main reason.} The model counts revenue reaching \emph{any} owner of AI data centers: Anthropic's compute bill, for example, sits inside the lab channel's cloud-capture share whoever is paid. Anthropic pays SpaceX \$1.25B a month to May 2029 for all of Colossus~1~\cite{ref:baxtel_spacex_q2}. So that rent was counted as receipts, while the cost of the buildings and chips that earn it was not. Revenue in, cost out: that flatters the build-out, and a model that wants to be checked cannot keep it.
+\item \emph{Revenue.} SpaceX's AI segment booked about \$7.6B in the third quarter, including new cloud contracts and the Cursor acquisition~\cite{ref:il_spacex_q3,ref:hl_spacex_q3}. None of it is new to the model: rent from labs is in the lab channel, Grok subscriptions in consumer, Cursor in coding tools. So adding SpaceX adds cost and no new revenue.
+\end{itemize}
+
+\lead{What it does to the result.} SpaceX's AI capex is run through the same vintage model as the Big-5 --- same silicon and shell lives, energization lags, facility opex and 9.45\% cost of money (\texttt{model/spacex\_overlay.py}).
+\begin{itemize}
+\item \emph{Held at the 2026 level} ($\sim$\$75B a year): it adds about \$40B to the yearly cost in 2027, \$60B in 2028, \$87B in 2030 and \$120B in 2035. The flat path's 2030 shortfall widens from about \$260B to about \$345B.
+\item \emph{At the fourth-quarter pace} ($\sim$\$150B a year from 2027): it adds about \$55B in 2027, \$100B in 2028, \$166B in 2030. The 2030 shortfall widens to about \$425B.
+\item \emph{The management claim.} SpaceX's CFO says compute is deployed for ``less than a one-year payback''~\cite{ref:baxtel_spacex_q2}. That is an interested party's statement, recorded as grade-J (judgment), like the Big-5's own claims (Section~\ref{sec:gs}). Anthropic's \$15B a year covers well under a year of a \$75B build-out; the rest of the payback has to come from revenue the model already counts.
+\end{itemize}
+
+\lead{Why an overlay, not the base, in v28.} Three reasons. SpaceX has three quarters of public segment data and only a forecast for the largest one; its fourth-quarter actual (late January) decides between the two paths above; and changing the base on the eve of release, without the register run and the reissue test, would break the paper's own update rule (Appendix~\ref{app:update}). The overlay is stated next to every headline it moves; it enters the register and the base in v29.
+
+\lead{The same gap, elsewhere.} The asymmetry is not only SpaceX's. The GPU-rental firms (CoreWeave, Nebius, Lambda, Crusoe) and data centers held in off-balance-sheet vehicles earn receipts the model counts, while only the part leased back by the Big-5 enters the carry. They are listed for v29 with the same treatment: cost and revenue on the same side of the line.
+
 \subsection*{New sources}\label{ag:sources}
 \begin{itemize}
 \item \textbf{Anthropic's S-1 (public 26 October): the first filed lab financials.} First-half 2026 revenue \$16.3B (\$1.2B a year earlier); operating loss \$0.7B; net loss \$80.7B, of which \$72.4B is a non-cash change in the fair value of convertible notes and similar instruments~\cite{ref:anthropic_s1}. The \$80.7B is therefore \emph{not} cash burn and is not used as such.
@@ -329,12 +361,13 @@ The body tables (Tables~\ref{tab:breakeven} and~\ref{tab:bu_results}) were compu
 \end{itemize}
 
 \subsection*{Still waiting on}\label{ag:waiting}
-Anthropic's amended S-1 with filed third-quarter figures (expected in November; its first-half statements go stale around 11--12 November); Nvidia's third quarter (19 November); Oracle's fiscal second quarter (December); a post-earnings consensus for 2027--28 capex.
+Anthropic's amended S-1 with filed third-quarter figures (expected in November; its first-half statements go stale around 11--12 November); Nvidia's third quarter (19 November); Oracle's fiscal second quarter (December); a post-earnings consensus for 2027--28 capex; SpaceX's fourth-quarter capex (late January), which decides between the two SpaceX paths.
 \newpage
 
 \section*{Executive Summary}\label{ag:exec}
 \begin{itemize}
     \item \textbf{The wait is the investor's problem.} The money spent in 2025--27 does not earn an ordinary return for a long time. Counting the early losses and a cost of money of $\sim$9.5\%, spending that follows revenue earns back its losses with an ordinary return only in 2034--35, and a 35\% cut in 2033; flat spending averages $\sim$1\%/yr by 2035; an arms race loses money on average every year to 2035 (Tables~\ref{tab:cumyear} and~\ref{tab:roiyear}). After inflation ($\sim$2.6\%/yr, counted once) the flat path is still losing $\sim$1.6\% a year on average in 2035.
+    \item \textbf{A sixth builder: SpaceX/xAI.} About \$75B of AI capex in 2026 and a fourth-quarter pace of \$140--160B a year. The model already counted its rent from Anthropic but not its cost; run through the same vintage model, it widens the 2030 flat-path shortfall from $\sim$\$260B to $\sim$\$345B (to $\sim$\$425B at its current pace). Shown as an overlay in v28; merged into the base in v29 (p.~\pageref{ag:spacex}).
 
     The losses peak at \$260--550B on the paths that recover and pass \$1.5T on the flat path. That delay, not whether AI is useful, is what investors are pricing.
     \item \textbf{What the October earnings said.} Every company that gave a direction pointed 2027 spending up; Alphabet lost $\sim$\$500B of value in a day on its spending and a slowdown in search advertising, as AI answers replace ad-bearing results; Anthropic's first filed numbers matched the paper's estimate; and Oracle said its spending peaks in 2027--28 and steps down after --- the first builder to describe the way out (What Is New in Version 28).
@@ -737,7 +770,7 @@ An estimate improves in exactly one way --- by decomposing its loosest factor in
 \midrule
 Anthropic, booked 2026 (gross basis) & 53 / 56 / 60 & H1 \$16.3B filed (S-1)~\cite{ref:anthropic_s1}; Q3 \$16.8B reported, not filed~\cite{ref:cnbc_anthropic_q3}; Q4 \$20--24B as growth slows (v28; v27: 50 / 57 / 65) \\
 OpenAI, booked 2026 & 29 / 32 / 35 & Run-rate \$21B (Dec.~2025), $\sim$\$33B (May), $>$\$40B (Aug.)~\cite{ref:epoch_revenue,ref:sacra_anthropic,ref:valueadd_openai} \\
-Other labs (xAI, Mistral, Cohere, Perplexity, non-US) & 4 / 7 / 12 & Sparse disclosure\verify \\
+Other labs (xAI's Grok, Mistral, Cohere, Perplexity, non-US) & 4 / 7 / 12 & Sparse disclosure\verify \\
 Hyperscaler AI services excluding lab hosting and reseller pass-through & 25 / 35 / 45 & Microsoft AI run-rate $>$\$37B less Azure-OpenAI hosting; AWS AI $>$\$15B less Bedrock pass-through; Google Cloud AI less Vertex pass-through~\cite{ref:yahoo2026,ref:traderinsights2026}\verify \\
 AI-attributable advertising uplift (Meta + Google) & 25 / 40 / 55 & Meta: 8--12\% relevance/pricing lift disclosed~\cite{ref:meta_q2_2026} on $\sim$\$230B ads $=$ \$18--28B; Google assumed comparable magnitude with less disclosure, \$10--25B \\
 Consumer, search and internal use not already in lab revenue & 8 / 15 / 25 & Gemini, Microsoft Copilot consumer, AI search monetization, internal productivity\verify \\
@@ -2090,7 +2123,7 @@ The budget pool will be smaller and more reallocated than the base case assumes,
 Every number in this paper is a function of a register of inputs, each with a source, a source date, the date its source next publishes, and the model parameter it feeds. The register (\texttt{parameters.json}), the model, and a rebuild script are deposited with the paper. Updating is mechanical: change the input, run the rebuild, read the delta.
 
 \subsection*{The register}
-Fifty-two entries in five groups --- supply (capex history, silicon share, lives, opex, WACC, inflation, lags, grid and siting), demand (the 2026 base and its components, cloud-capture share, sector ceilings, European displacement, common factors), feasibility (software and services pools, seat share, seat growth, reallocation), the incumbent worked case (seats, price, attach, elasticity), and the re-issue rule.
+Fifty-three entries in five groups --- supply (capex history, silicon share, lives, opex, WACC, inflation, lags, grid and siting), demand (the 2026 base and its components, cloud-capture share, sector ceilings, European displacement, common factors), feasibility (software and services pools, seat share, seat growth, reallocation), the incumbent worked case (seats, price, attach, elasticity), and the re-issue rule.
 
 Entries marked \emph{secondary} are swept in their own figures rather than trusted at a range. Two commitments follow from the register: nothing enters the model except through it, so the provenance trail is complete; and any reader can substitute their own value and rebuild.
 
@@ -2147,6 +2180,7 @@ Anthropic 2026 bookings (\$B) & 50 / 57 / 65 & 53 / 56 / 60 & As above \\
 OpenAI 2026 bookings (\$B) & 26 / 29 / 33 & 29 / 32 / 35 & Q2 booked \$6.7B, Aug.\ run-rate \$40B~\cite{ref:sacra_openai,ref:valueadd_openai} \\
 Big-5 capex 2026 (\$B) & 780 & 780 (sources refreshed) & Q3 releases and calls~\cite{ref:alphabet_q3_2026,ref:msft_q1fy27,ref:amzn_q3_2026,ref:meta_q3_2026} \\
 Street capex 2027 / 2028 (\$B) & 1,050 / 1,150 & 1,100 / 1,150 & \cite{ref:gs_capex_bbg} \\
+SpaceX/xAI AI capex (new; overlay) & --- & 0.5, 5.6, 12.7, $\sim$75 (2023--26); hold or $\sim$150/yr & IPO filing; Q2 and Q3 calls~\cite{ref:tc_spacex_s1,ref:baxtel_spacex_q2,ref:il_spacex_q3,ref:hl_spacex_q3}; not in the base until v29 \\
 Inflation, $\pi$ (new; presentation only) & --- & 2.0 / 2.6 / 3.7\% & Fed 2\% goal; Sep.\ 2026 core and headline CPI~\cite{ref:fed_goal,ref:bls_cpi_sep26}; no effect on $g^{*}$, $z$ or payback years \\
 Shell and silicon lives & 15/20/25; 4/5/6 & unchanged; anchors added & Microsoft accounting changes and capex mix~\cite{ref:cfodive_msft,ref:msft_q1fy27} \\
 \midrule
@@ -2942,6 +2976,21 @@ Bloomberg (2026). ``Goldman Sees Hyperscaler AI Capex Rising 50\% to \$1.2 Trill
 
 \bibitem{ref:yahoo_nasdaq_1029}
 Yahoo Finance (2026). ``Nasdaq Drops 365 Points on Alphabet's Rare Double Miss: Stock Market Today,'' Oct.~29, 2026 (EPS \$2.67 vs \$3.00 expected; revenue \$127.6B vs \$127.9B; search ad growth 12\% vs 17\% in Q2; long-term debt \$125.1B vs \$21.6B a year earlier; Wedbush: the search slowdown ``outweighs all other points in the print''). \url{https://finance.yahoo.com/markets/stocks/articles/nasdaq-drops-365-points-alphabets-200822565.html}
+\bibitem{ref:tc_spacex_s1}
+TechCrunch (2026). ``xAI burned \$6.4B last year --- SpaceX's IPO filing shows why the spending is far from over,'' May 20, 2026 (AI segment capex \$5.6B in 2024, \$12.7B in 2025, \$7.7B in Q1 2026; 2025 revenue \$3.2B; Colossus I and II $\sim$1 GW). \url{https://techcrunch.com/2026/05/20/xai-burned-6-4b-last-year-spacexs-ipo-filing-shows-why-the-spending-is-far-from-over/}
+
+\bibitem{ref:baxtel_spacex_q2}
+Baxtel (2026). ``SpaceX's first earnings call was mostly a data center call,'' Aug.~5, 2026 (Q2 capex \$18.4B, of which AI \$15.8B; Anthropic \$1.25B a month to May 2029 for Colossus~1; 1.4 GW, $>$2 GW by end-2026; CFO: ``less than a one-year payback''; Musk: ``closer to 10 GW than 5 GW'' by end-2027). \url{https://baxtel.com/posts/spacex-s-first-earnings-call-was-mostly-a-data-center-call}
+
+\bibitem{ref:il_spacex_q3}
+investingLive (2026). ``SpaceX beats Q3 forecasts across all three segments as AI revenue tops \$7.5 billion,'' Oct.~20, 2026 (revenue \$14.6B; AI segment $\sim$\$7.6B; capex \$19.6B, of which AI $\sim$\$16.4B). \url{https://investinglive.com/stocks/spacex-beats-q3-forecasts-across-all-three-segments-as-ai-revenue-tops-7-5-billion/}
+
+\bibitem{ref:hl_spacex_q3}
+Hargreaves Lansdown (2026). ``SpaceX Q3 results: AI powers a big beat,'' Oct.~2026 (``Fourth-quarter capital expenditure should rise to \$35--40bn''; AI revenue up ``more than ninefold'' on cloud deals and the Cursor acquisition). \url{https://www.hl.co.uk/shares/share-research/spacex-q3-results-ai-powers-a-big-beat}
+
+\bibitem{ref:basenor_spacex_q4}
+Basenor (2026). ``SpaceX plans \$35--40B Q4 capex,'' Oct.~2026 (Q4 capex ``almost entirely'' for compute; \$40B of callable debt for GPUs arriving in Q1--Q2 2027). \url{https://www.basenor.com/blogs/news/spacex-plans-35-40b-q4-capex-matches-teslas-last-4-years-combined}
+
 \bibitem{ref:fed_goal}
 Federal Open Market Committee (2026). ``Statement on Longer-Run Goals and Monetary Policy Strategy'' (inflation of 2 percent over the longer run, as measured by the PCE price index). \url{https://www.federalreserve.gov/monetarypolicy/files/FOMC_LongerRunGoals.pdf}
 

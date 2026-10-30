@@ -277,6 +277,22 @@
    "secondary": true,
    "trigger": "decline toward $1/hr = floor arriving; feeds econ_depreciation_rate",
    "maps_to": "delta_econ evidence"
+  },
+  "spacex_ai_capex_overlay": {
+   "value": {
+    "2023": 0.5,
+    "2024": 5.6,
+    "2025": 12.7,
+    "2026": 74.5
+   },
+   "forward_paths": {
+    "hold": 74.5,
+    "q4_pace": 150
+   },
+   "source": "SpaceX IPO filing (TechCrunch 2026-05-20); Q2 call (Baxtel 2026-08-05): Q2 AI capex 15.8; Q3 call 2026-10-20 (investingLive, Hargreaves Lansdown): AI capex 16.4, Q4 total capex guided 35-40 'almost entirely' compute (taken as 32-37 AI)",
+   "next_update": "2027-01 (SpaceX Q4 results)",
+   "maps_to": "overlay only (model/spacex_overlay.py); enters the base in v29",
+   "note": "Added for symmetry: SpaceX's rent from Anthropic is already inside counted receipts; its cost was not in the carry."
   }
  },
  "demand": {

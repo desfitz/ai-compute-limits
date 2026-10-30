@@ -48,7 +48,7 @@ s.addText([
   { text: "Founder, Nvara.ai   |   Retired, IBM Systems", options: { breakLine: true } },
   { text: "desmond.fitzpatrick@nvara.ai   |   ORCID 0009-0001-0534-2793", options: {} },
 ], { x: 0.8, y: 4.0, w: 11.7, h: 1.2, fontSize: 16, color: C.text1, margin: 0, isTextBox: true });
-s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 147-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
+s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 149-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
 
 
 // NEW v29: what the October earnings changed
@@ -59,6 +59,7 @@ s.addText(BUL([
   "Anthropic's S-1 gave the first filed numbers from an AI lab. Our estimate held: its third quarter, $16.8 billion, is inside the $16-19 billion we projected. Most of its $80.7 billion loss is accounting, not cash.",
   "Oracle said its spending peaks in 2027-28 and steps down after: the first builder to describe the way out.",
   "The result does not move: about $260 billion a year short in 2030 if spending plateaus - and an ordinary return, early losses included, arrives in 2034-35 at best; after inflation, flat spending is still losing about 1.6% a year in 2035.",
+  "New: Musk's SpaceX/xAI, at about $75 billion of AI spending this year, is added as a sixth builder: the 2030 shortfall becomes about $345 billion.",
 ]), { x: 0.6, y: 1.7, w: 12.1, h: 4.7, fontSize: 18, color: C.text1, margin: 0, valign: "top", isTextBox: true, paraSpaceAfter: 12 });
 SRC(s, "Sources: company Q3 releases and calls (Oct 21-29), Anthropic S-1 (Oct 26), Oracle Investor Day (Oct 28), CNBC (Oct 29). The full list of changes is at the front of the paper.");
 
@@ -134,6 +135,21 @@ s.addTable([hdr, ...rows], { x: 5.6, y: 1.8, w: 7.1, colW: [2.85, 0.85, 0.85, 0.
 P(s, "And the losses cost money: they are paid for by borrowing (Alphabet's debt went from $22 billion to $125 billion in a year) or by giving up other earnings. Charging that cost on the losses, the flat path's hole reaches $2.4 trillion by 2035, and even spending that follows revenue is not repaid until 2035. The question for investors is not whether AI is useful. It is how long they wait, and what the wait costs.", 0.6, 4.4, 12.1, 1.9, { fontSize: 16 });
 SRC(s, "Paper v28, Tables 1-2 (What Is New); model/roi.py. Medians; the cost of money is the register's 9-10% a year.");
 
+// NEW: the sixth builder
+s = pres.addSlide({ masterName: "CONTENT" }); T(s, "A sixth builder: SpaceX/xAI", "Musk's AI business now builds at hyperscaler scale - and it was half in the model");
+BIG(s, "~$75B", "SpaceX AI spending in 2026 - a tenth of the Big-5; Q4 pace $140-160B a year", 0.6, 1.7, 4.6);
+BIG(s, "$345B", "2030 shortfall on flat spending with SpaceX added (was $260B); $425B at its Q4 pace", 0.6, 3.5, 4.6);
+s.addText([
+  { text: "Why we added it", options: { bold: true, breakLine: true, paraSpaceAfter: 8 } },
+  ...BUL([
+    "Half of it was already counted: Anthropic pays SpaceX $1.25 billion a month for Colossus 1, and that rent was in the revenue the model counts.",
+    "The other half was not: the buildings and chips that earn the rent. Revenue in, cost out flattered the build-out.",
+    "It adds cost, not revenue: Grok, Cursor and lab rent are already in the revenue chains.",
+    "Shown beside the base in v28; merged in v29, after SpaceX's fourth quarter (late January).",
+  ]),
+], { x: 5.6, y: 1.7, w: 7.1, h: 4.6, fontSize: 15, color: "1F1F1F", margin: 0, valign: "top", isTextBox: true });
+SRC(s, "Paper v28, 'The sixth builder'; SpaceX IPO filing, Q2 and Q3 calls (Aug 5, Oct 20); model/spacex_overlay.py.");
+
 // NEW: inflation, counted once
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "After inflation: the wait in today's money", "Inflation counted once - already in the 9.45% cost of money, never added to revenue");
 BIG(s, "-1.6%", "flat spending's average return in 2035, in today's money (+1% before inflation)", 0.6, 1.7, 4.6);
@@ -208,7 +224,7 @@ P(s, "The paper, the model, the data and the register of inputs — each with it
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v29_2026-10-30_v8.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-30_v9.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);

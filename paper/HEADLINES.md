@@ -26,6 +26,11 @@ Section titles, the one-line claim under each, the In-brief points, and the head
   - Worked example: one dollar lost in 2027, recovered in 2035 - $2.06 needed back; a fifth of the cost is inflation, four-fifths real return forgone.
   - What average growth would do it on a flat path:
 
+### The sixth builder: SpaceX/xAI, and why it is added
+  - Musk's AI business builds at hyperscaler scale (~$75B in 2026; $140-160B a year pace).
+  - Its rent from Anthropic was already counted; its cost was not - so it is added.
+  - Adds ~$87B to the 2030 cost: shortfall ~$345B (~$425B at the Q4 pace). Overlay in v28, base in v29.
+
 ### New sources
   - Anthropic's S-1 (public 26 October): the first filed lab financials.
   - The paper's Anthropic estimate held.

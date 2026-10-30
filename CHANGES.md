@@ -16,6 +16,22 @@ Each version opens with what changed and why. Click a line to expand it.
 - That delay, not whether AI is useful, is what investors are pricing. Tables below.
 </details>
 
+<details><summary><b>A sixth builder: SpaceX/xAI adds ~$85B to the 2030 cost - shortfall ~$345B, or ~$425B at its current pace</b></summary>
+
+**Why it was left out:** the model counts the builders reported in SEC filings and tracked by Epoch AI. Until 2026 xAI was private and small ($5.6B of AI capex in 2024, $12.7B in 2025).
+
+**Why it is added now:**
+- **Scale:** AI capex $7.7B (Q1), $15.8B (Q2), $16.4B (Q3); Q4 total guided $35-40B, "almost entirely" compute. About $75B in 2026, and a $140-160B a year pace - Meta's scale.
+- **Symmetry (the main reason):** Anthropic pays SpaceX $1.25B a month to May 2029 for Colossus 1. That rent was already counted as revenue reaching data-centre owners; the cost of the buildings and chips that earn it was not. Revenue in, cost out flattered the build-out.
+- **No new revenue:** SpaceX's AI revenue (~$7.6B in Q3) is already in the model - lab rent in the lab channel, Grok in consumer, Cursor in coding tools.
+
+**What it does:** run through the same vintage model (`model/spacex_overlay.py`): +$87B to the 2030 cost if it holds at the 2026 level (2030 flat-path shortfall ~$260B -> ~$345B); +$166B at the Q4 pace (-> ~$425B).
+
+**Why an overlay in v28:** the largest quarter is still a forecast, and changing the base on release eve would break the paper's own update rule. It enters the base in v29, after SpaceX's Q4 (late January). The same fix will then be applied to the GPU-rental firms (CoreWeave, Nebius, Lambda, Crusoe) and off-balance-sheet vehicles.
+
+The CFO's "less than a one-year payback" is recorded as an interested party's judgment.
+</details>
+
 <details><summary><b>Inflation, counted once: after inflation the flat path is still losing ~1.6% a year in 2035</b></summary>
 
 Over a nine-year wait inflation matters, so v28 states it explicitly - and makes sure it is not counted twice.
@@ -162,7 +178,7 @@ Computed by `model/roi.py`.
 
 ### Model changes (parameters.json)
 
-<details><summary><b>Seven register entries changed (one new: inflation); delta log in Appendix H of the paper</b></summary>
+<details><summary><b>Eight register entries changed (new: inflation; SpaceX/xAI overlay); delta log in Appendix H of the paper</b></summary>
 
 | Entry | v27 | v28 |
 |---|---|---|
@@ -172,6 +188,7 @@ Computed by `model/roi.py`.
 | Big-5 capex 2026 ($B) | 780 | 780 (sources refreshed to Q3) |
 | Street capex 2027 / 2028 ($B) | 1,050 / 1,150 | 1,100 / 1,150 |
 | Shell and silicon lives | 15/20/25; 4/5/6 | unchanged; Microsoft anchors added |
+| SpaceX/xAI AI capex (new; overlay) | - | 0.5, 5.6, 12.7, ~75 (2023-26); hold or ~150/yr |
 | Inflation (new; presentation only) | - | 2.0 / 2.6 / 3.7% (Fed goal; Sep 2026 core and headline CPI) |
 
 Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(profit, rationalize, 2030) 54% -> 52%.
