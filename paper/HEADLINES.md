@@ -56,9 +56,9 @@ Section titles, the one-line claim under each, the In-brief points, and the head
   - What the October earnings said.
   - Labs and landlords.
   - The losses cost money too.
-  - The question is g, not D.
+  - The question is the growth rate g, not the demand level D.
   - The carry ramps.
-  - Break-even growth is 49-62%/yr sustained to 2030.
+  - Break-even growth is 33-62%/yr sustained to 2030, depending on spending.
   - The sectors deliver about 33%, not 49%.
   - The observed growth rate is above the threshold today, unevenly.
   - Where the remaining doubt lives, and whether profit can overlap.
@@ -81,6 +81,7 @@ In brief:
 - Precision of tens of percent.
 - What "Fermi" means here.
 - Three rules for the uncertainty.
+- Marked figures.
 - Open model.
 
 ## Prior Literature
@@ -101,9 +102,9 @@ In brief:
 - What the observables say.
 
 ### Do the five, and the Chinese four, tell the same story?
-*Yes: US and Chinese operators show the same pattern, so the base case is not built on a US anomaly.*
+*US and Chinese operators are on the same curve.*
 - The nine largest cloud operators.
-- China's four sit outside the model.
+- Two implications.
 
 ## The Supply-Side Carry: A Vintage Model
 *Each year's spending stays on the books for years, so the yearly cost keeps climbing even if spending stops growing.*
@@ -153,7 +154,7 @@ In brief:
 - Investor money is not customer revenue.
 
 ## Bottom-Up Demand: Fifteen Sector Fermi Chains
-*A second, independent estimate: fifteen sectors, each growing toward its own ceiling. Together they grow about 33% a year, not 49%.*
+*A second, independent estimate: fifteen sectors, each growing toward its own ceiling. Together they grow about 33% a year from their own 2026 base, not 49%.*
 In brief:
   > A second estimate that does not assume a growth rate: fifteen sectors, each growing toward a ceiling set by seats, budgets or users.
   > Together they reach about 625B of customer revenue in 2030, growing about 33% a year on average and slowing as they near their ceilings.
@@ -170,9 +171,8 @@ In brief:
 ## Decomposing the Dominant Uncertainties
 *Nineteen loose inputs are broken into sourced parts, which shrinks the uncertainty and moves the answer against the build-out.*
 In brief:
-  > Nineteen loose inputs are broken into sourced parts, so the uncertainty can be seen and argued with.
-  > That cuts the spread of the result by more than half, and moves the answer against the build-out rather than for it.
-  > What remains uncertain is mainly two things: how fast firms adopt AI, and how big the assistant market gets.
+  > Breaking nineteen loose inputs into sourced parts cuts the spread of the result by more than half, and moves the answer against the build-out rather than for it.
+  > What remains uncertain is mainly three things: the labs' compute-cost share, how fast firms adopt AI, and how big the assistant market gets.
   > Budgets bound the answer, and those budgets are themselves being reshaped by AI.
 - Every decomposition, both directions.
 
@@ -272,7 +272,6 @@ In brief:
 ### Readiness: consent, water, and siting
 *Local opposition, water and power now delay and cancel projects: about 130B blocked or delayed in the first quarter of 2026 alone.*
 In brief:
-  > Local opposition now blocks or delays projects at scale: 156B in 2025 and 130B in the first quarter of 2026.
   > Water and electricity bills are the stated grounds; the record on bills so far cuts the other way.
   > The model defers 10-35% of each year's build by a year and adds 2-9% to building cost.
   > The effect is to shift the cost later, not to remove it.
@@ -281,12 +280,12 @@ In brief:
 - China is the exception.
 - Water, as a Fermi chain.
 - Water and heat.
-- Why some regions refuse evaporative cooling.
+- Where water decides.
 - Three variables.
 - Effect.
 
 ### What remains, and the what-if curves
-*After all the decompositions, the doubt sits in two places: how fast firms adopt, and how big the assistant market gets.*
+*After all the decompositions, the doubt sits in three places: how fast firms adopt, how big the assistant market gets, and the labs' compute-cost share.*
 - How robust is the sign?
 
 ## Digital Sovereignty and Grid Friction
@@ -301,7 +300,6 @@ In brief:
 ## Circular Capital Flows
 *Some cloud revenue is the clouds' own investment coming back; the round trips are small, but the 190B of lab funding is not.*
 In brief:
-  > Some cloud revenue is the clouds' own investment in the labs coming back as compute spending.
   > The strict round trips are small, about 12B a year; the 190B of 2026 lab funding is the larger issue.
   > The labs and the clouds fund, supply and compete with one another; the squeeze moves money between them, not from the customer.
 - Off-balance-sheet structures.
@@ -319,15 +317,15 @@ In brief:
 ## Enterprise ROI and the Slack Trap
 *Time saved is not money saved: firms realize a fraction of AI's nominal savings, and that fraction is what pays the carry.*
 In brief:
-  > Enterprises would need about 1.2T of real benefit in 2028 to justify their share of the carry.
+  > Enterprises would need about 1.1T of real benefit in 2028 to justify their share of the carry.
   > AI's savings come in fragments, need checking and get absorbed, so only about 28 cents of each dollar of nominal savings becomes cash.
   > Controlled studies show real gains at the task level; the leak is between the task and the profit.
 
 ### What enterprises must realize
-*In 2028 enterprises would need to realize about 1.2T of benefit to justify their share of the carry.*
+*In 2028 enterprises would need to realize about 1.1T of benefit to justify their share of the carry.*
 
 ### The labor-substitution floor
-*That is about 4% of world knowledge-worker pay - possible, but only if savings turn into cash.*
+*The 1.1T of benefit enterprises need is about 4% of world knowledge-worker pay - possible, but only if savings turn into cash.*
 
 ### Four reasons realized yield is a fraction of nominal savings
 *Savings come in fragments, need checking, get absorbed, and managers protect their teams - so only about 28 cents per dollar becomes cash.*
@@ -346,7 +344,6 @@ In brief:
 ## Last-Mile Services and Value Capture
 *Much of AI's value goes to buyers and to the integrators who fix the process, not to the cloud.*
 In brief:
-  > Much of AI's value goes to buyers and to the integrators who fix the process, not to the cloud.
   > A dollar of cloud tokens can produce 10 to 50 dollars of savings for the buyer: good for the buyer, little for the cloud.
   > Most in-house AI projects fail, so firms turn to outside operators paid on results.
 
@@ -409,7 +406,7 @@ In brief:
 ### Who is the low-cost producer
 *The cheapest producers - own-chip clouds and open models - set the price; the GPU renters are the first squeezed.*
 - The producer cost curve.
-- Who the floor eliminates first.
+- Neo-clouds go first.
 
 ### The commodity floor
 *If prices fall to the cash cost of running the chips - a tenth of today's - the capital is never recovered.*
@@ -452,14 +449,16 @@ In brief:
 *Goldman sizes the revenue one cohort of spending must earn: 1.42T over 2028-30.*
 - Goldman's cost per gigawatt.
 - The revenue a cohort must earn.
-- Benchmarked against backlog.
+- Contracts, not forecasts.
 - Goldman's conclusion.
-- The semiconductor-side build.
+- A second build, from the chipmakers.
 
 ### The same hurdle in the paper's units
 *Restated per dollar, the bank's hurdle and the paper's carry are almost the same.*
 - What follows from Goldman's note.
-- One cohort or the whole stack.
+  - The hurdle is not in dispute.
+  - One cohort or the whole stack.
+  - The note's cohort is larger.
 
 ### Where the paper is harsher, and where it is not
 *The two differ on scope - one cohort or the whole stack - and on one input, running costs.*
@@ -467,7 +466,7 @@ In brief:
   > The one input that really differs from Goldman Sachs is running cost: 2% of capital a year against the paper's 6.65%.
   > If Goldman is right, the 2030 gap falls from about 260B to about 140B; the sign and the 2027-28 loss stand.
   > Backlog is a contract, not a payment, and management claims are graded as statements by interested parties.
-- Two anchors on operating cost.
+- Not changed silently.
 - Demand.
 - A backlog is not a payment.
 - Ramp and utilization.
@@ -486,7 +485,6 @@ In brief:
 ## Results: Break-Even Growth
 *Revenue must grow about 49% a year to break even by 2030; no growth rate rescues 2027-28.*
 In brief:
-  > Revenue must grow about 49% a year, every year, to break even on a flat path by 2030; no growth rate rescues 2027-28.
   > Counted sector by sector, receipts fall about 260B a year short in 2030, three and a half standard deviations from break-even.
   > AI can disrupt software and still fail to pay for its capital: the buyer's dollar moves, but only a fraction reaches the cloud.
   > With a 35% spending cut, the chance of profit is about 50% in 2030 and 95% by 2032.
@@ -499,13 +497,13 @@ In brief:
 - The bottom-up variance.
 
 ### Reconciling the two estimates
-*The two estimates disagree by about 250B of revenue in 2030, three and a half standard deviations.*
+*The two estimates disagree by about 255B of end-customer revenue in 2030; the gap in receipts against the carry is three and a half standard deviations.*
 - A robust sign.
 
 ### Can both be true? Cannibalization and the "internally inconsistent" objection
 *Yes: AI can disrupt software and still fail to pay for its capital - the buyer's dollar moves, but only a fraction reaches the cloud.*
 - Additive or substitutive?
-- More, but less than the sum.
+- Partly additive.
 - One flow, two consequences.
 
 ### The overlap gauge
