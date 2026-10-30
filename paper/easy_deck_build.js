@@ -14,7 +14,7 @@ pres.layout = "LAYOUT_WIDE"; // 13.33 x 7.5
 pres.theme = { headFontFace: THEME.headFontFace, bodyFontFace: THEME.bodyFontFace };
 pres.author = "Desmond Fitzpatrick"; pres.title = "Will the AI build-out pay for itself?";
 const C = pres.SchemeColor;
-const FOOT = "Will the AI build-out pay for itself?  |  from The Macroeconomic Limits of AI Compute, v27, October 2026";
+const FOOT = "Will the AI build-out pay for itself?  |  from The Macroeconomic Limits of AI Compute, v28, 29 October 2026";
 
 pres.defineSlideMaster({
   title: "CONTENT", background: { color: "FFFFFF" },
@@ -42,19 +42,31 @@ let s;
 // 1 Title
 s = pres.addSlide({ masterName: "TITLE" });
 s.addText("Will the AI build-out pay for itself?", { x: 0.8, y: 1.6, w: 11.7, h: 1.2, fontSize: 44, bold: true, color: C.text2, margin: 0, isTextBox: true });
-s.addText("A Fermi estimate, in thirteen slides", { x: 0.8, y: 2.8, w: 11.7, h: 0.6, fontSize: 24, color: C.accent2, margin: 0, isTextBox: true });
+s.addText("A Fermi estimate, in fourteen slides - updated after the October earnings", { x: 0.8, y: 2.8, w: 11.7, h: 0.6, fontSize: 24, color: C.accent2, margin: 0, isTextBox: true });
 s.addText([
   { text: "Desmond Fitzpatrick", options: { bold: true, breakLine: true } },
   { text: "Retired, IBM Systems   |   Founder, Nvara.ai", options: { breakLine: true } },
   { text: "desmond.fitzpatrick@nvara.ai   |   ORCID 0009-0001-0534-2793", options: {} },
 ], { x: 0.8, y: 4.0, w: 11.7, h: 1.2, fontSize: 16, color: C.text1, margin: 0, isTextBox: true });
-s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 106-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data: doi.org/10.5281/zenodo.23406476", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
+s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 109-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
+
+
+// NEW v29: what the October earnings changed
+s = pres.addSlide({ masterName: "CONTENT" }); T(s, "New: what the October earnings changed", "Version 28 of the paper, 29 October 2026");
+s.addText(BUL([
+  "Alphabet had its worst day ever: down about 13%, roughly $500 billion of value, on results in which Google Cloud doubled. Investors sold the spending, not the business.",
+  "Every company pointed 2027 up - Alphabet \"increase significantly\", Amazon \"meaningfully more\". Flat spending, the paper's base case, is now the conservative one.",
+  "Anthropic's S-1 gave the first filed numbers from an AI lab. Our estimate held: its third quarter, $16.8 billion, is inside the $16-19 billion we projected. Most of its $80.7 billion loss is accounting, not cash.",
+  "Oracle said its spending peaks in 2027-28 and steps down after: the first builder to describe the way out.",
+  "The result does not move: about $260 billion a year short in 2030 if spending plateaus.",
+]), { x: 0.6, y: 1.7, w: 12.1, h: 4.7, fontSize: 18, color: C.text1, margin: 0, valign: "top", isTextBox: true, paraSpaceAfter: 12 });
+SRC(s, "Sources: company Q3 releases and calls (Oct 21-29), Anthropic S-1 (Oct 26), Oracle Investor Day (Oct 28), CNBC (Oct 29). The full list of changes is at the front of the paper.");
 
 // 2 The question
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "1. The question", "Will the revenue arrive to pay for the build-out?");
 P(s, "Five companies — Microsoft, Alphabet, Amazon, Meta and Oracle — are spending about $780 billion this year on AI data centers, after $448 billion last year. The question is not whether AI is useful. It is whether the revenue will arrive, fast enough, to pay for the buildings and the chips.", 0.6, 1.7, 5.4, 4.5, { fontSize: 18 });
 IMG(s, "f1_capex", 6.4, 1.7, 6.3, 4.6);
-SRC(s, "Capex from company filings via Epoch AI; 2026 from the companies' own July guidance. Street consensus for 2027 is higher still, about $1.05 trillion.");
+SRC(s, "Capex from company filings via Epoch AI; 2026 from the companies' own guidance, unchanged on the October calls. Street consensus for 2027 is higher still, about $1.1 trillion, and every company pointed 2027 up.");
 
 
 // 2 Fermi
@@ -101,7 +113,7 @@ SRC(s, "Paper Sections 8 and 13. Of the $625B customers spend in 2030, about $48
 
 // 8 Gap
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "8. The gap", "The most likely outcome at the register's current inputs");
-BIG(s, "~$255B a year", "short in 2030 if spending plateaus", 0.6, 1.7, 5.4);
+BIG(s, "~$260B a year", "short in 2030 if spending plateaus", 0.6, 1.7, 5.4);
 BIG(s, "$190–540B", "short in 2030 under the street's arms-race path", 0.6, 3.5, 5.4);
 P(s, "This is the most likely outcome, 3.5 standard deviations from break-even with every range propagated. Change the inputs and it moves; the last slide says how.", 0.6, 5.2, 5.4, 1.2, { fontSize: 15, color: C.accent3 });
 IMG(s, "f10_reconcile", 6.4, 1.6, 6.3, 4.9);
@@ -138,7 +150,7 @@ SRC(s, "Paper Sections 15 and 16.");
 // 12 Prove wrong
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "12. What would change the most likely outcome, and when");
 BIG(s, "$400B", "AI revenue in calendar 2028 above this overturns the most likely outcome", 0.6, 1.7, 5.4);
-P(s, "Interim marker: calendar 2027 near $330B is our path; above $350B favours the build-out.\n\nThe next data: the Q3 earnings calls of 28–30 October, Nvidia on 19 November, the Anthropic listing. The register is rebuilt after each and the paper re-issued if anything moves materially.", 0.6, 3.5, 5.4, 2.9, { fontSize: 15 });
+P(s, "Interim marker: calendar 2027 near $330B is our path; above $350B favours the build-out.\n\nThe next data: Nvidia on 19 November, Anthropic's amended S-1 with its third quarter, Oracle in December. The register is rebuilt after each and the paper re-issued if anything moves materially.", 0.6, 3.5, 5.4, 2.9, { fontSize: 15 });
 IMG(s, "f17_probmap", 6.4, 1.8, 6.3, 2.6);
 P(s, "Probability of profit in 2030 over the two things we cannot pin down: how fast firms actually adopt, and how big the office-assistant market gets.", 6.4, 4.6, 6.3, 1.2, { fontSize: 12, color: C.accent3 });
 SRC(s, "Paper Section 17 and the update protocol.");
@@ -157,15 +169,15 @@ s.addText([
   "The installed base costs about 28 cents per dollar per year to carry; that is $725B a year by 2030 on a flat path.",
   "Revenue is $180B today and must grow 49% a year to catch it.",
   "Counted sector by sector, it grows 33%, and only $480–490B of it reaches the owners.",
-  "The gap is $255B a year in 2030, more under the street's path, and 2027–28 is already lost.",
+  "The gap is about $260B a year in 2030, more under the street's path, and 2027–28 is already lost.",
   "Watch 2027 and 2028 revenue: above $400B in 2028, the most likely outcome was wrong.",
 ].map((t, i, a) => ({ text: t, options: { bullet: { type: "number" }, breakLine: i < a.length - 1, paraSpaceAfter: 6 } })), { x: 0.6, y: 2.2, w: 6.6, h: 4.2, fontSize: 15, color: C.text1, margin: 0, valign: "top", isTextBox: true });
 P(s, "Every number is yours to challenge", 7.6, 1.7, 5.1, 0.4, { bold: true });
-P(s, "The paper, the model, the data and the register of inputs — each with its evidence, its range and what would improve it — are public. Change an input, run one script, and the paper's numbers and charts regenerate; the script says whether the change is minor or forces a re-issue.\n\nPaper and bundle: doi.org/10.5281/zenodo.23406476\nModel and register: the GitHub repository named in the paper\nComments: desmond.fitzpatrick@nvara.ai", 7.6, 2.2, 5.1, 4.2, { fontSize: 13 });
+P(s, "The paper, the model, the data and the register of inputs — each with its evidence, its range and what would improve it — are public. Change an input, run one script, and the paper's numbers and charts regenerate; the script says whether the change is minor or forces a re-issue.\n\nPaper and bundle (latest): doi.org/10.5281/zenodo.23406475\nModel and register: the GitHub repository named in the paper\nComments: desmond.fitzpatrick@nvara.ai", 7.6, 2.2, 5.1, 4.2, { fontSize: 13 });
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v28-2_2026-10-15.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-29.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);

@@ -16,7 +16,9 @@ Version 27, 15 October 2026.
 - The slides with commentary (Data Democracy on Substack): https://datademocracy.substack.com/p/the-macroeconomic-limits-of-ai-compute
 - Comments and corrections: desmond.fitzpatrick@nvara.ai
 
-**Start here:** the fourteen-slide version, `paper/easy_deck_v28-2.pdf` (PowerPoint: `paper/easy_deck_v28-2.pptx`). The paper is `paper/paper_v27.pdf`.
+**What's new:** [CHANGES.md](CHANGES.md) - version 28 (29 October 2026) rebuilt after the Q3 earnings and Anthropic's S-1.
+
+**Start here:** the deck, `paper/easy_deck_v29.pdf` (PowerPoint: `paper/easy_deck_v29.pptx`). The paper is `paper/paper_v28.pdf`.
 
 ## The method in plain words
 

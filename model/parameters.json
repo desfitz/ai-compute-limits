@@ -1,10 +1,10 @@
 {
  "_meta": {
   "paper": "The Macroeconomic Limits of AI Compute",
-  "as_of": "2026-10-01 (v26.5 pre-earnings)",
+  "as_of": "2026-10-29 (v28 post-Q3 earnings)",
   "units": "$B unless stated; rates per year; shares 0-1",
   "rule": "Each entry: value (triangular min/mode/max or scalar), source, source_date, next_update (when the source next publishes), trigger (what would move it), maps_to (model parameter).",
-  "version": " ; v27 (2026-10-14): GS note anchors added, no values changed"
+  "version": " ; v27 (2026-10-14): GS note anchors added, no values changed ; v28 (2026-10-29): post-Q3 rebuild - base_2026 re-derived from Anthropic S-1 (filed H1) and reported Q3; capex sources refreshed to Q3 filings; consensus anchor 1100; Microsoft accounting-life and lease changes noted"
  },
  "supply": {
   "capex_history": {
@@ -14,11 +14,20 @@
     "2025": 448,
     "2026": 780
    },
-   "source": "Epoch AI (2023-25); 2026 = Q2 guidance: GOOG 195-205, MSFT ~175 calendar, AMZN ~220, META 135-145, ORCL ~50",
-   "source_date": "2026-07-30",
-   "next_update": "2026-10-28 (Big-4 Q3 calls; Oracle 2026-12)",
+   "source": "Epoch AI (2023-25); 2026 = Q3-call guidance (unchanged in total): GOOG 195-205 (unchanged, 8-K/call 2026-10-28), MSFT ~170 calendar-2026 (down from ~175; year attribution reported, not verified verbatim), AMZN ~220 cash (8-K 2026-10-29), META 135-145 incl. finance-lease principal (8-K 2026-10-21), ORCL ~50",
+   "source_date": "2026-10-29",
+   "next_update": "2027-02 (10-K actuals); Oracle FY27 Q2 (Dec 2026)",
    "trigger": "2026 actual vs 780; 2027 guidance",
-   "maps_to": "HIST"
+   "maps_to": "HIST",
+   "q3_2026_quarter": {
+    "GOOG": 51.4,
+    "MSFT_incl_finance_leases": 45.2,
+    "MSFT_cash": 39.4,
+    "AMZN_gross": 77.3,
+    "META_incl_fl": 34.9,
+    "note": "definitions differ by company; Q3 four-company total ~209"
+   },
+   "direction_2027": "GOOG: 'expect our capex to increase significantly in 2027' (no number; '$300B' is press estimate, not guidance); AMZN: 'spend meaningfully more in 2027'; META: 'continue investing aggressively'; MSFT: FY27 capex to grow y/y, Q2 FY27 >$50B; ORCL (Investor Day 2026-10-28, 8-K): 'peak capex in FY27-FY28 ... step-down in FY29'"
   },
   "ai_capex_2023": {
    "value": [
@@ -81,7 +90,10 @@
    "source": "Amazon 5y, Meta 5.5y, MSFT/GOOG 6y accounting lives",
    "source_date": "2026-02",
    "next_update": "2027-02 (10-K)",
-   "maps_to": "Linf"
+   "maps_to": "Linf",
+   "anchors": {
+    "msft_q1fy27": "~3/4 of Microsoft Q1 FY27 capex was short-lived assets, primarily CPUs and GPUs (CFO, call 2026-10-28)"
+   }
   },
   "life_shell": {
    "value": [
@@ -90,7 +102,11 @@
     25
    ],
    "source": "industry",
-   "maps_to": "Lsh"
+   "maps_to": "Lsh",
+   "anchors": {
+    "msft_accounting_2026-07": "Microsoft lengthened data-center building lives from 15 to 25 years from FY27 (CFO Dive 2026-07-30) - accounting choice; lowers reported depreciation, not economic carry. Paper keeps 15/20/25.",
+    "msft_leases_2026-07": "Microsoft now books new data-center leases as operating rather than finance leases, lowering reported capex vs the Epoch series definition"
+   }
   },
   "opex_share": {
    "value": [
@@ -231,15 +247,15 @@
   },
   "capex_consensus_2027_2028": {
    "value": [
-    1050,
+    1100,
     1150
    ],
-   "units": "$B/yr, S&P Capital IQ consensus Sept 18 2026 (JPM: 1066/1179)",
-   "source": "a16z State of Markets Sept 2026",
-   "source_date": "2026-09-18",
+   "units": "$B/yr; 2027 Street ~1.1T per Goldman Sachs (Bloomberg 2026-09-25; GS own forecast 1.2T / 1.4T for 2027/28); 2028 retained from S&P Capital IQ via a16z (Sept 18). No post-Q3 consensus found as of 2026-10-29",
+   "source": "Goldman Sachs via Bloomberg 2026-09-25; a16z State of Markets Sept 2026",
+   "source_date": "2026-09-25",
    "grade": "S",
    "maps_to": "ArmsRace path (~consensus)",
-   "next_update": "2026-10-28 guidance"
+   "next_update": "post-Q3 consensus (Nov 2026); Q4 calls Jan-Feb 2027"
   },
   "gpu_rental_h100": {
    "value": 2.63,
@@ -255,13 +271,13 @@
  "demand": {
   "base_2026": {
    "value": [
-    171,
-    187,
-    202
+    161,
+    179,
+    198
    ],
-   "source": "7 components; updated 29 Sep 2026: OpenAI Q2 booked $6.7B (H1 $12.4B), Aug run-rate $40B -> cal-2026 ~$31-33B; Anthropic expected >$100B annualized exit-2026 (Bloomberg/NYT, 15 Sep) -> cal-2026 ~$58-66B",
-   "source_date": "2026-09-29",
-   "next_update": "2026-10-28 (MSFT/GOOG/META/AMZN Q3); lab run-rate reports monthly",
+   "source": "7 components (decomp.py); v28: Anthropic 53/56/60 = filed H1 2026 revenue $16.286B (S-1, public 2026-10-26) + reported Q3 $16.8B (CNBC/FT 2026-10-14, not filed) + Q4 20-24 (S-1 warns q/q growth will slow); OpenAI 29/32/35 (Q2 booked 6.7, H1 12.4, Aug run-rate 40). Supersedes the 29 Sep register value 171/187/202, which rested on Anthropic's >$100B exit run-rate report.",
+   "source_date": "2026-10-29",
+   "next_update": "Anthropic S-1/A with Q3 (expected Nov 2026); 10-Ks Jan-Feb 2027",
    "trigger": "calendar-2026 bookings; any lab audited figure (OpenAI S-1)",
    "maps_to": "D0"
   },

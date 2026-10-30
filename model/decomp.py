@@ -4,7 +4,7 @@ plt.rcParams.update({'font.size':9,'axes.spines.top':False,'axes.spines.right':F
 q=lambda x,p: np.percentile(x,p); m=np.median; sl=lambda x: np.std(np.log(x))
 rng=np.random.default_rng(21)
 # ---- A. 2026 revenue base decomposition (calendar-2026 booked, $B)
-comp={'Anthropic booked (gross basis)':(50,57,65),'OpenAI booked':(26,29,33),'Other labs':(4,7,12),
+comp={'Anthropic booked (gross basis)':(53,56,60),'OpenAI booked':(29,32,35),'Other labs':(4,7,12),
       'Hyperscaler AI services ex-lab hosting':(25,35,45),'Advertising uplift (Meta+Google)':(25,40,55),
       'Consumer/search/internal not in labs':(8,15,25),'Overlap correction (reseller gross basis)':(-15,-8,0)}
 parts={k:T(rng,*v) for k,v in comp.items()}; base=sum(parts.values())
