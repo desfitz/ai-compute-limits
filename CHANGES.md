@@ -91,6 +91,10 @@ Each version opens with what changed and why. Click a line to expand it.
 Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(profit, rationalize, 2030) 54% -> 52%.
 </details>
 
+### Easier to read
+
+- The abstract is rewritten as ten short points in plain language; the technical detail is in the Executive Summary.
+
 ### Errata (where earlier versions erred) - full list in [ERRATA.md](ERRATA.md)
 
 <details><summary><b>v26.x-v27.1: abstract and tables disagreed ($187B / $255B vs $179B / ~$260B)</b></summary>
