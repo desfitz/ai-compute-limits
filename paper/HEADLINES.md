@@ -22,6 +22,8 @@ Section titles, the one-line claim under each, the In-brief points, and the head
   - The losses cost money: interest or lost earnings.
   - The losses are not part of capex.
   - The return on the money, with the early losses included.
+  - Inflation, counted once: already inside the 9.45% cost of money, so payback years stand; not added to revenue (contracts fixed in dollars); it cuts the return investors keep - flat spending ~-1.6% a year in 2035 in today's money.
+  - Worked example: one dollar lost in 2027, recovered in 2035 - $2.06 needed back; a fifth of the cost is inflation, four-fifths real return forgone.
   - What average growth would do it on a flat path:
 
 ### New sources

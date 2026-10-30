@@ -127,6 +127,8 @@
 \item \textbf{How long investors wait.} Even on the best path --- spending cut back to follow the revenue that actually arrives --- the money earns an ordinary return (about 9.5\% a year), counting the early losses, only in 2034--35, eight to nine years from now.
 
   On a flat path it has averaged about 1\% a year by 2035. If spending keeps rising, it loses money on average every year to 2035. And the losses are not free: they are paid for by borrowing (Alphabet's long-term debt rose from \$21.6B to \$125.1B in a year~\cite{ref:yahoo_nasdaq_1029}) or by giving up other earnings, so the hole grows with interest.
+
+  In today's money it is worse: after inflation (about 2.6\% a year) flat spending is still losing about 1.6\% a year on average in 2035, while fixed-price contracts lose value and power and labor costs rise.
 \item \textbf{What would prove it wrong.} AI revenue above \$400B in calendar 2028. This is a probability assessment, not a forecast.
 \item \textbf{Why growth slows.} Time saved is not money saved; checking AI's work takes time; much of the value goes to buyers and integrators rather than the cloud; countries carve out their own clouds; and the grid and local consent hold projects back.
 \item \textbf{The way out.} Not a crash: spending that tracks the revenue actually booked turns profitable around 2031. A flat path does not recover by 2035; an arms race never does.
@@ -143,8 +145,8 @@
 \begin{tabular}{@{}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.74\textwidth}@{}}
 \textbf{Method} & Fermi estimate: the answer is a chain of bounded factors, and each factor's uncertainty is carried to the result by Monte Carlo simulation (100,000 draws). \\[2pt]
 \textbf{Who is counted} & The five largest US builders --- Microsoft, Alphabet, Amazon, Meta, Oracle. They are about nine-tenths of 2026 spending by the world's nine largest cloud operators; the Chinese four (\$50--110B a year) are tracked but kept outside the model~\cite{ref:trendforce_csp9}. \\[2pt]
-\textbf{What is tracked} & 51 inputs in a public register, each with a source, a date and its next update; 15 sector revenue chains; a 2026 revenue base built from 7 components; 19 inputs decomposed into sourced parts; years 2023--2035. \\[2pt]
-\textbf{Sources} & 127 references: about 20 company filings and earnings releases, 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
+\textbf{What is tracked} & 52 inputs in a public register, each with a source, a date and its next update; 15 sector revenue chains; a 2026 revenue base built from 7 components; 19 inputs decomposed into sourced parts; years 2023--2035. \\[2pt]
+\textbf{Sources} & 129 references: about 20 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
 \textbf{Result} & About \$260B a year short in 2030 if spending stays flat; overturned if 2028 AI revenue exceeds \$400B. \\[2pt]
 \textbf{The wait} & With early losses counted, an ordinary return arrives in 2034--35 at best; about 1\% a year by 2035 on a flat path; never by 2035 if spending keeps rising. \\
 \end{tabular}
@@ -222,13 +224,29 @@ Spending tracks revenue & $-$150 & $-$330 & $-$470 & $-$550 & $-$500 & $-$340 & 
 \item \textbf{The losses cost money: interest or lost earnings.} Spending ahead of revenue has to be financed --- by borrowing, as Alphabet now is (long-term debt \$21.6B $\to$ \$125.1B in a year~\cite{ref:yahoo_nasdaq_1029}), or by giving up earnings the money would have made elsewhere. Either way the hole compounds. Table~\ref{tab:cumwacc} charges the cost of money ($\sim$9.5\% a year) on the losses themselves.
 \item \textbf{The losses are not part of capex.} Capex is the money spent on buildings and chips. The yearly cost above is what that capex costs to hold. The losses are revenue falling short of that cost, and they come out of the owners' profits and cash --- lower earnings, then write-downs. With the cost of money charged on them, the deepest point for spending that tracks revenue is about \$650B rather than \$550B, and payback moves from 2034 to 2035.
 \item \textbf{The return on the money, with the early losses included.} Table~\ref{tab:roiyear} gives the average return earned on the money still invested, from 2027 to each year, before tax. An ordinary investor's return is about 9.5\%. Spending that tracks revenue passes it around 2034; a 35\% cut around 2032--33; flat spending averages about 1\% by 2035; an arms race loses money on average every year to 2035.
+\item \textbf{Inflation, counted once.} Over a nine-year wait, inflation matters --- but it must not be counted twice.
+  \begin{itemize}
+  \item \emph{Already in:} the cost of money (9.45\%) is a nominal rate, so it already contains the inflation investors expect. The payback years above therefore stand as they are; deflating them again would double-count. Stated in 2026 dollars, both sides shrink together and the crossover years do not move (Table~\ref{tab:cumwacc}, bottom).
+  \item \emph{Not added to revenue:} receipts are counted in today's prices --- multi-year contracts are fixed in dollars when signed, AI unit prices are falling, and the sector ceilings are built from today's prices. So no inflation uplift is given to revenue.
+  \item \emph{What it changes:} the returns investors actually keep. Inflation is taken at 2.0 / 2.6 / 3.7\% a year --- the Federal Reserve's 2\% goal, September core CPI (2.6\%) and headline CPI (3.7\%)~\cite{ref:fed_goal,ref:bls_cpi_sep26}. After it, an ordinary return is about 6.5\%; flat spending averages about $-$1.6\% a year in 2035 and an arms race about $-$9\% (Table~\ref{tab:roiyear}, bottom).
+  \item \emph{Fixed prices, rising costs:} a fixed-price contract signed in 2026 is worth about a fifth less in real terms by 2035, while power, labor and site costs rise with prices. The model holds facility opex at its 2026 share of gross stock; letting it rise with inflation would add about \$13B to the 2030 carry and \$40B by 2035 on the flat path. That is left out of the base (no source yet for the escalation clauses) and shown here as a sensitivity: it makes the result worse, not better.
+  \end{itemize}
+\item \textbf{Worked example: one dollar lost in 2027, recovered in 2035.} Every step can be checked on a calculator.
+  \begin{enumerate}
+  \item \emph{The cost of waiting, in dollars.} The dollar lost in 2027 is borrowed, or taken from other investments. At the cost of money, 9.45\% a year, the owner needs $1.0945^{8}=2.06$ dollars back in 2035 just to be even. This is what Table~\ref{tab:cumwacc} charges.
+  \item \emph{How much of that is inflation.} Prices rising 2.6\% a year for eight years multiply by $1.026^{8}=1.23$. A 2035 dollar buys what $1/1.23=0.81$ of a 2026 dollar buys.
+  \item \emph{The rest is real earnings given up.} $2.06/1.23=1.67$, which is $1.067^{8}$: about 6.7\% a year in today's money. (Across the Monte Carlo draws the median is about 6.5\%, because the inflation range leans high.) So of the \$1.06 the waiting costs, about a fifth is inflation and four-fifths is real return forgone.
+  \item \emph{The revenue side gets no uplift.} A contract signed in 2026 to pay \$1 in 2035 still pays \$1 --- worth 81 cents in today's money. The model already counts it as \$1 and never inflates it, so nothing is added here and nothing needs removing.
+  \item \emph{Why the payback year does not move.} To state everything in today's money, each year's hole and each year's recovery are divided by the same price level. Dividing a number by a positive number never changes its sign, so the year the hole closes is the same either way --- 2033 for a 35\% cut, 2035 for spending that tracks revenue (Table~\ref{tab:cumwacc}, both halves). Deflating the 9.45\% rate a second time would have pushed payback later for no reason: that is the double count avoided.
+  \item \emph{What does change.} The return investors keep. In 2035 the flat path's average return is about $+$1\% in dollars of each year, $(1.011/1.027)-1\approx-1.6\%$ in today's money: still losing purchasing power after nine years.
+  \end{enumerate}
 \item \textbf{What average growth would do it on a flat path:} about 49\% a year to break even in 2030, and about 64\% a year to have made up the 2027--28 losses by then (Table~\ref{tab:breakeven}). The sector chains deliver about 33\%.
 \end{itemize}
 
 
 \begin{table}[htbp]
 \centering\small
-\caption{Average return on the money invested, 2027 to each year, before tax (\%, median; an ordinary investor's return is $\sim$9.5\%). Computed by \texttt{model/roi.py}.}
+\caption{Average return on the money invested, 2027 to each year, before tax (\%, median). Top: in dollars of each year (an ordinary investor's return is $\sim$9.5\%). Bottom: the same returns in today's money, $(1+\text{nominal})/(1+\text{inflation})-1$ (an ordinary return is $\sim$6.5\%). Computed by \texttt{model/roi.py}.}
 \label{tab:roiyear}
 \resizebox{\textwidth}{!}{\begin{tabular}{lrrrrrrrrr}
 \toprule
@@ -238,6 +256,12 @@ Flat spending (plateau) & $-4$ & $-4$ & $-4$ & $-4$ & $-3$ & $-2$ & $-1$ & 0 & 1
 Arms race (street path) & $-6$ & $-7$ & $-8$ & $-9$ & $-9$ & $-9$ & $-8$ & $-8$ & $-7$ \\
 35\% cut (rationalize) & $-2$ & $-1$ & 1 & 4 & 6 & 9 & 12 & 14 & 17 \\
 Spending tracks revenue & $-4$ & $-4$ & $-3$ & $-1$ & 2 & 5 & 9 & 11 & 13 \\
+\midrule
+\multicolumn{10}{l}{\textit{In today's money --- after inflation of about 2.6\%/yr (ordinary return $\sim$6.5\%)}} \\
+Flat spending (plateau) & $-7$ & $-7$ & $-7$ & $-7$ & $-6$ & $-5$ & $-4$ & $-3$ & $-2$ \\
+Arms race (street path) & $-8$ & $-9$ & $-10$ & $-11$ & $-11$ & $-11$ & $-11$ & $-10$ & $-9$ \\
+35\% cut (rationalize) & $-5$ & $-3$ & $-1$ & 1 & 4 & 6 & 9 & 11 & 14 \\
+Spending tracks revenue & $-7$ & $-6$ & $-5$ & $-4$ & $-1$ & 3 & 6 & 8 & 10 \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -254,6 +278,12 @@ Flat spending (plateau) & $-$150 & $-$370 & $-$650 & $-$970 & $-$1{,}290 & $-$1{
 Arms race (street path) & $-$190 & $-$520 & $-$1{,}010 & $-$1{,}650 & $-$2{,}390 & $-$3{,}190 & $-$4{,}050 & $-$4{,}970 & $-$5{,}950 \\
 35\% cut (rationalize) & $-$120 & $-$220 & $-$300 & $-$320 & $-$270 & $-$140 & $+$70 & $+$370 & $+$800 \\
 Spending tracks revenue & $-$150 & $-$340 & $-$520 & $-$640 & $-$650 & $-$540 & $-$350 & $-$90 & $+$210 \\
+\midrule
+\multicolumn{10}{l}{\textit{The same, in 2026 dollars (divided by the price level, inflation $\sim$2.6\%/yr)}} \\
+Flat spending (plateau) & $-$150 & $-$350 & $-$600 & $-$870 & $-$1{,}120 & $-$1{,}360 & $-$1{,}560 & $-$1{,}740 & $-$1{,}880 \\
+Arms race (street path) & $-$180 & $-$500 & $-$930 & $-$1{,}480 & $-$2{,}080 & $-$2{,}710 & $-$3{,}340 & $-$4{,}000 & $-$4{,}650 \\
+35\% cut (rationalize) & $-$110 & $-$210 & $-$270 & $-$290 & $-$240 & $-$120 & $+$50 & $+$300 & $+$620 \\
+Spending tracks revenue & $-$150 & $-$330 & $-$480 & $-$580 & $-$570 & $-$460 & $-$290 & $-$70 & $+$160 \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -304,7 +334,7 @@ Anthropic's amended S-1 with filed third-quarter figures (expected in November; 
 
 \section*{Executive Summary}\label{ag:exec}
 \begin{itemize}
-    \item \textbf{The wait is the investor's problem.} The money spent in 2025--27 does not earn an ordinary return for a long time. Counting the early losses and a cost of money of $\sim$9.5\%, spending that follows revenue earns back its losses with an ordinary return only in 2034--35, and a 35\% cut in 2033; flat spending averages $\sim$1\%/yr by 2035; an arms race loses money on average every year to 2035 (Tables~\ref{tab:cumyear} and~\ref{tab:roiyear}).
+    \item \textbf{The wait is the investor's problem.} The money spent in 2025--27 does not earn an ordinary return for a long time. Counting the early losses and a cost of money of $\sim$9.5\%, spending that follows revenue earns back its losses with an ordinary return only in 2034--35, and a 35\% cut in 2033; flat spending averages $\sim$1\%/yr by 2035; an arms race loses money on average every year to 2035 (Tables~\ref{tab:cumyear} and~\ref{tab:roiyear}). After inflation ($\sim$2.6\%/yr, counted once) the flat path is still losing $\sim$1.6\% a year on average in 2035.
 
     The losses peak at \$260--550B on the paths that recover and pass \$1.5T on the flat path. That delay, not whether AI is useful, is what investors are pricing.
     \item \textbf{What the October earnings said.} Every company that gave a direction pointed 2027 spending up; Alphabet lost $\sim$\$500B of value in a day on its spending and a slowdown in search advertising, as AI answers replace ad-bearing results; Anthropic's first filed numbers matched the paper's estimate; and Oracle said its spending peaks in 2027--28 and steps down after --- the first builder to describe the way out (What Is New in Version 28).
@@ -1716,6 +1746,8 @@ Three readings.
 
 The adaptive path also answers a question the fixed paths cannot: how does the industry stay on the rails? By letting the operators' own recoverability tests do their work a year at a time, rather than by any single actor's failure.
 
+\paragraph{Inflation over the longer horizon.} The further out the horizon, the more inflation matters, so it is stated explicitly. Receipts are in today's prices: no inflation uplift is given to revenue, because contracts are fixed in dollars and AI unit prices are falling. The carry charges a nominal 9.45\% on the money, which already contains expected inflation, so the annual and cumulative figures in Table~\ref{tab:horizon} and the payback years stand as they are. What inflation changes is how much the owners keep: in today's money the plateau's cumulative hole with interest is about \$1.9T in 2035 rather than \$2.4T, and its average return is about $-$1.6\% a year rather than $+$1\% --- smaller dollars, the same loss of purchasing power. One effect would make the result worse and is left out of the base for lack of a source: power, labor and site costs rising with prices while fixed-price contracts do not ($\sim$\$40B a year by 2035 on the plateau). The step-by-step reasoning is in ``How long investors wait'' (p.~\pageref{ag:cum}); the formulas, term by term, in Appendix~\ref{app:equations}.
+
 Growth $g$ is in this sense not an exogenous unknown but the outcome of decisions the operators will make with the same numbers, which is why the paper reports distributions and thresholds rather than a forecast.
 
 \section{Sector Ceiling Derivations}\label{app:sectors}
@@ -1913,6 +1945,10 @@ Mean time to failure by electromigration falls with current density $J$ raised t
 \[r_e=r_f+\beta\,\text{ERP},\qquad r=\frac{E}{V}r_e+\frac{D}{V}r_d(1-T_{\text{tax}}).\]
 Cost of equity: risk-free rate plus beta times the equity risk premium. WACC: equity weight times cost of equity plus debt weight times after-tax cost of debt. Worked: $4.3+1.2\times5.0=10.3\%$; $0.82\times10.3+0.18\times6.5\times0.79=8.45+0.92=9.4\%$.
 
+\subsection*{Real return and amounts in today's money (v28)}
+\[\rho_{\text{real}}=\frac{1+\rho}{1+\pi}-1,\qquad X^{\text{2026\$}}_t=\frac{X_t}{(1+\pi)^{t-2026}}.\]
+$\rho$ is a return in dollars of each year (nominal), for example the average return to date in Table~\ref{tab:roiyear}; $\pi$ is inflation per year (register entry \texttt{inflation}, 2.0 / 2.6 / 3.7\%); $\rho_{\text{real}}$ is the same return in today's purchasing power. $X_t$ is any dollar amount in year $t$ (a cumulative deficit, a contract payment); $(1+\pi)^{t-2026}$ is the price level relative to 2026; $X^{\text{2026\$}}_t$ is the amount in 2026 dollars. Worked: $\rho=9.45\%$, $\pi=2.6\%$ gives $1.0945/1.026-1=6.7\%$; \$2.41T owed in 2035 is $2.41/1.026^{9}\approx\$1.9$T in 2026 dollars (the Monte Carlo median, \$1.88T, uses the drawn inflation). Because the divisor is positive, a sign --- and therefore a payback year --- never changes; the WACC $r$ is nominal and is not deflated again.
+
 \subsection*{Internal rate of return}
 \[\sum_{t=0}^{n}\frac{F_t}{(1+d)^{t}}=0.\]
 The project's cash flows, $F_t$, are its money in and out (negative outlay at $t=0$, positive returns after); $d$ is the discount rate. The IRR is the $d$ that makes the discounted flows sum to zero. A hurdle rate is the minimum IRR a firm accepts.
@@ -1963,6 +1999,8 @@ The 4.6\% gap (staffing, property tax and insurance, network, other) is the one 
 \paragraph{Cooling opex uplift, $u$ (0 / 3 / 6 \%).} Engineering estimate of dry versus evaporative cooling. Improve with: the fraction of new capacity in water-constrained jurisdictions. Likely: the mode, rising with siting friction.
 
 \paragraph{WACC, $r$ (9.0 / 9.45 / 9.9 \%).} CAPM with Damodaran inputs. The one input that is honestly well known; changes with rates. Improve with: the January update.
+
+\paragraph{Inflation, $\pi$ (2.0 / 2.6 / 3.7 \%/yr; new in v28, presentation only).} Minimum: the Federal Reserve's longer-run 2\% goal; mode: September 2026 core CPI, 2.6\%; maximum: September headline CPI, 3.7\%~\cite{ref:fed_goal,ref:bls_cpi_sep26}. Used only to restate returns and deficits in today's money. It is not applied to receipts (contracts are fixed in dollars, AI unit prices fall, ceilings use today's prices) and not to the payback test, because the WACC is already nominal --- applying it there would count inflation twice. Improve with: the monthly CPI release; escalation clauses in power and colocation contracts, which would let facility opex rise with prices in the base case.
 
 \paragraph{Grid energization cap (1150 / 1400 / 1680 \$B/yr).} 22--40 GW/yr of connectable new AI load, globally, at \$38--55M/MW. Weakly sourced: assembled from utility and queue reports, not a single dataset. Does not bind on a plateau, so its looseness does not matter unless capex exceeds $\sim$\$1.3T.
 
@@ -2052,7 +2090,7 @@ The budget pool will be smaller and more reallocated than the base case assumes,
 Every number in this paper is a function of a register of inputs, each with a source, a source date, the date its source next publishes, and the model parameter it feeds. The register (\texttt{parameters.json}), the model, and a rebuild script are deposited with the paper. Updating is mechanical: change the input, run the rebuild, read the delta.
 
 \subsection*{The register}
-Fifty-one entries in five groups --- supply (capex history, silicon share, lives, opex, WACC, lags, grid and siting), demand (the 2026 base and its components, cloud-capture share, sector ceilings, European displacement, common factors), feasibility (software and services pools, seat share, seat growth, reallocation), the incumbent worked case (seats, price, attach, elasticity), and the re-issue rule.
+Fifty-two entries in five groups --- supply (capex history, silicon share, lives, opex, WACC, inflation, lags, grid and siting), demand (the 2026 base and its components, cloud-capture share, sector ceilings, European displacement, common factors), feasibility (software and services pools, seat share, seat growth, reallocation), the incumbent worked case (seats, price, attach, elasticity), and the re-issue rule.
 
 Entries marked \emph{secondary} are swept in their own figures rather than trusted at a range. Two commitments follow from the register: nothing enters the model except through it, so the provenance trail is complete; and any reader can substitute their own value and rebuild.
 
@@ -2109,6 +2147,7 @@ Anthropic 2026 bookings (\$B) & 50 / 57 / 65 & 53 / 56 / 60 & As above \\
 OpenAI 2026 bookings (\$B) & 26 / 29 / 33 & 29 / 32 / 35 & Q2 booked \$6.7B, Aug.\ run-rate \$40B~\cite{ref:sacra_openai,ref:valueadd_openai} \\
 Big-5 capex 2026 (\$B) & 780 & 780 (sources refreshed) & Q3 releases and calls~\cite{ref:alphabet_q3_2026,ref:msft_q1fy27,ref:amzn_q3_2026,ref:meta_q3_2026} \\
 Street capex 2027 / 2028 (\$B) & 1,050 / 1,150 & 1,100 / 1,150 & \cite{ref:gs_capex_bbg} \\
+Inflation, $\pi$ (new; presentation only) & --- & 2.0 / 2.6 / 3.7\% & Fed 2\% goal; Sep.\ 2026 core and headline CPI~\cite{ref:fed_goal,ref:bls_cpi_sep26}; no effect on $g^{*}$, $z$ or payback years \\
 Shell and silicon lives & 15/20/25; 4/5/6 & unchanged; anchors added & Microsoft accounting changes and capex mix~\cite{ref:cfodive_msft,ref:msft_q1fy27} \\
 \midrule
 \multicolumn{4}{p{\dimexpr\textwidth-2\tabcolsep\relax}}{\textbf{Effect:} plateau 2030 deficit $-255\to-259$; $z$ $-3.47\to-3.54$; $g^{*}_{2030}$ 48\%$\to$49\%; P(profit, rationalize, 2030) 54\%$\to$52\%. \emph{Minor} under the rule.} \\
@@ -2162,7 +2201,7 @@ Terms are grouped by discipline and listed alphabetically within each group; a t
 \end{description}
 
 \subsection*{Model variables and parameters}
-Every quantity the model uses, alphabetical by symbol within each group (Greek letters by their names: $\phi$ under p, $\theta$ under t), with its symbol as it appears in the text, its name in the register (\texttt{parameters.json}), its units, its base-case range (triangular min / mode / max unless stated) and what it means. Ranges are those of the current version; the register is authoritative.
+Every quantity the model uses, alphabetical by symbol within each group (Greek letters by their names: $\phi$ under p, $\theta$ under t), alphabetical by symbol within each group (Greek letters by their names: $\phi$ under p, $\theta$ under t), alphabetical by symbol within each group (Greek letters by their names: $\phi$ under p, $\theta$ under t), with its symbol as it appears in the text, its name in the register (\texttt{parameters.json}), its units, its base-case range (triangular min / mode / max unless stated) and what it means. Ranges are those of the current version; the register is authoritative.
 
 \begingroup\footnotesize
 \begin{xltabular}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
@@ -2189,6 +2228,7 @@ $L_{\text{si}}$ & --- (derived) & years & $\sim$4.2 & Effective silicon life, ha
 $L_{\text{tr}}$ & life\_training & years & 2.5 / 3.5 / 4.5 & Economic life of training-cluster silicon (power-slot obsolescence) \\
 $N_c$ & --- (derived) & \$B/yr & $\sim$156 in 2026 & Non-AI baseline in year $c$: $N_{2023}(1+g_N)^{c-2023}$ \\
 $\phi$ & silicon\_share & 0--1 & 0.45 / 0.52 / 0.60 & Share of $A_c$ that is accelerators, memory, networking, servers (rest is shell) \\
+$\pi$ & inflation & 1/yr & 0.020 / 0.026 / 0.037 & Inflation for stating returns and deficits in today's money; not applied to receipts or to the payback test (no double count) \\
 $r$ & wacc & 1/yr & 0.090 / 0.0945 / 0.099 & Weighted average cost of capital (CAPM); return charged on net book value \\
 $u$ & cooling\_opex\_uplift & 0--1 & 0 / 0.03 / 0.06 & Opex uplift where evaporative cooling is refused (dry cooling) \\
 \bottomrule
@@ -2281,6 +2321,7 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[$\nu_{\text{verify}}$] Share of the remainder consumed by human verification and liability review ($\approx$0.20).
 \item[$\omega(e)$] Dollars flowing along edge $e$ of the circular-flow graph; the revenue a cycle can round-trip is the smallest $\omega$ on it.
 \item[P10, P50, P90] Percentiles: the value below which 10\%, 50\% (median), 90\% of Monte Carlo outcomes fall.
+\item[$\rho$, $\rho_{\text{real}}$] A return in dollars of each year (nominal), and the same return in today's money: $\rho_{\text{real}}=(1+\rho)/(1+\pi)-1$ (Appendix~\ref{app:equations}). Not to be confused with $r$, the cost of capital.
 \item[$\sigma_{\text{slack}}$] Share of nominal saving absorbed as organizational slack ($\approx$0.65): fractional time, output inflation, the manager's dilemma.
 \item[$\sigma_{\ln X}$, $\sigma_{\ln Y}$, $\sigma_{\ln D}$, $\sigma_{\ln R_s}$] Relative (log) standard deviations of a factor, a chain, the demand total and a sector; see \emph{$\sigma_{\ln}$} under Statistics and estimation, below.
 \item[$t_0$, $t$, $c$] The base year (2026); the year being evaluated; a cohort (capex) year.
@@ -2334,6 +2375,7 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[MAU] Monthly active users: anyone who used the product at least once in the month. The distribution of use behind that count is extremely skewed --- a small fraction of heavy daily users, a long tail of occasional ones --- which is why the consumer ceiling multiplies MAU by a paid-conversion rate (4--8\%) rather than treating users as alike.
 \item[MIT NANDA] The MIT initiative whose 2025 report found $\sim$95\% of enterprise generative-AI pilots without measurable P\&L impact.
 \item[Net book value] Cost less accumulated depreciation; the base on which a return is charged.
+\item[Nominal vs real] Nominal amounts and returns are in dollars of each year; real ones are in today's dollars, after inflation. Real return $=(1+\text{nominal})/(1+\pi)-1$. The paper's cost of money (9.45\%) is nominal, so inflation is already inside the payback test; real figures are shown only for the returns investors keep.
 \item[NOPAT] Net operating profit after tax: operating profit (EBIT) less tax at the statutory rate; the numerator of Goldman Sachs's ROIC definition in Section~\ref{sec:gs}.
 \item[OCI] Oracle Cloud Infrastructure.
 \item[Opex] Operating expenditure. Here \emph{facility opex}: power, cooling, on-site staff and maintenance, property tax, insurance, network --- everything it costs to run the building each year other than depreciation and financing.
@@ -2900,5 +2942,10 @@ Bloomberg (2026). ``Goldman Sees Hyperscaler AI Capex Rising 50\% to \$1.2 Trill
 
 \bibitem{ref:yahoo_nasdaq_1029}
 Yahoo Finance (2026). ``Nasdaq Drops 365 Points on Alphabet's Rare Double Miss: Stock Market Today,'' Oct.~29, 2026 (EPS \$2.67 vs \$3.00 expected; revenue \$127.6B vs \$127.9B; search ad growth 12\% vs 17\% in Q2; long-term debt \$125.1B vs \$21.6B a year earlier; Wedbush: the search slowdown ``outweighs all other points in the print''). \url{https://finance.yahoo.com/markets/stocks/articles/nasdaq-drops-365-points-alphabets-200822565.html}
+\bibitem{ref:fed_goal}
+Federal Open Market Committee (2026). ``Statement on Longer-Run Goals and Monetary Policy Strategy'' (inflation of 2 percent over the longer run, as measured by the PCE price index). \url{https://www.federalreserve.gov/monetarypolicy/files/FOMC_LongerRunGoals.pdf}
+
+\bibitem{ref:bls_cpi_sep26}
+US Bureau of Labor Statistics (2026). ``Consumer Price Index --- September 2026,'' released Oct.~14, 2026 (all items 3.7\% over 12 months; all items less food and energy 2.6\%). \url{https://www.bls.gov/news.release/cpi.nr0.htm}; figures as reported by Eco3min, ``Next US CPI release'' (read Oct.~30, 2026), \url{https://eco3min.fr/en/next-us-cpi-release/}
 \end{thebibliography}
 \end{document}

@@ -48,7 +48,7 @@ s.addText([
   { text: "Founder, Nvara.ai   |   Retired, IBM Systems", options: { breakLine: true } },
   { text: "desmond.fitzpatrick@nvara.ai   |   ORCID 0009-0001-0534-2793", options: {} },
 ], { x: 0.8, y: 4.0, w: 11.7, h: 1.2, fontSize: 16, color: C.text1, margin: 0, isTextBox: true });
-s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 142-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
+s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 147-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
 
 
 // NEW v29: what the October earnings changed
@@ -58,7 +58,7 @@ s.addText(BUL([
   "Every company pointed 2027 up - Alphabet \"increase significantly\", Amazon \"meaningfully more\". Flat spending, the paper's base case, is now the conservative one.",
   "Anthropic's S-1 gave the first filed numbers from an AI lab. Our estimate held: its third quarter, $16.8 billion, is inside the $16-19 billion we projected. Most of its $80.7 billion loss is accounting, not cash.",
   "Oracle said its spending peaks in 2027-28 and steps down after: the first builder to describe the way out.",
-  "The result does not move: about $260 billion a year short in 2030 if spending plateaus - and an ordinary return, early losses included, arrives in 2034-35 at best.",
+  "The result does not move: about $260 billion a year short in 2030 if spending plateaus - and an ordinary return, early losses included, arrives in 2034-35 at best; after inflation, flat spending is still losing about 1.6% a year in 2035.",
 ]), { x: 0.6, y: 1.7, w: 12.1, h: 4.7, fontSize: 18, color: C.text1, margin: 0, valign: "top", isTextBox: true, paraSpaceAfter: 12 });
 SRC(s, "Sources: company Q3 releases and calls (Oct 21-29), Anthropic S-1 (Oct 26), Oracle Investor Day (Oct 28), CNBC (Oct 29). The full list of changes is at the front of the paper.");
 
@@ -134,6 +134,22 @@ s.addTable([hdr, ...rows], { x: 5.6, y: 1.8, w: 7.1, colW: [2.85, 0.85, 0.85, 0.
 P(s, "And the losses cost money: they are paid for by borrowing (Alphabet's debt went from $22 billion to $125 billion in a year) or by giving up other earnings. Charging that cost on the losses, the flat path's hole reaches $2.4 trillion by 2035, and even spending that follows revenue is not repaid until 2035. The question for investors is not whether AI is useful. It is how long they wait, and what the wait costs.", 0.6, 4.4, 12.1, 1.9, { fontSize: 16 });
 SRC(s, "Paper v28, Tables 1-2 (What Is New); model/roi.py. Medians; the cost of money is the register's 9-10% a year.");
 
+// NEW: inflation, counted once
+s = pres.addSlide({ masterName: "CONTENT" }); T(s, "After inflation: the wait in today's money", "Inflation counted once - already in the 9.45% cost of money, never added to revenue");
+BIG(s, "-1.6%", "flat spending's average return in 2035, in today's money (+1% before inflation)", 0.6, 1.7, 4.6);
+BIG(s, "~6.5%", "an ordinary investor's return after inflation (9.45% before)", 0.6, 3.5, 4.6);
+s.addText([
+  { text: "One dollar lost in 2027, recovered in 2035", options: { bold: true, breakLine: true, paraSpaceAfter: 8 } },
+  ...BUL([
+    "Cost of waiting: at 9.45% a year the owner needs $2.06 back (1.0945 to the 8th).",
+    "Inflation's part: prices up 2.6% a year multiply by 1.23 - a 2035 dollar buys 81 cents of today's goods.",
+    "The rest is real earnings given up: 2.06 / 1.23 = 1.67, about 6.7% a year. Inflation is a fifth of the cost; four-fifths is the return forgone.",
+    "Revenue gets no uplift: contracts are fixed in dollars when signed, so $1 in 2035 is worth 81 cents today.",
+    "Payback years do not move: hole and recovery shrink together. Deflating twice would be a double count.",
+  ]),
+], { x: 5.6, y: 1.7, w: 7.1, h: 4.6, fontSize: 15, color: "1F1F1F", margin: 0, valign: "top", isTextBox: true });
+SRC(s, "Paper v28, 'How long investors wait' and Table 2; inflation 2.0/2.6/3.7%: Fed 2% goal, BLS CPI Sep 2026 (core 2.6%, headline 3.7%); model/roi.py.");
+
 // 9 Why growth slows
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "9. Why growth slows", "Five things already visible");
 s.addText(BUL([
@@ -192,7 +208,7 @@ P(s, "The paper, the model, the data and the register of inputs — each with it
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v29_2026-10-30_v7.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-30_v8.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);

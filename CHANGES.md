@@ -16,6 +16,33 @@ Each version opens with what changed and why. Click a line to expand it.
 - That delay, not whether AI is useful, is what investors are pricing. Tables below.
 </details>
 
+<details><summary><b>Inflation, counted once: after inflation the flat path is still losing ~1.6% a year in 2035</b></summary>
+
+Over a nine-year wait inflation matters, so v28 states it explicitly - and makes sure it is not counted twice.
+
+- **Already in:** the cost of money (9.45%) is a nominal rate, so it already contains expected inflation. The payback years stand as they are. Stated in 2026 dollars, the hole and the recovery shrink together and the crossover years do not move (2033 for a 35% cut, 2035 for spending that tracks revenue).
+- **Not added to revenue:** receipts are counted in today's prices - multi-year contracts are fixed in dollars when signed, AI unit prices are falling, and the sector ceilings use today's prices. No inflation uplift.
+- **What changes:** the return investors keep. Inflation 2.0 / 2.6 / 3.7% a year (Fed 2% goal; September 2026 core CPI 2.6%; headline CPI 3.7% - BLS, 14 Oct). An ordinary return becomes ~6.5% real; flat spending averages ~-1.6% a year in 2035; an arms race ~-9%.
+- **Fixed prices, rising costs:** a contract signed in 2026 is worth about a fifth less in real terms by 2035, while power, labour and site costs rise. Letting facility opex rise with prices would add ~$13B to the 2030 carry and ~$40B by 2035 on the flat path - left out of the base (no source yet for escalation clauses), shown as a sensitivity. It makes the result worse.
+- **Worked example - one dollar lost in 2027, recovered in 2035:** at 9.45% the owner needs 1.0945^8 = $2.06 back; inflation accounts for 1.026^8 = 1.23 of that; the rest, 2.06 / 1.23 = 1.67 = 1.067^8, is ~6.7% a year of real earnings given up. About a fifth of the cost of waiting is inflation; four-fifths is real return forgone.
+- New register entry `inflation` (presentation only; no effect on g*, z or payback years). New: real-return rows in the return table, a 2026-dollar block in the cost-of-money table, the formula term by term in the equations appendix, a paragraph in the 2035 horizon appendix, and glossary entries (Nominal vs real; pi; rho).
+
+| Return in today's money (%; ordinary ~6.5%) | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
+|---|---|---|---|---|---|---|---|---|---|
+| Flat spending | -7 | -7 | -7 | -7 | -6 | -5 | -4 | -3 | -2 |
+| Arms race | -8 | -9 | -10 | -11 | -11 | -11 | -11 | -10 | -9 |
+| 35% cut | -5 | -3 | -1 | 1 | 4 | 6 | 9 | 11 | 14 |
+| Spending tracks revenue | -7 | -6 | -5 | -4 | -1 | 3 | 6 | 8 | 10 |
+
+| Hole with cost of money, in 2026 dollars ($B) | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
+|---|---|---|---|---|---|---|---|---|---|
+| Flat spending | -150 | -350 | -600 | -870 | -1,120 | -1,360 | -1,560 | -1,740 | -1,880 |
+| Arms race | -180 | -500 | -930 | -1,480 | -2,080 | -2,710 | -3,340 | -4,000 | -4,650 |
+| 35% cut | -110 | -210 | -270 | -290 | -240 | -120 | +50 | +300 | +620 |
+| Spending tracks revenue | -150 | -330 | -480 | -580 | -570 | -460 | -290 | -70 | +160 |
+
+</details>
+
 <details><summary><b>The market asked the paper's question: Alphabet's worst day ever, down ~13%, ~$480-500B of value</b></summary>
 
 - Investors sold two things: the spending, and a slowdown in search advertising (below).
@@ -135,7 +162,7 @@ Computed by `model/roi.py`.
 
 ### Model changes (parameters.json)
 
-<details><summary><b>Six register entries changed; delta log in Appendix H of the paper</b></summary>
+<details><summary><b>Seven register entries changed (one new: inflation); delta log in Appendix H of the paper</b></summary>
 
 | Entry | v27 | v28 |
 |---|---|---|
@@ -145,6 +172,7 @@ Computed by `model/roi.py`.
 | Big-5 capex 2026 ($B) | 780 | 780 (sources refreshed to Q3) |
 | Street capex 2027 / 2028 ($B) | 1,050 / 1,150 | 1,100 / 1,150 |
 | Shell and silicon lives | 15/20/25; 4/5/6 | unchanged; Microsoft anchors added |
+| Inflation (new; presentation only) | - | 2.0 / 2.6 / 3.7% (Fed goal; Sep 2026 core and headline CPI) |
 
 Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(profit, rationalize, 2030) 54% -> 52%.
 </details>
@@ -157,6 +185,7 @@ Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(pr
 - **More bullets:** arguments made in steps (first, second, third) are set out as lists; the incumbent's dilemma and the assistant ceiling are rewritten as simple argument, then detail.
 - **Symbols named first:** quantities are named in words before their symbols are used.
 - **A cleaner page:** navy section headings, a running header, figures on a light-blue panel and tables on light tan; every figure is redrawn in colour (no grey curves); the flow diagram labels every box and arrow; every page fits its margins.
+- **A sorted glossary:** every glossary list and the variable tables are alphabetical within each group (Greek letters by their names).
 - **A web edition** shows only the claims and *In brief* boxes, with a "Dig deeper" button under each section for the full text, tables and figures.
 
 ### New analysis: labs and landlords

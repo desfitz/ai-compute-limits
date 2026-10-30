@@ -133,6 +133,17 @@
    "next_update": "2027-01 (Damodaran update)",
    "maps_to": "r"
   },
+  "inflation": {
+   "value": [
+    0.02,
+    0.026,
+    0.037
+   ],
+   "source": "Min: Federal Reserve longer-run 2% PCE inflation goal; mode: US core CPI 2.6% y/y, Sep 2026 (BLS, released 2026-10-14); max: US headline CPI 3.7% y/y, Sep 2026 (BLS)",
+   "next_update": "monthly (BLS CPI; next release 2026-11-10)",
+   "maps_to": "pi",
+   "note": "Presentation only (real returns, deficits in 2026 dollars). Not applied to receipts (contracts fixed in nominal dollars; AI unit prices falling; ceilings built from today's prices) and not applied again to the payback test, because the WACC is already nominal."
+  },
   "lag_silicon": {
    "value": [
     0.5,
