@@ -334,7 +334,28 @@ Spending tracks revenue & $-$220 & $-$490 & $-$740 & $-$930 & $-$1{,}020 & $-$1{
 \item \emph{The Big-5 alone} are unchanged: about \$260B short in 2030. The difference is the other builders' cost, which their share of the same revenue does not cover.
 \end{itemize}
 
-\lead{Who is still out.} Meta's Hyperion venture with Blue Owl (\$27B and more, built off Meta's balance sheet: its CFO said the construction ``will not be recorded in capex''~\cite{ref:meta_hyperion}); Anthropic's own sites with Fluidstack (\$50B over several years); Crusoe, Lambda and Nscale, which publish no capex; Tesla's training clusters (about 400 MW by end-2026, no dollar figure); and the Gulf builders. Each would add cost and no revenue. They are left out only because no stated figure exists yet; the register lists them, and the next filings will bring some in.
+\lead{Who is still out --- and when they come in.} The point bears repeating, because it is the heart of this version: for every builder below, the rent it earns is \emph{already} in the revenue the paper counts; its cost is not. Each one left out flatters the build-out. They are left out only because no stated figure exists yet, not because they are small. The register lists them, and each enters the base as soon as a company-stated or filed figure appears (Table~\ref{tab:notyet}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{Builders whose rent is counted but whose cost is not yet in the carry, and what will bring each in}
+\label{tab:notyet}
+\begin{tabularx}{\textwidth}{L{2.9cm}L{6.2cm}X}
+\toprule
+\textbf{Builder} & \textbf{What is known} & \textbf{What brings it into the base} \\
+\midrule
+Meta Hyperion (Blue Owl joint venture) & \$27B at signing, later financing reported near \$56B for 5 GW, built 2026--30 off Meta's balance sheet; Meta's CFO: construction ``will not be recorded in capex''~\cite{ref:meta_hyperion} & The joint venture's financing filings, or Meta's variable-interest-entity note in its 10-K, giving a yearly construction figure \\
+Anthropic's own sites (with Fluidstack) & \$50B announced for Texas and New York sites over several years; Anthropic guarantees leases and invests, Fluidstack and partners build~\cite{ref:anthropic_s1} & Anthropic's amended S-1 or later filings (commitments note), or Fluidstack's own disclosures \\
+Crusoe & Builder of the Abilene campus for Oracle/OpenAI and for Microsoft; a \$15B second-phase joint venture; no capex published & An IPO filing, a bond or project-finance prospectus, or a stated annual build figure \\
+Lambda & Multibillion-dollar Microsoft agreement; IPO targeted for 2027 & Its S-1 (expected 2027) \\
+Nscale & About \$23B Microsoft contract for GB300 capacity; Texas site from 2027 & A stated capex figure or financing filings \\
+Tesla (training clusters) & Cortex 1 and 2, about 400 MW by end-2026; total 2026 capex guided above \$25B with no AI split & An AI-compute split in Tesla's 10-K or calls \\
+Gulf builders (Stargate UAE, Humain) & Stargate UAE over \$30B for 5 GW; Gulf AI data-center spend \$5--7B in 2026 (analyst estimate) & Company or ministerial annual figures; kept with the Chinese four as a separate overlay until then \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\lead{Why this matters for the reader.} A count that includes the rent but not the cost will always look better than the economics. Version 28 closes that gap for every builder that states a figure; the list above is the remainder, published so that no reader has to wonder what is missing, and so that each version can say what moved from this table into the base.
 
 \subsection*{New sources}\label{ag:sources}
 \begin{itemize}
@@ -1497,7 +1518,7 @@ Plateau, sovereignty overlay ($\kappa=1.2$, $\gamma=0.25$) & & & & $\sim$75\% \\
 \centering\small
 \caption{Cumulative $\Delta$ 2027--30 (\$B, median; P10--P90; P(cumulative $<0$)), all builders}
 \label{tab:cum}
-\begin{tabular}{lccc}
+\resizebox{\textwidth}{!}{\begin{tabular}{lccc}
 \toprule
 \textbf{Path} & $g=30\%$ & $g=50\%$ & $g=70\%$ \\
 \midrule
@@ -1505,7 +1526,7 @@ Plateau & $-1{,}615$ ($-1{,}785$, $-1{,}455$; 100\%) & $-1{,}010$ ($-1{,}200$, $
 Arms race & $-2{,}340$ (100\%) & $-1{,}735$ ($-1{,}965$, $-1{,}500$; 100\%) & $-905$ ($-1{,}170$, $-645$; 100\%) \\
 Rationalize & $-915$ ($-1{,}055$, $-780$; 100\%) & $-310$ ($-470$, $-150$; 99\%) & $+520$ ($+320$, $+715$; 0\%) \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \begin{figure}[htbp]\centering\figbox{\includegraphics[width=0.85\textwidth]{f7_tornado.pdf}}
@@ -2164,6 +2185,7 @@ Late Jan.~2027 & Big-4 Q4 calls and 10-Ks & Calendar-2026 revenue test (interim 
 Q1 2027 & OpenAI S-1 if it becomes public & Audited lab revenue, margin, compute commitments ($\theta_{\text{lab}}$, base) \\
 Quarterly & Seat-metric disclosures (Atlassian, Salesforce, ServiceNow, Adobe) & Seat-SaaS growth (secondary variable) \\
 Mar.~2027 & State of Digital Sovereignty 2027 survey & European displacement \\
+Each quarter & Builders not yet counted (Table~\ref{tab:notyet}) & Any company-stated or filed capex figure moves that builder into the base; the delta log records it \\
 Jan.~2028 & Calendar-2027 revenue & Interim marker: $\sim$\$290B is the bottom-up path, above \$310B favors the build-out (seven-component basis) \\
 Jan.~2029 & Calendar-2028 revenue & The revenue test: above \$440B overturns the most likely outcome \\
 \bottomrule

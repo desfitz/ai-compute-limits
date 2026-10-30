@@ -23,7 +23,16 @@ Each version opens with what changed and why. Click a line to expand it.
 - 35% cut: was about even in 2030; now $110B short, profitable year by year from 2032.
 - With the cost of money, **no path is repaid by 2035**.
 
-**Still out, for lack of a stated figure:** Meta's off-balance-sheet Hyperion venture, Anthropic's own sites (Fluidstack), Crusoe, Lambda, Nscale, Tesla's training clusters, the Gulf. Each would widen the gap.
+**Still out - their rent is counted, their cost is not yet - and what brings each in (paper, table "Builders whose rent is counted but whose cost is not yet in the carry"):**
+- Meta Hyperion (Blue Owl JV, $27B at signing, ~$56B financing reported, off Meta's books): JV financing filings or Meta's VIE note.
+- Anthropic's own sites with Fluidstack ($50B announced): the amended S-1 or later filings.
+- Crusoe (Abilene for Oracle/OpenAI and Microsoft): an IPO filing, bond or project-finance prospectus.
+- Lambda (Microsoft agreement): its S-1, expected 2027.
+- Nscale (~$23B Microsoft contract): a stated capex figure or financing filings.
+- Tesla (Cortex training clusters, ~400 MW by end-2026): an AI split of its capex.
+- Gulf (Stargate UAE >$30B for 5 GW; Humain): annual figures; until then a separate overlay with the Chinese four.
+
+Each one left out flatters the build-out. Each moves into the base as soon as a stated figure appears, and the delta log will say so.
 </details>
 
 <details><summary><b>How long investors wait: longer than the horizon - no path earns an ordinary return by 2035</b></summary>

@@ -48,7 +48,7 @@ s.addText([
   { text: "Founder, Nvara.ai   |   Retired, IBM Systems", options: { breakLine: true } },
   { text: "desmond.fitzpatrick@nvara.ai   |   ORCID 0009-0001-0534-2793", options: {} },
 ], { x: 0.8, y: 4.0, w: 11.7, h: 1.2, fontSize: 16, color: C.text1, margin: 0, isTextBox: true });
-s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 149-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
+s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 152-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
 
 
 // NEW v29: what the October earnings changed
@@ -58,8 +58,8 @@ s.addText(BUL([
   "Every company pointed 2027 up - Alphabet \"increase significantly\", Amazon \"meaningfully more\". Flat spending, the paper's base case, is now the conservative one.",
   "Anthropic's S-1 gave the first filed numbers from an AI lab. Our estimate held: its third quarter, $16.8 billion, is inside the $16-19 billion we projected. Most of its $80.7 billion loss is accounting, not cash.",
   "Oracle said its spending peaks in 2027-28 and steps down after: the first builder to describe the way out.",
-  "The result does not move: about $260 billion a year short in 2030 if spending plateaus - and an ordinary return, early losses included, arrives in 2034-35 at best; after inflation, flat spending is still losing about 1.6% a year in 2035.",
-  "New: Musk's SpaceX/xAI, at about $75 billion of AI spending this year, is added as a sixth builder: the 2030 shortfall becomes about $345 billion.",
+  "New: every builder counted. SpaceX/xAI, CoreWeave, Nebius and others add about $140 billion of AI spending this year. Their rent was already in the revenue we count; now their cost is too.",
+  "The result: about $420 billion a year short in 2030 if spending plateaus (the five largest alone: $260 billion). No path earns an ordinary return on the money by 2035.",
 ]), { x: 0.6, y: 1.7, w: 12.1, h: 4.7, fontSize: 18, color: C.text1, margin: 0, valign: "top", isTextBox: true, paraSpaceAfter: 12 });
 SRC(s, "Sources: company Q3 releases and calls (Oct 21-29), Anthropic S-1 (Oct 26), Oracle Investor Day (Oct 28), CNBC (Oct 29). The full list of changes is at the front of the paper.");
 
@@ -72,38 +72,38 @@ SRC(s, "Capex from company filings via Epoch AI; 2026 from the companies' own gu
 
 // 2 Fermi
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "2. How we estimate: the Fermi way", "A long way on bounded factors; only the big uncertainties left as a tail");
-P(s, "Fermi asked how many piano tuners Chicago had and got within a factor of two by chaining things he could bound: people, households, pianos per household, tunings a year, tunings a tuner can do. No single factor was known well. The product was, because the errors cancel rather than compound.\n\nThis paper does the same. The carry is a chain of factors each known to tens of percent (capex, silicon share, lives, power, cost of capital). Demand is fifteen such chains. Where an input carried too much of the uncertainty, we split it into sourced pieces — nineteen times — until the spread fell from 286 to 104 and only two big uncertainties were left: how fast firms actually adopt, and how big the office-assistant market gets. Those two are the tail, and the probability map is drawn over them.", 0.6, 1.7, 6.2, 4.8, { fontSize: 15 });
+P(s, "Fermi asked how many piano tuners Chicago had and got within a factor of two by chaining things he could bound: people, households, pianos per household, tunings a year, tunings a tuner can do. No single factor was known well. The product was, because the errors cancel rather than compound.\n\nThis paper does the same. The carry is a chain of factors each known to tens of percent (capex, silicon share, lives, power, cost of capital). Demand is fifteen such chains. Where an input carried too much of the uncertainty, we split it into sourced pieces — nineteen times — until the spread fell from 286 to 110 and only two big uncertainties were left: how fast firms actually adopt, and how big the office-assistant market gets. Those two are the tail, and the probability map is drawn over them.", 0.6, 1.7, 6.2, 4.8, { fontSize: 15 });
 IMG(s, "f7_tornado", 7.0, 1.6, 5.7, 4.9);
 SRC(s, "Paper Sections 2 and 9. The chart ranks every input by how much it moves the 2030 result; the long bars are the tail.");
 
 // 3 Carry
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "3. What it costs every year", "The carry: wear, running costs, and the return on the money");
 P(s, "A data center is not paid for when it is bought. Each year it costs its owner three things: the chips wearing out (about four years), running the building (power, people, maintenance), and the return the money could have earned elsewhere. We call that yearly cost the carry.", 0.6, 1.7, 5.4, 2.2);
-BIG(s, "$390B → $725B", "carry per year, 2027 to 2030, if spending merely stays flat", 0.6, 4.0, 5.4);
+BIG(s, "$465B → $890B", "carry per year, 2027 to 2030, all builders, if spending merely stays flat", 0.6, 4.0, 5.4);
 P(s, "It keeps rising even if spending stops rising: this year's chips are still on the books when next year's arrive.", 0.6, 5.6, 5.4, 0.9, { fontSize: 14, color: C.accent3 });
 IMG(s, "f2_carry", 6.4, 1.7, 6.3, 4.6);
 SRC(s, "Paper Section 4. About 28 cents of revenue per dollar of capital per year; Goldman Sachs's September 2026 framework says 27.");
 
 // 4 Today
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "4. What comes in today");
-P(s, "All AI revenue in calendar 2026 — the frontier labs (OpenAI, Anthropic and others), the clouds' AI services, the AI lift in advertising, consumer subscriptions — adds up to roughly $179 billion. That is real money and it is growing very fast. It is also less than a quarter of what the installed base will cost to carry in 2030.", 0.6, 1.5, 12.1, 1.6, { fontSize: 18 });
+P(s, "All AI revenue in calendar 2026 — the frontier labs (OpenAI, Anthropic and others), the clouds' AI services, the AI lift in advertising, consumer subscriptions — adds up to roughly $179 billion. That is real money and it is growing very fast. It is about a fifth of what the installed base will cost to carry in 2030.", 0.6, 1.5, 12.1, 1.6, { fontSize: 18 });
 BIG(s, "~$179B", "AI revenue, 2026, all channels (range $168–191B)", 1.0, 3.4, 5.4);
-BIG(s, "~$725B", "carry of the installed base, 2030, if spending plateaus", 6.9, 3.4, 5.4);
+BIG(s, "~$890B", "carry of the installed base, 2030, if spending plateaus", 6.9, 3.4, 5.4);
 P(s, "So the whole argument is about one number: how fast revenue has to grow to catch the carry — and whether anything in the real economy can grow that fast for that long.", 0.6, 5.3, 12.1, 1.0, { fontSize: 18, bold: false });
 SRC(s, "Paper Section 7: the 2026 base, decomposed into seven sourced pieces; lab run-rates are discounted to booked revenue.");
 
 // 5 Scissors
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "5. How fast revenue must grow", "The scissors");
-P(s, "Grow today's $179 billion at a steady rate and see where it crosses the carry. It takes about 49% a year, every year to 2030, just to break even on a flat spending path — and nothing clears 2027–28, which is already a sunk loss of $100–250 billion a year.", 0.6, 1.7, 5.0, 4.0, { fontSize: 18 });
+P(s, "Grow today's $179 billion at a steady rate and see where it crosses the carry. It takes about 57% a year, every year to 2030, just to break even on a flat spending path — and nothing clears 2027–29, which is already a sunk loss of $200–400 billion a year.", 0.6, 1.7, 5.0, 4.0, { fontSize: 18 });
 IMG(s, "f3_scissors", 5.9, 1.6, 6.8, 4.9);
-SRC(s, "Paper Section 10. Under the street's own spending path (an arms race) break-even needs 62% a year; under a 35% cut, 33%.");
+SRC(s, "Paper Section 10. Under the street's own spending path (an arms race) break-even needs 70% a year; under a 35% cut, 41%.");
 
 // 6 Sectors
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "6. Where the revenue would come from", "Fifteen sectors, counted one by one");
 IMG(s, "f9_sectors", 0.6, 1.6, 7.0, 4.9);
 P(s, "Instead of assuming a growth rate, the paper builds demand up from fifteen sectors — office assistants and agents, advertising, consumer apps, coding tools, healthcare, robotics and so on — each with a 2026 base, a ceiling set by payrolls, IT budgets or users, and a realistic ramp.", 7.9, 1.6, 4.8, 2.2, { fontSize: 15 });
 BIG(s, "~$625B", "what end customers spend on AI in 2030 (range $525–745B)", 7.9, 3.9, 4.8);
-P(s, "About 33% a year, not 49%. Growth starts near 57% in 2027 and decays toward 14% by 2030.", 7.9, 5.5, 4.8, 0.9, { fontSize: 14, color: C.accent3 });
+P(s, "About 33% a year, not 57%. Growth starts near 57% in 2027 and decays toward 14% by 2030.", 7.9, 5.5, 4.8, 0.9, { fontSize: 14, color: C.accent3 });
 SRC(s, "Paper Section 8. No single sector closes the gap; the four largest are office assistants, advertising, consumer and coding.");
 
 // 7 Leak
@@ -114,45 +114,45 @@ SRC(s, "Paper Sections 8 and 13. Of the $625B customers spend in 2030, about $48
 
 // 8 Gap
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "8. The gap", "The most likely outcome at the register's current inputs");
-BIG(s, "~$260B a year", "short in 2030 if spending plateaus", 0.6, 1.7, 5.4);
-BIG(s, "$190–540B", "short in 2030 under the street's arms-race path", 0.6, 3.5, 5.4);
-P(s, "This is the most likely outcome, 3.5 standard deviations from break-even with every range propagated. Change the inputs and it moves; the last slide says how.", 0.6, 5.2, 5.4, 1.2, { fontSize: 15, color: C.accent3 });
+BIG(s, "~$420B a year", "short in 2030 if spending plateaus (five largest alone: $260B)", 0.6, 1.7, 5.4);
+BIG(s, "~$745B a year", "short in 2030 under the street's arms-race path", 0.6, 3.5, 5.4);
+P(s, "This is the most likely outcome, 5.6 standard deviations from break-even with every range propagated. Change the inputs and it moves; the last slide says how.", 0.6, 5.2, 5.4, 1.2, { fontSize: 15, color: C.accent3 });
 IMG(s, "f10_reconcile", 6.4, 1.6, 6.3, 4.9);
-SRC(s, "Paper Section 10, Table 12. 2027–28 is a loss on every path; the argument is about whether 2029–30 recovers it.");
+SRC(s, "Paper Section 10, Table 12. 2027–29 is a loss on every path; even a 35% cut is still $110 billion short in 2030.");
 
 
 // NEW: how long investors wait
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "How long investors wait", "Average return on the money from 2027, early losses included (before tax)");
-BIG(s, "2034-35", "earliest the money earns back its losses with an ordinary return (~9.5% a year), if spending follows revenue", 0.6, 1.8, 4.6);
+BIG(s, "Not by 2035", "on any path does the money earn back its losses with an ordinary return (~9.5% a year)", 0.6, 1.8, 4.6);
 const hdr = ["Spending path", "2027", "2029", "2031", "2033", "2035"].map(t => ({ text: t, options: { bold: true, fill: { color: "E8EDF5" } } }));
 const rows = [
-  ["Flat spending", "-4%", "-4%", "-3%", "-1%", "1%"],
-  ["Arms race (what the companies describe)", "-6%", "-8%", "-9%", "-8%", "-7%"],
-  ["Cut by 35%", "-2%", "1%", "6%", "12%", "17%"],
-  ["Spending follows revenue", "-4%", "-3%", "2%", "9%", "13%"],
+  ["Flat spending", "-7%", "-8%", "-8%", "-6%", "-4%"],
+  ["Arms race (what the companies describe)", "-8%", "-11%", "-11%", "-11%", "-10%"],
+  ["Cut by 35%", "-6%", "-4%", "0%", "4%", "8%"],
+  ["Spending follows revenue", "-7%", "-7%", "-2%", "4%", "9%"],
 ];
 s.addTable([hdr, ...rows], { x: 5.6, y: 1.8, w: 7.1, colW: [2.85, 0.85, 0.85, 0.85, 0.85, 0.85], fontSize: 14, color: "1F1F1F", border: { type: "solid", pt: 0.5, color: "C9D3E3" }, align: "center", valign: "middle" });
-P(s, "And the losses cost money: they are paid for by borrowing (Alphabet's debt went from $22 billion to $125 billion in a year) or by giving up other earnings. Charging that cost on the losses, the flat path's hole reaches $2.4 trillion by 2035, and even spending that follows revenue is not repaid until 2035. The question for investors is not whether AI is useful. It is how long they wait, and what the wait costs.", 0.6, 4.4, 12.1, 1.9, { fontSize: 16 });
+P(s, "And the losses cost money: they are paid for by borrowing (Alphabet's debt went from $22 billion to $125 billion in a year) or by giving up other earnings. Charging that cost on the losses, the flat path's hole reaches $4.5 trillion by 2035, and even spending that follows revenue is still about $800 billion short. The question for investors is not whether AI is useful. It is how long they wait, and what the wait costs.", 0.6, 4.4, 12.1, 1.9, { fontSize: 16 });
 SRC(s, "Paper v28, Tables 1-2 (What Is New); model/roi.py. Medians; the cost of money is the register's 9-10% a year.");
 
 // NEW: the sixth builder
-s = pres.addSlide({ masterName: "CONTENT" }); T(s, "A sixth builder: SpaceX/xAI", "Musk's AI business now builds at hyperscaler scale - and it was half in the model");
-BIG(s, "~$75B", "SpaceX AI spending in 2026 - a tenth of the Big-5; Q4 pace $140-160B a year", 0.6, 1.7, 4.6);
-BIG(s, "$345B", "2030 shortfall on flat spending with SpaceX added (was $260B); $425B at its Q4 pace", 0.6, 3.5, 4.6);
+s = pres.addSlide({ masterName: "CONTENT" }); T(s, "Every builder counted", "SpaceX/xAI and the GPU-rental firms now build at hyperscaler scale");
+BIG(s, "~$140B", "AI spending in 2026 outside the Big-5: SpaceX/xAI ~$75B, CoreWeave ~$37B, Nebius ~$22B, others ~$6B", 0.6, 1.7, 4.6);
+BIG(s, "$420B", "2030 shortfall on flat spending, all builders (five largest alone: $260B)", 0.6, 3.5, 4.6);
 s.addText([
   { text: "Why we added it", options: { bold: true, breakLine: true, paraSpaceAfter: 8 } },
   ...BUL([
-    "Half of it was already counted: Anthropic pays SpaceX $1.25 billion a month for Colossus 1, and that rent was in the revenue the model counts.",
+    "Half of it was already counted: Anthropic pays SpaceX $1.25 billion a month; Microsoft provides two-thirds of CoreWeave's revenue. That rent was in the revenue the model counts.",
     "The other half was not: the buildings and chips that earn the rent. Revenue in, cost out flattered the build-out.",
-    "It adds cost, not revenue: Grok, Cursor and lab rent are already in the revenue chains.",
-    "Shown beside the base in v28; merged in v29, after SpaceX's fourth quarter (late January).",
+    "A new builder adds cost, not customers: it divides the same customers' money among more owners.",
+    "Still out, for lack of a stated figure: Meta's off-the-books Hyperion, Anthropic's own sites, Crusoe, Lambda, Nscale, Tesla. Each would widen the gap.",
   ]),
 ], { x: 5.6, y: 1.7, w: 7.1, h: 4.6, fontSize: 15, color: "1F1F1F", margin: 0, valign: "top", isTextBox: true });
-SRC(s, "Paper v28, 'The sixth builder'; SpaceX IPO filing, Q2 and Q3 calls (Aug 5, Oct 20); model/spacex_overlay.py.");
+SRC(s, "Paper v28, 'Beyond the Big-5'; company guidance (SpaceX, CoreWeave, Nebius, IREN, Applied Digital); register entry other_builders_ai_capex.");
 
 // NEW: inflation, counted once
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "After inflation: the wait in today's money", "Inflation counted once - already in the 9.45% cost of money, never added to revenue");
-BIG(s, "-1.6%", "flat spending's average return in 2035, in today's money (+1% before inflation)", 0.6, 1.7, 4.6);
+BIG(s, "-6.5%", "flat spending's average return in 2035, in today's money (-4% before inflation)", 0.6, 1.7, 4.6);
 BIG(s, "~6.5%", "an ordinary investor's return after inflation (9.45% before)", 0.6, 3.5, 4.6);
 s.addText([
   { text: "One dollar lost in 2027, recovered in 2035", options: { bold: true, breakLine: true, paraSpaceAfter: 8 } },
@@ -161,7 +161,7 @@ s.addText([
     "Inflation's part: prices up 2.6% a year multiply by 1.23 - a 2035 dollar buys 81 cents of today's goods.",
     "The rest is real earnings given up: 2.06 / 1.23 = 1.67, about 6.7% a year. Inflation is a fifth of the cost; four-fifths is the return forgone.",
     "Revenue gets no uplift: contracts are fixed in dollars when signed, so $1 in 2035 is worth 81 cents today.",
-    "Payback years do not move: hole and recovery shrink together. Deflating twice would be a double count.",
+    "Payback does not move: hole and recovery shrink together. Deflating twice would be a double count.",
   ]),
 ], { x: 5.6, y: 1.7, w: 7.1, h: 4.6, fontSize: 15, color: "1F1F1F", margin: 0, valign: "top", isTextBox: true });
 SRC(s, "Paper v28, 'How long investors wait' and Table 2; inflation 2.0/2.6/3.7%: Fed 2% goal, BLS CPI Sep 2026 (core 2.6%, headline 3.7%); model/roi.py.");
@@ -179,7 +179,7 @@ SRC(s, "Paper Sections 11–13. Each has a precedent: electricity took forty yea
 
 // 10 Chips worth less
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "10. The chips are worth less than the books say");
-P(s, "Accountants depreciate a chip over five or six years. Economically it is worth what it can earn against the newest chip, whose cost per token falls 50–90% a year. On that schedule the silicon bought through 2026 is already worth $100–250 billion less than the balance sheets show.", 0.6, 1.5, 12.1, 1.5, { fontSize: 17 });
+P(s, "Accountants depreciate a chip over five or six years. Economically it is worth what it can earn against the newest chip, whose cost per token falls 50–90% a year. On that schedule the silicon the five largest bought through 2026 is already worth $100–250 billion less than the balance sheets show.", 0.6, 1.5, 12.1, 1.5, { fontSize: 17 });
 IMG(s, "f23_econdep_floor", 0.6, 3.1, 12.1, 3.4);
 SRC(s, "Paper Section 14. If token prices fall to the cash cost of running the chips (a tenth of today's), the capital is never recovered.");
 
@@ -196,7 +196,7 @@ SRC(s, "Paper Sections 15 and 16.");
 
 // 12 Prove wrong
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "12. What would change the most likely outcome, and when");
-BIG(s, "$400B", "AI revenue in calendar 2028 above this overturns the most likely outcome", 0.6, 1.7, 5.4);
+BIG(s, "$440B", "AI revenue in calendar 2028 above this overturns the most likely outcome", 0.6, 1.7, 5.4);
 P(s, "Interim marker: calendar 2027 near $330B is our path; above $350B favours the build-out.\n\nThe next data: Nvidia on 19 November, Anthropic's amended S-1 with its third quarter, Oracle in December. The register is rebuilt after each and the paper re-issued if anything moves materially.", 0.6, 3.5, 5.4, 2.9, { fontSize: 15 });
 IMG(s, "f17_probmap", 6.4, 1.8, 6.3, 2.6);
 P(s, "Probability of profit in 2030 over the two things we cannot pin down: how fast firms actually adopt, and how big the office-assistant market gets.", 6.4, 4.6, 6.3, 1.2, { fontSize: 12, color: C.accent3 });
@@ -204,7 +204,7 @@ SRC(s, "Paper Section 17 and the update protocol.");
 
 // 13 Way out
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "13. The way out is not dramatic");
-P(s, "Stop building ahead of revenue. An operator that cuts spending by about a third — or simply lets spending track the revenue it actually books — turns profitable around 2031 and recovers the hole by 2034–35. A plateau never recovers within the horizon; an arms race widens the gap every year.", 0.6, 1.5, 12.1, 1.4, { fontSize: 17 });
+P(s, "Stop building ahead of revenue. An operator that cuts spending by about a third — or simply lets spending track the revenue it actually books — turns a yearly profit around 2032, and is close to even by 2035 before the cost of money. A plateau never turns a profit within the horizon; an arms race widens the gap every year.", 0.6, 1.5, 12.1, 1.4, { fontSize: 17 });
 IMG(s, "f20_adaptive", 2.4, 3.0, 8.5, 3.5);
 SRC(s, "Paper appendix on the 2035 horizon. The forecast is impairments and a capex retreat in 2027–29, then a cheaper, more distributed equilibrium — not the end of AI.");
 
@@ -213,18 +213,18 @@ s = pres.addSlide({ masterName: "CONTENT" }); T(s, "The whole argument", "and ho
 P(s, "In six lines", 0.6, 1.7, 6.6, 0.4, { bold: true });
 s.addText([
   "Fermi, not forecast: every number is a chain of bounded factors; nineteen were decomposed until only two big uncertainties remain.",
-  "The installed base costs about 28 cents per dollar per year to carry; that is $725B a year by 2030 on a flat path.",
-  "Revenue is $179B today and must grow 49% a year to catch it.",
+  "The installed base costs about 28 cents per dollar per year to carry; that is $890B a year by 2030 on a flat path, counting every builder.",
+  "Revenue is $179B today and must grow 57% a year to catch it.",
   "Counted sector by sector, it grows 33%, and only $480–490B of it reaches the owners.",
-  "The gap is about $260B a year in 2030, more under the street's path, and 2027–28 is already lost.",
-  "Watch 2027 and 2028 revenue: above $400B in 2028, the most likely outcome was wrong.",
+  "The gap is about $420B a year in 2030, more under the street's path, and 2027–29 is already lost.",
+  "Watch 2027 and 2028 revenue: above $440B in 2028, the most likely outcome was wrong.",
 ].map((t, i, a) => ({ text: t, options: { bullet: { type: "number" }, breakLine: i < a.length - 1, paraSpaceAfter: 6 } })), { x: 0.6, y: 2.2, w: 6.6, h: 4.2, fontSize: 15, color: C.text1, margin: 0, valign: "top", isTextBox: true });
 P(s, "Every number is yours to challenge", 7.6, 1.7, 5.1, 0.4, { bold: true });
 P(s, "The paper, the model, the data and the register of inputs — each with its evidence, its range and what would improve it — are public. Change an input, run one script, and the paper's numbers and charts regenerate; the script says whether the change is minor or forces a re-issue.\n\nPaper and bundle (latest): doi.org/10.5281/zenodo.23406475\nModel and register: the GitHub repository named in the paper\nComments: desmond.fitzpatrick@nvara.ai", 7.6, 2.2, 5.1, 4.2, { fontSize: 13 });
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v29_2026-10-30_v9.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-30_v10.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);

@@ -93,10 +93,10 @@ blockquote{margin:1em 0;padding:10px 16px;background:var(--tint);border-radius:4
 <p class="sub">A Fermi model of what the AI build-out costs to carry, and how fast revenue must grow to pay for it</p>
 <div class="byline"><b>Desmond Fitzpatrick, Ph.D.</b> &middot; Founder, Nvara.ai &middot; Retired, IBM Systems &middot; ORCID 0009-0001-0534-2793 &middot; desmond.fitzpatrick@nvara.ai</div>
 <div class="stats">
-<div class="stat"><div class="n">$780B</div><div class="l">Big-5 spending on AI data centers in 2026</div></div>
-<div class="stat"><div class="n">$725B</div><div class="l">yearly cost to carry the build-out by 2030, even if spending stays flat</div></div>
-<div class="stat"><div class="n">$179B</div><div class="l">AI revenue in 2026; it must grow ~49% a year to cover the cost</div></div>
-<div class="stat gap"><div class="n">~$260B</div><div class="l">most likely shortfall in 2030; overturned if 2028 AI revenue tops $400B</div></div>
+<div class="stat"><div class="n">$920B</div><div class="l">AI data-center spending in 2026: the Big-5 ($780B) plus SpaceX/xAI, CoreWeave and others ($140B)</div></div>
+<div class="stat"><div class="n">$890B</div><div class="l">yearly cost to carry the build-out by 2030, even if spending stays flat</div></div>
+<div class="stat"><div class="n">$179B</div><div class="l">AI revenue in 2026; it must grow ~57% a year to cover the cost</div></div>
+<div class="stat gap"><div class="n">~$420B</div><div class="l">most likely shortfall in 2030, every builder counted; overturned if 2028 AI revenue tops $440B</div></div>
 </div>
 <div class="controls"><button type="button" id="openall">Open every "Dig deeper"</button><button type="button" id="closeall">Close them all</button></div>
 <div class="abstract"><h2>The paper in eleven points</h2>%ABSTRACT%</div>

@@ -50,7 +50,8 @@ Section titles, the one-line claim under each, the In-brief points, and the head
   - Does a new builder take revenue from the others?
   - How they enter the model.
   - What it does to the result.
-  - Who is still out.
+  - Who is still out - and when they come in.
+  - Why this matters for the reader.
 
 ### New sources
   - Anthropic's S-1 (public 26 October): the first filed lab financials.
@@ -72,6 +73,7 @@ Section titles, the one-line claim under each, the In-brief points, and the head
   - Colour figures and a cleaner page.
 
 ### Errata: where earlier versions erred
+  - All versions to v27.1, scope (the largest).
   - v26.x-v27.1, abstract.
   - v26.x-v27.1, register.
 
@@ -436,11 +438,11 @@ Section titles, the one-line claim under each, the In-brief points, and the head
 *Counted sector by sector, receipts fall about $420B a year short of the carry of all builders in 2030.*
 
 ### Variance budget, undecomposed and decomposed
-*Breaking the inputs down cuts the uncertainty from 286 to 104, and the sign survives.*
+*Breaking the inputs down cuts the uncertainty from 286 to 110, and the sign survives.*
   - The bottom-up variance.
 
 ### Reconciling the two estimates
-*The two estimates disagree by about $255B of end-customer revenue in 2030; the gap in receipts against the carry is three and a half standard deviations.*
+*The two estimates disagree by about $465B of end-customer revenue in 2030; the gap in receipts against the carry is five and a half standard deviations.*
   - A robust sign.
 
 ### Can both be true? Cannibalization and the ``internally inconsistent'' objection
@@ -469,7 +471,7 @@ Section titles, the one-line claim under each, the In-brief points, and the head
   - 2030:
 
 ## What Would Change the Distribution
-*Two observations would overturn the result on their own - above all, 2028 AI revenue above $400B.*
+*Two observations would overturn the result on their own - above all, 2028 AI revenue above $440B.*
   - Revenue.
   - Impairment and retreat.
   - If the paper is right: the sequence.
