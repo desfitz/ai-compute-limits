@@ -1,4 +1,4 @@
-import numpy as np, matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
+import numpy as np, matplotlib; matplotlib.use('Agg'); import figstyle; import matplotlib.pyplot as plt
 from model5 import *
 plt.rcParams.update({'font.size':9,'axes.spines.top':False,'axes.spines.right':False})
 m=np.median; q=lambda x,p: np.percentile(x,p)
@@ -31,8 +31,8 @@ res={}
 for d,ls in zip([0.5,0.7,0.9],[':','--','-.']):
     He=carry_econ(v,'Plateau',d); res[d]=He
     print(f"delta={d}: H",[f"{m(He[t]):.0f}" for t in yrs],"delta_t",[f"{m(rec[t]-v['circ']-He[t]):+.0f}" for t in yrs])
-    ax[0].plot(yrs,[m(He[t]) for t in yrs],ls,color='0.3',marker='s',ms=3,label=f'Declining balance, {d:.0%}/yr economic obsolescence')
-ax[0].plot(yrs,[m(rec[t]-v['circ']) for t in yrs],'-',color='0.6',marker='^',ms=3,label='Infrastructure receipts (bottom-up)')
+    ax[0].plot(yrs,[m(He[t]) for t in yrs],ls,color='#2E86AB',marker='s',ms=3,label=f'Declining balance, {d:.0%}/yr economic obsolescence')
+ax[0].plot(yrs,[m(rec[t]-v['circ']) for t in yrs],'-',color='#3BA272',marker='^',ms=3,label='Infrastructure receipts (bottom-up)')
 ax[0].set_ylabel('$B/yr'); ax[0].set_xticks(yrs); ax[0].legend(fontsize=6.5); ax[0].set_title('Carry under accounting-style vs economic depreciation (Plateau)',fontsize=9)
 # commodity floor: marginal cash cost per M tokens
 rng2=np.random.default_rng(5); T_=lambda a,b,c: rng2.triangular(a,b,c,N)
@@ -44,8 +44,8 @@ mcc2=cash_hr/(tok_hr*2)*1e6                          # if utilization doubles
 print("marginal cash cost $/Mtok med",round(m(mcc),3),"P10-P90",round(q(mcc,10),3),round(q(mcc,90),3),"| at 2x utilization",round(m(mcc2),3))
 price=T_(0.10,0.30,1.0)  # blended realized $/Mtok, small-to-mid models weighted
 print("price/floor ratio med",round(m(price/mcc),1))
-ax[1].hist(mcc,bins=80,color='0.4',alpha=0.8,label='Marginal cash cost, current utilization'); ax[1].hist(mcc2,bins=80,color='0.75',alpha=0.8,label='...if utilization doubles')
-for p_,lab in [(0.10,'small-model API ~$0.10'),(0.30,'blended ~$0.30'),(1.0,'mid-frontier ~$1.0')]: ax[1].axvline(p_,color='k',ls=':',lw=0.8); ax[1].text(p_,ax[1].get_ylim()[1]*0.9,lab,rotation=90,fontsize=6.5,va='top',ha='right')
+ax[1].hist(mcc,bins=80,color='#C0504D',alpha=0.8,label='Marginal cash cost, current utilization'); ax[1].hist(mcc2,bins=80,color='#9DB7D5',alpha=0.8,label='...if utilization doubles')
+for p_,lab in [(0.10,'small-model API ~$0.10'),(0.30,'blended ~$0.30'),(1.0,'mid-frontier ~$1.0')]: ax[1].axvline(p_,color='#1E2761',ls=':',lw=0.8); ax[1].text(p_,ax[1].get_ylim()[1]*0.9,lab,rotation=90,fontsize=6.5,va='top',ha='right')
 ax[1].set_xscale('log'); ax[1].set_xlabel('$ per million tokens (log scale)'); ax[1].set_yticks([]); ax[1].legend(fontsize=6.5,loc='upper left'); ax[1].set_title('The commodity floor: marginal cash cost of inference vs realized prices',fontsize=9)
 plt.tight_layout(); plt.savefig('f23_econdep_floor.pdf'); print('fig done')
 # receipts at the floor: opex + tiny margin

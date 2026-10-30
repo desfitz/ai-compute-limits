@@ -151,7 +151,23 @@ Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(pr
 
 ### Easier to read
 
-- The abstract is rewritten as eleven short points in plain language, followed by a reading guide with page numbers (what's new, errata, summary, inputs, delta log, glossary). The technical detail is in the Executive Summary.
+- **A plain-language front:** the abstract is eleven short points, then an at-a-glance box and a reading guide with page numbers.
+- **The argument in the titles:** every section and subsection opens with a one-line claim in blue; the longest open with an *In brief* box - the simple argument first, the detail below.
+- **Short paragraphs with headlines:** long paragraphs are split, with a blank line between them; most open with a short headline in a contrasting colour, so the argument can be followed by scanning (`paper/HEADLINES.md`).
+- **More bullets:** arguments made in steps (first, second, third) are set out as lists; the incumbent's dilemma and the assistant ceiling are rewritten as simple argument, then detail.
+- **Symbols named first:** quantities are named in words before their symbols are used.
+- **A cleaner page:** navy section headings, a running header, figures on a light-blue panel and tables on light tan; every figure is redrawn in colour (no grey curves); the flow diagram labels every box and arrow; every page fits its margins.
+- **A web edition** shows only the claims and *In brief* boxes, with a "Dig deeper" button under each section for the full text, tables and figures.
+
+### New analysis: labs and landlords
+
+<details><summary><b>Where the labs and the infrastructure owners cooperate, squeeze each other, and are one and the same</b></summary>
+
+- Cooperate: hyperscalers fund the labs; the labs spend it on their compute (Anthropic's reported $252B of noncancelable commitments to Google, AWS, Microsoft).
+- Squeeze: labs spread across clouds, build their own capacity and grow their margins; landlords build their own chips and models and bundle AI into search, office suites and ads.
+- Same company: Google and Meta are both lab and landlord - no margin to argue over, but no outside customer paying the carry either.
+- For the model: the squeeze moves the gap between labs and landlords (theta_lab), not the gap with the customer.
+</details>
 
 ### Errata (where earlier versions erred) - full list in [ERRATA.md](ERRATA.md)
 

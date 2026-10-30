@@ -22,5 +22,5 @@ if prev:
 else: print("first run; numbers.json written")
 print("Plateau 2030:",out['plateau_2030'],"| g*:",out['Plateau']['g_star'])
 if '--figs' in sys.argv:
-    for f in ['figs4.py','figs5.py','decomp.py','overlap.py','figs16.py','incumbent.py']: subprocess.run(['python3',f],stdout=subprocess.DEVNULL)
+    for f in ['figs4.py','figs5.py','decomp.py','overlap.py','figs16.py','figs_flow.py','incumbent.py','econdep.py','coststack.py']: subprocess.run(['python3',f],stdout=subprocess.DEVNULL)
     print("figures regenerated")

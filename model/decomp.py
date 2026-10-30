@@ -1,4 +1,4 @@
-import numpy as np, matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
+import numpy as np, matplotlib; matplotlib.use('Agg'); import figstyle; import matplotlib.pyplot as plt
 from model5 import *
 plt.rcParams.update({'font.size':9,'axes.spines.top':False,'axes.spines.right':False})
 q=lambda x,p: np.percentile(x,p); m=np.median; sl=lambda x: np.std(np.log(x))
@@ -40,7 +40,7 @@ SECTORS['Advertising uplift']['C']=(q(adC,5),m(adC),q(adC,95))
 def bu_delta(path,mcap=1.0,adC=None,copC=None,thlab=None,seed=11):
     rng=np.random.default_rng(seed); v=draw(rng); H=carry(v,path)
     if adC: SECTORS['Advertising uplift']['C']=adC
-    if copC: SECTORS['Office copilots/agents']['C']=copC
+    if copC: SECTORS['Office assistants/agents']['C']=copC
     end,rec,per=bottom_up(rng)
     if thlab is not None:  # scale lab-channel-heavy sectors' receipts? approximate: scale receipts by thlab/0.65 on 50% of receipts
         rec={t:rec[t]*(0.5+0.5*thlab/0.65) for t in rec}
@@ -50,8 +50,8 @@ fig,ax=plt.subplots(1,2,figsize=(10,3.4)); ms=np.arange(0.6,1.61,0.1)
 for p,ls in zip(PATHS,['-','--',':']):
     z=[];pl=[]
     for mc in ms: d=bu_delta(p,mcap=mc); z.append(m(d)/np.std(d)); pl.append((d<0).mean()*100)
-    ax[0].plot(ms,z,ls,color='k',marker='o',ms=3,label=p); ax[1].plot(ms,pl,ls,color='k',marker='o',ms=3,label=p)
-ax[0].axhline(0,color='gray',lw=0.8); ax[0].axhline(-2,color='gray',lw=0.6,ls=':'); ax[0].axhline(2,color='gray',lw=0.6,ls=':')
+    ax[0].plot(ms,z,ls,color='#1E2761',marker='o',ms=3,label=p); ax[1].plot(ms,pl,ls,color='#1E2761',marker='o',ms=3,label=p)
+ax[0].axhline(0,color='#7F9BC0',lw=0.8); ax[0].axhline(-2,color='#7F9BC0',lw=0.6,ls=':'); ax[0].axhline(2,color='#7F9BC0',lw=0.6,ls=':')
 ax[0].set_xlabel('Residual adoption/capability factor on 2030 receipts'); ax[0].set_ylabel('z = delta_2030 / sigma'); ax[0].legend(fontsize=7)
 ax[1].set_xlabel('Residual adoption/capability factor on 2030 receipts'); ax[1].set_ylabel('P(deficit 2030), %'); ax[1].legend(fontsize=7)
 fig.suptitle('What-if 1: the residual factor no decomposition removes',fontsize=9); plt.tight_layout(); plt.savefig('f13_whatif_mcap.pdf')
@@ -60,23 +60,23 @@ ads=np.linspace(80,300,12); cops=np.linspace(120,400,12); Z=np.zeros((len(cops),
 for i,c in enumerate(cops):
     for j,a in enumerate(ads):
         Z[i,j]=m(bu_delta('Plateau',adC=(a*0.8,a,a*1.2),copC=(c*0.8,c,c*1.2)))
-SECTORS['Advertising uplift']['C']=(q(adC,5),m(adC),q(adC,95)); SECTORS['Office copilots/agents']['C']=(100,150,230)
-fig,ax=plt.subplots(figsize=(6.2,4.2)); cs=ax.contourf(ads,cops,Z,levels=12,cmap='Greys_r'); plt.colorbar(cs,label='median delta_2030 ($B), Plateau')
+SECTORS['Advertising uplift']['C']=(q(adC,5),m(adC),q(adC,95)); SECTORS['Office assistants/agents']['C']=(100,150,230)
+fig,ax=plt.subplots(figsize=(6.2,4.2)); cs=ax.contourf(ads,cops,Z,levels=12,cmap='Blues_r'); plt.colorbar(cs,label='median delta_2030 ($B), Plateau')
 ax.plot([m(adC)],[150],'ko'); ax.annotate('paper modes',(m(adC),150),xytext=(8,8),textcoords='offset points',fontsize=8)
-ax.set_xlabel('Advertising uplift ceiling 2030 ($B)'); ax.set_ylabel('Office copilots/agents ceiling 2030 ($B)'); ax.set_title('What-if 2: the two largest ceilings; no break-even in range',fontsize=9)
+ax.set_xlabel('Advertising uplift ceiling 2030 ($B)'); ax.set_ylabel('Office assistants/agents ceiling 2030 ($B)'); ax.set_title('What-if 2: the two largest ceilings; no break-even in range',fontsize=9)
 plt.tight_layout(); plt.savefig('f14_whatif_ceilings.pdf')
 # f15: z vs theta_lab and vs 2026 base
 fig,ax=plt.subplots(1,2,figsize=(10,3.4)); ths=np.arange(0.45,0.96,0.05)
 for p,ls in zip(PATHS,['-','--',':']):
-    ax[0].plot(ths,[m(bu_delta(p,thlab=t)) for t in ths],ls,color='k',marker='o',ms=3,label=p)
-ax[0].axhline(0,color='gray',lw=0.8); ax[0].set_xlabel('Lab-channel infrastructure share (compute cost / lab revenue)'); ax[0].set_ylabel('median delta_2030 ($B)'); ax[0].legend(fontsize=7)
+    ax[0].plot(ths,[m(bu_delta(p,thlab=t)) for t in ths],ls,color='#1E2761',marker='o',ms=3,label=p)
+ax[0].axhline(0,color='#7F9BC0',lw=0.8); ax[0].set_xlabel('Lab-channel infrastructure share (compute cost / lab revenue)'); ax[0].set_ylabel('median delta_2030 ($B)'); ax[0].legend(fontsize=7)
 bs=np.arange(150,301,15)
 for p,ls in zip(PATHS,['-','--',':']):
     zz=[]
     for b in bs:
         o=topdown(p,0.49,over=dict(D0=(b*0.9,b,b*1.1)))[2030]; d=o['D']-o['H']; zz.append(m(d))
-    ax[1].plot(bs,zz,ls,color='k',marker='o',ms=3,label=p)
-ax[1].axhline(0,color='gray',lw=0.8); ax[1].set_xlabel('Calendar-2026 AI revenue base ($B), top-down at g=42%'); ax[1].set_ylabel('median delta_2030 ($B)'); ax[1].legend(fontsize=7)
+    ax[1].plot(bs,zz,ls,color='#1E2761',marker='o',ms=3,label=p)
+ax[1].axhline(0,color='#7F9BC0',lw=0.8); ax[1].set_xlabel('Calendar-2026 AI revenue base ($B), top-down at g=42%'); ax[1].set_ylabel('median delta_2030 ($B)'); ax[1].legend(fontsize=7)
 fig.suptitle('What-if 3: lab economics and the 2026 base',fontsize=9); plt.tight_layout(); plt.savefig('f15_whatif_theta_base.pdf')
 # final bottom-up with decomposed inputs
 r=run('Plateau'); d=r['rec'][2030]-r['circ']-r['H'][2030]

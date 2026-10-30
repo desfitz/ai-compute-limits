@@ -1,4 +1,4 @@
-import numpy as np, matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
+import numpy as np, matplotlib; matplotlib.use('Agg'); import figstyle; import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size':8.5,'axes.spines.top':False,'axes.spines.right':False})
 N=100_000; rng=np.random.default_rng(9); T=lambda a,b,c: rng.triangular(a,b,c,N); m=np.median; q=lambda x,p: np.percentile(x,p)
 H=8760
@@ -22,11 +22,11 @@ rows.sort(key=lambda x:x[4])
 fig,ax=plt.subplots(figsize=(10,4)); x=0
 for lab,mc,mlo,mhi,fc,flo,fhi,sh in rows:
     w=sh*100
-    ax.bar(x+w/2,fc,width=w,color='0.75',edgecolor='k',lw=0.6); ax.bar(x+w/2,mc,width=w,color='0.3',edgecolor='k',lw=0.6)
-    ax.errorbar(x+w/2,fc,yerr=[[fc-flo],[fhi-fc]],color='k',capsize=3,lw=0.8)
+    ax.bar(x+w/2,fc,width=w,color='#9DB7D5',edgecolor='#1E2761',lw=0.6); ax.bar(x+w/2,mc,width=w,color='#2E86AB',edgecolor='#1E2761',lw=0.6)
+    ax.errorbar(x+w/2,fc,yerr=[[fc-flo],[fhi-fc]],color='#1E2761',capsize=3,lw=0.8)
     ax.text(x+w/2,fhi*1.08,lab.replace(', ','\n'),ha='center',va='bottom',fontsize=6.8); x+=w
-ax.axhline(0.30,color='k',ls=':',lw=1); ax.text(1,0.31,'blended realized price ~$0.30/M (list)',fontsize=7)
-ax.axhline(0.06,color='k',ls='--',lw=0.8); ax.text(1,0.063,'effective price, batch+cache heavy users ~$0.03-0.06/M',fontsize=7)
+ax.axhline(0.30,color='#1E2761',ls=':',lw=1); ax.text(1,0.31,'blended realized price ~$0.30/M (list)',fontsize=7)
+ax.axhline(0.06,color='#1E2761',ls='--',lw=0.8); ax.text(1,0.063,'effective price, batch+cache heavy users ~$0.03-0.06/M',fontsize=7)
 ax.set_xlabel('Share of 2030 inference capacity (%), producers ordered by full cost'); ax.set_ylabel('$ per million tokens'); ax.set_ylim(0,1.0)
 ax.set_title('The inference cost curve: marginal cash cost (dark) and full cost incl. carry (light) by producer tier',fontsize=9)
 plt.tight_layout(); plt.savefig('f24_coststack.pdf'); print('fig done')
