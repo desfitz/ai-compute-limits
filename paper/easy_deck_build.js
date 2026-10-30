@@ -42,7 +42,7 @@ let s;
 // 1 Title
 s = pres.addSlide({ masterName: "TITLE" });
 s.addText("Will the AI build-out pay for itself?", { x: 0.8, y: 1.6, w: 11.7, h: 1.2, fontSize: 44, bold: true, color: C.text2, margin: 0, isTextBox: true });
-s.addText("A Fermi estimate, in fourteen slides - updated after the October earnings", { x: 0.8, y: 2.8, w: 11.7, h: 0.6, fontSize: 24, color: C.accent2, margin: 0, isTextBox: true });
+s.addText("A Fermi estimate, in fifteen slides - updated after the October earnings", { x: 0.8, y: 2.8, w: 11.7, h: 0.6, fontSize: 24, color: C.accent2, margin: 0, isTextBox: true });
 s.addText([
   { text: "Desmond Fitzpatrick", options: { bold: true, breakLine: true } },
   { text: "Founder, Nvara.ai   |   Retired, IBM Systems", options: { breakLine: true } },
@@ -58,7 +58,7 @@ s.addText(BUL([
   "Every company pointed 2027 up - Alphabet \"increase significantly\", Amazon \"meaningfully more\". Flat spending, the paper's base case, is now the conservative one.",
   "Anthropic's S-1 gave the first filed numbers from an AI lab. Our estimate held: its third quarter, $16.8 billion, is inside the $16-19 billion we projected. Most of its $80.7 billion loss is accounting, not cash.",
   "Oracle said its spending peaks in 2027-28 and steps down after: the first builder to describe the way out.",
-  "The result does not move: about $260 billion a year short in 2030 if spending plateaus.",
+  "The result does not move: about $260 billion a year short in 2030 if spending plateaus - and an ordinary return, early losses included, arrives in 2034-35 at best.",
 ]), { x: 0.6, y: 1.7, w: 12.1, h: 4.7, fontSize: 18, color: C.text1, margin: 0, valign: "top", isTextBox: true, paraSpaceAfter: 12 });
 SRC(s, "Sources: company Q3 releases and calls (Oct 21-29), Anthropic S-1 (Oct 26), Oracle Investor Day (Oct 28), CNBC (Oct 29). The full list of changes is at the front of the paper.");
 
@@ -119,6 +119,21 @@ P(s, "This is the most likely outcome, 3.5 standard deviations from break-even w
 IMG(s, "f10_reconcile", 6.4, 1.6, 6.3, 4.9);
 SRC(s, "Paper Section 10, Table 12. 2027–28 is a loss on every path; the argument is about whether 2029–30 recovers it.");
 
+
+// NEW: how long investors wait
+s = pres.addSlide({ masterName: "CONTENT" }); T(s, "How long investors wait", "Average return on the money from 2027, early losses included (before tax)");
+BIG(s, "2034-35", "earliest the money earns back its losses with an ordinary return (~9.5% a year), if spending follows revenue", 0.6, 1.8, 4.6);
+const hdr = ["Spending path", "2027", "2029", "2031", "2033", "2035"].map(t => ({ text: t, options: { bold: true, fill: { color: "E8EDF5" } } }));
+const rows = [
+  ["Flat spending", "-4%", "-4%", "-3%", "-1%", "1%"],
+  ["Arms race (what the companies describe)", "-6%", "-8%", "-9%", "-8%", "-7%"],
+  ["Cut by 35%", "-2%", "1%", "6%", "12%", "17%"],
+  ["Spending follows revenue", "-4%", "-3%", "2%", "9%", "13%"],
+];
+s.addTable([hdr, ...rows], { x: 5.6, y: 1.8, w: 7.1, colW: [2.85, 0.85, 0.85, 0.85, 0.85, 0.85], fontSize: 14, color: "1F1F1F", border: { type: "solid", pt: 0.5, color: "C9D3E3" }, align: "center", valign: "middle" });
+P(s, "And the losses cost money: they are paid for by borrowing (Alphabet's debt went from $22 billion to $125 billion in a year) or by giving up other earnings. Charging that cost on the losses, the flat path's hole reaches $2.4 trillion by 2035, and even spending that follows revenue is not repaid until 2035. The question for investors is not whether AI is useful. It is how long they wait, and what the wait costs.", 0.6, 4.4, 12.1, 1.9, { fontSize: 16 });
+SRC(s, "Paper v28, Tables 1-2 (What Is New); model/roi.py. Medians; the cost of money is the register's 9-10% a year.");
+
 // 9 Why growth slows
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "9. Why growth slows", "Five things already visible");
 s.addText(BUL([
@@ -177,7 +192,7 @@ P(s, "The paper, the model, the data and the register of inputs — each with it
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v29_2026-10-29_v3.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-29_v5.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);

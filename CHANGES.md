@@ -8,6 +8,14 @@ Each version opens with what changed and why. Click a line to expand it.
 
 ### Headline
 
+<details><summary><b>How long investors wait: an ordinary return, early losses included, arrives in 2034-35 at best</b></summary>
+
+- Spending that follows revenue: an ordinary return (~9.5%), early losses included, only in 2034-35; a 35% cut in 2033.
+- Flat spending: ~1% a year on average by 2035. Rising spending: a loss on average every year to 2035.
+- The losses cost money too - interest on debt or earnings given up - so the hole compounds: with ~9.5%/yr on the losses, the flat path's hole is ~$2.4T by 2035.
+- That delay, not whether AI is useful, is what investors are pricing. Tables below.
+</details>
+
 <details><summary><b>The market asked the paper's question: Alphabet's worst day ever, down ~13%, ~$480-500B of value</b></summary>
 
 - Investors sold two things: the spending, and a slowdown in search advertising (below).
@@ -33,7 +41,7 @@ Each version opens with what changed and why. Click a line to expand it.
 - The paper already counts AI only as an uplift to advertising (25/40/55 $B) and assumes AI answers defend search share rather than expand it. If AI takes from search, the uplift belongs at its low end (about $15B less in the 2026 base). No input changed yet: one quarter is a signal; on the watch list for v28.1.
 </details>
 
-### How deep the hole gets, and when it is paid back
+### How long investors wait
 
 <details><summary><b>New table: cumulative surplus or deficit by year, 2027-2035, by spending path</b></summary>
 
@@ -60,6 +68,16 @@ Average return on the money invested, 2027 to each year, before tax (%; an ordin
 | Spending tracks revenue | -4 | -4 | -3 | -1 | 2 | 5 | 9 | 11 | 13 |
 
 Computed by `model/roi.py`.
+
+- **The losses cost money: interest or lost earnings.** Spending ahead of revenue is financed by borrowing (Alphabet's long-term debt $21.6B -> $125.1B in a year) or by giving up other earnings, so the hole compounds. With ~9.5%/yr charged on the losses:
+
+| Path ($B, cumulative from 2027, with cost of money) | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
+|---|---|---|---|---|---|---|---|---|---|
+| Flat spending | -150 | -370 | -650 | -970 | -1,290 | -1,600 | -1,890 | -2,170 | -2,410 |
+| Arms race | -190 | -520 | -1,010 | -1,650 | -2,390 | -3,190 | -4,050 | -4,970 | -5,950 |
+| 35% cut | -120 | -220 | -300 | -320 | -270 | -140 | +70 | +370 | +800 |
+| Spending tracks revenue | -150 | -340 | -520 | -640 | -650 | -540 | -350 | -90 | +210 |
+
 </details>
 
 ### New sources
@@ -133,7 +151,7 @@ Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(pr
 
 ### Easier to read
 
-- The abstract is rewritten as ten short points in plain language, followed by a reading guide with page numbers (what's new, errata, summary, inputs, delta log, glossary). The technical detail is in the Executive Summary.
+- The abstract is rewritten as eleven short points in plain language, followed by a reading guide with page numbers (what's new, errata, summary, inputs, delta log, glossary). The technical detail is in the Executive Summary.
 
 ### Errata (where earlier versions erred) - full list in [ERRATA.md](ERRATA.md)
 
