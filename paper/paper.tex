@@ -147,7 +147,7 @@
 \textbf{Method} & Fermi estimate: the answer is a chain of bounded factors, and each factor's uncertainty is carried to the result by Monte Carlo simulation (100,000 draws). \\[2pt]
 \textbf{Who is counted} & The five largest US builders --- Microsoft, Alphabet, Amazon, Meta, Oracle. They are about nine-tenths of 2026 spending by the world's nine largest cloud operators; the Chinese four (\$50--110B a year) are tracked but kept outside the model~\cite{ref:trendforce_csp9}. New in v28: the builders outside the five whose rent was already counted --- SpaceX/xAI, CoreWeave, Nebius, IREN, Applied Digital, about \$140B in 2026 --- are in the base (p.~\pageref{ag:spacex}). \\[2pt]
 \textbf{What is tracked} & 53 inputs in a public register, each with a source, a date and its next update; 15 sector revenue chains; a 2026 revenue base built from 7 components; 19 inputs decomposed into sourced parts; years 2023--2035. \\[2pt]
-\textbf{Sources} & 134 references: about 20 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
+\textbf{Sources} & 143 references: about 25 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
 \textbf{Result} & About \$420B a year short in 2030 if spending stays flat (\$260B for the five largest alone); overturned if 2028 AI revenue exceeds \$440B. \\[2pt]
 \textbf{The wait} & With early losses and the cost of money counted, no path earns an ordinary return by 2035; a flat path has lost about 4\% a year on average by then. \\
 \end{tabular}
@@ -228,7 +228,7 @@ Spending tracks revenue & $-$230 & $-$500 & $-$740 & $-$900 & $-$920 & $-$830 & 
 \item \textbf{The return on the money, with the early losses included.} Table~\ref{tab:roiyear} gives the average return earned on the money still invested, from 2027 to each year, before tax. An ordinary investor's return is about 9.5\%. By 2035 spending that tracks revenue has averaged about 9\% and a 35\% cut about 8\% --- just short of it; flat spending averages about $-$4\%; an arms race about $-$10\%. No path earns an ordinary return on the money, early losses included, within the horizon.
 \item \textbf{Inflation, counted once.} Over a nine-year wait, inflation matters --- but it must not be counted twice.
   \begin{itemize}
-  \item \emph{Already in:} the cost of money (9.45\%) is a nominal rate, so it already contains the inflation investors expect. The payback years above therefore stand as they are; deflating them again would double-count. Stated in 2026 dollars, both sides shrink together and the crossover years, where there are any, do not move (Table~\ref{tab:cumwacc}, bottom).
+  \item \emph{Already in:} the cost of money (9.45\%) is a nominal rate, so it already contains the inflation investors expect. Whether and when the hole closes therefore stands as computed; deflating them again would double-count. Stated in 2026 dollars, both sides shrink together and the crossover years, where there are any, do not move (Table~\ref{tab:cumwacc}, bottom).
   \item \emph{Not added to revenue:} receipts are counted in today's prices --- multi-year contracts are fixed in dollars when signed, AI unit prices are falling, and the sector ceilings are built from today's prices. So no inflation uplift is given to revenue.
   \item \emph{What it changes:} the returns investors actually keep. Inflation is taken at 2.0 / 2.6 / 3.7\% a year --- the Federal Reserve's 2\% goal, September core CPI (2.6\%) and headline CPI (3.7\%)~\cite{ref:fed_goal,ref:bls_cpi_sep26}. After it, an ordinary return is about 6.5\%; flat spending averages about $-$6.5\% a year in 2035 and an arms race about $-$12\% (Table~\ref{tab:roiyear}, bottom).
   \item \emph{Fixed prices, rising costs:} a fixed-price contract signed in 2026 is worth about a fifth less in real terms by 2035, while power, labor and site costs rise with prices. The model holds facility opex at its 2026 share of gross stock; letting it rise with inflation would add about \$16B to the 2030 carry and \$50B by 2035 on the flat path. That is left out of the base (no source yet for the escalation clauses) and shown here as a sensitivity: it makes the result worse, not better.
@@ -399,12 +399,12 @@ Anthropic's amended S-1 with filed third-quarter figures (expected in November; 
     Two years of the labs' pace would clear the plateau path by 2029. The sector chains below are the reasons the paper expects deceleration; whether it comes is the 2027--28 test (Section~\ref{sec:falsify}).
     \item \textbf{Where the remaining doubt lives, and whether profit can overlap.} After nineteen decompositions (Section~\ref{sec:decomp}) the residual uncertainty sits in two axes: an adoption/capability factor and the assistant ceiling. Figure~\ref{fig:probmap} maps P(receipts $>$ carry) over both, with a feasibility band built from the enterprise software and services budget --- itself decomposed, because that budget is being torn up: seat-priced SaaS is deflating under agents, European and Chinese buyers are displacing US vendors, and the money is moving from seats to AI solutions.
 
-    On a plateau the 50\% contour sits at a residual factor of $\sim$1.5 --- 2030 AI revenue of $\sim$\$950B, which is inside the feasible band (\$920B--\$1.31T) and requires AI to take $\sim$25\% of a pool that is not growing. Under a 35\% capex cut P(profit) is $\sim$7\% in 2030 and $\sim$58\% by 2032 at the paper's modes.
+    On a plateau the 50\% contour sits at a residual factor of $\sim$1.9 --- 2030 AI revenue of $\sim$\$1.18T, near the top of the feasible band (\$920B--\$1.31T), which requires AI to take about a third of a pool that is not growing. Under a 35\% capex cut P(profit) is $\sim$7\% in 2030 and $\sim$58\% by 2032 at the paper's modes.
 
     That is the paper's result stated as a probability rather than a sign: not a prediction of loss, but a distribution over outcomes and the growth it takes to move it.
-    \item \textbf{Economic depreciation and the commodity floor.} Straight-line lives are the accounting view. The economic view (reviewer comment) is that an installed accelerator is worth what it can earn against the newest chip's marginal cost per token, which falls 50--90\% a year; on that schedule the 2023--26 silicon carries an unrecognized impairment of \$100--250B today, and the carry is front-loaded into years the paper already calls a sunk deficit. Doubling inference utilization (batching, quantization, open models) serves twice the tokens from the same stock but, if prices fall in step, no more dollars.
+    \item \textbf{Economic depreciation and the commodity floor.} Straight-line lives are the accounting view. The economic view (reviewer comment) is that an installed accelerator is worth what it can earn against the newest chip's marginal cost per token, which falls 50--90\% a year; on that schedule the 2023--26 silicon carries an unrecognized impairment of \$100--250B today for the five largest alone (more with the other builders), and the carry is front-loaded into years the paper already calls a sunk deficit. Doubling inference utilization (batching, quantization, open models) serves twice the tokens from the same stock but, if prices fall in step, no more dollars.
 
-    And if prices converge on marginal cash cost --- $\sim$\$0.03--0.05 per million tokens against realized prices of \$0.10--1.0 --- receipts converge on the opex line, $\sim$OPEXLINE against a \$890B carry. Section~\ref{sec:commodity}; the metric to watch is realized price per million tokens against that floor.
+    And if prices converge on marginal cash cost --- $\sim$\$0.03--0.05 per million tokens against realized prices of \$0.10--1.0 --- receipts converge on the opex line, $\sim$\$150B in 2028 and $\sim$\$220B in 2030, against a \$890B carry. Section~\ref{sec:commodity}; the metric to watch is realized price per million tokens against that floor.
     \item \textbf{Readiness is a constraint in its own right.} Data Center Watch counts \$130B of US projects blocked or delayed in Q1 2026 alone --- matching all of 2025 --- with 833 opposition groups in 49 states, a New York moratorium, and Ipsos polling near 70\% local opposition~\cite{ref:dcw_q1_2026,ref:forbes_consent,ref:tomshw_dcw}.
 
     Water, ratepayer bills, noise and diesel are the stated grounds; Dublin and Amsterdam were the European template. The model now defers 10--35\% of each cohort a year for consent and siting, adds 2--9\% to shell cost for community benefits, water mitigation and relocation, and 0--6\% to cooling opex where evaporative cooling is refused. The net effect is to shift the carry later, not to remove it.
@@ -579,19 +579,19 @@ where $G_{c,j}$ is the in-service gross value of component $j$ of cohort $c$, $L
 
 \begin{table}[htbp]
 \centering\small
-\caption{Annual carry $H_t$ (\$B, median; Plateau P10--P90 in parentheses)}
+\caption{Annual carry $H_t$ (\$B, median; Plateau P10--P90 in parentheses), all builders; path capex is the Big-5's, and the other builders follow the same path}
 \label{tab:carry}
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Path} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{2030} \\
 \midrule
-Plateau (780) & 390 (365--415) & 535 (505--570) & 650 (615--685) & 725 (685--770) \\
-Arms race (1000, 1100) & 425 & 650 & 850 & 1{,}015 \\
-Rationalize (550, 500) & 350 & 430 & 465 & 460 \\
+Plateau (780) & 465 (435--495) & 645 (610--685) & 795 (750--835) & 890 (845--945) \\
+Arms race (1000, 1100) & 505 & 775 & 1{,}020 & 1{,}215 \\
+Rationalize (550, 500) & 420 & 520 & 575 & 575 \\
 \bottomrule
 \end{tabular}
 \end{table}
-In 2028 under Plateau the median carry decomposes as depreciation $\sim$\$280B, facility opex $\sim$\$130B, return on net book and on deferred capital $\sim$\$125B. The carry ramps because 2027 is the cheapest year --- the 2026 cohort is half energized and the 2027 cohort barely --- and rationalization flattens rather than cuts because the 2025--26 cohorts are on the books whatever happens next.
+In 2028 under Plateau the median carry decomposes as depreciation $\sim$\$325B, facility opex $\sim$\$150B, return on net book and on deferred capital $\sim$\$170B. The carry ramps because 2027 is the cheapest year --- the 2026 cohort is half energized and the 2027 cohort barely --- and rationalization flattens rather than cuts because the 2025--26 cohorts are on the books whatever happens next.
 
 \subsection{Silicon life: accounting versus economics}
 \claim{The books say five to six years for a chip; the economics say about four, and the paper shows the result both ways.}
@@ -615,7 +615,7 @@ Field data agree. Meta's Llama~3 training run on 16{,}384 H100s recorded 419 une
 
 \lead{Three consequences for the model.}
 \begin{itemize}
-\item First, the economic-life distribution Triang(3, 4, 5.5) is, if anything, generous; a thermally motivated Triang(2.5, 3.5, 5) raises the 2027--28 carry by \$10--15B/yr and lowers 2029--30 slightly as cohorts roll off faster (2030 break-even $g^{*}$ stays at about 49\%).
+\item First, the economic-life distribution Triang(3, 4, 5.5) is, if anything, generous; a thermally motivated Triang(2.5, 3.5, 5) raises the 2027--28 carry by \$10--15B/yr and lowers 2029--30 slightly as cohorts roll off faster (2030 break-even $g^{*}$ stays at about 57\%).
 \item Second, and more important, shorter life converts a growing share of a flat \$780B/yr into \emph{replacement} rather than \emph{growth}: at a 3.5-year life the plateau path is buying back roughly a third of its own stock every year, so capacity --- and therefore revenue potential --- rises much more slowly than cumulative spend.
 \item Third, the salvage and second-life defenses that follow are weaker than their proponents assume, because the parts being down-cycled are the ones that have already consumed most of their Arrhenius budget.
 \end{itemize}
@@ -679,7 +679,7 @@ The same applies to every lab and to the hyperscalers' ``AI revenue'' lines: par
 \lead{Investor money is not customer revenue.} Those receipts are real cash to hyperscalers and are counted in $\theta D$; but they are bridging, not durable, and the model's $g$ is a growth rate of customer revenue, not of investor capital. Related-party round trips --- Microsoft--OpenAI, Nvidia--CoreWeave, Amazon/Alphabet--Anthropic --- are of order \$10B/yr\verify and are small against this; the investor-funded channel is the circularity that matters in 2026.
 
 \section{Bottom-Up Demand: Fifteen Sector Fermi Chains}\label{sec:bottomup}
-\claim{A second, independent estimate: fifteen sectors, each growing toward its own ceiling. Together they grow about 33\% a year from their own 2026 base, not 49\%.}
+\claim{A second, independent estimate: fifteen sectors, each growing toward its own ceiling. Together they grow about 33\% a year from their own 2026 base, not 57\%.}
 
 \inbrief{\item A second estimate that does not assume a growth rate: fifteen sectors, each growing toward a ceiling set by seats, budgets or users.\item Together they reach about \$625B of customer revenue in 2030, growing about 33\% a year on average and slowing as they near their ceilings.\item Four sectors carry three-quarters of it: office assistants and agents, advertising, consumer, and coding tools.\item Startups failing, chips moving onto devices and routine work moving to small models all cap what the cloud collects.}
 
@@ -921,7 +921,7 @@ That is almost exactly the band a stable, growing pool with a 15\% AI share woul
 \subsubsection*{What is still loose}
 \lead{Two secondary variables.} The reallocation share (12--32\% of the accessible pool moving to AI solutions) and the seat-priced SaaS growth rate ($-6$ to $+5$\%/yr) are the loosest terms in the band and neither can be pinned from 2026 data: the first will be visible in Gartner's and the vendors' 2027 category reporting, the second in seat-count disclosures over the next four quarters.
 
-\lead{Held at the centre, swept separately.} Rather than let them hide inside the band they are treated as \emph{secondary variables} --- held at their central ranges in the base case and swept explicitly in Figure~\ref{fig:secondary}. The reading is that the plateau's 50\% contour ($\sim$\$950B) stays inside the band unless the reallocation share falls below $\sim$12\% \emph{and} seat software contracts at 6\%/yr with heavy European displacement; the composition changes far more than the total.
+\lead{Held at the centre, swept separately.} Rather than let them hide inside the band they are treated as \emph{secondary variables} --- held at their central ranges in the base case and swept explicitly in Figure~\ref{fig:secondary}. The reading, with every builder counted: the plateau's 50\% contour ($\sim$\$1.18T) lies above the cutoff at the central secondary values ($\sim$\$1.10T). It is financeable only if the reallocation share is above about 24\%, or if seat software grows while European displacement stays low; the composition changes far more than the total.
 
 \begin{figure}[htbp]\centering\figbox{\includegraphics[width=0.95\textwidth]{f22_secondary.pdf}}
 \caption{The two secondary variables in the feasibility band. Left: the cutoff versus the share of the accessible pool reallocated to AI, for three seat-software growth rates. Right: the cutoff versus seat-software growth, for three levels of European displacement of US vendors. The dash-dot line is the plateau's 50\%-probability contour.}\label{fig:secondary}\end{figure}
@@ -1089,14 +1089,14 @@ Either way the carry is paid from the same end-customer dollar: the squeeze move
 \inbrief{\item Enterprises would need about \$1.1T of real benefit in 2028 to justify their share of the carry.\item AI's savings come in fragments, need checking and get absorbed, so only about 28 cents of each dollar of nominal savings becomes cash.\item Controlled studies show real gains at the task level; the leak is between the task and the profit.}
 
 \subsection{What enterprises must realize}
-\claim{In 2028 enterprises would need to realize about \$1.1T of benefit to justify their share of the carry.}
+\claim{In 2028 enterprises would need to realize about \$1.35T of benefit to justify their share of the carry.}
 
-Take 2028 under Plateau: carry $\sim$\$535B (Table~\ref{tab:carry}). Enterprise buyers supply roughly 70\% of AI revenue, so they must pay $\sim$\$375B to hyperscalers and labs. Every dollar of software or token spend carries $\mu_{\text{integ}}\sim$Triang(1.0, 1.5, 2.5) dollars of integration, so total enterprise outlay is $\sim$\$0.95T, and with a required benefit margin $m\approx0.2$ over cost for an unproven technology~\cite{ref:koller2020,ref:brealey2023} --- every firm applies a hurdle to new spending, and the hurdle is higher, not lower, for a technology whose payback is uncertain --- enterprises must realize $B_{\text{req}}\approx\$1.1\times10^{12}$/yr of auditable benefit by 2028.
+Take 2028 under Plateau: carry $\sim$\$645B, all builders (Table~\ref{tab:carry}). Enterprise buyers supply roughly 70\% of AI revenue, so they must pay $\sim$\$450B to the owners of the data centers and the labs. Every dollar of software or token spend carries $\mu_{\text{integ}}\sim$Triang(1.0, 1.5, 2.5) dollars of integration, so total enterprise outlay is $\sim$\$1.13T, and with a required benefit margin $m\approx0.2$ over cost for an unproven technology~\cite{ref:koller2020,ref:brealey2023} --- every firm applies a hurdle to new spending, and the hurdle is higher, not lower, for a technology whose payback is uncertain --- enterprises must realize $B_{\text{req}}\approx\$1.35\times10^{12}$/yr of auditable benefit by 2028.
 
 \subsection{The labor-substitution floor}
-\claim{The \$1.1T of benefit enterprises need is about 4\% of world knowledge-worker pay --- possible, but only if savings turn into cash.}
+\claim{The \$1.35T of benefit enterprises need is about 4.5\% of world knowledge-worker pay --- possible, but only if savings turn into cash.}
 
-Against a global knowledge-worker payroll of $\sim$\$30T (1.05B workers at $\sim$\$28.5k fully loaded) and a US pool of $\sim$\$9T (62M at $\sim$\$145k)~\cite{ref:bls_oes,ref:bls_ecec}, $B_{\text{req}}$ is $\sim$4\% of global payroll or $\sim$12\% of US payroll if the US bore it alone. Benefits need not be layoffs --- revenue growth, avoided hiring through attrition, faster cycle times all count --- but they must be auditable cash flow.
+Against a global knowledge-worker payroll of $\sim$\$30T (1.05B workers at $\sim$\$28.5k fully loaded) and a US pool of $\sim$\$9T (62M at $\sim$\$145k)~\cite{ref:bls_oes,ref:bls_ecec}, $B_{\text{req}}$ is $\sim$4.5\% of global payroll or $\sim$15\% of US payroll if the US bore it alone. Benefits need not be layoffs --- revenue growth, avoided hiring through attrition, faster cycle times all count --- but they must be auditable cash flow.
 
 \subsection{Four reasons realized yield is a fraction of nominal savings}
 \claim{Savings come in fragments, need checking, get absorbed, and managers protect their teams --- so only about 28 cents per dollar becomes cash.}
@@ -1205,12 +1205,12 @@ These are not contradictory; they dominate in different places. In high-liabilit
 \section{Economic Depreciation, Utilization, and the Commodity Floor}\label{sec:commodity}
 \claim{A commodities reviewer's three points: chips lose value faster than the books say, utilization gains go to buyers, and prices fall toward cash cost.}
 
-\inbrief{\item An AI chip is worth what it can earn against the newest chip, so the silicon bought through 2026 is already worth \$100--250B less than the books show.\item Running chips harder serves more work, but if prices fall in step it brings in no more money.\item If prices fall to the cash cost of running the chips --- about a tenth of today's --- the capital is never recovered.\item The cheapest producers set the price; the GPU renters are squeezed first.}
+\inbrief{\item An AI chip is worth what it can earn against the newest chip, so the silicon the five largest bought through 2026 is already worth \$100--250B less than the books show.\item Running chips harder serves more work, but if prices fall in step it brings in no more money.\item If prices fall to the cash cost of running the chips --- about a tenth of today's --- the capital is never recovered.\item The cheapest producers set the price; the GPU renters are squeezed first.}
 
 Three points raised by a reviewer with a commodities background~\cite{ref:mehta_2026} change how the supply side should be read, and each is now in the model as a secondary variable.
 
 \subsection{Economic versus accounting depreciation}
-\claim{An AI chip is worth what it can earn against the newest one, so the silicon bought through 2026 is already worth \$100--250B less than the books show.}
+\claim{An AI chip is worth what it can earn against the newest one, so the silicon the five largest bought through 2026 is already worth \$100--250B less than the books show.}
 
 The carry in Section~\ref{sec:supply} depreciates silicon straight-line over an effective 4.2 years --- 20--30\%/yr, close to the operators' accounting. The economic view is different: an installed accelerator is worth what it can earn against the newest chip, and the marginal cost of inference per token on the newest chip falls 50--90\% with each generation.
 
@@ -1218,7 +1218,7 @@ On that view the value of a cohort follows a declining balance, $\text{NBV}_t=G(
 
 \lead{The carry moves earlier.} Two consequences.
 \begin{itemize}
-\item First, the carry is front-loaded: at $\delta=0.7$ the 2027 carry is $\sim$\$415B rather than \$390B and the 2030 carry $\sim$\$650B rather than \$725B, because value written off early is not written off later (Figure~\ref{fig:econdep}, left). The annual deficits from 2027 are similar in size but flatter; what changes is timing, and the timing runs against the operators, since the losses fall in the years the paper already calls a sunk deficit.
+\item First, the carry is front-loaded: at $\delta=0.7$ the 2027 carry is $\sim$\$500B rather than \$465B and the 2030 carry $\sim$\$800B rather than \$890B, because value written off early is not written off later (Figure~\ref{fig:econdep}, left). The annual deficits from 2027 are similar in size but flatter; what changes is timing, and the timing runs against the operators, since the losses fall in the years the paper already calls a sunk deficit.
 \item Second, and more immediately, the silicon bought in 2023--26 is already impaired on the economic schedule: its straight-line net book value at end-2026 is $\sim$\$330B, its economic value \$75--230B, an unrecognized gap of \$100B ($\delta=0.5$), \$175B ($\delta=0.7$) or \$250B ($\delta=0.9$).
 \end{itemize}
 
@@ -1269,7 +1269,7 @@ The marginal cash cost of a token is the cash it takes to produce one more --- p
 
 \lead{Realized prices against the floor.} Realized \emph{list} prices are \$0.10--0.30 per million for small and mid models and \$1--5 for frontier models --- roughly ten times the floor, blended --- but effective prices for batch-and-cache pipelines are \$0.03--0.06, within one to three times the floor (register entry \texttt{token\_price\_index}, effective tier).
 
-If prices converge to the floor while volume rises to meet it, receipts converge on the fleet's cash cost --- the opex line, $\sim$\$130B in 2028 --- against a carry of \$540B then and \$725B in 2030. On the commodity view the depreciation and return terms are never recovered by anyone but the lowest-cost producer, and the paper's deficit is not a shortfall to be grown out of but the ordinary fate of fixed capital in a commodity whose price found its floor.
+If prices converge to the floor while volume rises to meet it, receipts converge on the fleet's cash cost --- the opex line, $\sim$\$150B in 2028 and $\sim$\$220B in 2030 --- against a carry of \$645B then and \$890B in 2030. On the commodity view the depreciation and return terms are never recovered by anyone but the lowest-cost producer, and the paper's deficit is not a shortfall to be grown out of but the ordinary fate of fixed capital in a commodity whose price found its floor.
 
 \lead{The metric to watch.} It is not revenue but the ratio of realized price per million tokens to marginal cash cost: the paper's register now carries both (\texttt{token\_price\_index}, \texttt{marginal\_cash\_cost}), and a ratio approaching one from above is the signal that the commodity view has won.
 
@@ -1433,7 +1433,7 @@ For the contracted share, power moves from opex into carry: a fixed liability th
 Two further notes from the same exchange --- a three-bloc comparison of five-year cost per megawatt (roughly \$42--50M in Europe, \$32--38M in the US, \$14--18M in China's western corridors) and a sketch of rest-of-world demand (India, ASEAN, Africa, Latin America) --- were derived without sources and are recorded here only as questions for the register\verify.
 
 \section{Results: Break-Even Growth}\label{sec:results}
-\claim{Revenue must grow about 49\% a year to break even by 2030; no growth rate rescues 2027--28.}
+\claim{Revenue must grow about 57\% a year to break even by 2030; no growth rate rescues 2027--29.}
 
 \inbrief{\item Counted sector by sector, receipts fall about \$420B a year short of the carry of all builders in 2030, five and a half standard deviations from break-even.\item AI can disrupt software and still fail to pay for its capital: the buyer's dollar moves, but only a fraction reaches the cloud.\item With a 35\% spending cut, the chance of profit is about 7\% in 2030 and 58\% by 2032.}
 
@@ -1562,18 +1562,18 @@ Equation~\ref{eq:var} in practice: Table~\ref{tab:varbudget} apportions the one-
  & \multicolumn{2}{c}{\textbf{Single judgment ranges}} & \multicolumn{2}{c}{\textbf{Decomposed (Section~\ref{sec:decomp})}} \\
 \textbf{Top-down input ($\Delta_{2030}$, Plateau, $g=g^{*}$)} & \textbf{Half-swing} & \textbf{Share} & \textbf{Half-swing} & \textbf{Share} \\
 \midrule
-2026 revenue base (7 components, hyperscaler part decomposed) & 229 & 64\% & 64 & 38\% \\
-Cloud share $\theta$ (by channel and by lab) & 121 & 18\% & 52 & 25\% \\
-Facility opex (5 components, plus water uplift) & 78 & 7\% & 20 & 4\% \\
-Silicon life (training/inference fleet mix) & 66 & 5\% & 48 & 22\% \\
+2026 revenue base (7 components, hyperscaler part decomposed) & 229 & 64\% & 61 & 31\% \\
+Cloud share $\theta$ (by channel and by lab) & 121 & 18\% & 53 & 23\% \\
+Facility opex (5 components, plus water uplift) & 78 & 7\% & 25 & 5\% \\
+Silicon life (training/inference fleet mix) & 66 & 5\% & 56 & 26\% \\
 Non-AI baseline (constrained by 2023) & 42 & 2\% & $<$10 & $<$1\% \\
 Energization lag (silicon/shell) & 41 & 2\% & $<$10 & $<$1\% \\
-Cost of capital (CAPM) & 26 & 1\% & 29 & 8\% \\
-Shell life; silicon share (Nvidia-anchored) & 13, 12 & $<$1\% & 12, 17 & $\sim$4\% \\
+Cost of capital (CAPM) & 26 & 1\% & 35 & 10\% \\
+Shell life; silicon share (Nvidia-anchored) & 13, 12 & $<$1\% & 15, 21 & $\sim$6\% \\
 Grid energization cap; siting deferral; site cost and cooling uplifts (new) & --- & --- & $<$12 each & $\sim$2\% \\
 \midrule
-Root-sum-square & 286 & & 104 & \\
-Linear sum & 628 & & 280 & \\
+Root-sum-square & 286 & & 110 & \\
+Linear sum & 628 & & 266 & \\
 \midrule
 \textbf{Bottom-up sector ceiling} & & & & \\
 Advertising uplift & 54 & 51\% & 18 & 11\% \\
@@ -1589,7 +1589,7 @@ Root-sum-square & 76 & & 50 & \\
 \subsection{Reconciling the two estimates}
 \claim{The two estimates disagree by about \$255B of end-customer revenue in 2030; the gap in receipts against the carry is three and a half standard deviations.}
 
-The top-down sweep says the plateau stock needs 49\%/yr sustained through 2030 (about \$880B of end-customer revenue; the siting friction defers carry but adds cost, and the two nearly cancel by 2030). The bottom-up chains deliver 33\% CAGR (about \$625B), with year-on-year growth falling from 57\% to 14\% as the large sectors saturate.
+The top-down sweep says the plateau stock needs 57\%/yr sustained through 2030 (about \$1.09T of end-customer revenue; the siting friction defers carry but adds cost, and the two nearly cancel by 2030). The bottom-up chains deliver 33\% CAGR (about \$625B), with year-on-year growth falling from 57\% to 14\% as the large sectors saturate.
 
 The two methods share only the 2026 base; the ceilings, ramps and capture shares are independent judgments, and the gap between them --- roughly \$480B of end-customer revenue or \$420B of infrastructure receipts in 2030 --- is several times the root-sum-square half-swing of the bottom-up estimate (Table~\ref{tab:varbudget}); expressed as a $z$-score of the difference, $\Delta_{2030}/\sigma_{\Delta}=-422/76\approx-5.6$ (Appendix~\ref{app:errors}).
 
@@ -1611,7 +1611,7 @@ So AI revenue can reach $\sim$\$1T by 2030 while the software industry shrinks, 
 \subsection{The overlap gauge}\label{sec:overlap}
 \claim{The chance that receipts exceed the carry, mapped over the two things the paper cannot pin down.}
 
-\inbrief{\item The right question is not the sign but the probability that receipts exceed the carry.\item On a flat path that needs 2030 AI revenue near \$950B --- inside the feasible band, but only if the sector chains are about 50\% too low.\item With a 35\% spending cut the chance of profit is about 50\% in 2030 and 95\% by 2032.\item The map shows the result as a probability, not a prediction of loss.}
+\inbrief{\item The right question is not the sign but the probability that receipts exceed the carry.\item On a flat path that needs 2030 AI revenue near \$1.18T --- near the top of the feasible band, and only if the sector chains are about 90\% too low.\item With a 35\% spending cut the chance of profit is about 7\% in 2030 and 58\% by 2032.\item The map shows the result as a probability, not a prediction of loss.}
 
 The question a Fermi analysis should end on is not ``what is the sign'' but ``with what probability can the two distributions overlap, and inside what feasible region.'' Figure~\ref{fig:overlap} overlays the bottom-up receipts and carry distributions year by year; Table~\ref{tab:pprofit} states P(receipts $>$ carry) for every path and year; and Figure~\ref{fig:probmap} maps that probability over the two residual axes with their feasibility cutoffs drawn in.
 
@@ -1620,7 +1620,7 @@ The question a Fermi analysis should end on is not ``what is the sign'' but ``wi
 
 \begin{table}[htbp]
 \centering\small
-\caption{P(profit) $=$ P(receipts $-$ circular $>$ carry), bottom-up demand, by path and year}
+\caption{P(profit) $=$ P(receipts $-$ circular $>$ carry), bottom-up demand, all builders, by path and year}
 \label{tab:pprofit}
 \begin{tabular}{llcccc}
 \toprule
@@ -1628,8 +1628,8 @@ The question a Fermi analysis should end on is not ``what is the sign'' but ``wi
 \midrule
 Plateau & none / overlay & 0\% / 0\% & 0\% / 0\% & 0\% / 0\% & 0\% / 0\% \\
 Arms race & none / overlay & 0\% / 0\% & 0\% / 0\% & 0\% / 0\% & 0\% / 0\% \\
-Rationalize & none & 0\% & 2\% & 20\% & 52\% \\
-Rationalize & overlay & 0\% & 0\% & 0\% & 3\% \\
+Rationalize & none & 0\% & 0\% & 1\% & 7\% \\
+Rationalize & overlay & 0\% & 0\% & 0\% & 0\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1637,11 +1637,11 @@ Rationalize & overlay & 0\% & 0\% & 0\% & 3\% \\
 \begin{figure}[htbp]\centering\figbox{\includegraphics[width=0.95\textwidth]{f17_probmap.pdf}}
 \caption{Probability of profit in 2030 over the two residual axes, by capex path. Solid contour: 50\%. Dashed line: the IT-budget hard cap on the assistant ceiling ($\sim$\$270B). Dotted curves bound the feasibility band: total 2030 AI revenue between \$920B and \$1.31T, the P10--P90 of the decomposed budget cutoff (Section~\ref{sec:decomp}); to the right of the band the demand cannot be financed from enterprise, advertising and consumer budgets. The dot is the paper's modes.}\label{fig:probmap}\end{figure}
 
-\lead{The map in one picture.} The feasibility band is what keeps it honest. A single line at 8\% of total IT spend ($\sim$\$810B) would put the plateau's 50\% contour outside the feasible region; decomposing the cutoff into Gartner's software and services budgets, their growth, and an AI share (Section~\ref{sec:decomp}) gives a band of \$920B--\$1.31T --- almost unchanged in total even though the pool it comes from is being torn up, because the money moves from seats to solutions rather than disappearing (Section~\ref{sec:decomp}) --- and the plateau's 50\% contour --- residual factor $\sim$1.5, 2030 AI revenue $\sim$\$950B --- lies in its upper half.
+\lead{The map in one picture.} The feasibility band is what keeps it honest. A single line at 8\% of total IT spend ($\sim$\$810B) would put the plateau's 50\% contour outside the feasible region; decomposing the cutoff into Gartner's software and services budgets, their growth, and an AI share (Section~\ref{sec:decomp}) gives a band of \$920B--\$1.31T --- almost unchanged in total even though the pool it comes from is being torn up, because the money moves from seats to solutions rather than disappearing (Section~\ref{sec:decomp}) --- and the plateau's 50\% contour --- residual factor $\sim$1.9, 2030 AI revenue $\sim$\$1.18T --- lies near its top: the carry of every builder can be financed only if almost everything goes right.
 
-\lead{The honest statement.} On a plateau, the installed base is more likely than not to earn its 2030 carry only if the sector chains are $\sim$50\% too conservative in aggregate, which is financeable in roughly 85\% of budget draws but requires AI to reach $\sim$25\% of an enterprise software and services pool that is no longer growing, up from $\sim$5\% in 2026 (Gartner's \$64B of AI platform and model spend against \$3.3T~\cite{ref:gartner_ai_platforms,ref:gartner_it_jul2026}) --- money that comes out of seat-priced software and consulting hours.
+\lead{The honest statement.} On a plateau, the installed base of every builder is more likely than not to earn its 2030 carry only if the sector chains are $\sim$90\% too conservative in aggregate, which is financeable in only about a third of budget draws (the cutoff's P50 is $\sim$\$1.10T) and requires AI to reach about a third of an enterprise software and services pool that is no longer growing, up from $\sim$5\% in 2026 (Gartner's \$64B of AI platform and model spend against \$3.3T~\cite{ref:gartner_ai_platforms,ref:gartner_it_jul2026}) --- money that comes out of seat-priced software and consulting hours.
 
-\lead{Other spending paths.} Under an arms race the contour is off the chart. Under rationalization the feasible and profitable regions overlap: P(profit) is $\sim$52\% at the paper's modes in 2030; siting friction pulls it down because deferred cohorts and site costs land in 2029--30. The zeros in Table~\ref{tab:pprofit} for 2027--28 are not a modeling artifact: the 2025--27 cohorts are on the books and demand cannot double fast enough to meet them under any path.
+\lead{Other spending paths.} Under an arms race the contour is off the chart. Under rationalization the feasible and profitable regions overlap, but late: P(profit) is $\sim$7\% at the paper's modes in 2030 and $\sim$58\% in 2032; siting friction pulls it down because deferred cohorts and site costs land in 2029--30. The zeros in Table~\ref{tab:pprofit} for 2027--28 are not a modeling artifact: the 2025--27 cohorts are on the books and demand cannot double fast enough to meet them under any path.
 
 \lead{Paid from labor budgets?} Three questions the feasibility band raises. The first is the deepest: a16z's \textit{State of Markets} argues that AI's addressable market is ``considerably larger than IT budgets'' because AI is paid from labor budgets~\cite{ref:a16z_som} --- the \$30T payroll, not the \$3.3T software-and-services pool.
 
@@ -1651,9 +1651,9 @@ If so, the band is wrong by a factor of several and the plateau pays easily. The
 \begin{itemize}
 \item First, is AI spending \emph{additional} to IT budgets or does it \emph{displace} other software and services? Gartner's 2026 forecast has total IT spending growing 14\%, most of it AI-driven, so the near-term answer is mostly additional; but the band's AI share is a share of the whole software-and-services pool, so if AI displaces seat-based software and consulting hours one-for-one the cap on AI is the same and the hyperscalers' non-AI cloud revenue shrinks instead --- Microsoft can gain AI revenue while losing on conventional Office.
 \item Second, AI's own efficiency will shrink the services budget it draws on: if AI removes \$200--400B of the \$1.87T services pool by 2030, the band's upper edge falls by roughly that share of the AI cut. Both effects narrow the feasible region; neither is in the base case, which is therefore generous to the build-out on this point.
-\end{itemize} \textbf{No growth rate clears 2027--28.} No plausible $g$ clears 2027 or 2028: the 2025--27 cohorts are a sunk deficit of \$100--250B/yr. Under Plateau, $g\approx57\%$ sustained for four years breaks even in 2030 alone and $\sim$64\% recovers the 2027--28 hole cumulatively. The tornado (Figure~\ref{fig:tornado}) says what a Fermi analyst wants to know: the 2026 revenue base and the infrastructure share dominate everything on the supply side; silicon life, opex and the non-AI baseline are second-order; cost of capital and shell life barely register.
+\end{itemize} \textbf{No growth rate clears 2027--28.} No plausible $g$ clears 2027 or 2028: the 2025--27 cohorts are a sunk deficit of \$200--300B/yr. Under Plateau, $g\approx57\%$ sustained for four years breaks even in 2030 alone and $\sim$74\% recovers the 2027--29 hole cumulatively. The tornado (Figure~\ref{fig:tornado}) says what a Fermi analyst wants to know: the 2026 revenue base and the infrastructure share dominate everything on the supply side; silicon life, opex and the non-AI baseline are second-order; cost of capital and shell life barely register.
 
- The distribution at $g=49\%$ (Figure~\ref{fig:hist}) is centered near zero --- the coin-toss neighborhood by construction. The bottom-up estimate says the sectors do not reach that neighborhood.
+ The distribution at $g=57\%$ (Figure~\ref{fig:hist}) is centered near zero --- the coin-toss neighborhood by construction. The bottom-up estimate says the sectors do not reach that neighborhood.
 
 \noindent\lead{Where the data stand.} Frontier-lab run-rates rose roughly 3.5$\times$ (Anthropic $\sim$7$\times$, OpenAI $\sim$2$\times$) between end-2025 and August 2026~\cite{ref:techcrunch_anthropic,ref:axios_anthropic,ref:epoch_revenue}. Both companies have told investors to expect slower growth in 2026 than trend --- roughly 2.2$\times$ for OpenAI and up to 4$\times$ for Anthropic~\cite{ref:epoch_revenue_x}.
 
@@ -1911,7 +1911,7 @@ The supply side, a chain of seventeen tight inputs, is uncertain by 5\%. Subtrac
 
 \section{Other Derivations}
 \subsection{Carry at the modes, 2028 Plateau}
-\emph{A hand check with round-number inputs from the first draft (opex 8\%, return 10.5\%, silicon life 4 years); the model's current median is \$535B (Table~\ref{tab:carry}).} AI cohorts in service: 2023: 0; 2024: 95; 2025: 283; 2026: 615; 2027: 615; 2028: 308 (half energized). Gross $\approx$1{,}915. Silicon 55\%: depreciation $1{,}053/4=263$; shell 45\%: $862/20=43$. Opex $0.08\times1{,}915=153$. Net book $\approx$1{,}280; return $0.105\times1{,}280=134$. $H_{2028}\approx590$ on these first-draft inputs.
+\emph{A hand check with round-number inputs from the first draft (opex 8\%, return 10.5\%, silicon life 4 years); the model's current median is \$535B for the five largest alone and \$645B with every builder (Table~\ref{tab:carry}).} AI cohorts in service: 2023: 0; 2024: 95; 2025: 283; 2026: 615; 2027: 615; 2028: 308 (half energized). Gross $\approx$1{,}915. Silicon 55\%: depreciation $1{,}053/4=263$; shell 45\%: $862/20=43$. Opex $0.08\times1{,}915=153$. Net book $\approx$1{,}280; return $0.105\times1{,}280=134$. $H_{2028}\approx590$ on these first-draft inputs.
 \subsection{Enterprise benefit requirement, 2028}
 $0.7\times535\approx375$; $\times(1+1.5)\approx940$; $\times1.2\approx1{,}125$. Payroll shares: $1.1/30\approx4\%$ global; $1.1/9\approx12\%$ US-alone.
 \subsection{Slack dissipation}
@@ -1919,7 +1919,7 @@ $\tau(1-0.65)(1-0.20)=0.28\,\tau$; at $\tau=0.15$: 4.2\% of payroll.
 \subsection{Contact-center ratio}
 Labor \$350B; displacement 5--10\% $=$ \$17--35B; tokens \$1--2B; ratio 10--35:1.
 \subsection{Break-even revenue levels}
-Plateau 2030 at $g^{*}=49\%$: $179\times1.49^{4}\approx880$; at $\theta=0.815$, infrastructure receipts $\approx720$, against $H_{2030}\approx710$.
+Plateau 2030 at $g^{*}=57\%$: $179\times1.57^{4}\approx1{,}090$; at $\theta=0.815$, infrastructure receipts $\approx885$, against $H_{2030}\approx890$.
 
 \newpage
 \section{Every Equation, Term by Term}\label{app:equations}
@@ -1968,7 +1968,7 @@ The payroll pool, $W$, is the wage bill AI could act on (\$T); $\tau$ the nomina
 
 \subsection*{The enterprise benefit requirement}
 \[B_{\text{req}}=S_{\text{ent}}(1+m),\qquad S_{\text{ent}}=H_{\text{ent}}(1+\mu_{\text{integ}}),\qquad H_{\text{ent}}=f_{\text{ent}}H_t.\]
-The enterprise share, $f_{\text{ent}}$ ($\approx$0.7), is the part of the carry that enterprises must fund; $\mu_{\text{integ}}$ the integration spend per dollar of software and tokens; $m$ the required margin over cost. Worked, 2028: $0.7\times540=378$; $\times2.5=945$; $\times1.2\approx1{,}130$, i.e.\ $\sim$\$1.1--1.2T.
+The enterprise share, $f_{\text{ent}}$ ($\approx$0.7), is the part of the carry that enterprises must fund; $\mu_{\text{integ}}$ the integration spend per dollar of software and tokens; $m$ the required margin over cost. Worked, 2028: $0.7\times645=452$; $\times2.5=1{,}129$; $\times1.2\approx1{,}355$, i.e.\ $\sim$\$1.35T.
 
 \subsection*{Propagation across summed chains (Appendix~\ref{app:errors})}
 \[\sigma^{2}_{\ln D}\approx\sigma^{2}_{\ln M}+\sum_s w_s^{2}\,\sigma^{2}_{\ln R_s}.\]
@@ -2133,7 +2133,7 @@ The supply-side numbers will be settled by filings within two quarters and are u
 
 The sector ceilings will hold except for office assistants, where the answer depends on agent adoption that no one can see from here, and advertising, where Meta and Google will keep attributing growth to AI whether or not the attribution is clean.
 
-The budget pool will be smaller and more reallocated than the base case assumes, hurting seat-priced incumbents more than the aggregate. Siting friction will peak in 2027. The result --- a sunk deficit in 2027--28 under every path, a plateau that pays only with adoption far above what is visible, and a rational operator who cuts to \$400--500B and recovers by 2034 --- is more likely to be moved by a capex decision than by any demand surprise. That decision is the thing to watch; the October calls pointed spending up, not down.
+The budget pool will be smaller and more reallocated than the base case assumes, hurting seat-priced incumbents more than the aggregate. Siting friction will peak in 2027. The result --- a sunk deficit in 2027--28 under every path, a plateau that pays only with adoption far above what is visible, and a rational operator who cuts to \$400--500B and turns a yearly profit in 2032 without earning back the losses by 2035 --- is more likely to be moved by a capex decision than by any demand surprise. That decision is the thing to watch; the October calls pointed spending up, not down.
 
 \section{Update Protocol: Keeping the Estimate Live}\label{app:update}
 Every number in this paper is a function of a register of inputs, each with a source, a source date, the date its source next publishes, and the model parameter it feeds. The register (\texttt{parameters.json}), the model, and a rebuild script are deposited with the paper. Updating is mechanical: change the input, run the rebuild, read the delta.
@@ -2360,7 +2360,7 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[{$\mathbf{1}[\cdot]$}] Indicator: 1 if the bracketed condition holds (the cohort is still alive), 0 otherwise.
 \item[$AF$, $E_a$, $k$, $T_1$, $T_2$] Arrhenius acceleration factor between absolute temperatures $T_1$ and $T_2$; activation energy ($\approx$0.7 eV); Boltzmann's constant ($8.617\times10^{-5}$ eV/K). Note $k$ here is not the logistic ramp $k_s$.
 \item[$B_{\text{realized}}$, $C_{\text{severance}}$] Cash benefit a firm can actually book, $W\tau(1-\sigma_{\text{slack}})(1-\nu_{\text{verify}})-C_{\text{severance}}$; one-time separation costs.
-\item[$B_{\text{req}}$, $S_{\text{ent}}$, $H_{\text{ent}}$] Benefit enterprises must realize ($\sim$\$1.1T in 2028); their total AI outlay including integration ($\sim$\$0.95T); the enterprise share of the carry ($\sim$\$375B).
+\item[$B_{\text{req}}$, $S_{\text{ent}}$, $H_{\text{ent}}$] Benefit enterprises must realize ($\sim$\$1.35T in 2028); their total AI outlay including integration ($\sim$\$1.13T); the enterprise share of the carry ($\sim$\$450B).
 \item[$\ell$ vs $L$] Lower-case $\ell$ (with subscript si or sh) is an energization lag, a fraction between 0 and 1; upper-case $L$ is a life in years. Different letters for different quantities.
 \item[$\epsilon$, $p$ (incumbent case)] Seat-loss elasticity and annual price growth; revenue ratio $(1+p)^4[1-\epsilon((1+p)^4-1)]$ times the seat trend.
 \item[$g$ subscripts] $g_N$ baseline growth; $g_C$ post-2030 ceiling growth; $g_{\text{EU}}$ European displacement; $g_{\text{seat}}$, $g_{\text{infra}}$, $g_{\text{sv}}$ growth of the three budget pools; $g^{*}$ break-even growth; bare $g$ the top-down sweep. All per year.

@@ -45,7 +45,7 @@ for gs,ls,lab in [(-0.06,':','seat SaaS -6%/yr'),(0.0,'-','seat SaaS 0%/yr'),(0.
     med=[m(pool*(r+ainew)+ads+cons) for r in rs]; lo=[q(pool*(r+ainew)+ads+cons,10) for r in rs]; hi=[q(pool*(r+ainew)+ads+cons,90) for r in rs]
     ax[0].plot(rs*100,med,ls,label=lab)
     if gs==0.0: ax[0].fill_between(rs*100,lo,hi,color='#7F9BC0',alpha=0.25)
-ax[0].axhline(950,color='#1E2761',lw=1,ls='-.'); ax[0].text(9,965,'plateau 50%-probability contour (~$950B)',fontsize=7)
+ax[0].axhline(1180,color='#1E2761',lw=1,ls='-.'); ax[0].text(9,1195,'plateau 50%-probability contour, all builders (~$1.18T)',fontsize=7)
 ax[0].set_xlabel('Share of accessible pool reallocated to AI solutions by 2030 (%)'); ax[0].set_ylabel('Feasibility cutoff, total 2030 AI revenue ($B)'); ax[0].legend(fontsize=7)
 ax[0].set_title('Secondary variable 1: reallocation share (band = P10-P90 at 0%/yr)',fontsize=9)
 gss=np.linspace(-0.10,0.06,9); disp=np.linspace(0.0,0.5,6)
@@ -55,6 +55,6 @@ for d_,ls in zip([0.0,0.2,0.4],[':','-','--']):
     for gs in gss:
         seat30=sw26*seat_share*(1+gs)**4; pool=(seat30+infra30+sv30)*(1-eu2); vals.append(m(pool*(T(0.12,0.20,0.32)+ainew)+ads+cons))
     ax[1].plot(gss*100,vals,ls,label=f'EU displacement {d_:.0%}')
-ax[1].axhline(950,color='#1E2761',lw=1,ls='-.'); ax[1].set_xlabel('Seat-priced SaaS growth 2026-30 (%/yr)'); ax[1].set_ylabel('Feasibility cutoff ($B)'); ax[1].legend(fontsize=7)
+ax[1].axhline(1180,color='#1E2761',lw=1,ls='-.'); ax[1].set_xlabel('Seat-priced SaaS growth 2026-30 (%/yr)'); ax[1].set_ylabel('Feasibility cutoff ($B)'); ax[1].legend(fontsize=7)
 ax[1].set_title('Secondary variable 2: seat deflation x sovereignty displacement',fontsize=9)
 plt.tight_layout(); plt.savefig('f22_secondary.pdf'); print('figs done')

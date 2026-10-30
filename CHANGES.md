@@ -4,59 +4,70 @@ Each version opens with what changed and why. Click a line to expand it.
 
 ## Version 28 - 29 October 2026 (post-Q3 earnings)
 
-**Result:** unchanged within its uncertainty. 2030 plateau deficit about $260B/yr (z = -3.54); break-even growth 49%/yr; the sector chains deliver about 33%. Minor under the re-issue rule. Nvidia (19 Nov), Oracle (Dec) and Anthropic's amended S-1 enter as v28.1.
+**Result:** a material change, because the count is now complete. With every builder whose rent the model already counted, the 2030 plateau deficit is about **$420B/yr (z = -5.56)**; break-even growth 57%/yr; the sector chains deliver about 33%. For the five largest alone nothing moved (about $260B, z = -3.54). Nvidia (19 Nov), Oracle (Dec), CoreWeave (10 Nov) and Anthropic's amended S-1 enter as v28.1.
 
 ### Headline
 
-<details><summary><b>How long investors wait: an ordinary return, early losses included, arrives in 2034-35 at best</b></summary>
+<details><summary><b>Every builder counted: SpaceX/xAI, CoreWeave, Nebius and others add ~$140B in 2026 - the 2030 shortfall is ~$420B, not ~$260B</b></summary>
 
-- Spending that follows revenue: an ordinary return (~9.5%), early losses included, only in 2034-35; a 35% cut in 2033.
-- Flat spending: ~1% a year on average by 2035. Rising spending: a loss on average every year to 2035.
-- The losses cost money too - interest on debt or earnings given up - so the hole compounds: with ~9.5%/yr on the losses, the flat path's hole is ~$2.4T by 2035.
+**Why they were left out:** the model counted the builders reported in SEC filings and tracked by Epoch AI (Microsoft, Alphabet, Amazon, Meta, Oracle). Until 2026 the others were private, small, or both.
+
+**Why they are added now:**
+- **Scale:** 2026 AI capex, company-stated: SpaceX/xAI ~$75B (Q1 7.7 + Q2 15.8 + Q3 16.4 + Q4 guided 35-40 total); CoreWeave $35-39B; Nebius $20-25B; IREN and Applied Digital ~$6B. About $140B - 18% on top of the Big-5's $780B.
+- **Symmetry (the main reason):** the model counts revenue reaching *any* owner of AI data centers. Anthropic pays SpaceX $1.25B a month for Colossus 1; Microsoft provides about two-thirds of CoreWeave's revenue. That rent was already counted; the buildings and chips that earn it were not. Revenue in, cost out flattered the build-out.
+- **No double count:** the Big-5 buy this capacity as a service, not as property - it is not in their cash capex or finance leases. The register flags the check for each filing.
+- **A new builder adds cost, not customers:** rent moves from Azure, AWS or Google Cloud to SpaceX or CoreWeave; it does not grow. Captive uses (Grok, robotaxis) are still paid for by end customers already in the sector chains. Compute in orbit would be capex like any other, with a shorter life.
+
+**What it does (all in the base, same vintage model, same paths as the Big-5):**
+- 2030 flat path: carry $725B -> $890B; shortfall $260B -> $420B; z -3.5 -> -5.6; break-even growth 49% -> 57%.
+- 35% cut: was about even in 2030; now $110B short, profitable year by year from 2032.
+- With the cost of money, **no path is repaid by 2035**.
+
+**Still out, for lack of a stated figure:** Meta's off-balance-sheet Hyperion venture, Anthropic's own sites (Fluidstack), Crusoe, Lambda, Nscale, Tesla's training clusters, the Gulf. Each would widen the gap.
+</details>
+
+<details><summary><b>How long investors wait: longer than the horizon - no path earns an ordinary return by 2035</b></summary>
+
+- A 35% cut, or spending that follows revenue, turns a yearly profit only from 2032 and has averaged 8-9% by 2035 - just short of an ordinary ~9.5%.
+- Flat spending: about -4% a year on average by 2035. Rising spending: about -10%.
+- The losses cost money too - interest on debt or earnings given up: with ~9.5%/yr on the losses, the flat path's hole is ~$4.5T by 2035; spending that follows revenue is still ~$800B short.
 - That delay, not whether AI is useful, is what investors are pricing. Tables below.
 </details>
 
-<details><summary><b>A sixth builder: SpaceX/xAI adds ~$85B to the 2030 cost - shortfall ~$345B, or ~$425B at its current pace</b></summary>
-
-**Why it was left out:** the model counts the builders reported in SEC filings and tracked by Epoch AI. Until 2026 xAI was private and small ($5.6B of AI capex in 2024, $12.7B in 2025).
-
-**Why it is added now:**
-- **Scale:** AI capex $7.7B (Q1), $15.8B (Q2), $16.4B (Q3); Q4 total guided $35-40B, "almost entirely" compute. About $75B in 2026, and a $140-160B a year pace - Meta's scale.
-- **Symmetry (the main reason):** Anthropic pays SpaceX $1.25B a month to May 2029 for Colossus 1. That rent was already counted as revenue reaching data-centre owners; the cost of the buildings and chips that earn it was not. Revenue in, cost out flattered the build-out.
-- **No new revenue:** SpaceX's AI revenue (~$7.6B in Q3) is already in the model - lab rent in the lab channel, Grok in consumer, Cursor in coding tools.
-
-**What it does:** run through the same vintage model (`model/spacex_overlay.py`): +$87B to the 2030 cost if it holds at the 2026 level (2030 flat-path shortfall ~$260B -> ~$345B); +$166B at the Q4 pace (-> ~$425B).
-
-**Why an overlay in v28:** the largest quarter is still a forecast, and changing the base on release eve would break the paper's own update rule. It enters the base in v29, after SpaceX's Q4 (late January). The same fix will then be applied to the GPU-rental firms (CoreWeave, Nebius, Lambda, Crusoe) and off-balance-sheet vehicles.
-
-The CFO's "less than a one-year payback" is recorded as an interested party's judgment.
-</details>
-
-<details><summary><b>Inflation, counted once: after inflation the flat path is still losing ~1.6% a year in 2035</b></summary>
+<details><summary><b>Inflation, counted once: after inflation the flat path is losing ~6.5% a year in 2035</b></summary>
 
 Over a nine-year wait inflation matters, so v28 states it explicitly - and makes sure it is not counted twice.
 
-- **Already in:** the cost of money (9.45%) is a nominal rate, so it already contains expected inflation. The payback years stand as they are. Stated in 2026 dollars, the hole and the recovery shrink together and the crossover years do not move (2033 for a 35% cut, 2035 for spending that tracks revenue).
+- **Already in:** the cost of money (9.45%) is a nominal rate, so it already contains expected inflation. Stated in 2026 dollars, the hole and the recovery shrink together, so whether and when the hole closes does not change.
 - **Not added to revenue:** receipts are counted in today's prices - multi-year contracts are fixed in dollars when signed, AI unit prices are falling, and the sector ceilings use today's prices. No inflation uplift.
-- **What changes:** the return investors keep. Inflation 2.0 / 2.6 / 3.7% a year (Fed 2% goal; September 2026 core CPI 2.6%; headline CPI 3.7% - BLS, 14 Oct). An ordinary return becomes ~6.5% real; flat spending averages ~-1.6% a year in 2035; an arms race ~-9%.
-- **Fixed prices, rising costs:** a contract signed in 2026 is worth about a fifth less in real terms by 2035, while power, labour and site costs rise. Letting facility opex rise with prices would add ~$13B to the 2030 carry and ~$40B by 2035 on the flat path - left out of the base (no source yet for escalation clauses), shown as a sensitivity. It makes the result worse.
+- **What changes:** the return investors keep. Inflation 2.0 / 2.6 / 3.7% a year (Fed 2% goal; September 2026 core CPI 2.6%; headline CPI 3.7% - BLS, 14 Oct). An ordinary return becomes ~6.5% real; flat spending averages ~-6.5% a year in 2035; an arms race ~-12%.
+- **Fixed prices, rising costs:** a contract signed in 2026 is worth about a fifth less in real terms by 2035, while power, labour and site costs rise. Letting facility opex rise with prices would add ~$16B to the 2030 carry and ~$50B by 2035 on the flat path - left out of the base (no source yet for escalation clauses), shown as a sensitivity. It makes the result worse.
 - **Worked example - one dollar lost in 2027, recovered in 2035:** at 9.45% the owner needs 1.0945^8 = $2.06 back; inflation accounts for 1.026^8 = 1.23 of that; the rest, 2.06 / 1.23 = 1.67 = 1.067^8, is ~6.7% a year of real earnings given up. About a fifth of the cost of waiting is inflation; four-fifths is real return forgone.
-- New register entry `inflation` (presentation only; no effect on g*, z or payback years). New: real-return rows in the return table, a 2026-dollar block in the cost-of-money table, the formula term by term in the equations appendix, a paragraph in the 2035 horizon appendix, and glossary entries (Nominal vs real; pi; rho).
+- New register entry `inflation` (presentation only; no effect on g*, z or payback). New: real-return rows in the return table, a 2026-dollar block in the cost-of-money table, the formula term by term in the equations appendix, a paragraph in the 2035 horizon appendix, and glossary entries (Nominal vs real; pi; rho).
 
 | Return in today's money (%; ordinary ~6.5%) | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
 |---|---|---|---|---|---|---|---|---|---|
-| Flat spending | -7 | -7 | -7 | -7 | -6 | -5 | -4 | -3 | -2 |
-| Arms race | -8 | -9 | -10 | -11 | -11 | -11 | -11 | -10 | -9 |
-| 35% cut | -5 | -3 | -1 | 1 | 4 | 6 | 9 | 11 | 14 |
-| Spending tracks revenue | -7 | -6 | -5 | -4 | -1 | 3 | 6 | 8 | 10 |
+| Flat spending | -10 | -10 | -11 | -11 | -10 | -9 | -8 | -8 | -7 |
+| Arms race | -11 | -12 | -13 | -14 | -14 | -13 | -13 | -13 | -12 |
+| 35% cut | -8 | -8 | -6 | -5 | -3 | -1 | 1 | 3 | 5 |
+| Spending tracks revenue | -10 | -10 | -9 | -7 | -5 | -2 | 1 | 3 | 6 |
 
 | Hole with cost of money, in 2026 dollars ($B) | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
 |---|---|---|---|---|---|---|---|---|---|
-| Flat spending | -150 | -350 | -600 | -870 | -1,120 | -1,360 | -1,560 | -1,740 | -1,880 |
-| Arms race | -180 | -500 | -930 | -1,480 | -2,080 | -2,710 | -3,340 | -4,000 | -4,650 |
-| 35% cut | -110 | -210 | -270 | -290 | -240 | -120 | +50 | +300 | +620 |
-| Spending tracks revenue | -150 | -330 | -480 | -580 | -570 | -460 | -290 | -70 | +160 |
+| Flat spending | -220 | -530 | -920 | -1,350 | -1,800 | -2,240 | -2,670 | -3,090 | -3,500 |
+| Arms race | -260 | -700 | -1,300 | -2,050 | -2,880 | -3,750 | -4,670 | -5,630 | -6,620 |
+| 35% cut | -180 | -360 | -540 | -670 | -750 | -780 | -760 | -690 | -550 |
+| Spending tracks revenue | -220 | -490 | -740 | -930 | -1,020 | -1,000 | -920 | -790 | -630 |
 
+</details>
+
+<details><summary><b>Tax, counted honestly: it widens the 2030 gap by ~$20-45B, not narrows it</b></summary>
+
+- The returns are before tax by design: the 9.45% cost of money is an after-tax rate, compared with pre-tax profit.
+- The 2025 law made 100% first-year write-off of equipment permanent (IRS Notice 2026-11); builders' 2025 tax bills fell sharply (Amazon ~$9B -> $1.2B; Meta $9.6B -> $2.8B; Alphabet $21.1B -> $13.8B).
+- But the write-off delays tax; it does not cancel it - Amazon: the policy "ultimately doesn't change the amount of tax we pay". Its value is the interest on the deferred tax: ~$11-33B a year by 2030.
+- Earning 9.45% after a 15-21% tax needs ~$42-63B a year more profit by 2030 than the carry charges.
+- Net: tax widens the 2030 gap by ~$20-45B a year (`model/tax_check.py`).
 </details>
 
 <details><summary><b>The market asked the paper's question: Alphabet's worst day ever, down ~13%, ~$480-500B of value</b></summary>
@@ -86,29 +97,29 @@ Over a nine-year wait inflation matters, so v28 states it explicitly - and makes
 
 ### How long investors wait
 
-<details><summary><b>New table: cumulative surplus or deficit by year, 2027-2035, by spending path</b></summary>
+<details><summary><b>New tables: cumulative surplus or deficit, return on the money, and the cost of the losses, 2027-2035 (all builders)</b></summary>
 
 The yearly cost already includes a normal return on the money (about 9-10% a year), so break-even means earning an ordinary investor's return.
 
 | Path ($B, cumulative from 2027) | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
 |---|---|---|---|---|---|---|---|---|---|
-| Flat spending | -150 | -360 | -600 | -860 | -1,080 | -1,280 | -1,420 | -1,520 | -1,550 |
-| Arms race | -190 | -510 | -940 | -1,490 | -2,070 | -2,640 | -3,210 | -3,750 | -4,260 |
-| 35% cut | -120 | -210 | -260 | -260 | -180 | -30 | +190 | +490 | +870 |
-| Spending tracks revenue | -150 | -330 | -470 | -550 | -500 | -340 | -100 | +180 | +480 |
+| Flat spending | -230 | -540 | -920 | -1,340 | -1,750 | -2,130 | -2,480 | -2,790 | -3,050 |
+| Arms race | -270 | -710 | -1,320 | -2,060 | -2,860 | -3,670 | -4,480 | -5,300 | -6,100 |
+| 35% cut | -180 | -370 | -530 | -640 | -680 | -660 | -580 | -420 | -190 |
+| Spending tracks revenue | -230 | -500 | -740 | -900 | -920 | -830 | -650 | -410 | -140 |
 
-- Flat spending is never repaid by 2035; an arms race never earns its return; cutting back is repaid by 2033-34.
-- On a flat path, average growth of ~49%/yr breaks even in 2030 and ~64%/yr makes up the 2027-28 losses by then. The sector chains deliver ~33%.
-- The losses are not part of capex: capex is the money spent; the yearly cost is what it costs to hold; the losses come out of profits and cash. Charging ~9.5% a year on the losses themselves deepens the hole (spending-tracks-revenue: ~$650B instead of ~$550B) and moves payback from 2034 to 2035.
+- No path is repaid by 2035. Cutting back stops the losses growing: a yearly profit from 2032, close to even by 2035 before the cost of money.
+- On a flat path, average growth of ~57%/yr breaks even in 2030 and ~74%/yr makes up the 2027-29 losses by then. The sector chains deliver ~33%.
+- The losses are not part of capex: capex is the money spent; the yearly cost is what it costs to hold; the losses come out of profits and cash.
 
 Average return on the money invested, 2027 to each year, before tax (%; an ordinary return is ~9.5%):
 
 | Path | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
 |---|---|---|---|---|---|---|---|---|---|
-| Flat spending | -4 | -4 | -4 | -4 | -3 | -2 | -1 | 0 | 1 |
-| Arms race | -6 | -7 | -8 | -9 | -9 | -9 | -8 | -8 | -7 |
-| 35% cut | -2 | -1 | 1 | 4 | 6 | 9 | 12 | 14 | 17 |
-| Spending tracks revenue | -4 | -4 | -3 | -1 | 2 | 5 | 9 | 11 | 13 |
+| Flat spending | -7 | -8 | -8 | -8 | -8 | -7 | -6 | -5 | -4 |
+| Arms race | -8 | -10 | -11 | -11 | -11 | -11 | -11 | -10 | -10 |
+| 35% cut | -6 | -5 | -4 | -2 | 0 | 2 | 4 | 6 | 8 |
+| Spending tracks revenue | -7 | -7 | -7 | -5 | -2 | 1 | 4 | 6 | 9 |
 
 Computed by `model/roi.py`.
 
@@ -116,10 +127,10 @@ Computed by `model/roi.py`.
 
 | Path ($B, cumulative from 2027, with cost of money) | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
 |---|---|---|---|---|---|---|---|---|---|
-| Flat spending | -150 | -370 | -650 | -970 | -1,290 | -1,600 | -1,890 | -2,170 | -2,410 |
-| Arms race | -190 | -520 | -1,010 | -1,650 | -2,390 | -3,190 | -4,050 | -4,970 | -5,950 |
-| 35% cut | -120 | -220 | -300 | -320 | -270 | -140 | +70 | +370 | +800 |
-| Spending tracks revenue | -150 | -340 | -520 | -640 | -650 | -540 | -350 | -90 | +210 |
+| Flat spending | -230 | -560 | -990 | -1,510 | -2,060 | -2,640 | -3,240 | -3,850 | -4,470 |
+| Arms race | -270 | -740 | -1,410 | -2,290 | -3,300 | -4,420 | -5,660 | -7,010 | -8,470 |
+| 35% cut | -180 | -380 | -580 | -750 | -860 | -930 | -920 | -860 | -700 |
+| Spending tracks revenue | -230 | -520 | -810 | -1,040 | -1,160 | -1,180 | -1,120 | -990 | -800 |
 
 </details>
 
@@ -178,7 +189,7 @@ Computed by `model/roi.py`.
 
 ### Model changes (parameters.json)
 
-<details><summary><b>Eight register entries changed (new: inflation; SpaceX/xAI overlay); delta log in Appendix H of the paper</b></summary>
+<details><summary><b>Eight register entries changed (new: other builders, in the base; inflation); delta log in Appendix H of the paper</b></summary>
 
 | Entry | v27 | v28 |
 |---|---|---|
@@ -188,10 +199,11 @@ Computed by `model/roi.py`.
 | Big-5 capex 2026 ($B) | 780 | 780 (sources refreshed to Q3) |
 | Street capex 2027 / 2028 ($B) | 1,050 / 1,150 | 1,100 / 1,150 |
 | Shell and silicon lives | 15/20/25; 4/5/6 | unchanged; Microsoft anchors added |
-| SpaceX/xAI AI capex (new; overlay) | - | 0.5, 5.6, 12.7, ~75 (2023-26); hold or ~150/yr |
+| Other builders' AI capex (new; in the base) | - | 0.5, 14.3, 27.8, 140.4 (2023-26); follows the Big-5 path |
 | Inflation (new; presentation only) | - | 2.0 / 2.6 / 3.7% (Fed goal; Sep 2026 core and headline CPI) |
 
-Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(profit, rationalize, 2030) 54% -> 52%.
+Effect of the Big-5 inputs alone: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49% (minor).
+Effect of adding the other builders: deficit -259 -> -422; z -3.54 -> -5.56; g* 49% -> 57%; P(profit, rationalize, 2030) 52% -> 7%. **Material** under the re-issue rule.
 </details>
 
 ### Easier to read
@@ -226,3 +238,5 @@ Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(pr
 
 - Anthropic amended S-1 with filed Q3 (expected November; statements go stale ~11-12 Nov)
 - Nvidia Q3 FY27 (19 Nov); Oracle FY27 Q2 (December); a post-earnings 2027-28 capex consensus
+- CoreWeave Q3 (10 Nov); SpaceX Q4 (late January); lease notes in the Big-5 10-Ks (confirm no neocloud capacity is booked as a finance lease)
+- Figures for the builders still out: Meta Hyperion, Anthropic/Fluidstack, Crusoe, Lambda, Nscale, Tesla, the Gulf
