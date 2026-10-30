@@ -54,7 +54,10 @@
 \usepackage{setspace}
 \usepackage{cite}
 \usepackage{array}
-\usepackage{url}
+\usepackage{xurl}
+\usepackage{xltabular}
+\setlength{\LTcapwidth}{\textwidth}
+\setlength{\emergencystretch}{3em}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{abstract}
@@ -158,7 +161,7 @@ The yearly cost in this paper already includes a return on the money: about 9--1
 \centering\small
 \caption{Cumulative surplus ($+$) or deficit ($-$) from 2027, by spending path (\$B, median, bottom-up revenue, rounded to \$10B)}
 \label{tab:cumyear}
-\begin{tabular}{lrrrrrrrrr}
+\resizebox{\textwidth}{!}{\begin{tabular}{lrrrrrrrrr}
 \toprule
 \textbf{Path} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{2030} & \textbf{2031} & \textbf{2032} & \textbf{2033} & \textbf{2034} & \textbf{2035} \\
 \midrule
@@ -167,7 +170,7 @@ Arms race (street path) & $-$190 & $-$510 & $-$940 & $-$1{,}490 & $-$2{,}070 & $
 35\% cut (rationalize) & $-$120 & $-$210 & $-$260 & $-$260 & $-$180 & $-$30 & $+$190 & $+$490 & $+$870 \\
 Spending tracks revenue & $-$150 & $-$330 & $-$470 & $-$550 & $-$500 & $-$340 & $-$100 & $+$180 & $+$480 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 \begin{itemize}
 \item \textbf{Flat spending} digs a hole of about \$860B by 2030 and \$1.55T by 2035. Each year's loss shrinks, but the hole is never repaid within the horizon.
@@ -184,7 +187,7 @@ Spending tracks revenue & $-$150 & $-$330 & $-$470 & $-$550 & $-$500 & $-$340 & 
 \centering\small
 \caption{Average return on the money invested, 2027 to each year, before tax (\%, median; an ordinary investor's return is $\sim$9.5\%). Computed by \texttt{model/roi.py}.}
 \label{tab:roiyear}
-\begin{tabular}{lrrrrrrrrr}
+\resizebox{\textwidth}{!}{\begin{tabular}{lrrrrrrrrr}
 \toprule
 \textbf{Path} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{2030} & \textbf{2031} & \textbf{2032} & \textbf{2033} & \textbf{2034} & \textbf{2035} \\
 \midrule
@@ -193,14 +196,14 @@ Arms race (street path) & $-6$ & $-7$ & $-8$ & $-9$ & $-9$ & $-9$ & $-8$ & $-8$ 
 35\% cut (rationalize) & $-2$ & $-1$ & 1 & 4 & 6 & 9 & 12 & 14 & 17 \\
 Spending tracks revenue & $-4$ & $-4$ & $-3$ & $-1$ & 2 & 5 & 9 & 11 & 13 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \begin{table}[htbp]
 \centering\small
 \caption{Cumulative surplus ($+$) or deficit ($-$) from 2027 with the cost of money ($\sim$9.5\%/yr) charged on the losses --- interest on debt, or earnings given up (\$B, median, rounded to \$10B). Computed by \texttt{model/roi.py}.}
 \label{tab:cumwacc}
-\begin{tabular}{lrrrrrrrrr}
+\resizebox{\textwidth}{!}{\begin{tabular}{lrrrrrrrrr}
 \toprule
 \textbf{Path} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{2030} & \textbf{2031} & \textbf{2032} & \textbf{2033} & \textbf{2034} & \textbf{2035} \\
 \midrule
@@ -209,7 +212,7 @@ Arms race (street path) & $-$190 & $-$520 & $-$1{,}010 & $-$1{,}650 & $-$2{,}390
 35\% cut (rationalize) & $-$120 & $-$220 & $-$300 & $-$320 & $-$270 & $-$140 & $+$70 & $+$370 & $+$800 \\
 Spending tracks revenue & $-$150 & $-$340 & $-$520 & $-$640 & $-$650 & $-$540 & $-$350 & $-$90 & $+$210 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 
@@ -295,15 +298,23 @@ Two disciplines follow: report one or two significant figures, and call a conclu
 The evidence for the build-out is strong and the paper uses it as input: Google Cloud's contracted backlog reached \$514B in Q2 2026, up from \$462B a quarter earlier, on 82\% revenue growth~\cite{ref:alphabet_q2_2026} (how much of it is AI-specific is not disclosed); the 2026 capex guidance has been revised upward all year~\cite{ref:mlq2026,ref:statista2026}; Goldman models \$5.3T of hyperscaler capex over 2025--2030~\cite{ref:yahoo_goldman2026}; and frontier-lab revenue has grown at multiples per year~\cite{ref:epoch_revenue}. Those are the observables the model must reconcile with, and the next section lists them with their provenance --- audited filing, company statement, or press report --- because they are not all of the same quality.
 
 \section{What We Observe (2025--2026)}\label{sec:observe}
-\begin{table}[htbp]
-\centering
-\small
-\caption{Observables the model must reconcile with (\$B unless noted)}
-\label{tab:observe}
-\begin{tabularx}{\textwidth}{L{5.0cm}L{2.4cm}X}
+\begingroup\small
+\begin{xltabular}{\textwidth}{L{4.3cm}L{2.7cm}X}
+\caption{Observables the model must reconcile with (\$B unless noted)}\label{tab:observe}\\
 \toprule
 \textbf{Quantity} & \textbf{Value} & \textbf{Source / note} \\
 \midrule
+\endfirsthead
+\multicolumn{3}{l}{\textit{Table~\ref{tab:observe}, continued}}\\
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source / note} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\textit{continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
 Big-5 capex 2022 / 2023 / 2024 / 2025 & 162 / 161 / 260 / 448 & Epoch AI from SEC XBRL, cash PP\&E plus new finance leases~\cite{ref:epoch_capex} \\
 Big-4 capex guidance, 2026 (Q3 calls, Oct.~21--29; v28) & Unchanged in total & Alphabet \$195--205B ``remains unchanged''; Amazon $\sim$\$220B; Meta \$135--145B; Microsoft $\sim$\$170B (from $\sim$175)~\cite{ref:alphabet_q3_2026,ref:amzn_q3_2026,ref:meta_q3_2026,ref:msft_q1fy27}. For 2027 every company points up: Alphabet ``increase significantly'', Amazon ``meaningfully more'' (no figures) \\
 Q3 2026 quarterly capex (v28) & GOOG 51.4; MSFT 45.2; AMZN 77.3; META 34.9 & Company releases; definitions differ (Microsoft and Meta include finance leases, Amazon gross purchases)~\cite{ref:alphabet_q3_2026,ref:msft_q1fy27,ref:amzn_q3_2026,ref:meta_q3_2026} \\
@@ -341,9 +352,9 @@ Backlog conversion the three CSPs would need (GS) & 59\% of \$1.69T over 2028--3
 AI infrastructure capex from the semiconductor build (GS), 2026 / 27 / 28 & 861 / 1,338 / 2,008; 20 / 35 / 57 GW & All buyers (hyperscalers, labs, sovereigns, enterprises) from Nvidia, Broadcom, AMD, Marvell, MediaTek revenue per GW; implied \$42 / 38 / 35B per GW~\cite{ref:gs_roic2026}; 57 GW exceeds the paper's grid cap (22--40 GW/yr) \\
 \midrule
 \textbf{Calendar-2026 AI revenue, all channels} & \textbf{$\sim$179 (168--191)} & Seven-component decomposition, Section~\ref{sec:decomp}, Table~\ref{tab:basedecomp} \\
-\bottomrule
-\end{tabularx}
-\end{table}
+
+\end{xltabular}
+\endgroup
 Provenance matters here. The capex series and Nvidia's revenue are audited filings; the lab run-rates are company statements or press reports citing them; the Microsoft, AWS and OpenAI figures are earnings-call remarks and leaked financials, not audited disclosures, and are marked accordingly. Meta's AI spending is monetized through advertising rather than sold as a product, so it has no ``AI revenue'' line at all; the paper treats it as an advertising-uplift channel (Section~\ref{sec:decomp}). Three things follow. Nvidia's \$300B data-center run-rate is consistent with the capex series and with a silicon share near half. Frontier-lab revenue is growing at multiples per year, which is the bull case realized so far. And roughly \$190B of lab equity was raised in 2026 alone, a sum comparable to the labs' combined revenue --- so a material share of the compute they buy from hyperscalers this year is paid with investor capital, not customer cash.
 
 \subsection{Do the five, and the Chinese four, tell the same story?}
@@ -427,7 +438,7 @@ Two caveats on the base. First, run-rates overstate booked revenue: OpenAI's rep
 \section{Bottom-Up Demand: Fifteen Sector Fermi Chains}\label{sec:bottomup}
 The top-down path in Section~\ref{sec:demand} has one free parameter, $g$. A Fermi estimate is only as good as the number of independent factors in it, so we build a second estimate that does not use $g$ at all. Each sector $s$ is a chain of four estimates: a calendar-2026 base $R_s$ (calibrated so the sectors sum to the observed \$179B --- the base is not independent evidence; the ceilings and ramps are), a 2030 ceiling $C_s$ derived from a physical or budgetary constraint (Appendix~\ref{app:sectors}), a logistic ramp rate $k_s$, and a cloud-capture share $\theta_s$ (the fraction of end-customer revenue that reaches the infrastructure layer after lab margins, on-device execution, on-premise deployment and integrator capture). End-customer revenue follows
 \begin{equation}
-R_s(t)=\frac{C_s}{1+\left(C_s/R_{s,0}-1\right)e^{-k_s(t-t_0)}},\qquad t_0=2026,\qquad D^{\text{BU}}_t=\sum_s R_s(t),\qquad \text{Receipts}_t=\sum_s\theta_s R_s(t),
+\begin{gathered}R_s(t)=\frac{C_s}{1+\left(C_s/R_{s,0}-1\right)e^{-k_s(t-t_0)}},\qquad t_0=2026,\\ D^{\text{BU}}_t=\sum_s R_s(t),\qquad \text{Receipts}_t=\sum_s\theta_s R_s(t),\end{gathered}
 \end{equation}
 where $R_{s,0}$ is the sector's 2026 revenue (\$B), $C_s$ its ceiling (\$B), and $k_s$ its ramp rate in units of per year: at $k=0.8$ the sector covers half the distance to its ceiling in about $\ln 2/0.8\approx0.9$ years. The curve starts at $R_{s,0}$, rises fastest early, and flattens as it approaches $C_s$; the sector's growth rate is not an input but falls out of the curve.
 Two common factors --- $M_C$ on ceilings ($\sim$Triang(0.7, 1.0, 1.4)) and $M_k$ on ramp rates ($\sim$Triang(0.7, 1.0, 1.3)) --- are multipliers drawn once per trial and applied to every sector. They represent the macroeconomic background the sectors share --- a recession, an interest-rate shock, a regulatory turn, or a capability step that makes agents trustworthy everywhere at once --- and they keep fifteen independent draws from averaging to an implausibly narrow band. Sectors are listed in order of their 2030 ceiling. Sectors exposed to sovereign procurement carry the $\gamma_{\text{sov}}$ carve-out in the sovereignty scenario, and in every scenario a European displacement ramp $g_{\text{EU}}\sim$Triang(3, 5, 8)\% by 2030 for the movement of European buyers away from US vendors documented in Section~\ref{sec:decomp}.
@@ -468,7 +479,7 @@ Eldercare / assistive & 0.5/1/2 & 3/6/12 & 0.3/0.5/0.8 & 0.1/0.15/0.25 & 160M OE
 \centering\small
 \caption{Bottom-up demand (\$B; median with P10--P90) and implied year-on-year growth}
 \label{tab:bottomup}
-\begin{tabular}{lccccc}
+\resizebox{\textwidth}{!}{\begin{tabular}{lccccc}
 \toprule
  & \textbf{2026} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{2030} \\
 \midrule
@@ -476,7 +487,7 @@ End-customer revenue & 204 (191--218) & 321 (291--355) & 445 (388--513) & 551 (4
 Infrastructure receipts ($\sum\theta_s R_s$) & 160 (148--172) & 250 (225--277) & 344 (299--398) & 423 (360--499) & 479 (402--570) \\
 Implied growth, end-customer & & 57\% & 39\% & 24\% & 14\% \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 Growth here is a consequence, not an input: it is high while the large sectors are far from their ceilings and falls as they approach them. Three readings. First, the sectors are consistent with the observed 2026--27 pace: 61\% growth into 2027 is in line with the labs' guided deceleration~\cite{ref:epoch_revenue_x}, so the bottom-up model is not a bear case in the near term. Second, growth decays fast because the four large sectors approach ceilings set by seat counts, IT budgets and advertising yields, not by model capability. Third, the cloud-capture share matters as much as the ceilings: a quarter of end-customer revenue never reaches the infrastructure layer --- it stays with labs as margin, runs on-device, or accrues to integrators.
@@ -675,7 +686,7 @@ Contact centers illustrate the ratio. Global contact-center labor is $\sim$\$350
 \centering\small
 \caption{The value-capture disconnect: realized savings versus upstream tokens (order of magnitude)}
 \label{tab:disconnect}
-\begin{tabularx}{\textwidth}{lXll}
+\begin{tabularx}{\textwidth}{L{3.3cm}L{3.0cm}L{3.0cm}X}
 \toprule
 \textbf{Workflow} & \textbf{Billing base} & \textbf{Realized savings, 2026--27} & \textbf{Upstream cloud tokens} \\
 \midrule
@@ -908,7 +919,7 @@ Table~\ref{tab:bu_results} and Figure~\ref{fig:reconcile} compare the carry with
 \centering\small
 \caption{Bottom-up: median $\Delta_t=\text{Receipts}_t-F_{\text{circ}}-\kappa H_t$ (\$B) and P($\Delta_t<0$); cumulative 2027--30}
 \label{tab:bu_results}
-\begin{tabular}{llccccc}
+\resizebox{\textwidth}{!}{\begin{tabular}{llccccc}
 \toprule
 \textbf{Path} & \textbf{Sovereignty} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{2030} & \textbf{Cum.\ (P$<$0)} \\
 \midrule
@@ -919,7 +930,7 @@ Arms race & $\kappa$=1.2, $\gamma$=0.25 & $-295$ & $-475$ & $-645$ & $-795$ & $-
 Rationalize & none & $-115$ (100\%) & $-95$ (98\%) & $-55$ (80\%) & $+5$ (48\%) & $-260$ (89\%) \\
 Rationalize & $\kappa$=1.2, $\gamma$=0.25 & $-205$ & $-210$ & $-185$ & $-135$ & $-735$ (100\%) \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \begin{figure}[htbp]\centering\includegraphics[width=0.9\textwidth]{f10_reconcile.pdf}
@@ -938,7 +949,7 @@ Equation~\ref{eq:var} in practice: Table~\ref{tab:varbudget} apportions the one-
 \centering\small
 \caption{Variance budget of $\Delta_{2030}$ (Plateau). Half-swing is half the min-to-max change in median $\Delta_{2030}$; share is its squared contribution to the total}
 \label{tab:varbudget}
-\begin{tabular}{lrrrr}
+\resizebox{\textwidth}{!}{\begin{tabular}{lrrrr}
 \toprule
  & \multicolumn{2}{c}{\textbf{Single judgment ranges}} & \multicolumn{2}{c}{\textbf{Decomposed (Section~\ref{sec:decomp})}} \\
 \textbf{Top-down input ($\Delta_{2030}$, Plateau, $g=g^{*}$)} & \textbf{Half-swing} & \textbf{Share} & \textbf{Half-swing} & \textbf{Share} \\
@@ -964,7 +975,7 @@ Search \& internal; coding & 18, 18 & 11\% & 18, 18 & 26\% \\
 Remaining ten sectors & $<$9 each & 5\% & $<$9 each & 6\% \\
 Root-sum-square & 76 & & 50 & \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \subsection{Reconciling the two estimates}
@@ -1450,7 +1461,7 @@ Big-5 capex 2026 (\$B) & 780 & 780 (sources refreshed) & Q3 releases and calls~\
 Street capex 2027 / 2028 (\$B) & 1,050 / 1,150 & 1,100 / 1,150 & \cite{ref:gs_capex_bbg} \\
 Shell and silicon lives & 15/20/25; 4/5/6 & unchanged; anchors added & Microsoft accounting changes and capex mix~\cite{ref:cfodive_msft,ref:msft_q1fy27} \\
 \midrule
-\multicolumn{4}{l}{\textbf{Effect:} plateau 2030 deficit $-255\to-259$; $z$ $-3.47\to-3.54$; $g^{*}_{2030}$ 48\%$\to$49\%; P(profit, rationalize, 2030) 54\%$\to$52\%. \emph{Minor} under the rule.} \\
+\multicolumn{4}{p{\dimexpr\textwidth-2\tabcolsep\relax}}{\textbf{Effect:} plateau 2030 deficit $-255\to-259$; $z$ $-3.47\to-3.54$; $g^{*}_{2030}$ 48\%$\to$49\%; P(profit, rationalize, 2030) 54\%$\to$52\%. \emph{Minor} under the rule.} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -1501,8 +1512,8 @@ Terms are grouped by discipline; a table lists every model variable and paramete
 \subsection*{Model variables and parameters}
 Every quantity the model uses, with its symbol as it appears in the text, its name in the register (\texttt{parameters.json}), its units, its base-case range (triangular min / mode / max unless stated) and what it means. Ranges are those of the current version; the register is authoritative.
 
-\begin{center}\footnotesize
-\begin{tabularx}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
+\begingroup\footnotesize
+\begin{xltabular}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
 \toprule
 \textbf{Symbol} & \textbf{Register name} & \textbf{Units} & \textbf{Base range} & \textbf{Meaning} \\
 \midrule
@@ -1529,9 +1540,9 @@ $f_{\text{delay}}$ & siting\_deferral & 0--1 & 0.10 / 0.20 / 0.35 & Share of eac
 $\kappa_{\text{site}}$ & site\_cost\_uplift & multiplier & 1.02 / 1.05 / 1.09 & Shell cost uplift for community benefits, water mitigation, relocation \\
 $\kappa_{\text{sov}}$ & (overlay) & multiplier & 1.1 / 1.2 / 1.3 & Capital duplication from data-residency rules; sovereignty scenario only \\
 \bottomrule
-\end{tabularx}
+\end{xltabular}
 \vspace{4pt}
-\begin{tabularx}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
+\begin{xltabular}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
 \toprule
 \textbf{Symbol} & \textbf{Register name} & \textbf{Units} & \textbf{Base range} & \textbf{Meaning} \\
 \midrule
@@ -1556,9 +1567,9 @@ $\Delta_t$ & --- (output) & \$B/yr & $\sim-259$ in 2030 & Receipts$_t-F_{\text{c
 $z$ & --- (output) & --- & $\sim-3.5$ & $\text{median}(\Delta_{2030})/\sigma_{\Delta}$ \\
 residual factor & (swept) & multiplier & 0.6--1.7 & Multiplier on 2030 receipts for adoption the sector chains cannot see (secondary variable) \\
 \bottomrule
-\end{tabularx}
+\end{xltabular}
 \vspace{4pt}
-\begin{tabularx}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
+\begin{xltabular}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
 \toprule
 \textbf{Symbol} & \textbf{Register name} & \textbf{Units} & \textbf{Base range} & \textbf{Meaning} \\
 \midrule
@@ -1573,9 +1584,9 @@ ainew & (fixed range) & 0--1 & 0.02 / 0.04 / 0.07 & Genuinely new AI spend as a 
 ads cap, cons cap & (fixed ranges) & \$B & 140/170/200; 80/105/130 & Advertising and consumer ceilings entering the band \\
 cutoff & --- (output) & \$B & 920--1310 (P10--P90) & Total 2030 AI revenue financeable: pool $\times$ (realloc $+$ ainew) $+$ ads $+$ cons \\
 \bottomrule
-\end{tabularx}
+\end{xltabular}
 \vspace{4pt}
-\begin{tabularx}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
+\begin{xltabular}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
 \toprule
 \textbf{Symbol} & \textbf{Register name} & \textbf{Units} & \textbf{Base range} & \textbf{Meaning} \\
 \midrule
@@ -1587,9 +1598,9 @@ agent seat change & (fixed range) & 1/yr & $-0.06$ / $-0.03$ / 0 & Seat change f
 EU exit & (fixed range) & 0--1 by 2030 & 0.03 / 0.08 / 0.15 & Cumulative sovereignty seat loss \\
 attach & copilot\_paid\_seats\_M (base) & 0--1 & 0.12 / 0.22 / 0.35 by 2030 & Paid Copilot attach on remaining seats ($\sim$6.5\% today) \\
 \bottomrule
-\end{tabularx}
+\end{xltabular}
 \vspace{4pt}
-\begin{tabularx}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
+\begin{xltabular}{\textwidth}{L{1.7cm}L{2.6cm}L{1.3cm}L{2.2cm}X}
 \toprule
 \textbf{Symbol} & \textbf{Register name} & \textbf{Units} & \textbf{Base range} & \textbf{Meaning} \\
 \midrule
@@ -1598,9 +1609,9 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 evaporative share & --- & 0--1 & 0.4 / 0.6 / 0.8 & Share of the fleet on evaporative cooling \\
 $E_a$, $k$, $AF$ & --- & eV; eV/K; --- & $E_a\approx0.7$ & Activation energy, Boltzmann constant, Arrhenius acceleration factor \\
 \bottomrule
-\end{tabularx}
+\end{xltabular}
 \vspace{4pt}
-\end{center}
+\endgroup
 
 \subsection*{Symbols used in the derivations (not model inputs)}
 \begin{description}\setlength{\itemsep}{1pt}
