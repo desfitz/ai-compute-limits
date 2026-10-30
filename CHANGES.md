@@ -229,9 +229,15 @@ Effect of adding the other builders: deficit -259 -> -422; z -3.54 -> -5.56; g* 
 
 ### Errata (where earlier versions erred) - full list in [ERRATA.md](ERRATA.md)
 
+<details><summary><b>v1-v27.1: revenue counted for every data-center owner, cost for only the five largest - the gap was understated (~$260B, now ~$420B)</b></summary>
+
+- The rent SpaceX/xAI, CoreWeave, Nebius and others earn was in the receipts; their buildings and chips were not in the carry. The error flattered the build-out.
+- Corrected in v28 with company-stated capex for the other builders. Material: no path is now repaid with the cost of money by 2035 (it was 2034-35 at best).
+</details>
+
 <details><summary><b>v26.x-v27.1: abstract and tables disagreed ($187B / $255B vs $179B / ~$260B)</b></summary>
 
-- v27's abstract quoted a register run on the superseded $187B base ($255B deficit, g* 48%). The body tables were on the $179B base. v28 states $179B and about $260B throughout.
+- v27's abstract quoted a register run on the superseded $187B base ($255B deficit, g* 48%). The body tables were on the $179B base. v28 states $179B throughout (about $260B for the five largest alone).
 </details>
 
 ### Still waiting on

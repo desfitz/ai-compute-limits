@@ -5,6 +5,12 @@ Newest first. Each entry: what was wrong, in which versions, the correction, and
 
 ## Found in v28 (29 October 2026)
 
+### E3. Cost counted for five builders, revenue for all (v1 - v27.1, model scope) - the largest
+- **Wrong:** receipts counted revenue reaching every owner of AI data centers (the labs' compute bills, whoever is paid), but the carry counted only the Big-5's capex. SpaceX/xAI, CoreWeave, Nebius, IREN and Applied Digital - about $140B of 2026 AI capex - had their rent in and their cost out.
+- **Why it was an error:** revenue and cost must be counted on the same set of owners. The asymmetry flattered the build-out.
+- **Correction (v28):** register entry `other_builders_ai_capex` (company-stated figures) added to the carry; same vintage model and paths. Builders without a stated figure (Meta Hyperion, Anthropic/Fluidstack, Crusoe, Lambda, Nscale, Tesla, the Gulf) are listed and still excluded; each would widen the gap.
+- **Effect:** material. 2030 plateau deficit -259 -> -422 ($B/yr); z -3.54 -> -5.56; g* 49% -> 57%; P(profit, rationalize, 2030) 52% -> 7%; with the cost of money no path is repaid by 2035 (was 2034-35 at best).
+
 ### E2. Revenue base raised on a run-rate report (v26.x - v27.1, register)
 - **Wrong:** on 29 Sept 2026 the register's calendar-2026 revenue base was raised from 179 to 187 ($B, mode) on a press report of Anthropic's expected $100B+ exit run-rate.
 - **Why it was an error:** it broke the paper's own rule that run-rates overstate bookings.
