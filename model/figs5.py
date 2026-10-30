@@ -14,7 +14,7 @@ ax.set_title('Bottom-up demand by sector (logistic ramps to sector ceilings)',fo
 plt.tight_layout(); plt.savefig('f9_sectors.pdf')
 # F10 three-way
 fig,ax=plt.subplots(figsize=(6.4,3.6)); ty=list(TY)
-ax.plot(ty,[m(r['H'][t]) for t in ty],'k-',lw=2.2,marker='o',label='Carry H_t (Plateau)')
+ax.plot(ty,[m(r['H'][t]) for t in ty],'-',color='#1E2761',lw=2.2,marker='o',label='Carry H_t (Plateau)')
 ax.fill_between(ty,[q(r['H'][t],10) for t in ty],[q(r['H'][t],90) for t in ty],color='#7F9BC0',alpha=0.25)
 ax.plot(ty,[m(r['rec'][t]) for t in ty],'-',color='#2E86AB',marker='s',label='Bottom-up cloud receipts')
 ax.fill_between(ty,[q(r['rec'][t],10) for t in ty],[q(r['rec'][t],90) for t in ty],color='#2E86AB',alpha=0.2)

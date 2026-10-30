@@ -26,7 +26,7 @@ def carry_econ(v,path,delta):
 rng=np.random.default_rng(11); v=draw(rng); Hsl=carry(v,'Plateau'); end,rec,per=bottom_up(rng)
 yrs=list(range(2027,2031)); print("straight-line H:",[f"{m(Hsl[t]):.0f}" for t in yrs])
 fig,ax=plt.subplots(1,2,figsize=(11,3.5))
-ax[0].plot(yrs,[m(Hsl[t]) for t in yrs],'k-',marker='o',label='Straight-line, effective life 4.2 yr (base)')
+ax[0].plot(yrs,[m(Hsl[t]) for t in yrs],'-',color='#1E2761',marker='o',label='Straight-line, effective life 4.2 yr (base)')
 res={}
 for d,ls in zip([0.5,0.7,0.9],[':','--','-.']):
     He=carry_econ(v,'Plateau',d); res[d]=He

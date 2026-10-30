@@ -48,7 +48,7 @@ s.addText([
   { text: "Founder, Nvara.ai   |   Retired, IBM Systems", options: { breakLine: true } },
   { text: "desmond.fitzpatrick@nvara.ai   |   ORCID 0009-0001-0534-2793", options: {} },
 ], { x: 0.8, y: 4.0, w: 11.7, h: 1.2, fontSize: 16, color: C.text1, margin: 0, isTextBox: true });
-s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 112-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
+s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 142-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
 
 
 // NEW v29: what the October earnings changed
@@ -85,15 +85,15 @@ SRC(s, "Paper Section 4. About 28 cents of revenue per dollar of capital per yea
 
 // 4 Today
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "4. What comes in today");
-P(s, "All AI revenue in calendar 2026 — the frontier labs (OpenAI, Anthropic and others), the clouds' AI services, the AI lift in advertising, consumer subscriptions — adds up to roughly $180 billion. That is real money and it is growing very fast. It is also less than a quarter of what the installed base will cost to carry in 2030.", 0.6, 1.5, 12.1, 1.6, { fontSize: 18 });
-BIG(s, "~$180B", "AI revenue, 2026, all channels (range $165–190B)", 1.0, 3.4, 5.4);
+P(s, "All AI revenue in calendar 2026 — the frontier labs (OpenAI, Anthropic and others), the clouds' AI services, the AI lift in advertising, consumer subscriptions — adds up to roughly $179 billion. That is real money and it is growing very fast. It is also less than a quarter of what the installed base will cost to carry in 2030.", 0.6, 1.5, 12.1, 1.6, { fontSize: 18 });
+BIG(s, "~$179B", "AI revenue, 2026, all channels (range $168–191B)", 1.0, 3.4, 5.4);
 BIG(s, "~$725B", "carry of the installed base, 2030, if spending plateaus", 6.9, 3.4, 5.4);
 P(s, "So the whole argument is about one number: how fast revenue has to grow to catch the carry — and whether anything in the real economy can grow that fast for that long.", 0.6, 5.3, 12.1, 1.0, { fontSize: 18, bold: false });
 SRC(s, "Paper Section 7: the 2026 base, decomposed into seven sourced pieces; lab run-rates are discounted to booked revenue.");
 
 // 5 Scissors
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "5. How fast revenue must grow", "The scissors");
-P(s, "Grow today's $180 billion at a steady rate and see where it crosses the carry. It takes about 49% a year, every year to 2030, just to break even on a flat spending path — and nothing clears 2027–28, which is already a sunk loss of $100–250 billion a year.", 0.6, 1.7, 5.0, 4.0, { fontSize: 18 });
+P(s, "Grow today's $179 billion at a steady rate and see where it crosses the carry. It takes about 49% a year, every year to 2030, just to break even on a flat spending path — and nothing clears 2027–28, which is already a sunk loss of $100–250 billion a year.", 0.6, 1.7, 5.0, 4.0, { fontSize: 18 });
 IMG(s, "f3_scissors", 5.9, 1.6, 6.8, 4.9);
 SRC(s, "Paper Section 10. Under the street's own spending path (an arms race) break-even needs 62% a year; under a 35% cut, 33%.");
 
@@ -182,7 +182,7 @@ P(s, "In six lines", 0.6, 1.7, 6.6, 0.4, { bold: true });
 s.addText([
   "Fermi, not forecast: every number is a chain of bounded factors; nineteen were decomposed until only two big uncertainties remain.",
   "The installed base costs about 28 cents per dollar per year to carry; that is $725B a year by 2030 on a flat path.",
-  "Revenue is $180B today and must grow 49% a year to catch it.",
+  "Revenue is $179B today and must grow 49% a year to catch it.",
   "Counted sector by sector, it grows 33%, and only $480–490B of it reaches the owners.",
   "The gap is about $260B a year in 2030, more under the street's path, and 2027–28 is already lost.",
   "Watch 2027 and 2028 revenue: above $400B in 2028, the most likely outcome was wrong.",
@@ -192,7 +192,7 @@ P(s, "The paper, the model, the data and the register of inputs — each with it
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v29_2026-10-29_v5.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-30_v7.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);

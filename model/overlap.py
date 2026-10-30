@@ -32,7 +32,7 @@ for ax,p in zip(axs,PATHS):
     ax.axhline(268,color='#1E2761',ls='--',lw=1); ax.text(0.72,275,'IT-budget cap on assistants (~$270B)',fontsize=7)
     # end-customer feasibility: total 2030 AI revenue > 8% of IT spend + ads + consumer caps (~$810B) shaded
     ax.contour(ms,cs,E,levels=[920,1310],colors='#1E2761',linestyles=':',linewidths=1.0); ax.contourf(ms,cs,E,levels=[920,1310],colors=['none'],hatches=['..'],alpha=0)
-    ax.plot([1.0],[150],'ko'); ax.set_title(f'{p}: P(profit 2030), %',fontsize=9); ax.set_xlabel('Residual adoption/capability factor'); 
+    ax.plot([1.0],[150],'o',color='#C0504D'); ax.set_title(f'{p}: P(profit 2030), %',fontsize=9); ax.set_xlabel('Residual adoption/capability factor'); 
 axs[0].set_ylabel('Office assistant/agent ceiling 2030 ($B)'); axs[0].text(1.02,95,'paper modes',fontsize=7)
 plt.colorbar(cf,ax=axs,fraction=0.02,label='P(receipts > carry), %')
 fig.suptitle('Probability of overlap across the two residual axes. Solid: 50%. Dashed: copilot IT-budget cap. Dotted/hatched: feasibility band, total 2030 AI revenue = $920B-$1,310B (P10-P90 of the budget cutoff)',fontsize=8)

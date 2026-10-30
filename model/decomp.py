@@ -62,7 +62,7 @@ for i,c in enumerate(cops):
         Z[i,j]=m(bu_delta('Plateau',adC=(a*0.8,a,a*1.2),copC=(c*0.8,c,c*1.2)))
 SECTORS['Advertising uplift']['C']=(q(adC,5),m(adC),q(adC,95)); SECTORS['Office assistants/agents']['C']=(100,150,230)
 fig,ax=plt.subplots(figsize=(6.2,4.2)); cs=ax.contourf(ads,cops,Z,levels=12,cmap='Blues_r'); plt.colorbar(cs,label='median delta_2030 ($B), Plateau')
-ax.plot([m(adC)],[150],'ko'); ax.annotate('paper modes',(m(adC),150),xytext=(8,8),textcoords='offset points',fontsize=8)
+ax.plot([m(adC)],[150],'o',color='#C0504D'); ax.annotate('paper modes',(m(adC),150),xytext=(8,8),textcoords='offset points',fontsize=8)
 ax.set_xlabel('Advertising uplift ceiling 2030 ($B)'); ax.set_ylabel('Office assistants/agents ceiling 2030 ($B)'); ax.set_title('What-if 2: the two largest ceilings; no break-even in range',fontsize=9)
 plt.tight_layout(); plt.savefig('f14_whatif_ceilings.pdf')
 # f15: z vs theta_lab and vs 2026 base

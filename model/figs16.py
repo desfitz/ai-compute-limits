@@ -19,8 +19,8 @@ ax[0].set_ylabel('Annual delta ($B, median)'); ax[1].set_ylabel('Cumulative delt
 fig.suptitle('Extending the horizon to 2035: annual and cumulative surplus/deficit by capex path',fontsize=9); plt.tight_layout(); plt.savefig('f19_horizon2035.pdf')
 # ---- f20: adaptive capex path and carry vs receipts
 fig,ax=plt.subplots(figsize=(6.4,3.4))
-ax.plot(yrs,[m(ra['capex'][t]) for t in yrs],'k-',marker='o',label='Adaptive capex')
-ax.plot(yrs,[m(ra['H'][t]) for t in yrs],'k--',marker='s',ms=3,label='Carry H_t')
+ax.plot(yrs,[m(ra['capex'][t]) for t in yrs],'-',color='#E08E45',marker='o',label='Adaptive capex')
+ax.plot(yrs,[m(ra['H'][t]) for t in yrs],'--',color='#1E2761',marker='s',ms=3,label='Carry H_t')
 ax.plot(yrs,[m(ra['rec'][t]-ra['circ']) for t in yrs],'-',color='#E08E45',marker='^',ms=3,label='Infrastructure receipts')
 ax.set_xticks(yrs); ax.set_ylabel('$B/yr'); ax.legend(fontsize=7); ax.set_title('A rational operator: capex follows last year\'s receipts-to-carry ratio (damped, bounded $400B-$1.1T)',fontsize=8.5)
 plt.tight_layout(); plt.savefig('f20_adaptive.pdf')

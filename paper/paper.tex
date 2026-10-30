@@ -470,6 +470,8 @@ Two implications. The growth rates the paper's near-term chains assume (40--80\%
 \section{The Supply-Side Carry: A Vintage Model}\label{sec:supply}
 \claim{Each year's spending stays on the books for years, so the yearly cost keeps climbing even if spending stops growing.}
 
+\inbrief{\item Each year's spending is a cohort that stays on the books: chips for about four years, buildings for about twenty.\item The yearly cost of the whole stack --- wear, running costs and a return on the money --- is the carry.\item On flat spending the carry climbs from about \$390B in 2027 to about \$725B in 2030, because old cohorts are still being paid for as new ones arrive.\item AI chips run hot and wear out faster than the accounting lives assume, and they cannot be cheaply reused.}
+
 \subsection{Cohorts, not a snapshot}
 \claim{Spending is counted by the year it was made, net of the old non-AI baseline, and each year's cohort is carried until it wears out.}
 
@@ -558,6 +560,8 @@ AI halls are engineered for 40--100 kW/rack with direct-to-chip liquid cooling a
 \section{Demand: Base, Growth, Quality}\label{sec:demand}
 \claim{Revenue is about \$179B in 2026, and it must be counted carefully: run-rates overstate it and some of it is investors' money.}
 
+\inbrief{\item AI revenue in 2026 is about \$179B, counted from seven sourced parts.\item Only part of it reaches the data-center owners: about 82 cents of each customer dollar.\item Run-rates overstate what is booked, and some lab spending is investors' money, not customers'.}
+
 \subsection{Anchor to what is observed}
 \claim{Three flows are easy to confuse --- what customers pay, what reaches the cloud, and what leaks away --- so the paper names each.}
 
@@ -595,6 +599,8 @@ The same applies to every lab and to the hyperscalers' ``AI revenue'' lines: par
 
 \section{Bottom-Up Demand: Fifteen Sector Fermi Chains}\label{sec:bottomup}
 \claim{A second, independent estimate: fifteen sectors, each growing toward its own ceiling. Together they grow about 33\% a year, not 49\%.}
+
+\inbrief{\item A second estimate that does not assume a growth rate: fifteen sectors, each growing toward a ceiling set by seats, budgets or users.\item Together they reach about \$625B of customer revenue in 2030, growing about 33\% a year on average and slowing as they near their ceilings.\item Four sectors carry three-quarters of it: office assistants and agents, advertising, consumer, and coding tools.\item Startups failing, chips moving onto devices and routine work moving to small models all cap what the cloud collects.}
 
 The top-down path in Section~\ref{sec:demand} has one free parameter, $g$. A Fermi estimate is only as good as the number of independent factors in it, so we build a second estimate that does not use $g$ at all. Each sector $s$ is a chain of four estimates: a calendar-2026 base $R_s$ (calibrated so the sectors sum to the observed \$179B --- the base is not independent evidence; the ceilings and ramps are), a 2030 ceiling $C_s$ derived from a physical or budgetary constraint (Appendix~\ref{app:sectors}), a logistic ramp rate $k_s$, and a cloud-capture share $\theta_s$ (the fraction of end-customer revenue that reaches the infrastructure layer after lab margins, on-device execution, on-premise deployment and integrator capture). End-customer revenue follows
 \begin{equation}
@@ -675,6 +681,8 @@ worth of order \$70--330B/yr at routine-model prices of \$0.10--0.50 per million
 
 \section{Decomposing the Dominant Uncertainties}\label{sec:decomp}
 \claim{Nineteen loose inputs are broken into sourced parts, which shrinks the uncertainty and moves the answer against the build-out.}
+
+\inbrief{\item Nineteen loose inputs are broken into sourced parts, so the uncertainty can be seen and argued with.\item That cuts the spread of the result by more than half, and moves the answer against the build-out rather than for it.\item What remains uncertain is mainly two things: how fast firms adopt AI, and how big the assistant market gets.\item Budgets bound the answer, and those budgets are themselves being reshaped by AI.}
 
 Left as single judgment ranges, three inputs would carry most of the model's uncertainty: the 2026 revenue base (64\% of top-down variance at a Triang(160, 210, 300) range), the cloud-capture share $\theta$ (18\%), and the advertising ceiling (51\% of bottom-up sector variance).
 
@@ -929,6 +937,8 @@ No pair of ceilings does it alone (Figure~\ref{fig:whatif2}); it takes ceilings,
 \section{Digital Sovereignty and Grid Friction}
 \claim{Countries keeping data at home duplicate capital and carve demand out of the US clouds; grid queues strand chips before they earn.}
 
+\inbrief{\item Rules that keep data at home force duplicate data centers that run below capacity.\item Countries building their own AI carve demand out of the US clouds: 15--35\% in the sovereignty scenario.\item Grid connection queues of five to seven years strand chips before they can earn.}
+
 \textbf{Capital duplication ($\kappa_{\text{sov}}$).} Data-residency regimes (GDPR Chapter~V, the EU AI Act, BSI C5, India's DPDP Act)~\cite{ref:gdpr,ref:aiact,ref:dpdp} require in-jurisdiction processing for large classes of data, forcing smaller, under-utilized facilities in Frankfurt, Paris, Dublin, London, Tokyo and Riyadh in place of a few gigawatt sites in cheap-power regions. We model the resulting carry multiplier as $\kappa_{\text{sov}}\sim$Triang(1.1, 1.2, 1.3). This is an engineering judgment about utilization and scale, not a published measurement.
 
 \lead{Demand carve-out ($\gamma_{\text{sov}}$).} Procurement preferences for domestic champions (Mistral, Falcon, Bhashini) and air-gapped defense enclaves remove a fraction $\gamma_{\text{sov}}\sim$Triang(0.15, 0.25, 0.35) of the sovereign-exposed sectors (office assistants, CX, financial, healthcare, legal, public sector, science) from US hyperscalers.
@@ -939,6 +949,8 @@ No pair of ceilings does it alone (Figure~\ref{fig:whatif2}); it takes ceilings,
 
 \section{Circular Capital Flows}\label{sec:circ}
 \claim{Some cloud revenue is the clouds' own investment coming back; the round trips are small, but the \$190B of lab funding is not.}
+
+\inbrief{\item Some cloud revenue is the clouds' own investment in the labs coming back as compute spending.\item The strict round trips are small, about \$12B a year; the \$190B of 2026 lab funding is the larger issue.\item The labs and the clouds fund, supply and compete with one another; the squeeze moves money between them, not from the customer.}
 
 Reported cloud revenue is not all exogenous demand. Where a hyperscaler's equity investment in a lab returns as that lab's cloud spend, the revenue is a round trip. Modeling the ecosystem as a directed graph, the circular revenue on a cycle is bounded by its minimum edge weight $\omega(e)$ (the dollars flowing along that edge), $F(C)=\min_{e\in C}\omega(e)$.
 \begin{table}[htbp]
@@ -992,6 +1004,8 @@ Either way the carry is paid from the same end-customer dollar: the squeeze move
 \section{Enterprise ROI and the Slack Trap}\label{sec:slack}
 \claim{Time saved is not money saved: firms realize a fraction of AI's nominal savings, and that fraction is what pays the carry.}
 
+\inbrief{\item Enterprises would need about \$1.2T of real benefit in 2028 to justify their share of the carry.\item AI's savings come in fragments, need checking and get absorbed, so only about 28 cents of each dollar of nominal savings becomes cash.\item Controlled studies show real gains at the task level; the leak is between the task and the profit.}
+
 \subsection{What enterprises must realize}
 \claim{In 2028 enterprises would need to realize about \$1.2T of benefit to justify their share of the carry.}
 
@@ -1036,6 +1050,8 @@ At the modes, realized yield is $0.28\,\tau$: a 15\% time saving converts to $\s
 \section{Last-Mile Services and Value Capture}\label{sec:lastmile}
 \claim{Much of AI's value goes to buyers and to the integrators who fix the process, not to the cloud.}
 
+\inbrief{\item Much of AI's value goes to buyers and to the integrators who fix the process, not to the cloud.\item A dollar of cloud tokens can produce 10 to 50 dollars of savings for the buyer: good for the buyer, little for the cloud.\item Most in-house AI projects fail, so firms turn to outside operators paid on results.}
+
 \subsection{Where the surplus goes}
 \claim{Professional-services firms lose billings to AI; little of what they lose shows up as cloud revenue.}
 
@@ -1078,6 +1094,8 @@ These are not contradictory; they dominate in different places. In high-liabilit
 \section{Hardware Cycle and Commoditization}
 \claim{Cheaper chips, smaller numbers and open models keep cutting the price of AI work, so the same revenue needs less cloud.}
 
+\inbrief{\item Cheaper chips, lower-precision maths and open models keep cutting the cost of AI work.\item Memory supply swings and on-device chips move routine work off the cloud.\item The same revenue therefore needs less cloud, which caps what the installed base can earn.}
+
 \begin{itemize}
     \item \textbf{Precision shifts.} FP4 microscaling delivers several times the throughput per watt of FP8/FP16 generations, and ternary-weight architectures remove floating-point multiply from the critical path. In power-constrained facilities this strands the prior generation regardless of its silicon health.
     \item \textbf{HBM bullwhip.} Lower-precision inference cuts memory-bandwidth demand per token. Capacity additions by SK Hynix, Samsung and Micron sized to 2025 demand risk oversupply by 2027--28.
@@ -1091,6 +1109,8 @@ These are not contradictory; they dominate in different places. In high-liabilit
 \section{Geopolitical Divergence}
 \claim{The US, Europe, China and others are building separate AI stacks; each duplication adds capital without adding customers.}
 
+\inbrief{\item The US, Europe, China and others are building separate AI stacks with different power costs and rules.\item Each duplication adds capital without adding customers.\item China's cheaper power and state siting make it a low-cost competitor for the same work.}
+
 \begin{itemize}
     \item \textbf{United States:} carries most of the global hyperscale debt and capex; industrial power \$0.10--0.14/kWh in PJM and rising; 5--7 year interconnection queues~\cite{ref:eia_epm,ref:pjm_queue}. No federal carbon price; California's cap-and-trade and the northeastern RGGI scheme cover a minority of load.
     \item \textbf{Europe (FLAPD):} power \$0.145--0.195/kWh, ETS carbon at $\sim$EUR~70/t, Dublin frozen to 2028~\cite{ref:eirgrid_cru}, Amsterdam capped~\cite{ref:amsterdam}.
@@ -1102,6 +1122,8 @@ These are not contradictory; they dominate in different places. In high-liabilit
 
 \section{Economic Depreciation, Utilization, and the Commodity Floor}\label{sec:commodity}
 \claim{A commodities reviewer's three points: chips lose value faster than the books say, utilization gains go to buyers, and prices fall toward cash cost.}
+
+\inbrief{\item An AI chip is worth what it can earn against the newest chip, so the silicon bought through 2026 is already worth \$100--250B less than the books show.\item Running chips harder serves more work, but if prices fall in step it brings in no more money.\item If prices fall to the cash cost of running the chips --- about a tenth of today's --- the capital is never recovered.\item The cheapest producers set the price; the GPU renters are squeezed first.}
 
 Three points raised by a reviewer with a commodities background~\cite{ref:mehta_2026} change how the supply side should be read, and each is now in the model as a secondary variable.
 
@@ -1235,6 +1257,8 @@ Whether labor budgets actually convert to AI spend is Section~\ref{sec:slack}'s 
 \section{The Sell-Side Hurdle: Goldman Sachs's Phase-2 ROIC Framework, September 2026}\label{sec:gs}
 \claim{Goldman Sachs's hurdle --- 27 cents of revenue per dollar of capital --- matches the paper's 28.}
 
+\inbrief{\item Goldman Sachs asks what revenue one cohort of spending must earn: \$1.42T over 2028--30.\item Per dollar of capital that is 27 cents a year; this paper's carry is 28. The hurdle is not in dispute.\item The two differ on scope --- one cohort or the whole stack --- and on running costs, which Goldman puts lower.}
+
 On September 24, 2026, Goldman Sachs's Americas Technology team (Sheridan, Borges, Schneider and colleagues) published a 29-page note, \textit{Sizing the AI Economy Needed to Justify ROIC on Hyperscaler AI Capex}~\cite{ref:gs_roic2026}, whose question is this paper's question asked from the other side of the table: not ``what is the carry'' but ``what revenue would make the carry worth paying.'' The note is taken here the way Section~\ref{sec:a16z} took a16z's deck --- claim by claim, against the register.
 
 It is the closest thing to a sell-side replication of the supply-side model that exists, and the two agree on the hurdle to within a few percent; where they differ is scope, one input, and what is assumed about demand.
@@ -1329,6 +1353,8 @@ Two further notes from the same exchange --- a three-bloc comparison of five-yea
 
 \section{Results: Break-Even Growth}\label{sec:results}
 \claim{Revenue must grow about 49\% a year to break even by 2030; no growth rate rescues 2027--28.}
+
+\inbrief{\item Revenue must grow about 49\% a year, every year, to break even on a flat path by 2030; no growth rate rescues 2027--28.\item Counted sector by sector, receipts fall about \$260B a year short in 2030, three and a half standard deviations from break-even.\item AI can disrupt software and still fail to pay for its capital: the buyer's dollar moves, but only a fraction reaches the cloud.\item With a 35\% spending cut, the chance of profit is about 50\% in 2030 and 95\% by 2032.}
 
 Each run draws $N=100{,}000$ samples of the parameters in Sections~\ref{sec:supply}--\ref{sec:demand} and computes the annual surplus or deficit $\Delta_t=D_t-H_t$ (positive is a surplus) for 2027--2030. Parameters are independent; since capex, energization and demand expectations are positively correlated in reality, the spread is understated and tail probabilities are indicative.
 
@@ -1556,6 +1582,8 @@ Even those guided rates exceed $g^{*}$. The labs' figures are the only high-grow
 \section{Winners and Losers}
 \claim{The GPU renters and their lenders are most exposed; buyers, integrators and own-chip clouds gain.}
 
+\inbrief{\item Most exposed: the GPU renters, Oracle's cloud and their lenders.\item Gaining: buyers, integrators paid on results, and clouds with their own chips.}
+
 \begin{table}[htbp]
 \centering
 \small
@@ -1599,6 +1627,8 @@ Grid and power industrials & Transformers, cooling, transmission & 36--48 month 
 \section{Timeline}
 \claim{If the paper is right: slowing lab growth and write-downs in 2027--28, a spending retreat in 2028--29, a cheaper equilibrium after.}
 
+\inbrief{\item 2026--27: startup failures, scrutiny of investor-funded cloud revenue, a first wave of write-downs.\item 2028--29: spending retreats as finance chiefs cut budgets.\item After 2030: a cheaper, more spread-out equilibrium --- not the end of AI.}
+
 \begin{itemize}
     \item \textbf{2026--27:} startup-cohort failure crosses $\sim$80\%; SEC and auditor scrutiny of related-party cloud revenue; first \$50B+ impairment wave across hyperscalers and neo-clouds; secondary GPU spot prices fall by half or more.
     \item \textbf{2028--29:} human-text data wall binds for frontier training~\cite{ref:epoch_data2024}; CFOs cut experimental AI budgets; Big-5 capex retreats 30\%+ from the 2026--27 peak; neo-cloud restructurings; OCI renegotiates unfulfilled contracts.
@@ -1607,6 +1637,8 @@ Grid and power industrials & Transformers, cooling, transmission & 36--48 month 
 
 \section{What Would Change the Distribution}\label{sec:falsify}
 \claim{Two observations would overturn the result on their own --- above all, 2028 AI revenue above \$400B.}
+
+\inbrief{\item AI revenue above \$400B in calendar 2028 would overturn the most likely outcome.\item Interim marker: 2027 revenue near \$330B is the paper's path; above \$350B favours the build-out.\item Paid use of office assistants is the sector to watch.}
 
 The paper's result is a distribution, not a yes or no, so the tests below are stated as observations that would move the distribution decisively rather than as binary refutations. Two are sufficient on their own:
 \begin{enumerate}

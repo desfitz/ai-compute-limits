@@ -27,10 +27,10 @@ ax.set_title('Carry cost of the AI-attributable installed base',fontsize=9)
 plt.tight_layout(); plt.savefig('f2_carry.pdf')
 # F3 scissors
 fig,ax=plt.subplots(figsize=(6.2,3.4)); o=simulate('Plateau',0.3)
-ax.plot(yrs,[np.median(o[t]['H']) for t in yrs],'k-',lw=2.2,marker='o',label='Carry H_t (Plateau)')
+ax.plot(yrs,[np.median(o[t]['H']) for t in yrs],'-',color='#1E2761',lw=2.2,marker='o',label='Carry H_t (Plateau)')
 ax.fill_between(yrs,[q(o[t]['H'],10) for t in yrs],[q(o[t]['H'],90) for t in yrs],color='#7F9BC0',alpha=0.25)
 for g,ls in zip([0.2,0.35,0.5,0.7],[':','-.','--','-']):
-    o=simulate('Plateau',g); ax.plot(yrs,[np.median(o[t]['D']) for t in yrs],ls,color='#2E86AB',marker='s',ms=3,label=f'Infra receipts at g={g:.0%}')
+    o=simulate('Plateau',g); ax.plot(yrs,[np.median(o[t]['D']) for t in yrs],ls,color={0.2:'#C0504D',0.35:'#E08E45',0.5:'#3BA272',0.7:'#2E86AB'}[g],marker='s',ms=3,label=f'Infra receipts at g={g:.0%}')
 ax.set_ylabel('$B/yr'); ax.set_xticks(list(yrs)); ax.legend(fontsize=7); ax.set_ylim(0,1400)
 ax.set_title('The scissors: carry versus infrastructure receipts by growth rate',fontsize=9)
 plt.tight_layout(); plt.savefig('f3_scissors.pdf')
