@@ -1,0 +1,42 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.55in]{geometry}\usepackage{amsmath}\usepackage{graphicx}\usepackage[final,expansion=false]{microtype}\usepackage{setspace}\usepackage[table]{xcolor}\usepackage[colorlinks=true,urlcolor=blue!60!black]{hyperref}\usepackage{charter}
+\definecolor{lead}{HTML}{B85042}\definecolor{navy}{HTML}{1E2761}\definecolor{boxbg}{HTML}{EEF3FA}
+\newcommand{\lead}[1]{{\sffamily\bfseries\color{lead}#1}}
+\setstretch{1.0}\small\pagestyle{empty}\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\begin{document}
+\begin{center}{\Large\bfseries\color{navy}Will the AI build-out pay for itself?}\\[2pt]
+{\normalsize The one-page version of \emph{The Macroeconomic Limits of AI Compute}, version 28 (30 October 2026)}\\[2pt]
+{\small Desmond Fitzpatrick, Ph.D. \quad Founder, Nvara.ai \quad Retired, IBM Systems}\end{center}
+
+\lead{The question.} This year Microsoft, Alphabet, Amazon, Meta and Oracle will spend about \$780 billion on AI data centers. Musk's SpaceX/xAI, CoreWeave, Nebius and others add about \$140 billion more. Will the money come back?
+
+\lead{How we count.} A Fermi estimate: the answer is built from many small factors, each bounded and sourced, and the uncertainty in each is carried to the result. All 53 inputs sit in a public register; change one, run one script, and the paper rebuilds itself.
+
+\colorbox{boxbg}{\begin{minipage}{0.97\textwidth}\vspace{3pt}
+\textbf{The answer in five lines}
+\begin{itemize}\setlength\itemsep{1pt}
+\item \textbf{The cost.} The buildings and chips cost about \$890 billion a year to own by 2030 --- wear, running costs and a return on the money --- even if spending stays flat.
+\item \textbf{The revenue.} AI revenue is about \$179 billion this year. To cover the cost by 2030 it must grow 57\% a year, every year. Counted sector by sector it grows about 33\%.
+\item \textbf{The gap.} About \$420 billion a year short in 2030. Flat spending is the optimistic case: every company pointed 2027 spending up.
+\item \textbf{The wait.} Counting the early losses and the cost of the money, no spending path earns an ordinary return by 2035. Even a one-third cut turns a yearly profit only from 2032.
+\item \textbf{What would prove it wrong.} AI revenue above \$440 billion in calendar 2028.
+\end{itemize}\vspace{2pt}\end{minipage}}
+
+\lead{New in this version.} \textbf{Every builder counted.} The rent that SpaceX/xAI, CoreWeave and the others earn from AI labs and clouds was always in the revenue we counted; their buildings and chips were not in the cost. Now they are. That one correction moves the 2030 gap from about \$260 billion (the five largest alone) to about \$420 billion. Builders that publish no figure yet --- Meta's off-balance-sheet Hyperion site, Anthropic's own sites, Crusoe, Lambda, Nscale, Tesla, the Gulf's Humain and Stargate UAE --- are listed with what will bring each in. Every one of them would widen the gap.
+
+\lead{Also new.} \emph{Inflation}, counted once: after it, flat spending is losing about 6.5\% a year in 2035. \emph{Tax}: the new write-off delays tax rather than cancelling it, so tax widens the gap. \emph{The October earnings}: Alphabet lost about \$500 billion of value in a day on its spending; Anthropic's first filed numbers matched the paper's estimate.
+
+\lead{Why it slows.} Time saved is not money saved; checking AI's work takes time; much of the value goes to buyers and integrators, not the cloud; countries build their own clouds; and the grid and local consent hold projects back.
+
+\lead{What it means.} Not a crash, and not the end of AI. The likely path is write-downs and a spending retreat in 2027--29, then a cheaper, more distributed build. The question for investors is not whether AI is useful. It is how long they wait, and what the wait costs.
+
+\lead{Where I was wrong.} Earlier versions counted the other builders' rent but not their cost, and printed one edge-computing figure a thousand times too large. Both are corrected and listed, as every error will be.
+
+\vspace{2pt}
+{\footnotesize\sloppy\textbf{Read more.}\\
+Paper, version 28: \url{https://doi.org/[v28 DOI]} \quad All versions: \url{https://doi.org/10.5281/zenodo.23406475}\\
+Deck (19 slides): on the Zenodo record \quad Model, inputs and code: \url{https://github.com/desfitz/ai-compute-limits}\\
+What changed: \url{https://github.com/desfitz/ai-compute-limits/blob/main/CHANGES.md} \quad First open question: \url{https://github.com/desfitz/ai-compute-limits/issues/1}\\
+SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7620359} \quad Data Democracy: \url{https://datademocracy.substack.com/p/the-macroeconomic-limits-of-ai-compute}\\
+Comments and corrections: desmond.fitzpatrick@nvara.ai}
+\end{document}
