@@ -171,8 +171,27 @@ Spending tracks revenue & $-$150 & $-$330 & $-$470 & $-$550 & $-$500 & $-$340 & 
 \item \textbf{Flat spending} digs a hole of about \$860B by 2030 and \$1.55T by 2035. Each year's loss shrinks, but the hole is never repaid within the horizon.
 \item \textbf{An arms race} --- the path the companies now describe --- never earns its return: the hole passes \$4T by 2035.
 \item \textbf{Cutting back} is the only way the money comes back with a normal return. A 35\% cut bottoms out near \$260B in 2029--30 and is repaid by 2033. Spending that simply tracks booked revenue bottoms near \$550B in 2030 and is repaid by 2034.
+\item \textbf{The losses are not part of capex.} Capex is the money spent on buildings and chips. The yearly cost above is what that capex costs to hold. The losses are revenue falling short of that cost, and they come out of the owners' profits and cash --- lower earnings, then write-downs. The table adds them up plainly. Charging the cost of money on the losses themselves (about 9.5\% a year) makes the hole deeper and the payback later: for spending that tracks revenue, the deepest point is about \$650B rather than \$550B, and payback moves from 2034 to 2035.
+\item \textbf{The return on the money, with the early losses included.} Table~\ref{tab:roiyear} gives the average return earned on the money still invested, from 2027 to each year, before tax. An ordinary investor's return is about 9.5\%. Spending that tracks revenue passes it around 2034; a 35\% cut around 2032--33; flat spending averages about 1\% by 2035; an arms race loses money on average every year to 2035.
 \item \textbf{What average growth would do it on a flat path:} about 49\% a year to break even in 2030, and about 64\% a year to have made up the 2027--28 losses by then (Table~\ref{tab:breakeven}). The sector chains deliver about 33\%.
 \end{itemize}
+
+
+\begin{table}[htbp]
+\centering\small
+\caption{Average return on the money invested, 2027 to each year, before tax (\%, median; an ordinary investor's return is $\sim$9.5\%). Computed by \texttt{model/roi.py}.}
+\label{tab:roiyear}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+\textbf{Path} & \textbf{2027} & \textbf{2028} & \textbf{2029} & \textbf{2030} & \textbf{2031} & \textbf{2032} & \textbf{2033} & \textbf{2034} & \textbf{2035} \\
+\midrule
+Flat spending (plateau) & $-4$ & $-4$ & $-4$ & $-4$ & $-3$ & $-2$ & $-1$ & 0 & 1 \\
+Arms race (street path) & $-6$ & $-7$ & $-8$ & $-9$ & $-9$ & $-9$ & $-8$ & $-8$ & $-7$ \\
+35\% cut (rationalize) & $-2$ & $-1$ & 1 & 4 & 6 & 9 & 12 & 14 & 17 \\
+Spending tracks revenue & $-4$ & $-4$ & $-3$ & $-1$ & 2 & 5 & 9 & 11 & 13 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection*{New sources}\label{ag:sources}
 \begin{itemize}

@@ -48,6 +48,18 @@ The yearly cost already includes a normal return on the money (about 9-10% a yea
 
 - Flat spending is never repaid by 2035; an arms race never earns its return; cutting back is repaid by 2033-34.
 - On a flat path, average growth of ~49%/yr breaks even in 2030 and ~64%/yr makes up the 2027-28 losses by then. The sector chains deliver ~33%.
+- The losses are not part of capex: capex is the money spent; the yearly cost is what it costs to hold; the losses come out of profits and cash. Charging ~9.5% a year on the losses themselves deepens the hole (spending-tracks-revenue: ~$650B instead of ~$550B) and moves payback from 2034 to 2035.
+
+Average return on the money invested, 2027 to each year, before tax (%; an ordinary return is ~9.5%):
+
+| Path | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 | 2033 | 2034 | 2035 |
+|---|---|---|---|---|---|---|---|---|---|
+| Flat spending | -4 | -4 | -4 | -4 | -3 | -2 | -1 | 0 | 1 |
+| Arms race | -6 | -7 | -8 | -9 | -9 | -9 | -8 | -8 | -7 |
+| 35% cut | -2 | -1 | 1 | 4 | 6 | 9 | 12 | 14 | 17 |
+| Spending tracks revenue | -4 | -4 | -3 | -1 | 2 | 5 | 9 | 11 | 13 |
+
+Computed by `model/roi.py`.
 </details>
 
 ### New sources
