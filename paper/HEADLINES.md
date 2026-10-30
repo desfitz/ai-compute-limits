@@ -73,6 +73,7 @@ Section titles, the one-line claim under each, the In-brief points, and the head
   - Colour figures and a cleaner page.
 
 ### Errata: where earlier versions erred
+  - v19-v27.1, edge-siphon arithmetic.
   - All versions to v27.1, scope (the largest).
   - v26.x-v27.1, abstract.
   - v26.x-v27.1, register.
@@ -438,7 +439,7 @@ Section titles, the one-line claim under each, the In-brief points, and the head
 *Counted sector by sector, receipts fall about $420B a year short of the carry of all builders in 2030.*
 
 ### Variance budget, undecomposed and decomposed
-*Breaking the inputs down cuts the uncertainty from 286 to 110, and the sign survives.*
+*Breaking the inputs down cuts the uncertainty from 286 to 142, and the sign survives.*
   - The bottom-up variance.
 
 ### Reconciling the two estimates

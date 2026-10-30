@@ -48,7 +48,7 @@ s.addText([
   { text: "Founder, Nvara.ai   |   Retired, IBM Systems", options: { breakLine: true } },
   { text: "desmond.fitzpatrick@nvara.ai   |   ORCID 0009-0001-0534-2793", options: {} },
 ], { x: 0.8, y: 4.0, w: 11.7, h: 1.2, fontSize: 16, color: C.text1, margin: 0, isTextBox: true });
-s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 152-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
+s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 157-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
 
 
 // NEW v29: what the October earnings changed
@@ -72,7 +72,7 @@ SRC(s, "Capex from company filings via Epoch AI; 2026 from the companies' own gu
 
 // 2 Fermi
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "2. How we estimate: the Fermi way", "A long way on bounded factors; only the big uncertainties left as a tail");
-P(s, "Fermi asked how many piano tuners Chicago had and got within a factor of two by chaining things he could bound: people, households, pianos per household, tunings a year, tunings a tuner can do. No single factor was known well. The product was, because the errors cancel rather than compound.\n\nThis paper does the same. The carry is a chain of factors each known to tens of percent (capex, silicon share, lives, power, cost of capital). Demand is fifteen such chains. Where an input carried too much of the uncertainty, we split it into sourced pieces — nineteen times — until the spread fell from 286 to 110 and only two big uncertainties were left: how fast firms actually adopt, and how big the office-assistant market gets. Those two are the tail, and the probability map is drawn over them.", 0.6, 1.7, 6.2, 4.8, { fontSize: 15 });
+P(s, "Fermi asked how many piano tuners Chicago had and got within a factor of two by chaining things he could bound: people, households, pianos per household, tunings a year, tunings a tuner can do. No single factor was known well. The product was, because the errors cancel rather than compound.\n\nThis paper does the same. The carry is a chain of factors each known to tens of percent (capex, silicon share, lives, power, cost of capital). Demand is fifteen such chains. Where an input carried too much of the uncertainty, we split it into sourced pieces — nineteen times — until the spread fell from 286 to 142 and only two big uncertainties were left: how fast firms actually adopt, and how big the office-assistant market gets. Those two are the tail, and the probability map is drawn over them.", 0.6, 1.7, 6.2, 4.8, { fontSize: 15 });
 IMG(s, "f7_tornado", 7.0, 1.6, 5.7, 4.9);
 SRC(s, "Paper Sections 2 and 9. The chart ranks every input by how much it moves the 2030 result; the long bars are the tail.");
 
@@ -197,7 +197,7 @@ SRC(s, "Paper Sections 15 and 16.");
 // 12 Prove wrong
 s = pres.addSlide({ masterName: "CONTENT" }); T(s, "12. What would change the most likely outcome, and when");
 BIG(s, "$440B", "AI revenue in calendar 2028 above this overturns the most likely outcome", 0.6, 1.7, 5.4);
-P(s, "Interim marker: calendar 2027 near $330B is our path; above $350B favours the build-out.\n\nThe next data: Nvidia on 19 November, Anthropic's amended S-1 with its third quarter, Oracle in December. The register is rebuilt after each and the paper re-issued if anything moves materially.", 0.6, 3.5, 5.4, 2.9, { fontSize: 15 });
+P(s, "2027 cannot tell the paths apart (both near $280B); 2028 can: $440B on the break-even path against about $390B on ours.\n\nThe next data: CoreWeave on 10 November, Nvidia on 19 November, Anthropic's amended S-1 with its third quarter, Oracle in December. The register is rebuilt after each and the paper re-issued if anything moves materially.", 0.6, 3.5, 5.4, 2.9, { fontSize: 15 });
 IMG(s, "f17_probmap", 6.4, 1.8, 6.3, 2.6);
 P(s, "Probability of profit in 2030 over the two things we cannot pin down: how fast firms actually adopt, and how big the office-assistant market gets.", 6.4, 4.6, 6.3, 1.2, { fontSize: 12, color: C.accent3 });
 SRC(s, "Paper Section 17 and the update protocol.");
@@ -224,7 +224,7 @@ P(s, "The paper, the model, the data and the register of inputs — each with it
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v29_2026-10-30_v10.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-30_v11.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);
