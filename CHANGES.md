@@ -93,7 +93,7 @@ Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(pr
 
 ### Easier to read
 
-- The abstract is rewritten as ten short points in plain language; the technical detail is in the Executive Summary.
+- The abstract is rewritten as ten short points in plain language, followed by a reading guide with page numbers (what's new, errata, summary, inputs, delta log, glossary). The technical detail is in the Executive Summary.
 
 ### Errata (where earlier versions erred) - full list in [ERRATA.md](ERRATA.md)
 

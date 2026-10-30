@@ -67,8 +67,8 @@
 
 \title{\textbf{\Large The Macroeconomic Limits of AI Compute: \\ A Vintage Fermi Model of Capital Carry, \\ Sectoral Demand, and the Growth Rate the Build-Out Requires}}
 \author{\textbf{Desmond Fitzpatrick, Ph.D.} \\
-\small Retired, IBM Systems \\
 \small Founder, Nvara.ai \\
+\small Retired, IBM Systems \\
 \small \texttt{desmond.fitzpatrick@nvara.ai} \quad \texttt{desmond.fitzpatrick@gmail.com} \\
 \small ORCID: \url{https://orcid.org/0009-0001-0534-2793}}
 \date{29 October 2026 --- Version 28, the post-earnings rebuild. \textit{What changed since version 27 is listed on the next page. Nvidia (19 November), Oracle (December) and Anthropic's amended S-1 enter as version 28.1; see Appendix~\ref{app:update}.}}
@@ -93,6 +93,37 @@
 \noindent\small Model, data and code are open. Every input is appraised in Appendix~\ref{app:inputs}, the update protocol is in Appendix~\ref{app:update}, and a glossary of terms is in Appendix~\ref{app:glossary}.
 \end{abstract}
 
+
+\vspace{0.6em}
+\noindent\fcolorbox{gray!60}{blue!4}{\begin{minipage}{0.96\textwidth}\vspace{0.4em}
+\noindent\textbf{\large At a glance}\par\vspace{0.3em}
+\begin{tabular}{@{}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.74\textwidth}@{}}
+\textbf{Method} & Fermi estimate: the answer is a chain of bounded factors, and each factor's uncertainty is carried to the result by Monte Carlo simulation (100,000 draws). \\[2pt]
+\textbf{Who is counted} & The five largest US builders --- Microsoft, Alphabet, Amazon, Meta, Oracle. They are about nine-tenths of 2026 spending by the world's nine largest cloud operators; the Chinese four (\$50--110B a year) are tracked but kept outside the model~\cite{ref:trendforce_csp9}. \\[2pt]
+\textbf{What is tracked} & 51 inputs in a public register, each with a source, a date and its next update; 15 sector revenue chains; a 2026 revenue base built from 7 components; 19 inputs decomposed into sourced parts; years 2023--2035. \\[2pt]
+\textbf{Sources} & 126 references: about 20 company filings and earnings releases, 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
+\textbf{Result} & About \$260B a year short in 2030 if spending stays flat; overturned if 2028 AI revenue exceeds \$400B. \\
+\end{tabular}
+\vspace{0.3em}\end{minipage}}
+
+\vspace{0.8em}
+\noindent\fcolorbox{gray!60}{blue!4}{\begin{minipage}{0.96\textwidth}\vspace{0.4em}
+\noindent\textbf{\large Reading guide}\par\vspace{0.3em}
+\noindent\textbf{1. What is new in version 28}\dotfill p.~\pageref{sec:v28}\\
+\hspace*{1.5em}The headline: what the October earnings changed\dotfill p.~\pageref{ag:headline}\\
+\hspace*{1.5em}New sources: Anthropic's S-1, cloud growth, Oracle\dotfill p.~\pageref{ag:sources}\\
+\hspace*{1.5em}Accounting changes that make the cost look smaller\dotfill p.~\pageref{ag:acct}\\
+\hspace*{1.5em}Errata: where earlier versions erred\dotfill p.~\pageref{ag:errata}\\
+\hspace*{1.5em}Still waiting on\dotfill p.~\pageref{ag:waiting}\\
+\textbf{2. Executive summary} --- the argument in short points\dotfill p.~\pageref{ag:exec}\\
+\textbf{3. The paper} --- method, cost, revenue, sectors, results\dotfill p.~\pageref{sec:method}\\
+\textbf{4. What would prove it wrong}\dotfill p.~\pageref{sec:falsify}\\
+\textbf{5. Every input, appraised}\dotfill p.~\pageref{app:inputs}\\
+\textbf{6. What changed, input by input (delta log)}\dotfill p.~\pageref{ag:delta}\\
+\textbf{7. Glossary} --- every term and abbreviation\dotfill p.~\pageref{app:glossary}
+\vspace{0.3em}\end{minipage}}
+
+
 \vspace{0.5em}
 \noindent\textbf{Keywords:} Fermi estimation, vintage capital model, hyperscale capex, break-even growth, productivity J-curve, surplus capture, ASC 360-10.
 \vspace{0.5em}
@@ -103,14 +134,14 @@
 \addcontentsline{toc}{section}{What Is New in Version 28}
 Version 28 is the post-earnings rebuild promised in Appendix~\ref{app:update}. Every input that moved is listed below with its source; the delta log in Appendix~\ref{app:update} gives old and new values. Nvidia (19 November) and Oracle (December) report later and will enter as v28.1, with Anthropic's amended S-1 if it is filed by then. An expandable version of this list, with the detail behind each bullet, is in the repository (\texttt{CHANGES.md}).
 
-\subsection*{The headline}
+\subsection*{The headline}\label{ag:headline}
 \begin{itemize}
 \item \textbf{The market asked the paper's question.} On 29 October Alphabet had its worst day as a public company --- down nearly 13\%, about \$480--500B of value~\cite{ref:cnbc_goog_1029,ref:yahoo_goog_1029} --- on results in which Google Cloud revenue \emph{doubled}. Investors sold the spending, not the business: capex of \$51.4B in the quarter, negative free cash flow, and the CFO's statement that ``we continue to expect our capex to increase significantly in 2027''~\cite{ref:alphabet_q3_2026}. Whether the revenue can carry the build-out is now being priced, at the largest scale yet.
 \item \textbf{The result does not move: $-$\$259B/yr in 2030, $z=-3.54$.} Calendar-2026 capex guidance across the five is unchanged in total at $\sim$\$780B. The 2026 revenue base, re-derived from Anthropic's filed financials, is \$179B (P10--P90 \$168--191B). Break-even growth on a plateau is 49\%/yr to 2030; the sector chains still deliver about 33\%. Under the re-issue rule the change is \emph{minor} (Appendix~\ref{app:update}).
 \item \textbf{Flat spending is now the conservative case.} No company guided down. Alphabet (``increase significantly''), Amazon (``spend meaningfully more in 2027''), Meta (``continue investing aggressively'') and Microsoft (fiscal-2027 capex to grow, Q2 above \$50B) all point up~\cite{ref:alphabet_q3_2026,ref:amzn_q3_2026,ref:meta_q3_2026,ref:msft_q1fy27}. The street's 2027 figure is about \$1.1T~\cite{ref:gs_capex_bbg}. The paper's arms-race path, not its plateau, is the one the companies describe.
 \end{itemize}
 
-\subsection*{New sources}
+\subsection*{New sources}\label{ag:sources}
 \begin{itemize}
 \item \textbf{Anthropic's S-1 (public 26 October): the first filed lab financials.} First-half 2026 revenue \$16.3B (\$1.2B a year earlier); operating loss \$0.7B; net loss \$80.7B, of which \$72.4B is a non-cash change in the fair value of convertible notes and similar instruments~\cite{ref:anthropic_s1}. The \$80.7B is therefore \emph{not} cash burn and is not used as such.
 \item \textbf{The paper's Anthropic estimate held.} v27 put Anthropic's 2026 bookings at 50--65 (mode 57), implying a third quarter of \$16--19B. The third quarter, reported to investors but not yet filed, was \$16.8B~\cite{ref:cnbc_anthropic_q3}. The component is narrowed to 53--60 (mode 56).
@@ -120,16 +151,16 @@ Version 28 is the post-earnings rebuild promised in Appendix~\ref{app:update}. E
 \item \textbf{Anthropic's compute commitments.} The S-1 refers to committed spend ``substantially all of which is related to compute and infrastructure''; press reports of the draft give noncancelable commitments of \$111B to Google, \$110B to AWS and \$31B to Microsoft, and up to \$750B in all~\cite{ref:anthropic_s1,ref:dealroom_s1}. A large part of the hyperscalers' future ``AI revenue'' is one lab's investor capital returning to them --- the circular flow of Section~\ref{sec:circ}, now in a filing.
 \end{itemize}
 
-\subsection*{Accounting changes that make the carry look smaller}
+\subsection*{Accounting changes that make the carry look smaller}\label{ag:acct}
 \begin{itemize}
 \item \textbf{Microsoft lengthened building lives from 15 to 25 years} from fiscal 2027, and books new data-center leases as operating rather than finance leases~\cite{ref:cfodive_msft}. Both lower \emph{reported} capex and depreciation; neither changes what the buildings cost or how long the chips inside them last. The paper's carry is economic and keeps shell lives at 15/20/25 years.
 \item \textbf{Three-quarters of Microsoft's capex is now chips.} ``Roughly 3/4 of our CapEx was for short-lived assets, primarily CPUs and GPUs''~\cite{ref:msft_q1fy27}. The paper's silicon share (45--65\%) is a five-company average; Microsoft's mix supports the upper half, which shortens the blended life and front-loads the carry.
 \end{itemize}
 
-\subsection*{Easier to read}
-The abstract is rewritten as ten short points in plain language; the detail it used to carry is in the Executive Summary that follows.
+\subsection*{Easier to read}\label{ag:read}
+The abstract is rewritten as ten short points in plain language, followed by a one-page reading guide with page numbers; the detail the abstract used to carry is in the Executive Summary.
 
-\subsection*{Errata: where earlier versions erred}
+\subsection*{Errata: where earlier versions erred}\label{ag:errata}
 Errors in published versions are listed here and kept, version by version, in the repository's \texttt{ERRATA.md}; nothing is corrected silently.
 \begin{itemize}
 \item \textbf{v26.x--v27.1, abstract.} The abstract quoted a calendar-2026 revenue base of \$187B, a 2030 plateau deficit of \$255B and $g^{*}=48\%$, from a register run in which the base had been raised on 29 September on a press report of Anthropic's expected \$100B+ exit run-rate. The body tables (Tables~\ref{tab:breakeven} and~\ref{tab:bu_results}) were computed on \$179B and showed $\sim$\$260B and 49\%. The filed S-1 supports \$179B. Effect on the conclusion: none (both inside the propagated uncertainty), but the abstract and the tables disagreed.
@@ -141,11 +172,11 @@ Errors in published versions are listed here and kept, version by version, in th
 \item The revenue base is now stated consistently as \$179B and the 2030 plateau deficit as $\sim$\$260B throughout; v27's abstract carried a register run on the superseded \$187B base (\$255B). The body tables were already on the \$179B base.
 \end{itemize}
 
-\subsection*{Still waiting on}
+\subsection*{Still waiting on}\label{ag:waiting}
 Anthropic's amended S-1 with filed third-quarter figures (expected in November; its first-half statements go stale around 11--12 November); Nvidia's third quarter (19 November); Oracle's fiscal second quarter (December); a post-earnings consensus for 2027--28 capex.
 \newpage
 
-\section*{Executive Summary}
+\section*{Executive Summary}\label{ag:exec}
 \begin{itemize}
     \item \textbf{The question is $g$, not $D$.} A stock built ahead of demand is rational if demand compounds fast enough. Comparing a stock to a demand level lets each side pick its year. The vintage model instead asks: at what sustained growth rate does the installed base earn its carry, and by when? (Figures~\ref{fig:scissors} and~\ref{fig:breakeven}.)
     \item \textbf{The carry ramps.} Net of a non-AI baseline that the flat 2023 capex total pins at $\sim$\$130B for that year, growing 2--10\%/yr since, the AI-attributable stock is $\sim$\$1.1T entering 2027 and $\sim$\$2.2T by 2029. Its carry is $\sim$\$390B in 2027, $\sim$\$535B in 2028, $\sim$\$725B in 2030 on a plateau (Figure~\ref{fig:carry}) --- siting friction defers some of it a year and then adds cost. A 35\% capex cut flattens it near \$460B; an arms race pushes it to \$1T.
@@ -164,7 +195,7 @@ Anthropic's amended S-1 with filed third-quarter figures (expected in November; 
 \end{itemize}
 \newpage
 
-\section{Method: What a Fermi Estimate Can and Cannot Say}
+\section{Method: What a Fermi Estimate Can and Cannot Say}\label{sec:method}
 On July 16, 1945, ten miles from the Trinity tower, Enrico Fermi dropped scraps of paper as the blast wave passed and, from their $\sim$2.5\,m displacement, estimated a yield of about 10 kilotons of TNT~\cite{ref:fermi_trinity}; radiochemistry later gave $21\pm2$ kilotons~\cite{ref:katz2021}. He had the order of magnitude before the instruments were read. At Chicago he institutionalized the method with the piano-tuner question~\cite{ref:morrison1963,ref:vonbaeyer1993}: chain population, household size, ownership density, tuning frequency and tuner throughput, and the product lands within a factor of two of the directory count.
 
 Why does this work? If the estimate is a product of $n$ independent factors, $Y=\prod X_i$, then $\ln Y=\sum\ln X_i$ and, for independent errors,
@@ -1328,7 +1359,7 @@ After each rebuild the script reports the change in three summary statistics aga
 To test the loop before it is needed: suppose the October calls put 2026 capex at \$800B and calendar-2026 AI revenue at \$195B rather than \$179B. Rebuilding gives $g^{*}_{2030}=46\%$ (from 49\%), $z=-3.57$ (from $-3.54$) and P(profit, rationalize, 2030) two points lower: all three inside the minor thresholds. The higher base helps the demand side, the higher capex hurts the supply side, and they nearly cancel. A disclosure that Copilot paid seats had reached 40M, by contrast, would move the assistant ceiling's floor and be reported as material.
 
 
-\subsection*{Delta log: version 28 (29 October 2026)}
+\subsection*{Delta log: version 28 (29 October 2026)}\label{ag:delta}
 \begin{table}[htbp]
 \centering\small
 \caption{Register entries changed in v28 and the effect on the summary statistics}

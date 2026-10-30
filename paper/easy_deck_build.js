@@ -45,7 +45,7 @@ s.addText("Will the AI build-out pay for itself?", { x: 0.8, y: 1.6, w: 11.7, h:
 s.addText("A Fermi estimate, in fourteen slides - updated after the October earnings", { x: 0.8, y: 2.8, w: 11.7, h: 0.6, fontSize: 24, color: C.accent2, margin: 0, isTextBox: true });
 s.addText([
   { text: "Desmond Fitzpatrick", options: { bold: true, breakLine: true } },
-  { text: "Retired, IBM Systems   |   Founder, Nvara.ai", options: { breakLine: true } },
+  { text: "Founder, Nvara.ai   |   Retired, IBM Systems", options: { breakLine: true } },
   { text: "desmond.fitzpatrick@nvara.ai   |   ORCID 0009-0001-0534-2793", options: {} },
 ], { x: 0.8, y: 4.0, w: 11.7, h: 1.2, fontSize: 16, color: C.text1, margin: 0, isTextBox: true });
 s.addText("This is a probability assessment, not a forecast: the most likely outcome at the inputs we could source, and what would move it. It is the short version of a 109-page paper whose every number sits in a public register anyone can challenge. If a slide here and the paper disagree, the paper is right. Paper, model and data (latest version): doi.org/10.5281/zenodo.23406475", { x: 0.8, y: 5.6, w: 11.7, h: 1.0, fontSize: 12, color: C.accent3, margin: 0, isTextBox: true });
@@ -177,7 +177,7 @@ P(s, "The paper, the model, the data and the register of inputs — each with it
 SRC(s, "Figures are the paper's own; no number here is newer than the paper's register.");
 
 (async () => {
-  const out = "ai_compute_easy_deck_v29_2026-10-29.pptx";
+  const out = "ai_compute_easy_deck_v29_2026-10-29_v2.pptx";
   await pres.writeFile({ fileName: out });
   await applyTheme(out, THEME);
   console.log("wrote", out);
