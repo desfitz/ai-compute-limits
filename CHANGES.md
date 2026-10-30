@@ -208,7 +208,7 @@ Effect of adding the other builders: deficit -259 -> -422; z -3.54 -> -5.56; g* 
 
 ### Easier to read
 
-- **A plain-language front:** the abstract is eleven short points, then an at-a-glance box and a reading guide with page numbers.
+- **A plain-language front:** the abstract is twelve short points, then an at-a-glance box and a reading guide with page numbers.
 - **The argument in the titles:** every section and subsection opens with a one-line claim in blue; the longest open with an *In brief* box - the simple argument first, the detail below.
 - **Short paragraphs with headlines:** long paragraphs are split, with a blank line between them; most open with a short headline in a contrasting colour, so the argument can be followed by scanning (`paper/HEADLINES.md`).
 - **More bullets:** arguments made in steps (first, second, third) are set out as lists; the incumbent's dilemma and the assistant ceiling are rewritten as simple argument, then detail.

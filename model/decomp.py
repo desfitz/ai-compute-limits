@@ -47,7 +47,7 @@ def bu_delta(path,mcap=1.0,adC=None,copC=None,thlab=None,seed=11):
         rec={t:rec[t]*(0.5+0.5*thlab/0.65) for t in rec}
     d=rec[2030]*mcap-v['circ']-H[2030]; return d
 # f13: z and P(deficit) vs residual capability factor
-fig,ax=plt.subplots(1,2,figsize=(10,3.4)); ms=np.arange(0.6,1.61,0.1)
+fig,ax=plt.subplots(1,2,figsize=(10,3.4)); ms=np.arange(0.6,2.21,0.1)
 for p,ls in zip(PATHS,['-','--',':']):
     z=[];pl=[]
     for mc in ms: d=bu_delta(p,mcap=mc); z.append(m(d)/np.std(d)); pl.append((d<0).mean()*100)

@@ -46,7 +46,7 @@ plt.tight_layout(); plt.savefig('f4_delta.pdf')
 fig,ax=plt.subplots(figsize=(6.2,3.2))
 for p,ls in zip(PATHS,['-','--',':']):
     ax.plot(list(yrs),[min(breakeven(p,t),1.5)*100 for t in yrs],ls,color=figstyle.PC.get(p,'#1E2761'),marker='o',label=p)
-for lab,ov,c in [('Plateau, D2026=$158B',dict(D0=(158,158,158.0001)),'#3BA272'),('Plateau, D2026=$197B',dict(D0=(197,197,197.0001)),'#3BA272')]:
+for lab,ov,c in [('Plateau, D2026=$163B',dict(D0=(163,163,163.0001)),'#3BA272'),('Plateau, D2026=$194B',dict(D0=(194,194,194.0001)),'#3BA272')]:
     ax.plot(list(yrs),[min(breakeven('Plateau',t,ov),1.5)*100 for t in yrs],'-',color=c,marker='^',ms=3,label=lab)
 ax.set_ylabel('Break-even sustained g* (%/yr)'); ax.set_xticks(list(yrs)); ax.legend(fontsize=7); ax.set_ylim(0,150)
 ax.set_title('Growth rate at which the installed base earns its carry',fontsize=9)
