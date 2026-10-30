@@ -9,6 +9,19 @@ PATHS={'Plateau':{y:780 for y in range(2027,2036)},
        'ArmsRace':{2027:1000,**{y:1100 for y in range(2028,2036)}},
        'Rationalize':{2027:550,**{y:500 for y in range(2028,2036)}}}
 YEARS=list(range(2023,2036)); TY=range(2027,2036)
+# v28: other builders (outside the Big-5) whose rent is already inside counted receipts. AI capex by year ($B, all AI);
+# forward years follow the same path as the Big-5 (scaled by path capex / 780). Register: supply.other_builders_ai_capex.
+def _oth():
+    try:
+        e=_P['supply']['other_builders_ai_capex']
+        if not e.get('include_in_base',True): return {}
+        return {int(k):float(v) for k,v in e['value'].items()}
+    except Exception: return {}
+OTH=_oth()
+def oth_capex(y,path_capex_y):
+    if not OTH: return 0.0
+    if y in OTH: return OTH[y]
+    return OTH[max(OTH)]*np.asarray(path_capex_y)/780.0
 HORIZON=2030
 def adaptive(seed=11,a=0.5,lo=400,hi=1100,cap0=780,kappa=1.0,gamma=0.0):
     """Rational-operator path: next year's capex scales with last year's receipts/carry ratio, damped (a) and bounded."""
@@ -57,7 +70,7 @@ def draw(rng,over=None):
     return v
 def carry(v,path):
     capex={**HIST,**PATHS[path]}
-    ai={y:np.maximum(capex[y]-v['nonai']*(1+v['gn'])**(y-2023),0) for y in YEARS}
+    ai={y:np.maximum(capex[y]-v['nonai']*(1+v['gn'])**(y-2023),0)+oth_capex(y,capex[y]) for y in YEARS}
     # grid interconnection cap: AI capex above the energizable ceiling is deferred to the next year (carries return only)
     defer=np.zeros(N); aiE={}; aiD={}
     for y in YEARS:

@@ -11,7 +11,7 @@ import model5 as M
 M.N=8000; N=M.N
 rng=np.random.default_rng(11); v=M.draw(rng)
 capex={**M.HIST,**M.PATHS['Plateau']}
-ai={y:np.maximum(capex[y]-v['nonai']*(1+v['gn'])**(y-2023),0) for y in M.YEARS}
+ai={y:np.maximum(capex[y]-v['nonai']*(1+v['gn'])**(y-2023),0)+M.oth_capex(y,capex[y]) for y in M.YEARS}
 def nbv(t,c,share,L):
     age=t-c+0.5; G=ai[c]*share
     return np.where(age<L,G*np.maximum(1-age/L,0),0)

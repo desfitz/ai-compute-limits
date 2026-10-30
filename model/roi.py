@@ -7,7 +7,7 @@ from model5 import *
 N=M.N
 def carry2(v,capex_path):
     capex={**M.HIST,**capex_path}
-    ai={y:np.maximum(capex[y]-v['nonai']*(1+v['gn'])**(y-2023),0) for y in M.YEARS}
+    ai={y:np.maximum(capex[y]-v['nonai']*(1+v['gn'])**(y-2023),0)+M.oth_capex(y,capex[y]) for y in M.YEARS}
     defer=np.zeros(N); aiE={}; aiD={}
     for y in M.YEARS:
         tot=ai[y]+defer; e=np.minimum(tot,v['gridcap'])*(1-v['fdelay']) if y>=2026 else np.minimum(tot,v['gridcap'])

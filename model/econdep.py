@@ -5,7 +5,7 @@ m=np.median; q=lambda x,p: np.percentile(x,p)
 def carry_econ(v,path,delta):
     """silicon on declining balance at rate delta (economic obsolescence); shell unchanged; same energization/deferral logic"""
     capex={**HIST,**PATHS[path]}
-    ai={y:np.maximum(capex[y]-v['nonai']*(1+v['gn'])**(y-2023),0) for y in YEARS}
+    ai={y:np.maximum(capex[y]-v['nonai']*(1+v['gn'])**(y-2023),0)+oth_capex(y,capex[y]) for y in YEARS}
     defer=np.zeros(N); aiE={}; aiD={}
     for y in YEARS:
         tot=ai[y]+defer; e=np.minimum(tot,v['gridcap'])*(1-v['fdelay']) if y>=2026 else np.minimum(tot,v['gridcap']); aiE[y]=e; aiD[y]=tot-e; defer=tot-e
