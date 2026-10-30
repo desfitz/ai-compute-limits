@@ -91,9 +91,9 @@ Each version opens with what changed and why. Click a line to expand it.
 Effect: plateau 2030 deficit -255 -> -259; z -3.47 -> -3.54; g* 48% -> 49%; P(profit, rationalize, 2030) 54% -> 52%.
 </details>
 
-### Corrections
+### Errata (where earlier versions erred) - full list in [ERRATA.md](ERRATA.md)
 
-<details><summary><b>Abstract now matches the tables</b></summary>
+<details><summary><b>v26.x-v27.1: abstract and tables disagreed ($187B / $255B vs $179B / ~$260B)</b></summary>
 
 - v27's abstract quoted a register run on the superseded $187B base ($255B deficit, g* 48%). The body tables were on the $179B base. v28 states $179B and about $260B throughout.
 </details>

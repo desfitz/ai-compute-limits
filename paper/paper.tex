@@ -116,7 +116,13 @@ Version 28 is the post-earnings rebuild promised in Appendix~\ref{app:update}. E
 \item \textbf{Three-quarters of Microsoft's capex is now chips.} ``Roughly 3/4 of our CapEx was for short-lived assets, primarily CPUs and GPUs''~\cite{ref:msft_q1fy27}. The paper's silicon share (45--65\%) is a five-company average; Microsoft's mix supports the upper half, which shortens the blended life and front-loads the carry.
 \end{itemize}
 
-\subsection*{Corrections}
+\subsection*{Errata: where earlier versions erred}
+Errors in published versions are listed here and kept, version by version, in the repository's \texttt{ERRATA.md}; nothing is corrected silently.
+\begin{itemize}
+\item \textbf{v26.x--v27.1, abstract.} The abstract quoted a calendar-2026 revenue base of \$187B, a 2030 plateau deficit of \$255B and $g^{*}=48\%$, from a register run in which the base had been raised on 29 September on a press report of Anthropic's expected \$100B+ exit run-rate. The body tables (Tables~\ref{tab:breakeven} and~\ref{tab:bu_results}) were computed on \$179B and showed $\sim$\$260B and 49\%. The filed S-1 supports \$179B. Effect on the conclusion: none (both inside the propagated uncertainty), but the abstract and the tables disagreed.
+\item \textbf{v26.x--v27.1, register.} Raising the base on a run-rate report broke the paper's own rule that run-rates overstate bookings. From v28 a lab component moves only on a filing or a booked-revenue figure.
+\end{itemize}
+\subsection*{Not an erratum, but worth flagging}
 \begin{itemize}
 \item A figure of ``\$300B of 2027 capex'' for Alphabet circulated widely after the call. It is a press estimate, not company guidance, and the paper does not use it.
 \item The revenue base is now stated consistently as \$179B and the 2030 plateau deficit as $\sim$\$260B throughout; v27's abstract carried a register run on the superseded \$187B base (\$255B). The body tables were already on the \$179B base.
