@@ -15,7 +15,7 @@ box(0.01,0.33,0.19,0.34,'END CUSTOMERS','enterprises, consumers,\nadvertisers pa
 box(0.36,0.71,0.21,0.22,'FRONTIER LABS','OpenAI, Anthropic, others:\nkeep a margin, buy\ncompute with the rest',C['lab'])
 box(0.36,0.39,0.21,0.22,'HYPERSCALER AI SERVICES','Azure AI, Bedrock,\nVertex, Copilot seats',C['hyp'])
 box(0.36,0.07,0.21,0.22,'ADVERTISING & CONSUMER','Meta and Google ads,\nsubscriptions',C['ads'])
-box(0.76,0.39,0.23,0.24,'INFRASTRUCTURE OWNERS','the Big-5 data centers;\nreceipts about\n\\$480-490B by 2030',C['infra'])
+box(0.76,0.39,0.23,0.24,'INFRASTRUCTURE OWNERS','all builders\' data centers;\nreceipts about\n\\$480B by 2030',C['infra'])
 box(0.76,0.74,0.23,0.19,'INVESTOR CAPITAL','lab equity, \\$190B\nin 2026; not revenue',C['inv'])
 box(0.76,0.04,0.23,0.17,'LEAKAGE','on-device chips, on-premise,\nintegrators, open models',C['leak'])
 arrow(0.20,0.60,0.36,0.80,'lab channel ~50%',0.27,0.74)

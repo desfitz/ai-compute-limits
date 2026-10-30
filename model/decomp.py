@@ -29,11 +29,11 @@ newD0=(q(base,2),m(base),q(base,98)); newTh=(q(theta,2),m(theta),q(theta,98))
 print("new D0 triang",[round(x) for x in newD0]," new theta",[round(x,3) for x in newTh])
 basep=dict(nonai=(140,165,200),phi=(0.45,0.55,0.65),Lsi=(3,4,5.5),Lsh=(15,20,25),copex=(0.059,0.0665,0.074),r=(0.09,0.105,0.12),lag=(0.3,0.5,0.7),D0=newD0,theta=newTh)
 modes={k:(v[1],v[1],v[1]+1e-4) for k,v in basep.items()}
-def td(over,g=0.42): o=topdown('Plateau',g,over=over)[2030]; return m(o['D']-o['H'])
+def td(over,g=None): o=topdown('Plateau',GSTAR if g is None else g,over=over)[2030]; return m(o['D']-o['H'])
 d0=td(modes); half={}
 for k,(a,b,c) in basep.items():
     lo=dict(modes);lo[k]=(a,a,a+1e-4); hi=dict(modes);hi[k]=(c,c,c+1e-4); half[k]=abs(td(hi)-td(lo))/2
-tot=sum(v*v for v in half.values()); print("Top-down variance budget AFTER decomposition (g=42%, base delta",round(d0),"):")
+tot=sum(v*v for v in half.values()); print(f"Top-down variance budget AFTER decomposition (g={GSTAR*100:.0f}%, base delta",round(d0),"):")
 for k,v in sorted(half.items(),key=lambda x:-x[1]): print(f"  {k:6s} half {v:5.0f} share {v*v/tot*100:4.1f}%")
 print("  RSS",round(tot**0.5))
 # ---- F. bottom-up with decomposed ad ceiling & theta_lab: what-if curves
@@ -77,7 +77,7 @@ for p,ls in zip(PATHS,['-','--',':']):
     for b in bs:
         o=topdown(p,GSTAR,over=dict(D0=(b*0.9,b,b*1.1)))[2030]; d=o['D']-o['H']; zz.append(m(d))
     ax[1].plot(bs,zz,ls,color='#1E2761',marker='o',ms=3,label=p)
-ax[1].axhline(0,color='#7F9BC0',lw=0.8); ax[1].set_xlabel('Calendar-2026 AI revenue base ($B), top-down at g=42%'); ax[1].set_ylabel('median delta_2030 ($B)'); ax[1].legend(fontsize=7)
+ax[1].axhline(0,color='#7F9BC0',lw=0.8); ax[1].set_xlabel(f'Calendar-2026 AI revenue base ($B), top-down at g={GSTAR*100:.0f}%'); ax[1].set_ylabel('median delta_2030 ($B)'); ax[1].legend(fontsize=7)
 fig.suptitle('What-if 3: lab economics and the 2026 base',fontsize=9); plt.tight_layout(); plt.savefig('f15_whatif_theta_base.pdf')
 # final bottom-up with decomposed inputs
 r=run('Plateau'); d=r['rec'][2030]-r['circ']-r['H'][2030]

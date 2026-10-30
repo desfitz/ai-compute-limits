@@ -238,6 +238,11 @@ Effect of adding the other builders: deficit -259 -> -422; z -3.54 -> -5.56; g* 
 
 ### Errata (where earlier versions erred) - full list in [ERRATA.md](ERRATA.md)
 
+<details><summary><b>v19-v27.1: edge-siphon arithmetic was off by 1,000 ($70-330B should be $66-330 million)</b></summary>
+
+- No result used the figure; the text now says where the siphon matters (work priced per seat or outcome moving on-device), not in token dollars. Found by the independent review.
+</details>
+
 <details><summary><b>v1-v27.1: revenue counted for every data-center owner, cost for only the five largest - the gap was understated (~$260B, now ~$420B)</b></summary>
 
 - The rent SpaceX/xAI, CoreWeave, Nebius and others earn was in the receipts; their buildings and chips were not in the carry. The error flattered the build-out.

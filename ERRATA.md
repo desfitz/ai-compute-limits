@@ -5,6 +5,11 @@ Newest first. Each entry: what was wrong, in which versions, the correction, and
 
 ## Found in v28 (29 October 2026)
 
+### E4. Edge-siphon arithmetic off by 1,000 (v19 - v27.1, text)
+- **Wrong:** 6.6x10^14 routine tokens a year at $0.10-0.50 per million tokens was printed as $70-330B a year (and "$40-280B never billed").
+- **Correct:** $66-330 million a year ($40-280 million never billed).
+- **Effect:** none on any result - no register input used the figure. The text now says the siphon matters through seat- and outcome-priced work moving on-device, which the cloud-capture shares carry, not through token dollars. Found by the v28 independent review.
+
 ### E3. Cost counted for five builders, revenue for all (v1 - v27.1, model scope) - the largest
 - **Wrong:** receipts counted revenue reaching every owner of AI data centers (the labs' compute bills, whoever is paid), but the carry counted only the Big-5's capex. SpaceX/xAI, CoreWeave, Nebius, IREN and Applied Digital - about $140B of 2026 AI capex - had their rent in and their cost out.
 - **Why it was an error:** revenue and cost must be counted on the same set of owners. The asymmetry flattered the build-out.

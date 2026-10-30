@@ -21,7 +21,7 @@ def pmap(path,mcap,copC):
     old=SECTORS['Office assistants/agents']['C']; SECTORS['Office assistants/agents']['C']=(copC*0.8,copC,copC*1.2)
     end,rec,per=bottom_up(rng); SECTORS['Office assistants/agents']['C']=old
     d=rec[2030]*mcap-v['circ']-H[2030]; return (d>0).mean()*100, m(end[2030])*mcap
-ms=np.linspace(0.7,1.7,11); cs=np.linspace(80,400,9)
+ms=np.linspace(0.7,2.2,16); cs=np.linspace(80,400,9)
 fig,axs=plt.subplots(1,3,figsize=(11,3.6))
 for ax,p in zip(axs,PATHS):
     Z=np.zeros((len(cs),len(ms))); E=np.zeros_like(Z)
@@ -35,5 +35,5 @@ for ax,p in zip(axs,PATHS):
     ax.plot([1.0],[150],'o',color='#C0504D'); ax.set_title(f'{p}: P(profit 2030), %',fontsize=9); ax.set_xlabel('Residual adoption/capability factor'); 
 axs[0].set_ylabel('Office assistant/agent ceiling 2030 ($B)'); axs[0].text(1.02,95,'paper modes',fontsize=7)
 plt.colorbar(cf,ax=axs,fraction=0.02,label='P(receipts > carry), %')
-fig.suptitle('Probability of overlap across the two residual axes. Solid: 50%. Dashed: copilot IT-budget cap. Dotted/hatched: feasibility band, total 2030 AI revenue = $920B-$1,310B (P10-P90 of the budget cutoff)',fontsize=8)
+fig.suptitle('Probability of overlap across the two residual axes. Solid: 50%. Dashed: assistant IT-budget cap. Dotted/hatched: feasibility band, total 2030 AI revenue = $920B-$1,310B (P10-P90 of the budget cutoff)',fontsize=8)
 plt.savefig('f17_probmap.pdf',bbox_inches='tight'); print("done")
