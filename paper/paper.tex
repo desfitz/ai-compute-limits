@@ -147,7 +147,7 @@
 \textbf{Method} & Fermi estimate: the answer is a chain of bounded factors, and each factor's uncertainty is carried to the result by Monte Carlo simulation (100,000 draws). \\[2pt]
 \textbf{Who is counted} & The five largest US builders --- Microsoft, Alphabet, Amazon, Meta, Oracle. They are about nine-tenths of 2026 spending by the world's nine largest cloud operators; the Chinese four (\$50--110B a year) are tracked but kept outside the model~\cite{ref:trendforce_csp9}. New in v28: the builders outside the five whose rent was already counted --- SpaceX/xAI, CoreWeave, Nebius, IREN, Applied Digital, about \$140B in 2026 --- are in the base (p.~\pageref{ag:spacex}). \\[2pt]
 \textbf{What is tracked} & 53 inputs in a public register, each with a source, a date and its next update; 15 sector revenue chains; a 2026 revenue base built from 7 components; 19 inputs decomposed into sourced parts; years 2023--2035. \\[2pt]
-\textbf{Sources} & 143 references: about 25 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
+\textbf{Sources} & 147 references: about 25 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
 \textbf{Result} & About \$420B a year short in 2030 if spending stays flat (\$260B for the five largest alone); overturned if 2028 AI revenue exceeds \$440B. \\[2pt]
 \textbf{The wait} & With early losses and the cost of money counted, no path earns an ordinary return by 2035; a flat path has lost about 4\% a year on average by then. \\
 \end{tabular}
@@ -350,7 +350,7 @@ Crusoe & Builder of the Abilene campus for Oracle/OpenAI and for Microsoft; a \$
 Lambda & Multibillion-dollar Microsoft agreement; IPO targeted for 2027 & Its S-1 (expected 2027) \\
 Nscale & About \$23B Microsoft contract for GB300 capacity; Texas site from 2027 & A stated capex figure or financing filings \\
 Tesla (training clusters) & Cortex 1 and 2, about 400 MW by end-2026; total 2026 capex guided above \$25B with no AI split & An AI-compute split in Tesla's 10-K or calls \\
-Gulf builders (Stargate UAE, Humain) & Stargate UAE over \$30B for 5 GW; Gulf AI data-center spend \$5--7B in 2026 (analyst estimate) & Company or ministerial annual figures; kept with the Chinese four as a separate overlay until then \\
+Gulf builders: Saudi Arabia, the UAE, Qatar, Kuwait & \emph{Saudi Arabia:} Humain (Public Investment Fund; 1.9 GW by 2030, 6.6 GW later; a 500 MW Nvidia ``AI factory''; a \$3B campus with AirTrunk; a \$10B AI hub with Google Cloud), Project Transcendence (PIF, \$100B announced 2024), Groq with Aramco Digital (\$1.5B). \emph{UAE:} Stargate UAE (G42 with OpenAI, Oracle, Nvidia, Cisco, SoftBank; a 1 GW cluster in the 5 GW UAE--US AI Campus, first 200 MW in 2026; over \$30B for 5 GW per the UAE's AI minister), Khazna (G42's data-center arm, 650 MW planned), du ($\sim$1 GW site). \emph{Qatar:} Qai (Qatar Investment Authority, launched late 2025, no figures). \emph{Kuwait:} the Kuwait Investment Authority in the AI Infrastructure Partnership with MGX, BlackRock and Microsoft. Gulf-wide AI data-center spend $\sim$\$5--7B in 2026 (analyst estimate)~\cite{ref:gulf_projects,ref:gulfnews_stargate_uae,ref:agbi_stargate_uae,ref:analysys_gcc} & Company or ministerial annual figures. Until then a separate overlay, with the Chinese four. Microsoft's \$15.2B UAE commitment is already in Microsoft's capex; Google's Saudi hub may be partly in Alphabet's \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -578,7 +578,7 @@ The Chinese hyperscalers are on the same curve a year behind and at smaller scal
 \subsection{Cohorts, not a snapshot}
 \claim{Spending is counted by the year it was made, net of the old non-AI baseline, and each year's cohort is carried until it wears out.}
 
-Let $I_c$ be Big-5 capex in cohort year $c$ (Table~\ref{tab:observe}; Figure~\ref{fig:capex}) and $A_c=\max(I_c-N_c,0)$ the AI-attributable part after subtracting the non-AI baseline $N_c=N_{2023}(1+g_N)^{c-2023}$. From v28 the AI capex of the other builders in the register --- SpaceX/xAI, CoreWeave, Nebius, IREN, Applied Digital (\texttt{other\_builders\_ai\_capex}) --- is added to $A_c$ in full: all of it is AI, so no baseline is subtracted, and from 2027 it follows the Big-5's path. The baseline is constrained by data: total capex was flat at \$161B in 2023 while AI purchases began~\cite{ref:epoch_capex}, so $N_{2023}=161-A_{2023}$ with $A_{2023}\sim$Triang(20, 30, 40), and it grows at $g_N\sim$Triang(2, 6, 10)\%/yr for ordinary cloud refresh and logistics (Section~\ref{sec:decomp}).
+Let $I_c$ be Big-5 capex in cohort year $c$ (Table~\ref{tab:observe}; Figure~\ref{fig:capex}) and $A_c=\max(I_c-N_c,0)$ the AI-attributable part after subtracting the non-AI baseline $N_c=N_{2023}(1+g_N)^{c-2023}$. From v28 the AI capex of the other builders in the register --- SpaceX/xAI, CoreWeave, Nebius, IREN, Applied Digital (\texttt{other\_builders\_ai\_capex}) --- --- call it $O_c$ --- is added to $A_c$ in full: all of it is AI, so no baseline is subtracted, and from 2027 it follows the Big-5's path. The baseline is constrained by data: total capex was flat at \$161B in 2023 while AI purchases began~\cite{ref:epoch_capex}, so $N_{2023}=161-A_{2023}$ with $A_{2023}\sim$Triang(20, 30, 40), and it grows at $g_N\sim$Triang(2, 6, 10)\%/yr for ordinary cloud refresh and logistics (Section~\ref{sec:decomp}).
 
 AI-attributable capex above a grid energization ceiling of Triang(1{,}150, 1{,}400, 1{,}680) \$B/yr --- 22--40 GW of new IT load at \$38--55M per MW --- is deferred to the following year and carries return but not depreciation (Section~\ref{sec:decomp}); the ceiling does not bind at the register's ranges on any path, even with every builder counted (arms-race AI capex peaks near \$1.1T a year against a ceiling of \$1.15--1.68T), but it would at higher spending.
 
@@ -2245,14 +2245,18 @@ Terms are grouped by discipline and listed alphabetically within each group; a t
 
 \subsection*{Paper-specific terms and model symbols}
 \begin{description}\setlength{\itemsep}{1pt}
-\item[AI-attributable capex ($A_c$)] Big-5 capex in year $c$ minus a non-AI baseline (fulfillment, ordinary cloud refresh). Only this part enters the carry.
-\item[Big-5] Microsoft, Alphabet, Amazon, Meta, Oracle --- the five whose capex Epoch AI tracks and whose infrastructure hosts most frontier AI.
+\item[AI-attributable capex ($A_c$)] Big-5 capex in year $c$ minus a non-AI baseline (fulfillment, ordinary cloud refresh), plus the other builders' AI capex $O_c$ from v28. Only this part enters the carry.
+\item[Average return to date] The return earned on the money still invested from 2027 to a given year, early losses included: the sum of each year's return on net book plus surplus (deficit), divided by the sum of net book (Table~\ref{tab:roiyear}).
+\item[Big-5] Microsoft, Alphabet, Amazon, Meta, Oracle --- the five whose capex Epoch AI tracks and whose infrastructure hosts most frontier AI. From v28 the carry also counts the other builders (see Other builders).
 \item[Break-even growth ($g^{*}$)] In percent per year (0.57 $=$ 57\%/yr). The constant annual growth rate of end-customer revenue from 2026 at which infrastructure receipts equal carry in a given year. Held constant by construction so that one number can be tested; the bottom-up growth is not constant (it decays).
+\item[Builders not yet counted] Builders whose rent is counted but whose cost is not yet in the carry, because no stated figure exists (Table~\ref{tab:notyet}); each enters the base when one appears.
+\item[Captive use] Compute a builder uses for its own products (Grok, robotaxis, robots) rather than renting out. It still earns money only when end customers pay, so its revenue is already in the sector chains.
 \item[Carry ($H_t$)] The annual cost of owning the installed base in year $t$: depreciation plus facility opex plus a return on net book value. The revenue the base must earn just to stand still.
 \item[Ceiling ($C_s$)] In \$B. A sector's maximum 2030 end-customer revenue, set by a physical or budgetary constraint (seats, IT budgets, ad yields, users). Given as a triangular range; the logistic never quite reaches it.
 \item[Cloud-capture share ($\theta_s$; $\theta$)] Dimensionless, 0--1. The fraction of sector $s$'s end-customer revenue that becomes infrastructure receipts, after the lab's margin, on-device execution, on-premise deployment and integrator capture. $\theta$ without a subscript is the revenue-weighted average; $\theta_{\text{lab}}$ is the same quantity for the frontier-lab channel alone, i.e.\ the labs' compute cost as a share of their revenue.
 \item[Cohort] Capital spent in one calendar year, tracked as a unit through its own depreciation life. A \emph{vintage model} sums the cohorts alive in each year.
 \item[Common factor] A multiplier drawn once per Monte Carlo trial and applied to every sector's ceiling (and a second to every ramp), representing the macroeconomic and technological background all sectors share --- recession, rates, regulation, or a capability step. Without it, fifteen independent sectors would average to a falsely narrow total.
+\item[Cost of money on the losses] Charging the 9.45\% cost of capital on the cumulative deficit itself --- interest on the debt that funds it, or the earnings the money would have made elsewhere (Table~\ref{tab:cumwacc}).
 \item[End-customer revenue ($D_t$; $R_s(t)$)] What buyers --- enterprises, consumers, advertisers --- pay in year $t$ for AI products and services, in \$B. $D_t$ is the total; $R_s(t)$ is one sector's part of it, and $D_t=\sum_s R_s(t)$. It is counted \emph{before} the frontier labs take their margin and before the part that never reaches a cloud (leakage) is removed. See Figure~\ref{fig:flow}.
 \item[Energization] Connecting built capacity to grid power so it can run. The \emph{lag} ($\ell$) is the share of a cohort energized in its spend year; the rest follows a year later.
 \item[Feasibility cutoff / band] In \$B. The most that could be spent on AI in 2030 out of the enterprise software and services pool --- itself decomposed into seat-priced software, infrastructure software, and services, each with its own growth, less the share displaced from US vendors --- plus advertising and consumer caps. The cutoff is uncertain, so it is drawn as a band from its P10 to its P90 (\$920B--\$1.31T); its P50 is $\sim$\$1.10T.
@@ -2261,8 +2265,12 @@ Terms are grouped by discipline and listed alphabetically within each group; a t
 \item[Infrastructure receipts (also ``receipts'', ``cloud receipts'')] The part of end-customer revenue that reaches the owners of the data centers, in \$B: $\text{Receipts}_t=\sum_s\theta_s R_s(t)$. This, not end-customer revenue, is what is compared with the carry.
 \item[Last-mile operator] An external firm that delivers AI outcomes to an enterprise on gain-share pricing, typically on small open-weight models.
 \item[Logistic] The S-shaped saturation curve $R(t)=C/[1+(C/R_0-1)e^{-k(t-t_0)}]$ with $t_0=2026$ and $R_0$ the 2026 value: growth that decays as the ceiling is approached.
+\item[Other builders ($O_c$)] The AI data-center builders outside the Big-5 whose rent was already inside the counted receipts: from v28 SpaceX/xAI, CoreWeave, Nebius, IREN and Applied Digital, with company-stated capex (register entry \texttt{other\_builders\_ai\_capex}). Their AI capex $O_c$ is added in full to AI-attributable capex; from 2027 it follows the Big-5's path.
+\item[Overlay] A scenario layered beside the base case rather than inside it, used when an input is real but not yet sourced well enough for the register (the sovereignty overlay; the Chinese four; the Gulf builders).
+\item[Payback (with the cost of money)] The year the cumulative deficit, grown at the cost of money, returns to zero; on the full count of builders no path reaches it by 2035.
 \item[Plateau / Arms race / Rationalize / Adaptive] The forward capex paths: flat at the 2026 level of \$780B; the 2027 trajectory continued at \$1.0--1.1T (an \emph{arms race}: each operator building because the others are); a 35\% cut to \$500--550B; and an adaptive path in which capex tracks realized receipts (Appendix~\ref{app:horizon}).
 \item[Ramp ($k_s$)] In units of per year. The rate parameter of the logistic curve; a sector covers half the remaining distance to its ceiling in about $\ln2/k_s$ years (0.9 years at $k=0.8$). It is not a growth rate and not ``$1+k$''.
+\item[Rent counted, cost not (symmetry)] The principle behind v28's main change: revenue and cost must be counted for the same set of owners. Counting the rent a builder earns without the cost of the buildings and chips that earn it flatters the build-out.
 \item[Residual adoption/capability factor] Dimensionless multiplier on 2030 receipts (1.0 $=$ the sector chains as estimated). It stands for what the chains cannot see from 2026: the pilots and seat counts visible today let one see roughly four years ahead, but not whether a capability step makes agents trustworthy with whole workflows. Because it cannot be estimated, it is swept as a what-if axis rather than assigned a range.
 \item[Shell] Buildings, power distribution, cooling plant --- the long-lived (15--25 yr) part of a data center.
 \item[Silicon share ($\phi$)] Fraction of AI-attributable capex that is accelerators, memory, networking and servers, as opposed to shell, power and cooling.
@@ -2300,6 +2308,7 @@ $L_{\text{sh}}$ & life\_shell & years & 15 / 20 / 25 & Life of buildings, power 
 $L_{\text{si}}$ & --- (derived) & years & $\sim$4.2 & Effective silicon life, harmonic mean: $1/(f_{\text{tr}}/L_{\text{tr}}+(1-f_{\text{tr}})/L_{\text{inf}})$ \\
 $L_{\text{tr}}$ & life\_training & years & 2.5 / 3.5 / 4.5 & Economic life of training-cluster silicon (power-slot obsolescence) \\
 $N_c$ & --- (derived) & \$B/yr & $\sim$156 in 2026 & Non-AI baseline in year $c$: $N_{2023}(1+g_N)^{c-2023}$ \\
+$O_c$ & other\_builders\_ai\_capex & \$B/yr & 0.5, 14.3, 27.8, 140.4 (2023--26); Big-5 path after & AI capex of builders outside the Big-5 whose rent is already in receipts (SpaceX/xAI, CoreWeave, Nebius, IREN, Applied Digital); added to $A_c$ in full \\
 $\phi$ & silicon\_share & 0--1 & 0.45 / 0.52 / 0.60 & Share of $A_c$ that is accelerators, memory, networking, servers (rest is shell) \\
 $\pi$ & inflation & 1/yr & 0.020 / 0.026 / 0.037 & Inflation for stating returns and deficits in today's money; not applied to receipts or to the payback test (no double count) \\
 $r$ & wacc & 1/yr & 0.090 / 0.0945 / 0.099 & Weighted average cost of capital (CAPM); return charged on net book value \\
@@ -2427,11 +2436,15 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[ARPU] Average revenue per user (or per seat), in \$ per month or per year; for Microsoft 365 commercial, the blended price across E3, E5 and Business plans ($\sim$\$21/seat/month, unverified).
 \item[ARR] Annual recurring revenue (see run-rate).
 \item[ASC 360-10] The US accounting standard (FASB Codification) governing impairment of long-lived assets: if projected undiscounted cash flows fall below carrying value, the asset is written down to fair value.
+\item[Backlog (contracted revenue)] Contracts signed but not yet delivered (see RPO); CoreWeave's was \$104B at mid-2026. A contract, not a payment.
 \item[Beta] A stock's sensitivity to the market; $>$1 means more volatile than the market.
+\item[Blue Owl] An alternative-asset manager; Meta's partner (80\%) in the Hyperion joint venture.
+\item[Bonus depreciation; 100\% expensing] Writing equipment off for tax in the year it is bought. Made permanent by the 2025 tax law for property acquired after 19 January 2025 (IRS Notice 2026-11). It delays tax; it does not cancel it.
 \item[Capex] Capital expenditure: cash spent on long-lived assets, here including new finance leases.
 \item[CAPM] Capital asset pricing model. Cost of equity $=r_f+\beta\times\text{ERP}$: the risk-free rate plus the stock's beta times the equity risk premium. With $r_f=4.3\%$, $\beta=1.2$ and ERP $=5\%$, cost of equity is $4.3+1.2\times5=10.3\%$; blended with cheaper debt it gives the WACC.
 \item[COGS] Cost of goods sold; direct costs of delivering a product.
 \item[CSP] Cloud service provider: Amazon Web Services, Microsoft Azure, Google Cloud.
+\item[Deferred tax] Tax not yet paid because tax depreciation runs ahead of book depreciation; repaid as the books catch up. Its value to the company is the interest saved meanwhile.
 \item[Depreciation] The annual write-down of an asset's cost over its useful life. \emph{Accounting life} is the company's book assumption (5--6 yr for servers); \emph{economic life} is how long the asset actually earns its keep.
 \item[DINUM] France's interministerial digital directorate, which mandated the government Windows-to-Linux migration in April 2026.
 \item[DOI] Digital object identifier: the permanent citable identifier Zenodo issues for a deposit.
@@ -2439,6 +2452,7 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[EBIT] Earnings before interest and tax: operating profit.
 \item[Equity risk premium] The excess return investors demand over the risk-free rate for holding equities. (Not to be confused with ERP, enterprise resource planning software, which also appears.)
 \item[FASB] Financial Accounting Standards Board, the US accounting standard-setter.
+\item[Finance lease vs operating lease] A finance lease puts the asset and its debt on the lessee's balance sheet and, in this paper, counts as capex; an operating lease is a rental cost and does not. The Big-5's neocloud capacity is bought as a service and is not in their capex.
 \item[Gross margin] Revenue less COGS, as a share of revenue.
 \item[Hurdle rate] The minimum IRR a company requires before approving an investment. Every business applies one to all spending; it is set above the WACC, and higher again for projects whose payback is uncertain --- so AI projects face a higher hurdle than routine capital, not a lower one.
 \item[IDC] International Data Corporation, the other large IT-market forecaster; a cross-check on Gartner.
@@ -2446,12 +2460,15 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[JPMorgan; Bank of America] Investment banks whose 2026 software-sector notes are cited on the SaaS repricing.
 \item[M365] Microsoft 365, the commercial Office suite subscription; the largest seat-priced software base.
 \item[MAU] Monthly active users: anyone who used the product at least once in the month. The distribution of use behind that count is extremely skewed --- a small fraction of heavy daily users, a long tail of occasional ones --- which is why the consumer ceiling multiplies MAU by a paid-conversion rate (4--8\%) rather than treating users as alike.
+\item[MGX] An Abu Dhabi technology investment fund; investor in Stargate UAE and in the AI Infrastructure Partnership.
 \item[MIT NANDA] The MIT initiative whose 2025 report found $\sim$95\% of enterprise generative-AI pilots without measurable P\&L impact.
 \item[Net book value] Cost less accumulated depreciation; the base on which a return is charged.
 \item[Nominal vs real] Nominal amounts and returns are in dollars of each year; real ones are in today's dollars, after inflation. Real return $=(1+\text{nominal})/(1+\pi)-1$. The paper's cost of money (9.45\%) is nominal, so inflation is already inside the payback test; real figures are shown only for the returns investors keep.
 \item[NOPAT] Net operating profit after tax: operating profit (EBIT) less tax at the statutory rate; the numerator of Goldman Sachs's ROIC definition in Section~\ref{sec:gs}.
 \item[OCI] Oracle Cloud Infrastructure.
+\item[Off-balance-sheet vehicle; joint venture] A separate company, often co-owned with an investor, that builds and owns a data center leased to a sponsor whose own capex then excludes the construction (Meta's Hyperion with Blue Owl).
 \item[Opex] Operating expenditure. Here \emph{facility opex}: power, cooling, on-site staff and maintenance, property tax, insurance, network --- everything it costs to run the building each year other than depreciation and financing.
+\item[PIF; QIA; KIA] Saudi Arabia's Public Investment Fund, the Qatar Investment Authority and the Kuwait Investment Authority: the Gulf sovereign funds behind Humain, Qai and the AI Infrastructure Partnership.
 \item[PP\&E] Property, plant and equipment.
 \item[ROI / ROIC] Return on investment / on invested capital.
 \item[ROU asset] Right-of-use asset: a leased asset recognized on the balance sheet.
@@ -2460,7 +2477,9 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[SK Hynix, Samsung, Micron] The three HBM suppliers; the bullwhip risk sits with their 2027--28 capacity.
 \item[SPV] Special-purpose vehicle: a separate legal entity used to hold assets and debt off a parent's balance sheet. SPVs change who carries the carry and where it appears, not its size; they matter to the paper only because their debt-service tripwires can turn a slow revenue shortfall into a fast liquidation.
 \item[TAM] Total addressable market.
+\item[Tax gross-up] The extra pre-tax profit needed to keep an after-tax return: to earn $r$ after tax rate $T$, a company must earn $r/(1-T)$ before tax.
 \item[TCO] Total cost of ownership over an asset's life.
+\item[Variable-interest entity (VIE)] An entity a company controls economically without owning a majority; its 10-K note on VIEs is where off-balance-sheet data-center vehicles are disclosed.
 \item[VC] Venture capital.
 \item[WACC] Weighted average cost of capital: the blended annual return a company must earn on invested capital to satisfy its shareholders and lenders. The paper's $r$. It is a property of the company, not of the project, so the same $r$ applies to AI and non-AI assets; the extra risk of AI is handled through the hurdle rate on the customer side, not the WACC.
 \item[XBRL] The machine-readable tagging of SEC filings, from which Epoch AI's capex series is built.
@@ -2471,30 +2490,43 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \begin{description}\setlength{\itemsep}{1pt}
 \item[A100; H100; B200] Successive Nvidia data-center accelerator generations (2020, 2022, 2024--25).
 \item[Agentic; agents] AI systems that execute multi-step tasks and take actions, rather than single responses.
+\item[AirTrunk] A Blackstone-backed data-center developer building a \$3B campus in Saudi Arabia with Humain.
 \item[API] Application programming interface; here, metered access to a model over the network.
 \item[AWS; GCP; OCI; Azure] Amazon Web Services, Google Cloud Platform, Oracle Cloud Infrastructure, Microsoft's cloud.
 \item[Bedrock; Vertex; Azure AI Foundry] The AI platform services of AWS, Google Cloud and Microsoft Azure through which third-party models are resold.
+\item[Compute in orbit] Data centers on satellites, proposed by SpaceX; counted like any other capex if built, with a satellite's shorter life.
 \item[Copilot (Microsoft 365 Copilot; GitHub Copilot)] Microsoft's branded assistants for Office and for coding. Their disclosed paid seat counts anchor the office-assistant sector's 2026 base.
+\item[CoreWeave] The largest GPU-rental firm (neo-cloud); 2026 capex guidance \$35--39B; Microsoft provides about two-thirds of its revenue.
+\item[Cortex] Tesla's AI training clusters (about 400 MW by end-2026).
 \item[CPU] Central processing unit; conventional server silicon.
+\item[Crusoe; Lambda; Nscale; Fluidstack] Private builders and GPU-rental firms with large contracts (Crusoe at Abilene for Oracle/OpenAI and Microsoft; Lambda and Nscale for Microsoft; Fluidstack with Anthropic) and no published capex: on the not-yet-counted list.
+\item[Cursor] An AI coding tool acquired by SpaceX in 2026; its revenue sits in the coding-tools sector chain.
 \item[Distilled / quantized model] A smaller model trained to mimic a larger one; a model stored at lower numeric precision. Both cut compute cost.
+\item[du] A UAE telecom operator planning a $\sim$1 GW data-center site.
 \item[Edge] Computing on the user's own device --- a phone or PC with an NPU. \emph{Not} the same as on-premise.
 \item[FP4 / FP8 / FP16] Floating-point number formats of 4, 8 and 16 bits; lower precision means more throughput per watt.
 \item[Frontier lab] A developer of leading models (OpenAI, Anthropic, xAI, Mistral, DeepSeek).
 \item[GPT-4] OpenAI's March 2023 model; used here as the date from which AI capex is measured.
 \item[GPU] Graphics processing unit; the general term for the accelerators (Nvidia H100, B200) that train and run AI models.
+\item[Groq; Aramco Digital] An AI-inference chip company and the digital arm of Saudi Aramco, partners in a \$1.5B Saudi inference build.
 \item[HBM (HBM3, HBM3e, HBM4)] High-bandwidth memory: DRAM stacked vertically next to the accelerator die; successive generations.
+\item[Hyperion] Meta's multi-gigawatt Louisiana data-center campus, built through the Blue Owl joint venture off Meta's balance sheet.
 \item[Hyperscaler] A cloud operator building at multi-gigawatt scale (the Big-5 and their global peers).
 \item[Inference vs training] Running a trained model to answer requests, versus the compute-intensive process of creating it.
 \item[InfiniBand; RoCE] High-speed cluster networking fabrics.
+\item[IREN; Applied Digital] US-listed builders converting power-rich sites (originally bitcoin mining for IREN) into AI data centers.
 \item[LLM; SLM] Large / small language model.
 \item[Microscaling (MX formats)] A block floating-point scheme, standardized by the Open Compute Project in 2023, in which a group of 32 values shares one scale factor so that each value needs only 4 bits. It is what makes FP4 accurate enough for inference; expected to spread fastest where accelerators are scarce, including China.
 \item[MLOps] Machine-learning operations: the engineering discipline of deploying and maintaining models in production.
+\item[Nebius] A Netherlands-based, Nasdaq-listed neo-cloud; 2026 capex guidance \$20--25B.
 \item[Neo-cloud] A GPU-rental specialist without a broad software business (CoreWeave and peers).
 \item[NPU] Neural processing unit: an AI accelerator built into consumer devices (phones, PCs).
 \item[Office assistant / agent] The paper's generic term for AI assistants embedded in productivity suites and enterprise workflows (Microsoft 365 Copilot, Google Gemini for Workspace, Claude and ChatGPT enterprise seats, and the agentic workloads built on them). Lower-case ``copilot'' has become industry shorthand for this category; the paper avoids it to keep the category distinct from the product.
 \item[On-premise] Computing on servers the customer owns and operates in its own facilities, typically running open-weight models. Edge and on-premise both bypass the cloud meter; the paper's $\theta_s$ nets out both.
 \item[Open-weight model] A model whose parameters are published for anyone to run (Llama, Mistral, DeepSeek).
 \item[RAG] Retrieval-augmented generation: a model answering with reference to documents fetched at query time.
+\item[SpaceX/xAI; Grok; Colossus] Musk's AI business, merged into SpaceX: Grok is its chatbot; Colossus 1 and 2 are its Memphis data centers (Colossus 1 rented in full to Anthropic, \$1.25B a month to May 2029).
+\item[Stargate; Stargate UAE] Stargate: OpenAI's umbrella name for leased US capacity built by Oracle, SoftBank, Crusoe and others. Stargate UAE: a 1 GW cluster in Abu Dhabi's 5 GW UAE--US AI Campus, built by G42's Khazna with OpenAI, Oracle, Nvidia, Cisco and SoftBank.
 \item[Ternary weights] Model weights restricted to $\{-1,0,1\}$, eliminating multiplications.
 \item[Token] The unit of text a model reads or writes (roughly 3/4 of a word); the unit in which inference is priced.
 \item[TOPS] Tera-operations per second; the throughput rating of an NPU.
@@ -2527,27 +2559,34 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 
 \subsection*{Economics, policy and institutions}
 \begin{description}\setlength{\itemsep}{1pt}
+\item[AI Infrastructure Partnership] A fund of BlackRock, Global Infrastructure Partners, MGX and Microsoft (with the Kuwait Investment Authority) investing in data centers and power.
 \item[BLS OES / ECEC] The Bureau of Labor Statistics' occupational employment and wage survey, and its employer-cost-of-compensation series.
 \item[CFO; CX; POC] Chief financial officer; customer experience (contact centers); proof of concept.
+\item[CPI (headline vs core); PCE] US consumer price index for all items (headline) and excluding food and energy (core), from the BLS; PCE is the Federal Reserve's preferred price index, against which its 2\% goal is set.
 \item[Data Center Watch] A research firm that tracks data-center projects blocked or delayed by local opposition; source of the siting-deferral calibration.
 \item[Digital sovereignty] Policies requiring data and compute to remain under national jurisdiction.
 \item[DPI] Digital public infrastructure (India's state-run digital platforms).
 \item[East Data, West Computing] China's program to site compute in its western, low-cost-power provinces.
 \item[Epoch AI] A nonprofit research group that maintains open datasets on AI compute, spending and revenue; its capex series, built from SEC XBRL filings, is the paper's capex history, and its revenue-reports dataset anchors the lab figures.
+\item[G42; Khazna] Abu Dhabi's AI group and its data-center arm; Khazna develops Stargate UAE.
 \item[Gain-share] Pricing as a share of the customer's realized savings.
 \item[Gartner] The largest IT-market research and forecasting firm; source of the IT-spending and AI-share figures.
 \item[GCC; G20] Gulf Cooperation Council states; the Group of Twenty economies.
 \item[GDPR; EU AI Act; BSI C5; DPDP] EU data-protection regulation and its Chapter V transfer rules; the EU's 2024 AI regulation; Germany's cloud security catalogue; India's 2023 Digital Personal Data Protection Act.
+\item[Humain] Saudi Arabia's national AI company, owned by the Public Investment Fund (1.9 GW of data centers by 2030, 6.6 GW later).
 \item[IT budget / IT spend] Enterprise spending on software, services, devices and data-center systems, as tracked by Gartner.
 \item[Jevons paradox; Parkinson's law] Efficiency gains increase total consumption; work expands to fill the time available. Combined here as \emph{Parkinson--Jevons}: cheaper output inflates the demand for output.
 \item[Knowledge worker] Office, professional, technical and managerial labor; the paper's $\sim$1.05B global and 62M US pools.
 \item[NHTSA; HIPAA; FINRA; SEC; SR 11-7] US vehicle-safety regulator; health-privacy law; securities self-regulator; securities regulator; the Federal Reserve's model-risk-management guidance.
 \item[OECD; IFR; ILO; BLS; NEA] The OECD; International Federation of Robotics; International Labour Organization; US Bureau of Labor Statistics; China's National Energy Administration.
 \item[Productivity J-curve] The pattern (Brynjolfsson et al.) in which a general-purpose technology first depresses measured productivity, because of intangible complementary investment, then raises it.
+\item[Project Transcendence] The PIF's \$100B AI initiative announced in 2024.
+\item[Qai] The Qatar Investment Authority's AI company, launched late 2025.
 \item[Seat] A per-user software license.
 \item[Solow paradox] ``You can see the computer age everywhere but in the productivity statistics.''
 \item[Surplus capture (Nordhaus)] Innovators historically kept about 2\% of the social surplus from their innovations.
 \item[TFP] Total factor productivity: output growth not explained by more labor or capital.
+\item[UAE--US AI Campus] A planned 5 GW AI campus in Abu Dhabi, announced in May 2025; Stargate UAE is its first 1 GW.
 \end{description}
 
 \subsection*{Phrases and idioms used in the paper}
@@ -2573,6 +2612,7 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[Competing with one's own ghost] Selling retired hardware into a secondary market that then undercuts the seller's new hardware.
 \item[Consent bottleneck] Local political permission as the binding constraint on siting (Forbes' phrase).
 \item[Cost curve / supply stack] Producers ranked by full cost per unit, with capacity on the horizontal axis --- the standard commodity picture; the price settles where demand meets the curve, and producers above it lose their carry.
+\item[Counted once (inflation)] Inflation is already inside the nominal cost of money; it is applied again only to state returns and deficits in today's money, never to the payback test.
 \item[De-racked] Physically removed from the data center.
 \item[Deflationary wedge] Open-weight models driving API prices toward the marginal cost of electricity.
 \item[Dual-use fallacy] The assumption that AI halls can be repurposed for conventional hosting; their density and cooling make that uneconomic.
@@ -2594,6 +2634,7 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[Local-silicon siphon; edge siphon] Routine inference migrating to NPUs in phones and PCs, where it is not billed to any cloud.
 \item[Manager's dilemma] Managers' incentive to report ``bandwidth expansion'' rather than surrender headcount.
 \item[Marginal cash cost of inference] Cash cost of producing one more token: power and facility opex per accelerator-hour divided by tokens per hour; excludes depreciation and return. $\sim$\$0.03--0.05 per million tokens.
+\item[Material vs minor (re-issue rule)] The update protocol's test of whether a rebuild changes the answer enough to re-release the paper with a delta log ($|\Delta z|\ge0.5$, $|\Delta g^{*}|\ge5$ points, or $|\Delta \text{P(profit)}|\ge15$ points). Adding the other builders was material.
 \item[Move the estimate vs tighten it] Decomposition can shift the central value (a move) as well as narrow its range (a tightening); the paper records both.
 \item[Observables] Public, verifiable numbers the model must reconcile with (Table~\ref{tab:observe}).
 \item[One-at-a-time] Moving a single input across its range with all others held at their modes; the basis of the tornado charts and variance budget.
@@ -2607,6 +2648,7 @@ WUE & --- & L/kWh & 0.3 / 1.0 / 1.8 & Water consumed per kWh of IT energy \\
 \item[Recoverability test] The ASC 360-10 step comparing an asset's carrying value with the undiscounted cash flows management projects for it.
 \item[Referee] An anonymous academic reviewer; ``what a referee would attack first'' means the weakest point a hostile expert reader would find.
 \item[Replacement vs growth capex] Spending that merely replaces retired capacity versus spending that adds capacity; at short silicon lives, a flat budget is increasingly replacement.
+\item[Revenue in, cost out] Shorthand for the asymmetry corrected in v28: an owner's rent counted as receipts while its capital is left out of the carry.
 \item[Round trip; circular flow; closed loop] Revenue that a company's own investment returns to it, e.g.\ equity in a lab that comes back as cloud spend.
 \item[SaaSpocalypse] Wall Street's name for the January--April 2026 repricing of enterprise software, $\sim$\$2T of market value, on the recognition that AI agents replace the human seats per-seat software is priced on.
 \item[Salvage fallacy; second-life fallacy] The assumption that retired accelerators keep meaningful value; the paper argues they do not, for power, pricing and thermal reasons.
@@ -3056,6 +3098,18 @@ Applied Digital (2026). Fiscal fourth-quarter 2026 earnings release, Jul.~27, 20
 
 \bibitem{ref:meta_hyperion}
 DatacenterDynamics (2025). ``Meta plans notably larger capex spend on AI data centers in 2026'' (Hyperion construction costs ``will not be recorded in capex''), Oct.~2025, \url{https://www.datacenterdynamics.com/en/news/meta-plans-notably-larger-capex-spend-on-ai-data-centers-in-2026-compute-expectations-already-higher-than-last-quarter-prediction/}; Bisnow, ``Meta pushes its largest data center project off its books with \$27B joint venture,'' Oct.~22, 2025, \url{https://www.bisnow.com/news/national/data-center-capital-markets/meta-pushes-its-largest-data-center-project-off-its-books-with-27b-joint-venture-131490}
+
+\bibitem{ref:gulf_projects}
+Usetech (2026). ``7 Massive Gulf AI Infrastructure Projects Transforming Saudi Arabia, UAE \& Qatar'' (Humain 1.9 GW by 2030, 6.6 GW later; Humain--Nvidia 500 MW; AirTrunk \$3B; Google Cloud hub \$10B; Project Transcendence \$100B; Groq--Aramco Digital \$1.5B; Khazna 650 MW; du $\sim$1 GW; Qai; KIA in the AI Infrastructure Partnership; Microsoft UAE \$15.2B). \url{https://usetech.com/blog/gulf-ai-infrastructures/}
+
+\bibitem{ref:gulfnews_stargate_uae}
+Gulf News (2025). ``Stargate UAE: first phase of 200MW to complete by 2026,'' Oct.~16, 2025 (G42, OpenAI, Oracle, Nvidia, Cisco, SoftBank; 1 GW cluster developed by Khazna within the 5 GW UAE--US AI Campus). \url{https://gulfnews.com/business/markets/stargate-uae-first-phase-of-200mw-to-complete-by-2026-1.500310364}
+
+\bibitem{ref:agbi_stargate_uae}
+AGBI (2026). ``UAE's Stargate data centre to cost \$30bn, says AI minister,'' Jan.~26, 2026. \url{https://www.agbi.com/ai/2026/01/uaes-stargate-data-centre-to-cost-30bn-says-ai-minister/}
+
+\bibitem{ref:analysys_gcc}
+Analysys Mason (2025). ``Accelerated investment in AI data centres in the GCC region will reach USD5--7 billion in 2026,'' Predictions 2026. \url{https://www.analysysmason.com/about-us/news/predictions-2026/prediction-ai-investment-gcc/}
 
 \bibitem{ref:fed_goal}
 Federal Open Market Committee (2026). ``Statement on Longer-Run Goals and Monetary Policy Strategy'' (inflation of 2 percent over the longer run, as measured by the PCE price index). \url{https://www.federalreserve.gov/monetarypolicy/files/FOMC_LongerRunGoals.pdf}

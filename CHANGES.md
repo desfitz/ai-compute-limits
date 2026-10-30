@@ -30,7 +30,7 @@ Each version opens with what changed and why. Click a line to expand it.
 - Lambda (Microsoft agreement): its S-1, expected 2027.
 - Nscale (~$23B Microsoft contract): a stated capex figure or financing filings.
 - Tesla (Cortex training clusters, ~400 MW by end-2026): an AI split of its capex.
-- Gulf (Stargate UAE >$30B for 5 GW; Humain): annual figures; until then a separate overlay with the Chinese four.
+- Gulf builders - **Saudi Arabia:** Humain (PIF; 1.9 GW by 2030, 6.6 GW later; 500 MW Nvidia AI factory; $3B AirTrunk campus; $10B Google Cloud hub), Project Transcendence (PIF, $100B announced 2024), Groq with Aramco Digital ($1.5B). **UAE:** Stargate UAE (G42 with OpenAI, Oracle, Nvidia, Cisco, SoftBank; 1 GW in the 5 GW UAE-US AI Campus, first 200 MW in 2026; >$30B for 5 GW per the AI minister), Khazna (G42, 650 MW planned), du (~1 GW site). **Qatar:** Qai (QIA, no figures yet). **Kuwait:** KIA in the AI Infrastructure Partnership (MGX, BlackRock, Microsoft). Gulf-wide ~$5-7B in 2026 (analyst estimate). Annual company or ministerial figures bring them in; until then a separate overlay with the Chinese four. (Microsoft's $15.2B UAE commitment is already in Microsoft's capex.)
 
 Each one left out flatters the build-out. Each moves into the base as soon as a stated figure appears, and the delta log will say so.
 </details>
