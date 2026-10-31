@@ -2,7 +2,10 @@
 
 Each version opens with what changed and why. Click a line to expand it.
 
-## Version 28 - 29 October 2026 (post-Q3 earnings)
+## Version 28 - 29-31 October 2026 (post-Q3 earnings)
+
+**New on 31 October - the story behind the news:** the paper now opens with why Wall Street sold AI on 29-30 October (Alphabet ~$500B on Thursday; tech ~$1T on Friday; Nasdaq-100 ~$2T in October). The builders' cash flow turned negative and they are selling shares to fund the spending (Meta up to $97.5B, Alphabet $84.75B); cloud growth is real (Google Cloud +100%, Azure +48%, AWS +39%) but short of the 57%/yr the cost needs. In today's dollars the paper's hole to 2035 is about $2T on flat spending - the same size as October's markdown - and about $3.8T on the path the builders describe. Market prices are cited, not model inputs; no number in the model changed.
+
 
 **Result:** a material change, because the count is now complete. With every builder whose rent the model already counted, the 2030 plateau deficit is about **$420B/yr (z = -5.56)**; break-even growth 57%/yr; the sector chains deliver about 33%. For the five largest alone nothing moved (about $260B, z = -3.54). Nvidia (19 Nov), Oracle (Dec), CoreWeave (10 Nov) and Anthropic's amended S-1 enter as v28.1.
 

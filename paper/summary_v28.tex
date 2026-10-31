@@ -1,16 +1,20 @@
 \documentclass[11pt,letterpaper]{article}
-\usepackage[margin=0.55in]{geometry}\usepackage{amsmath}\usepackage{graphicx}\usepackage[final,expansion=false]{microtype}\usepackage{setspace}\usepackage[table]{xcolor}\usepackage[colorlinks=true,urlcolor=blue!60!black]{hyperref}\usepackage{charter}
+\usepackage[margin=0.45in]{geometry}\usepackage{amsmath}\usepackage{graphicx}\usepackage[final,expansion=false]{microtype}\usepackage{setspace}\usepackage[table]{xcolor}\usepackage[colorlinks=true,urlcolor=blue!60!black]{hyperref}\usepackage{charter}
 \definecolor{lead}{HTML}{B85042}\definecolor{navy}{HTML}{1E2761}\definecolor{boxbg}{HTML}{EEF3FA}
 \newcommand{\lead}[1]{{\sffamily\bfseries\color{lead}#1}}
-\setstretch{1.0}\small\pagestyle{empty}\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\setstretch{0.97}\small\pagestyle{empty}\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
 \begin{document}
 \begin{center}{\Large\bfseries\color{navy}Will the AI build-out pay for itself?}\\[2pt]
-{\normalsize The one-page version of \emph{The Macroeconomic Limits of AI Compute}, version 28 (30 October 2026)}\\[2pt]
+{\normalsize The one-page version of \emph{The Macroeconomic Limits of AI Compute}, version 28 (31 October 2026)}\\[2pt]
 {\small Desmond Fitzpatrick, Ph.D. \quad Founder, Nvara.ai \quad Retired, IBM Systems}\end{center}
+
+\colorbox{boxbg}{\begin{minipage}{0.97\textwidth}\vspace{3pt}
+\textbf{The news, and the story behind it.} On 29--30 October AI stocks lost well over \$1 trillion of value: Alphabet about \$500B on Thursday, technology stocks about \$1T on Friday (Nasdaq $-$2.9\%, chip stocks $-$7\%, Intel $-$29\%); the Nasdaq-100 lost about \$2T in October. Alphabet, Amazon and Meta reported negative free cash flow, and Meta and Alphabet are selling up to \$180B of new shares to fund the spending. As one strategist put it, the market is ``increasingly questioning whether shareholders will earn an adequate return on the enormous capital being deployed.'' That is exactly what this paper counts --- and its answer is below. Counted in today's dollars, the hole on flat spending is about \$2T, the same size as what the market marked down in October; if the builders keep raising spending, as they say they will, it is nearly twice that.
+\vspace{2pt}\end{minipage}}
 
 \lead{The question.} This year Microsoft, Alphabet, Amazon, Meta and Oracle will spend about \$780 billion on AI data centers. Musk's SpaceX/xAI, CoreWeave, Nebius and others add about \$140 billion more. Will the money come back?
 
-\lead{How we count.} A Fermi estimate: the answer is built from many small factors, each bounded and sourced, and the uncertainty in each is carried to the result. All 53 inputs sit in a public register; change one, run one script, and the paper rebuilds itself.
+\lead{How we count.} A Fermi estimate: many small factors, each bounded and sourced, with the uncertainty carried to the result. All 53 inputs are public.
 
 \colorbox{boxbg}{\begin{minipage}{0.97\textwidth}\vspace{3pt}
 \textbf{The answer in five lines}
@@ -22,21 +26,20 @@
 \item \textbf{What would prove it wrong.} AI revenue above \$440 billion in calendar 2028.
 \end{itemize}\vspace{2pt}\end{minipage}}
 
-\lead{New in this version.} \textbf{Every builder counted.} The rent that SpaceX/xAI, CoreWeave and the others earn from AI labs and clouds was always in the revenue we counted; their buildings and chips were not in the cost. Now they are. That one correction moves the 2030 gap from about \$260 billion (the five largest alone) to about \$420 billion. Builders that publish no figure yet --- Meta's off-balance-sheet Hyperion site, Anthropic's own sites, Crusoe, Lambda, Nscale, Tesla, the Gulf's Humain and Stargate UAE --- are listed with what will bring each in. Every one of them would widen the gap.
+\lead{New in this version.} \textbf{Every builder counted.} The rent that SpaceX/xAI, CoreWeave and the others earn from AI labs and clouds was always in the revenue we counted; their buildings and chips were not in the cost. Now they are. That one correction moves the 2030 gap from about \$260 billion (the five largest alone) to about \$420 billion. Builders that publish no figure yet (Meta's Hyperion, Crusoe, Lambda, the Gulf's Humain and Stargate UAE and others) are listed with what will bring each in; each would widen the gap.
 
-\lead{Also new.} \emph{Inflation}, counted once: after it, flat spending is losing about 6.5\% a year in 2035. \emph{Tax}: the new write-off delays tax rather than cancelling it, so tax widens the gap. \emph{The October earnings}: Alphabet lost about \$500 billion of value in a day on its spending; Anthropic's first filed numbers matched the paper's estimate.
+\lead{Also new.} \emph{Inflation}, counted once: after it, flat spending is losing about 6.5\% a year in 2035. \emph{Tax}: the new write-off delays tax rather than cancelling it, so tax widens the gap. \emph{The October earnings}: Anthropic's first filed numbers matched the paper's estimate.
 
-\lead{Why it slows.} Time saved is not money saved; checking AI's work takes time; much of the value goes to buyers and integrators, not the cloud; countries build their own clouds; and the grid and local consent hold projects back.
+\lead{Why it slows.} Time saved is not money saved; checking AI's work takes time; much of the value goes to buyers and integrators; and the grid and local consent hold projects back.
 
-\lead{What it means.} Not a crash, and not the end of AI. The likely path is write-downs and a spending retreat in 2027--29, then a cheaper, more distributed build. The question for investors is not whether AI is useful. It is how long they wait, and what the wait costs.
+\lead{What it means.} Not a crash, and not the end of AI. The likely path is write-downs and a spending retreat in 2027--29, then a cheaper, more distributed build. This week moved the timing earlier, not the destination. The sign to watch: the first builder to guide 2027 spending down.
 
-\lead{Where I was wrong.} Earlier versions counted the other builders' rent but not their cost, and printed one edge-computing figure a thousand times too large. Both are corrected and listed, as every error will be.
+\lead{Where I was wrong.} Earlier versions counted the other builders' rent but not their cost. It is corrected and listed, as every error will be.
 
-\vspace{2pt}
 {\footnotesize\sloppy\textbf{Read more.}\\
 Paper, version 28: \url{https://doi.org/[v28 DOI]} \quad All versions: \url{https://doi.org/10.5281/zenodo.23406475}\\
 Deck (19 slides): on the Zenodo record \quad Model, inputs and code: \url{https://github.com/desfitz/ai-compute-limits}\\
 What changed: \url{https://github.com/desfitz/ai-compute-limits/blob/main/CHANGES.md} \quad First open question: \url{https://github.com/desfitz/ai-compute-limits/issues/1}\\
-SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7620359} \quad Data Democracy: \url{https://datademocracy.substack.com/p/the-macroeconomic-limits-of-ai-compute}\\
-Comments and corrections: desmond.fitzpatrick@nvara.ai}
+SSRN: \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7620359} \quad Comments: desmond.fitzpatrick@nvara.ai\\
+Data Democracy: \url{https://datademocracy.substack.com/p/the-macroeconomic-limits-of-ai-compute}}
 \end{document}

@@ -83,7 +83,7 @@
 \small Retired, IBM Systems \\
 \small \texttt{desmond.fitzpatrick@nvara.ai} \quad \texttt{desmond.fitzpatrick@gmail.com} \\
 \small ORCID: \url{https://orcid.org/0009-0001-0534-2793}}
-\date{29 October 2026 --- Version 28, the post-earnings rebuild. \textit{What changed since version 27 is listed on page~\pageref{sec:v28}. Nvidia (19 November), Oracle (December) and Anthropic's amended S-1 enter as version 28.1; see Appendix~\ref{app:update}.}}
+\date{31 October 2026 --- Version 28, the post-earnings rebuild. \textit{The story behind this week's sell-off is on page~\pageref{sec:news}; what changed since version 27 is on page~\pageref{sec:v28}. Nvidia (19 November), Oracle (December) and Anthropic's amended S-1 enter as version 28.1; see Appendix~\ref{app:update}.}}
 
 \definecolor{leadblue}{HTML}{1E2761}
 \definecolor{leadwarm}{HTML}{B85042}
@@ -118,6 +118,7 @@
 
 \begin{abstract}
 \begin{itemize}\setlength\itemsep{0.35em}
+\item \textbf{The news.} In two days, 29--30 October, AI stocks lost well over \$1 trillion of value: Alphabet about \$500B on Thursday, technology stocks about \$1T on Friday; the Nasdaq-100 lost about \$2T in October~\cite{ref:cnbc_goog_1029,ref:nbc_1030,ref:reuters_1030}. The builders' cash flow turned negative and they are now selling shares to fund the spending. This paper is the story behind that news: the build-out costs more each year than AI revenue brings in, and the gap grows (p.~\pageref{sec:news}).
 \item \textbf{The question.} Five companies --- Microsoft, Alphabet, Amazon, Meta and Oracle --- are spending about \$780B this year on AI data centers, up from \$448B in 2025~\cite{ref:epoch_capex,ref:mlq2026}; Musk's SpaceX/xAI and the GPU-rental firms add about \$140B more. Will the revenue arrive fast enough to pay for them?
 \item \textbf{The method.} A Fermi estimate: the answer is built from many small, bounded, sourced factors, and the uncertainty in each is carried through to the result. Every input sits in a public register anyone can change.
 \item \textbf{The cost.} The buildings and chips cost about \$890B a year to carry by 2030 --- wear, running costs and a return on the money --- even if spending merely stays flat, because each year's spending is still on the books when the next arrives.
@@ -144,10 +145,11 @@
 \noindent\fcolorbox{gray!60}{blue!4}{\begin{minipage}{0.96\textwidth}\vspace{0.4em}
 \noindent\textbf{\large At a glance}\par\vspace{0.3em}
 \begin{tabular}{@{}p{0.2\textwidth}>{\raggedright\arraybackslash}p{0.74\textwidth}@{}}
+\textbf{This week} & AI stocks lost well over \$1T of value on 29--30 October; the market's own question --- will shareholders earn an adequate return on the capital? --- is the one this paper counts (p.~\pageref{sec:news}). \\[2pt]
 \textbf{Method} & Fermi estimate: the answer is a chain of bounded factors, and each factor's uncertainty is carried to the result by Monte Carlo simulation (100,000 draws). \\[2pt]
 \textbf{Who is counted} & The five largest US builders --- Microsoft, Alphabet, Amazon, Meta, Oracle. They are about nine-tenths of 2026 spending by the world's nine largest cloud operators; the Chinese four (\$50--110B a year) are tracked but kept outside the model~\cite{ref:trendforce_csp9}. New in v28: the builders outside the five whose rent was already counted --- SpaceX/xAI, CoreWeave, Nebius, IREN, Applied Digital, about \$140B in 2026 --- are in the base (p.~\pageref{ag:spacex}). \\[2pt]
 \textbf{What is tracked} & 53 inputs in a public register, each with a source, a date and its next update; 15 sector revenue chains; a 2026 revenue base built from 7 components; 19 inputs decomposed into sourced parts; years 2023--2035. \\[2pt]
-\textbf{Sources} & 147 references: about 25 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 60 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
+\textbf{Sources} & 157 references: about 25 company filings and earnings releases, 2 official statistics (Federal Reserve, BLS), 30 research and data houses (Epoch AI, Goldman Sachs, Gartner, TrendForce and others), 15 academic works, and 70 press reports. Figures that rest on press reports or leaks are marked as such. \\[2pt]
 \textbf{Result} & About \$420B a year short in 2030 if spending stays flat (\$260B for the five largest alone); overturned if 2028 AI revenue exceeds \$440B. \\[2pt]
 \textbf{The wait} & With early losses and the cost of money counted, no path earns an ordinary return by 2035; a flat path has lost about 4\% a year on average by then. \\
 \end{tabular}
@@ -156,6 +158,7 @@
 \vspace{0.8em}
 \noindent\fcolorbox{gray!60}{blue!4}{\begin{minipage}{0.96\textwidth}\vspace{0.4em}
 \noindent\textbf{\large Reading guide}\par\vspace{0.3em}
+\noindent\textbf{0. The story behind the news:} why Wall Street sold AI this week\dotfill p.~\pageref{sec:news}\\
 \noindent\textbf{1. What is new in version 28}\dotfill p.~\pageref{sec:v28}\\
 \hspace*{1.5em}The headline: what the October earnings changed\dotfill p.~\pageref{ag:headline}\\
 \hspace*{1.5em}What spooked investors: AI and the search business\dotfill p.~\pageref{ag:search}\\
@@ -180,7 +183,55 @@
 \hrule
 \vspace{1em}
 
-\section*{What Is New in Version 28 (29 October 2026): the Q3 Earnings}\label{sec:v28}
+\section*{The Story Behind the News: Why Wall Street Sold AI This Week}\label{sec:news}
+\addcontentsline{toc}{section}{The Story Behind the News}
+\noindent\textit{Written 31 October 2026, the morning after. Market figures are as reported by the press on 29--31 October and are cited; they are not inputs to the model, which moves only on filed or sourced operating figures.}
+
+\subsection*{What happened}\label{news:what}
+\begin{itemize}
+\item \textbf{Thursday 29 October: Alphabet.} Down 12.6\%, its worst day as a public company, about \$480--500B of value~\cite{ref:cnbc_goog_1029,ref:yahoo_goog_1029} --- on results in which Google Cloud revenue doubled. Free cash flow was $-$\$9.1B for the quarter; long-term debt has gone from \$21.6B to \$125.1B in a year~\cite{ref:yahoo_nasdaq_1029}.
+\item \textbf{Thursday evening: Amazon.} AWS grew 39\% to \$46.0B, its fastest in years, and the company expects over 40\% in 2027 and 2028. But it spent \$77.3B on property and equipment in the quarter --- a pace of over \$300B a year --- and trailing free cash flow swung from $+$\$14.8B to $-$\$42.4B in a year~\cite{ref:amzn_q3_2026,ref:fortune_amzn_1029}. Shares fell 6--7\% after hours; they recovered most of it on Friday and closed down 1.4\%~\cite{ref:reuters_1030}.
+\item \textbf{Friday 30 October: the whole trade.} The Nasdaq fell 2.86\% to 25,437, its worst day since June and 7.8\% below its 6 October high; the S\&P~500 fell 1.82\% and the Dow 1.09\%. The chip index fell 7.2\% (more than 15\% for October). Intel fell 28.6\% on its results, its worst day since 1974; AMD fell 10.9\%, Qualcomm 11.1\%, Micron 5.3\%, Nvidia 4.2\%~\cite{ref:reuters_1030,ref:biggo_1030}. Apple (\$5.03T) passed Nvidia (\$4.93T) as the most valuable company~\cite{ref:biggo_1030}. Tech stocks lost about \$1 trillion of value in the day~\cite{ref:nbc_1030}.
+\item \textbf{The month.} The Nasdaq-100 was on course to lose more than \$2 trillion of value in October; the S\&P~500 technology sector had its worst month since March 2025~\cite{ref:reuters_1030,ref:techinsider_oct}.
+\item \textbf{The financing.} On 27 October Meta enlarged its share sale to \$97.5B --- about \$35B of common and preferred stock now, and up to \$60B more sold into the market from early 2027 --- after its first quarter of negative free cash flow in over a decade ($-$\$2.1B). Its cash (\$82.5B) now roughly equals its long-term debt (\$80.9B). Alphabet had already enlarged its own share offerings to \$84.75B in June~\cite{ref:aawsat_meta_1027}.
+\item \textbf{Microsoft was the exception, and why.} Azure grew 48\% and the shares rose~\cite{ref:msft_q1fy27,ref:xtb_msft_1028}. Its capex more than doubled to \$39.4B, but it also lengthened the lives of its buildings from 15 to 25 years, which lowers \emph{reported} capex and depreciation without lowering what the buildings cost (p.~\pageref{ag:acct}).
+\end{itemize}
+
+\subsection*{What the market said, in its own words}\label{news:words}
+\begin{itemize}
+\item ``The market isn't necessarily questioning whether the AI buildout can be financed. It's increasingly questioning whether shareholders will earn an adequate return on the enormous capital being deployed'' --- Chris Weston, Pepperstone~\cite{ref:yahoo_1030}. That is this paper's question, word for word: the return on the money, not the money itself.
+\item The question, said Oliver Pursche of Wealthspire Advisors, is ``whether there will be a positive return on investment and if so, how quickly''~\cite{ref:techinsider_oct} --- the subject of the paper's section on how long investors wait (p.~\pageref{ag:cum}).
+\item Goldman Sachs reported the largest selling of technology stocks ever in its prime-brokerage book in the week before the earnings, as investors cut ``a crowded trade in AI, semiconductor and hyperscaler stocks''~\cite{ref:gs_privorotsky}. Its September framework put the AI revenue the hyperscalers need just to cover depreciation and running costs at about \$300B a year, and their capex at \$800B in 2026, \$1.2T in 2027 and \$1.4T in 2028~\cite{ref:gs_capex_bbg,ref:gs_hammond_yahoo}.
+\end{itemize}
+
+\subsection*{The story behind it: four things the market saw this week}\label{news:why}
+\begin{enumerate}
+\item \textbf{The cost became visible as cash.} The paper's central quantity is the \emph{carry}: what the installed buildings and chips cost to hold each year --- wear, running costs and a return on the money. Until this quarter, it showed up in earnings slowly, through depreciation. This week it showed up at once, in cash: Alphabet, Amazon and Meta all reported negative free cash flow. The carry for all builders is about \$460B in 2027 and \$890B in 2030 on flat spending (Table~\ref{tab:carry}); AI revenue is about \$179B this year. The cash part of that difference is what the market saw this week.
+\item \textbf{The difference is being paid by shareholders.} A deficit has to be financed. First it was debt (Alphabet's long-term debt up nearly six-fold in a year). Now it is new shares: \$97.5B at Meta, \$84.75B at Alphabet. New shares divide the future profit among more owners, so the price per share falls even when the business grows. That is why record cloud growth and falling shares arrived in the same week.
+\item \textbf{The growth is real, and still not enough.} Google Cloud doubled; Azure grew 48\%; AWS 39\%. The paper does not dispute any of it: its fifteen sector chains have AI revenue growing about 33\% a year to 2030. The problem is the arithmetic. To cover the carry by 2030 on flat spending, revenue must grow about 57\% a year, every year (Table~\ref{tab:breakeven}). Fast growth that is slower than the cost of the build-out still loses money --- and the companies are guiding spending \emph{up}.
+\item \textbf{The suppliers are priced on the spending, not on the return.} Chip makers sell to the builders. If investors stop rewarding the spending, the builders' next move is to slow it --- Oracle has already told investors its capex steps down after fiscal 2028~\cite{ref:orcl_investor_day} --- and the suppliers' sales follow. Friday's 7\% fall in chip stocks is the market pricing that risk ahead of time. (Intel's 28.6\% fall was mostly about its own results; the rest of the sector fell with it.)
+\end{enumerate}
+
+\subsection*{How big is the hole, compared with what the market has marked down?}\label{news:size}
+A Fermi comparison, every step checkable:
+\begin{enumerate}
+\item \emph{The paper's hole.} With the cost of money charged on the losses, flat spending is \$4.47T short by 2035; an arms race \$8.47T; spending that tracks revenue \$0.80T; a 35\% cut \$0.70T (Table~\ref{tab:cumwacc}).
+\item \emph{In today's dollars.} Those are 2035 dollars carried forward at the cost of money (9.45\%). To bring them back to today, divide by $1.0945^{9}=2.25$: flat spending about \textbf{\$2.0T}; arms race about \textbf{\$3.8T}; tracking revenue or a 35\% cut about \textbf{\$0.3--0.4T}. The first two are floors: flat spending and the arms race are still losing money in 2035.
+\item \emph{What the market has marked down.} About \$2T from the Nasdaq-100 in October; about \$0.5T from Alphabet on Thursday and about \$1T from tech on Friday.
+\item \emph{The comparison.} The market has marked down about what the paper says the hole is worth if spending stays \emph{flat}. That is not proof of cause --- prices also reflect rates, Intel's own troubles and much else, and the value shareholders lose is not the same as the money the builders lose --- but the two numbers are the same size.
+\end{enumerate}
+\noindent\textbf{What it implies.} If the builders do what they say --- spend more in 2027 --- the hole on the paper's count is nearly twice what has been marked down, and the repricing has further to run. If they cut back to follow the revenue that arrives, the hole is about a sixth as deep, and much of what was marked down this week would come back. The market has not yet decided which; the companies' 2027 budgets will decide it.
+
+\subsection*{The outlook: what happens next, and what to watch}\label{news:outlook}
+\begin{itemize}
+\item \textbf{The paper's expectation is unchanged by this week.} Not a crash, and not the end of AI: write-downs and a spending retreat in 2027--29, then a cheaper, more widely distributed build. This week moves the timing earlier, not the destination: the spending is now being questioned in cash, in share prices and in financing, ahead of the paper's 2027 marker.
+\item \textbf{The test of the turn: 2027 capex guidance.} Every company that gave a direction this month pointed 2027 up. The first builder to guide 2027 \emph{down}, or to tie spending to booked revenue, will mark the turn from the arms-race path to the path that tracks revenue --- the only kind of path on which yearly profits arrive (from about 2032). Expect it at the January--February results, if not before.
+\item \textbf{Dates to watch.} Nvidia, 19 November (the suppliers' view of 2027 orders); Oracle, December (its step-down plan); the Federal Reserve, December (the cost of money); Meta's \$60B of share sales from early 2027 (how much of the hole shareholders are asked to fund); the January--February results (2027 budgets; Google's revenue per search).
+\item \textbf{What would prove the paper wrong} is unchanged: AI revenue above \$440B in calendar 2028. Nothing this week moved toward it or away from it; the revenue reported was in line with the paper's base.
+\end{itemize}
+\noindent The rest of this front section, written on 29 October, gives the earnings and the full count; it is unchanged.
+
+\section*{What Is New in Version 28 (29--31 October 2026): the Q3 Earnings}\label{sec:v28}
 \addcontentsline{toc}{section}{What Is New in Version 28}
 Version 28 is the post-earnings rebuild promised in Appendix~\ref{app:update}. Every input that moved is listed below with its source; the delta log in Appendix~\ref{app:update} gives old and new values. Nvidia (19 November) and Oracle (December) report later and will enter as v28.1, with Anthropic's amended S-1 if it is filed by then. An expandable version of this list, with the detail behind each bullet, is in the repository (\texttt{CHANGES.md}).
 
@@ -3128,5 +3179,36 @@ Federal Open Market Committee (2026). ``Statement on Longer-Run Goals and Moneta
 
 \bibitem{ref:bls_cpi_sep26}
 US Bureau of Labor Statistics (2026). ``Consumer Price Index --- September 2026,'' released Oct.~14, 2026 (all items 3.7\% over 12 months; all items less food and energy 2.6\%). \url{https://www.bls.gov/news.release/cpi.nr0.htm}; figures as reported by Eco3min, ``Next US CPI release'' (read Oct.~30, 2026), \url{https://eco3min.fr/en/next-us-cpi-release/}
+
+\bibitem{ref:reuters_1030}
+Reuters (2026). ``Wall Street closes sharply lower as AI cash burn fears spark tech selloff,'' Oct.~30, 2026, via Investing.com (Nasdaq $-$2.86\% to 25,437.00, largest one-day fall since Jun.~5 and 7.8\% below the Oct.~6 high; S\&P~500 $-$1.82\% to 7,580.07; Dow $-$1.09\%; chip index $-$7.2\%, more than $-$15\% for October; Intel $-$28.6\%; Amazon $-$1.4\%; Nvidia $-$4.2\%; AMD $-$10.9\%; Qualcomm $-$11.1\%; tech sector's largest monthly fall since March 2025). \url{https://www.investing.com/news/stock-market-news/nasdaq-futures-tumble-as-amazon-intel-results-deepen-ai-spending-woes-4986163}
+
+\bibitem{ref:biggo_1030}
+BigGo Finance (2026). ``AI Trade Cools Off! Nasdaq Falls 3\% for the Week, Intel Plunges Nearly 30\%, Apple Overtakes Nvidia to Become the World's Most Valuable Company,'' Oct.~31, 2026 (Intel's worst day since 1974; Apple \$5.03T, Nvidia \$4.93T). Press aggregator. \url{https://finance.biggo.com/news/e8f1f49c-43e1-4a9f-820f-43770b1ce416}
+
+\bibitem{ref:nbc_1030}
+NBC News (2026). ``Tech stocks wipe out \$1 trillion in value as concerns deepen about the AI boom,'' Oct.~30, 2026 (headline figure). \url{https://www.nbcnews.com/business/markets/tech-stocks-nasdaq-ai-boom-fears-deepen-rcna606512}
+
+\bibitem{ref:techinsider_oct}
+Tech Insider (2026). ``Nasdaq 100 AI Spending Fears: \$2T October Wipeout,'' Oct.~2026 (Reuters, Oct.~30: more than \$2T of Nasdaq-100 value expected to be lost in October --- a projection, not a final tally; Pursche, Wealthspire Advisors, on ``whether there will be a positive return on investment and if so, how quickly''). \url{https://tech-insider.org/nasdaq-100-2-trillion-october-wipeout-ai-spending-fears-2026/}
+
+\bibitem{ref:yahoo_1030}
+Yahoo Finance / Reuters (2026). ``Stocks fall on AI cash burn worries while bonds rally with oil,'' Oct.~30, 2026 (Chris Weston, Pepperstone, on whether shareholders will earn an adequate return; Alphabet's spending ``turned the company's cash flow negative''). \url{https://finance.yahoo.com/markets/stocks/articles/stocks-slump-bonds-leap-ai-024810978.html}
+
+\bibitem{ref:fortune_amzn_1029}
+Fortune (2026). ``Amazon shares sink as spending on AI overshadows growth in cloud unit,'' Oct.~29, 2026 (AWS \$45.98B, $+$39.3\%; free cash flow from $+$\$14.8B to $-$\$42.4B over the past year; shares down more than 6\% after hours; Q4 guidance midpoints below estimates). \url{https://fortune.com/2026/10/29/amazon-shares-sink-as-spending-on-ai-overshadows-growth-in-cloud-unit/}
+
+\bibitem{ref:aawsat_meta_1027}
+Asharq Al-Awsat (2026). ``Meta Eyes Record \$97.5 Billion Equity Raise to Fund AI Expansion,'' Oct.~27, 2026 (\$25B common at \$625; 250M depositary shares at \$50; $\sim$\$35B public offerings; up to \$60B at-the-market from Q1 2027; Q3 free cash flow $-$\$2.12B; cash \$82.45B, long-term debt \$80.92B; Alphabet's equity offerings raised to \$84.75B in June). \url{https://english.aawsat.com/node/5334092}
+
+\bibitem{ref:xtb_msft_1028}
+XTB (2026). ``Microsoft results: cloud growth overshadows capex questions,'' Oct.~28, 2026 (Azure $+$48\%; capex \$39.37B, $+$103\%; free cash flow \$18.63B; building lives 15 to 25 years lowers reported capex). \url{https://www.xtb.com/en/market-analysis/microsoft-results-cloud-growth-overshadows-capex-questions}
+
+\bibitem{ref:gs_privorotsky}
+24/7 Wall St. (2026). ``Goldman Sachs Sees Investors De-Risking From AI Stocks,'' Oct.~27, 2026 (Goldman Sachs \emph{The Markets} podcast, Oct.~23, Rich Privorotsky: record technology selling in the prime-brokerage book; de-risking a crowded AI, semiconductor and hyperscaler trade). \url{https://247wallst.com/personal-finance/2026/10/27/goldman-sachs-says-investors-are-fleeing-ai-stocks-at-63-she-discovers-her-900000-401k-is-riding-the-same-trade/}
+
+\bibitem{ref:gs_hammond_yahoo}
+Yahoo Finance / Investing.com (2026). ``Hyperscalers need \$300 billion in annual AI revenue to break even: Goldman,'' Sept.~25, 2026 (Ryan Hammond; 2026 capex $\sim$\$800B; 2027 consensus $\sim$\$1.1T; announced backlogs over \$1.5T). \url{https://finance.yahoo.com/technology/ai/articles/hyperscalers-300-billion-annual-ai-124157578.html}
+
 \end{thebibliography}
 \end{document}
