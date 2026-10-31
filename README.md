@@ -1,22 +1,23 @@
 # The Macroeconomic Limits of AI Compute — a community estimate
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23428319.svg)](https://doi.org/10.5281/zenodo.23428319) [![License: CC BY 4.0](https://img.shields.io/badge/text%20%26%20figures-CC%20BY%204.0-lightgrey.svg)](paper/LICENSE) [![License: MIT](https://img.shields.io/badge/model-MIT-lightgrey.svg)](model/LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23843154.svg)](https://doi.org/10.5281/zenodo.23843154) [![License: CC BY 4.0](https://img.shields.io/badge/text%20%26%20figures-CC%20BY%204.0-lightgrey.svg)](paper/LICENSE) [![License: MIT](https://img.shields.io/badge/model-MIT-lightgrey.svg)](model/LICENSE)
 
-Version 27, 15 October 2026.
+Version 28, 31 October 2026 - rebuilt after the Q3 earnings, every builder counted, and opening with the story behind the 29-30 October AI sell-off.
 
 **Purpose:** This is the first analysis in Data Democracy's public economics series: open, rebuildable tools for testing claims about big decisions, from public spending to macro challenges like AI that shape public policy. Each analysis comes with its data and sources, and with the model and code wherever they can be published. Here, everything is public: change the inputs and see the answer for yourself.
 
 **Links**
-- Paper, version 27.1 (PDF): https://doi.org/10.5281/zenodo.23428319
+- Paper, version 28 (PDF): https://doi.org/10.5281/zenodo.23843154
+- One-page summary (PDF): https://zenodo.org/records/23843154/files/ai_compute_summary_v28_2026-10-31.pdf?download=1
 - All versions (concept DOI): https://doi.org/10.5281/zenodo.23406475
-- The fourteen-slide deck (PDF): https://zenodo.org/records/23428319/files/ai_compute_easy_deck_v28-2_2026-10-15.pdf?download=1
+- The 21-slide deck (PDF): https://zenodo.org/records/23843154/files/ai_compute_easy_deck_v29_2026-10-31.pdf?download=1
 - This repository (model, register, code): https://github.com/desfitz/ai-compute-limits
 - First open question (facility-opex dispute): https://github.com/desfitz/ai-compute-limits/issues/1
 - SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7620359
 - The slides with commentary (Data Democracy on Substack): https://datademocracy.substack.com/p/the-macroeconomic-limits-of-ai-compute
 - Comments and corrections: desmond.fitzpatrick@nvara.ai
 
-**What's new:** [CHANGES.md](CHANGES.md) - version 28 (29 October 2026) rebuilt after the Q3 earnings and Anthropic's S-1.
+**What's new:** [CHANGES.md](CHANGES.md) - version 28 (31 October 2026): the story behind the AI sell-off, every builder counted, rebuilt after the Q3 earnings and Anthropic's S-1.
 
 **Start here:** the deck, `paper/easy_deck_v29.pdf` (PowerPoint: `paper/easy_deck_v29.pptx`). The paper is `paper/paper_v28.pdf`.
 
